@@ -13,18 +13,18 @@
 		1823E50428488CB500E9A1A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50228488CB500E9A1A1 /* Main.storyboard */; };
 		1823E50628488CB700E9A1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50528488CB700E9A1A1 /* Assets.xcassets */; };
 		1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50728488CB700E9A1A1 /* LaunchScreen.storyboard */; };
-		189256D12859C143004E7502 /* prism_ios_native_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189256CF2859C0A6004E7502 /* prism_ios_native_sdk.framework */; };
-		189256D22859C143004E7502 /* prism_ios_native_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 189256CF2859C0A6004E7502 /* prism_ios_native_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18A7B618285C639000C8DE35 /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A7B614285C620600C8DE35 /* prism_ios_native_sdk.xcframework */; };
+		18A7B619285C639000C8DE35 /* prism_ios_native_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18A7B614285C620600C8DE35 /* prism_ios_native_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1823E53028488DAE00E9A1A1 /* Embed Frameworks */ = {
+		18A7B61A285C639000C8DE35 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				189256D22859C143004E7502 /* prism_ios_native_sdk.framework in Embed Frameworks */,
+				18A7B619285C639000C8DE35 /* prism_ios_native_sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,7 +40,7 @@
 		1823E50528488CB700E9A1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1823E50828488CB700E9A1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1823E50A28488CB700E9A1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		189256CF2859C0A6004E7502 /* prism_ios_native_sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = prism_ios_native_sdk.framework; sourceTree = "<group>"; };
+		18A7B614285C620600C8DE35 /* prism_ios_native_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_native_sdk.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189256D12859C143004E7502 /* prism_ios_native_sdk.framework in Frameworks */,
+				18A7B618285C639000C8DE35 /* prism_ios_native_sdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		1823E51028488CBE00E9A1A1 /* prism-framework */ = {
 			isa = PBXGroup;
 			children = (
-				189256CF2859C0A6004E7502 /* prism_ios_native_sdk.framework */,
+				18A7B614285C620600C8DE35 /* prism_ios_native_sdk.xcframework */,
 			);
 			path = "prism-framework";
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 				1823E4F528488CB500E9A1A1 /* Sources */,
 				1823E4F628488CB500E9A1A1 /* Frameworks */,
 				1823E4F728488CB500E9A1A1 /* Resources */,
-				1823E53028488DAE00E9A1A1 /* Embed Frameworks */,
+				18A7B61A285C639000C8DE35 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,7 +317,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/prism-ios-sdk-demo-app/prism-framework",
@@ -355,7 +355,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/prism-ios-sdk-demo-app/prism-framework",

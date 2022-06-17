@@ -17,16 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var digiLockerBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //b66130a4-2659-48d2-a3d9-07496d7831a3
     }
     
     @IBAction func initSDKAct(_ sender: Any) {
         if(clientIdTF.text != "" || userNameTF.text != ""){
-            //b66130a4-2659-48d2-a3d9-07496d7831a3
-//            entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: "test_user_1", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .stage,refVC: self)
-
-//            entryPoint?.addConfig(config: [.digilockerFlow, .myAadhaarUidaiFlow, .residentUidaiAadhaarFlow])
-            
             self.view.endEditing(true)
             self.digiLockerBtn.isHidden = false
         }else{
@@ -39,7 +33,6 @@ class ViewController: UIViewController {
         entryPoint?.prismEntryDelegate = self
         entryPoint?.addConfig(config: [.digilockerFlow, .myAadhaarUidaiFlow, .residentUidaiAadhaarFlow])
         entryPoint?.beginKYCFLow()
-        
     }
     
 }

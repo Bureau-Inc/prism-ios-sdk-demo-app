@@ -1,0 +1,11 @@
+framework module prism_ios_native_sdk {
+  umbrella header "prism_ios_native_sdk.h"
+
+  export *
+  module * { export * }
+}
+
+module prism_ios_native_sdk.Swift {
+    header "prism_ios_native_sdk-Swift.h"
+    requires objc
+}
