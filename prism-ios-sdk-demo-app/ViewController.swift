@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var clientIdTF: UITextField!
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var digiLockerBtn: UIButton!
+    @IBOutlet weak var oldAadhaarBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,15 +24,23 @@ class ViewController: UIViewController {
         if(clientIdTF.text != "" || userNameTF.text != ""){
             self.view.endEditing(true)
             self.digiLockerBtn.isHidden = false
+            self.oldAadhaarBtn.isHidden = false
         }else{
             Toast.show(message: "Please Enter the valid ClientID & Username", controller: self)
         }
     }
     
+    @IBAction func startKYCOldAadhaarAct(_ sender: Any) {
+        entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .stage,refVC: self)
+        entryPoint?.prismEntryDelegate = self
+        entryPoint?.addConfig(config: [.residentUidaiAadhaarFlow, .myAadhaarUidaiFlow, .digilockerFlow])
+        entryPoint?.beginKYCFLow()
+    }
+    
     @IBAction func startKYCDigiLockerAct(_ sender: Any) {
         entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .stage,refVC: self)
         entryPoint?.prismEntryDelegate = self
-        entryPoint?.addConfig(config: [.digilockerFlow, .myAadhaarUidaiFlow, .residentUidaiAadhaarFlow])
+        entryPoint?.addConfig(config: [.digilockerFlow, .residentUidaiAadhaarFlow, .myAadhaarUidaiFlow])
         entryPoint?.beginKYCFLow()
     }
     
@@ -42,8 +51,8 @@ extension ViewController:PrismEntryPointDelegate{
         if(data?["status"] as? Bool ?? false){
             Toast.show(message: "Authentication Successfully Done!", controller: self)
         }else{
-            if let errorMsg = (data?["errorCode"] as? String ){
-                Toast.show(message: "\(errorMsg) Access", controller: self)
+            if let errorMsg = (data?["error"] as? NSDictionary){
+                Toast.show(message: "\((errorMsg.value(forKey: "message") as? String ?? "").capitalized)", controller: self)
                 return
             }
             Toast.show(message: "KYC not verified, please try again later", controller: self)

@@ -2,9 +2,12 @@
 // swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name prism_ios_native_sdk
 import Combine
+import CoreGraphics
 import Dispatch
 import Foundation
 import MobileCoreServices
+import ObjectiveC
+import QuartzCore
 import Swift
 import SystemConfiguration
 import UIKit
@@ -352,6 +355,59 @@ extension prism_ios_native_sdk.DownloadRequest {
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishUnserialized(on queue: Dispatch.DispatchQueue = .main) -> prism_ios_native_sdk.DownloadResponsePublisher<Foundation.URL?>
 }
+@available(iOSApplicationExtension, unavailable)
+@objc final public class IQInvocation : ObjectiveC.NSObject {
+  @objc weak final public var target: Swift.AnyObject?
+  @objc final public var action: ObjectiveC.Selector
+  @objc public init(_ target: Swift.AnyObject, _ action: ObjectiveC.Selector)
+  @objc final public func invoke(from: Any)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc final public class IQKeyboardReturnKeyHandler : ObjectiveC.NSObject {
+  @objc weak final public var delegate: (UIKit.UITextFieldDelegate & UIKit.UITextViewDelegate)?
+  @objc final public var lastTextFieldReturnKeyType: UIKit.UIReturnKeyType {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(controller: UIKit.UIViewController)
+  @objc deinit
+  @objc final public func addTextFieldView(_ view: UIKit.UIView)
+  @objc final public func removeTextFieldView(_ view: UIKit.UIView)
+  @objc final public func addResponderFromView(_ view: UIKit.UIView)
+  @objc final public func removeResponderFromView(_ view: UIKit.UIView)
+}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardReturnKeyHandler : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField, reason: UIKit.UITextField.DidEndEditingReason)
+  @_Concurrency.MainActor(unsafe) @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardReturnKeyHandler : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewShouldBeginEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewShouldEndEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidChangeSelection(_ textView: UIKit.UITextView)
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith textAttachment: UIKit.NSTextAttachment, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+  @available(iOS, deprecated: 10.0)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange) -> Swift.Bool
+  @available(iOS, deprecated: 10.0)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith textAttachment: UIKit.NSTextAttachment, in characterRange: Foundation.NSRange) -> Swift.Bool
+}
 extension prism_ios_native_sdk.Request {
   public static let didResumeNotification: Foundation.Notification.Name
   public static let didSuspendNotification: Foundation.Notification.Name
@@ -377,6 +433,68 @@ extension Foundation.Notification {
   final public func request(_ request: prism_ios_native_sdk.Request, didCancelTask task: Foundation.URLSessionTask)
   final public func request(_ request: prism_ios_native_sdk.Request, didCompleteTask task: Foundation.URLSessionTask, with error: prism_ios_native_sdk.AFError?)
   @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+@objc final public class IQKeyboardManager : ObjectiveC.NSObject {
+  @objc public static let shared: prism_ios_native_sdk.IQKeyboardManager
+  @objc final public var enable: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public var keyboardDistanceFromTextField: CoreGraphics.CGFloat
+  @objc final public var enableAutoToolbar: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public var toolbarManageBehaviour: prism_ios_native_sdk.IQAutoToolbarManageBehaviour
+  @objc final public var shouldToolbarUsesTextFieldTintColor: Swift.Bool
+  @objc final public var toolbarTintColor: UIKit.UIColor?
+  @objc final public var toolbarBarTintColor: UIKit.UIColor?
+  @objc final public var previousNextDisplayMode: prism_ios_native_sdk.IQPreviousNextDisplayMode
+  @objc final public var toolbarPreviousBarButtonItemImage: UIKit.UIImage?
+  @objc final public var toolbarNextBarButtonItemImage: UIKit.UIImage?
+  @objc final public var toolbarDoneBarButtonItemImage: UIKit.UIImage?
+  @objc final public var toolbarPreviousBarButtonItemText: Swift.String?
+  @objc final public var toolbarPreviousBarButtonItemAccessibilityLabel: Swift.String?
+  @objc final public var toolbarNextBarButtonItemText: Swift.String?
+  @objc final public var toolbarNextBarButtonItemAccessibilityLabel: Swift.String?
+  @objc final public var toolbarDoneBarButtonItemText: Swift.String?
+  @objc final public var toolbarDoneBarButtonItemAccessibilityLabel: Swift.String?
+  @objc final public var shouldShowToolbarPlaceholder: Swift.Bool
+  @objc final public var placeholderFont: UIKit.UIFont?
+  @objc final public var placeholderColor: UIKit.UIColor?
+  @objc final public var placeholderButtonColor: UIKit.UIColor?
+  @objc final public var overrideKeyboardAppearance: Swift.Bool
+  @objc final public var keyboardAppearance: UIKit.UIKeyboardAppearance
+  @objc final public var shouldResignOnTouchOutside: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public var resignFirstResponderGesture: UIKit.UITapGestureRecognizer {
+    @objc get
+    @objc set
+  }
+  @discardableResult
+  @objc final public func resignFirstResponder() -> Swift.Bool
+  @objc final public var shouldPlayInputClicks: Swift.Bool
+  @objc final public var layoutIfNeededOnUpdate: Swift.Bool
+  @objc final public var disabledDistanceHandlingClasses: [UIKit.UIViewController.Type]
+  @objc final public var enabledDistanceHandlingClasses: [UIKit.UIViewController.Type]
+  @objc final public var disabledToolbarClasses: [UIKit.UIViewController.Type]
+  @objc final public var enabledToolbarClasses: [UIKit.UIViewController.Type]
+  @objc final public var toolbarPreviousNextAllowedClasses: [UIKit.UIView.Type]
+  @objc final public var disabledTouchResignedClasses: [UIKit.UIViewController.Type]
+  @objc final public var enabledTouchResignedClasses: [UIKit.UIViewController.Type]
+  @objc final public var touchResignedGestureIgnoreClasses: [UIKit.UIView.Type]
+  @objc final public func registerTextFieldViewClass(_ aClass: UIKit.UIView.Type, didBeginEditingNotificationName: Swift.String, didEndEditingNotificationName: Swift.String)
+  @objc final public func unregisterTextFieldViewClass(_ aClass: UIKit.UIView.Type, didBeginEditingNotificationName: Swift.String, didEndEditingNotificationName: Swift.String)
+  @objc deinit
+  @objc final public func reloadLayoutIfNeeded()
+}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardManager : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
 }
 extension Foundation.URLSessionConfiguration : prism_ios_native_sdk.AlamofireExtended {
   public typealias ExtendedType = Foundation.URLSessionConfiguration
@@ -654,6 +772,75 @@ extension Foundation.URLSessionConfiguration {
     set
   }
 }
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func makeToast(_ message: Swift.String?, duration: Foundation.TimeInterval = ToastManager.shared.duration, position: prism_ios_native_sdk.ToastPosition = ToastManager.shared.position, title: Swift.String? = nil, image: UIKit.UIImage? = nil, style: prism_ios_native_sdk.ToastStyle = ToastManager.shared.style, completion: ((_ didTap: Swift.Bool) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func makeToast(_ message: Swift.String?, duration: Foundation.TimeInterval = ToastManager.shared.duration, point: CoreGraphics.CGPoint, title: Swift.String?, image: UIKit.UIImage?, style: prism_ios_native_sdk.ToastStyle = ToastManager.shared.style, completion: ((_ didTap: Swift.Bool) -> Swift.Void)?)
+  @_Concurrency.MainActor(unsafe) public func showToast(_ toast: UIKit.UIView, duration: Foundation.TimeInterval = ToastManager.shared.duration, position: prism_ios_native_sdk.ToastPosition = ToastManager.shared.position, completion: ((_ didTap: Swift.Bool) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func showToast(_ toast: UIKit.UIView, duration: Foundation.TimeInterval = ToastManager.shared.duration, point: CoreGraphics.CGPoint, completion: ((_ didTap: Swift.Bool) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func hideToast()
+  @_Concurrency.MainActor(unsafe) public func hideToast(_ toast: UIKit.UIView)
+  @_Concurrency.MainActor(unsafe) public func hideAllToasts(includeActivity: Swift.Bool = false, clearQueue: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func clearToastQueue()
+  @_Concurrency.MainActor(unsafe) public func makeToastActivity(_ position: prism_ios_native_sdk.ToastPosition)
+  @_Concurrency.MainActor(unsafe) public func makeToastActivity(_ point: CoreGraphics.CGPoint)
+  @_Concurrency.MainActor(unsafe) public func hideToastActivity()
+  @_Concurrency.MainActor(unsafe) public func toastViewForMessage(_ message: Swift.String?, title: Swift.String?, image: UIKit.UIImage?, style: prism_ios_native_sdk.ToastStyle) throws -> UIKit.UIView
+}
+public struct ToastStyle {
+  public init()
+  public var backgroundColor: UIKit.UIColor
+  public var titleColor: UIKit.UIColor
+  public var messageColor: UIKit.UIColor
+  public var maxWidthPercentage: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var maxHeightPercentage: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var horizontalPadding: CoreGraphics.CGFloat
+  public var verticalPadding: CoreGraphics.CGFloat
+  public var cornerRadius: CoreGraphics.CGFloat
+  public var titleFont: UIKit.UIFont
+  public var messageFont: UIKit.UIFont
+  public var titleAlignment: UIKit.NSTextAlignment
+  public var messageAlignment: UIKit.NSTextAlignment
+  public var titleNumberOfLines: Swift.Int
+  public var messageNumberOfLines: Swift.Int
+  public var displayShadow: Swift.Bool
+  public var shadowColor: UIKit.UIColor
+  public var shadowOpacity: Swift.Float {
+    get
+    set
+  }
+  public var shadowRadius: CoreGraphics.CGFloat
+  public var shadowOffset: CoreGraphics.CGSize
+  public var imageSize: CoreGraphics.CGSize
+  public var activitySize: CoreGraphics.CGSize
+  public var fadeDuration: Swift.Double
+  public var activityIndicatorColor: UIKit.UIColor
+  public var activityBackgroundColor: UIKit.UIColor
+}
+@_hasMissingDesignatedInitializers public class ToastManager {
+  public static let shared: prism_ios_native_sdk.ToastManager
+  public var style: prism_ios_native_sdk.ToastStyle
+  public var isTapToDismissEnabled: Swift.Bool
+  public var isQueueEnabled: Swift.Bool
+  public var duration: Swift.Double
+  public var position: prism_ios_native_sdk.ToastPosition
+  @objc deinit
+}
+public enum ToastPosition {
+  case top
+  case center
+  case bottom
+  public static func == (a: prism_ios_native_sdk.ToastPosition, b: prism_ios_native_sdk.ToastPosition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers open class NetworkReachabilityManager {
   public enum NetworkReachabilityStatus {
     case unknown
@@ -697,6 +884,50 @@ extension Foundation.URLSessionConfiguration {
 extension prism_ios_native_sdk.NetworkReachabilityManager.NetworkReachabilityStatus : Swift.Equatable {
   public static func == (a: prism_ios_native_sdk.NetworkReachabilityManager.NetworkReachabilityStatus, b: prism_ios_native_sdk.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Bool
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQTitleBarButtonItem : prism_ios_native_sdk.IQBarButtonItem {
+  @objc @_Concurrency.MainActor(unsafe) open var titleFont: UIKit.UIFont? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var title: Swift.String? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var titleColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var selectableTitleColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override open var invocation: prism_ios_native_sdk.IQInvocation? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) convenience public init(title: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardManager {
+  @objc final public var enableDebugging: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc final public func registerAllNotifications()
+  @objc final public func unregisterAllNotifications()
+  public struct Static {
+  }
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func viewContainingController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func topMostController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func parentContainerViewController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func superviewOfClassType(_ classType: UIKit.UIView.Type, belowView: UIKit.UIView? = nil) -> UIKit.UIView?
+}
 open class MultipartFormData {
   public static let encodingMemoryThreshold: Swift.UInt64
   open var contentType: Swift.String {
@@ -716,6 +947,62 @@ open class MultipartFormData {
   public func encode() throws -> Foundation.Data
   public func writeEncodedData(to fileURL: Foundation.URL) throws
   @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+@objc final public class IQBarButtonItemConfiguration : ObjectiveC.NSObject {
+  @objc public init(barButtonSystemItem: UIKit.UIBarButtonItem.SystemItem, action: ObjectiveC.Selector)
+  @objc public init(image: UIKit.UIImage, action: ObjectiveC.Selector)
+  @objc public init(title: Swift.String, action: ObjectiveC.Selector)
+  final public let barButtonSystemItem: UIKit.UIBarButtonItem.SystemItem?
+  @objc final public let image: UIKit.UIImage?
+  @objc final public let title: Swift.String?
+  @objc final public let action: ObjectiveC.Selector?
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIImage {
+  @objc public static func keyboardLeftImage() -> UIKit.UIImage?
+  @objc public static func keyboardRightImage() -> UIKit.UIImage?
+  @objc public static func keyboardUpImage() -> UIKit.UIImage?
+  @objc public static func keyboardDownImage() -> UIKit.UIImage?
+  @objc public static func keyboardPreviousImage() -> UIKit.UIImage?
+  @objc public static func keyboardNextImage() -> UIKit.UIImage?
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var keyboardToolbar: prism_ios_native_sdk.IQToolbar {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldHideToolbarPlaceholder: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var toolbarPlaceholder: Swift.String? {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var drawingToolbarPlaceholder: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addKeyboardToolbarWithTarget(target: Swift.AnyObject?, titleText: Swift.String?, rightBarButtonConfiguration: prism_ios_native_sdk.IQBarButtonItemConfiguration?, previousBarButtonConfiguration: prism_ios_native_sdk.IQBarButtonItemConfiguration? = nil, nextBarButtonConfiguration: prism_ios_native_sdk.IQBarButtonItemConfiguration? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithImage(_ image: UIKit.UIImage, target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithImage(_ image: UIKit.UIImage, target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithText(_ text: Swift.String, target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithText(_ text: Swift.String, target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addCancelDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, cancelAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonTitle: Swift.String, rightButtonTitle: Swift.String, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonImage: UIKit.UIImage, rightButtonImage: UIKit.UIImage, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addCancelDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, cancelAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonTitle: Swift.String, rightButtonTitle: Swift.String, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonImage: UIKit.UIImage, rightButtonImage: UIKit.UIImage, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonImage: UIKit.UIImage, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonTitle: Swift.String, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonImage: UIKit.UIImage, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonTitle: Swift.String, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
 }
 public protocol DataResponseSerializerProtocol {
   associatedtype SerializedObject
@@ -1106,6 +1393,67 @@ extension prism_ios_native_sdk.SessionDelegate : Foundation.URLSessionDownloadDe
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
 }
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIScrollView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldIgnoreScrollingAdjustment: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldIgnoreContentInsetAdjustment: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldRestoreScrollViewContentOffset: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+}
+@available(iOS 11.0, *)
+extension prism_ios_native_sdk.WKDownloadHelper : WebKit.WKNavigationDelegate {
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
+  @available(iOS 14.5, *)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, navigationResponse: WebKit.WKNavigationResponse, didBecome download: WebKit.WKDownload)
+}
+@available(iOS 14.5, *)
+extension prism_ios_native_sdk.WKDownloadHelper : WebKit.WKDownloadDelegate {
+  @objc dynamic public func download(_ download: WebKit.WKDownload, decideDestinationUsing response: Foundation.URLResponse, suggestedFilename: Swift.String, completionHandler: @escaping (Foundation.URL?) -> Swift.Void)
+  @objc dynamic public func download(_ download: WebKit.WKDownload, didFailWithError error: Swift.Error, resumeData: Foundation.Data?)
+  @objc dynamic public func downloadDidFinish(_ download: WebKit.WKDownload)
+}
+@available(iOSApplicationExtension, unavailable)
+@objc public enum IQAutoToolbarManageBehaviour : Swift.Int {
+  case bySubviews
+  case byTag
+  case byPosition
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOSApplicationExtension, unavailable)
+@objc public enum IQPreviousNextDisplayMode : Swift.Int {
+  case `default`
+  case alwaysHide
+  case alwaysShow
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOSApplicationExtension, unavailable)
+@objc public enum IQEnableMode : Swift.Int {
+  case `default`
+  case enabled
+  case disabled
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 extension prism_ios_native_sdk.Request {
   public typealias ValidationResult = Swift.Result<Swift.Void, Swift.Error>
 }
@@ -1135,6 +1483,40 @@ extension prism_ios_native_sdk.DownloadRequest {
   public func validate<S>(contentType acceptableContentTypes: @autoclosure @escaping () -> S) -> Self where S : Swift.Sequence, S.Element == Swift.String
   @discardableResult
   public func validate() -> Self
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQToolbar : UIKit.UIToolbar, UIKit.UIInputViewAudioFeedback {
+  @objc @_Concurrency.MainActor(unsafe) open var previousBarButton: prism_ios_native_sdk.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var nextBarButton: prism_ios_native_sdk.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var titleBarButton: prism_ios_native_sdk.IQTitleBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var doneBarButton: prism_ios_native_sdk.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var fixedSpaceBarButton: prism_ios_native_sdk.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func sizeThatFits(_ size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var tintColor: UIKit.UIColor! {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc open var enableInputClicksWhenVisible: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Request {
   public enum State {
@@ -1391,6 +1773,24 @@ extension prism_ios_native_sdk.UploadRequest.Uploadable : prism_ios_native_sdk.U
 }
 public protocol UploadConvertible : prism_ios_native_sdk.URLRequestConvertible, prism_ios_native_sdk.UploadableConvertible {
 }
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQPreviousNextView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQBarButtonItem : UIKit.UIBarButtonItem {
+  @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var tintColor: UIKit.UIColor? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open func setTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector?)
+  @objc @_Concurrency.MainActor(unsafe) open var invocation: prism_ios_native_sdk.IQInvocation?
+  @objc deinit
+}
 open class ServerTrustManager {
   final public let allHostsMustBeEvaluated: Swift.Bool
   final public let evaluators: [Swift.String : prism_ios_native_sdk.ServerTrustEvaluating]
@@ -1583,6 +1983,15 @@ extension prism_ios_native_sdk.CachedResponseHandler where Self == prism_ios_nat
   }
   public static func modify(using closure: @escaping ((Foundation.URLSessionDataTask, Foundation.CachedURLResponse) -> Foundation.CachedURLResponse?)) -> prism_ios_native_sdk.ResponseCacher
 }
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardManager {
+  @objc final public var keyboardShowing: Swift.Bool {
+    @objc get
+  }
+  @objc final public var keyboardFrame: CoreGraphics.CGRect {
+    @objc get
+  }
+}
 open class RetryPolicy : prism_ios_native_sdk.RequestInterceptor {
   public static let defaultRetryLimit: Swift.UInt
   public static let defaultExponentialBackoffBase: Swift.UInt
@@ -1617,7 +2026,62 @@ extension prism_ios_native_sdk.RequestInterceptor where Self == prism_ios_native
   }
   public static func connectionLostRetryPolicy(retryLimit: Swift.UInt = RetryPolicy.defaultRetryLimit, exponentialBackoffBase: Swift.UInt = RetryPolicy.defaultExponentialBackoffBase, exponentialBackoffScale: Swift.Double = RetryPolicy.defaultExponentialBackoffScale, retryableHTTPMethods: Swift.Set<prism_ios_native_sdk.HTTPMethod> = RetryPolicy.defaultRetryableHTTPMethods) -> prism_ios_native_sdk.ConnectionLostRetryPolicy
 }
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func imageFromUrl(urlString: Swift.String) -> UIKit.UIImage
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class Gradient : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 public struct clientInfo {
+}
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQTextView : UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, textContainer: UIKit.NSTextContainer?)
+  @objc override dynamic open func awakeFromNib()
+  @objc deinit
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var placeholderTextColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var attributedPlaceholder: Foundation.NSAttributedString? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var text: Swift.String! {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var attributedText: Foundation.NSAttributedString! {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var font: UIKit.UIFont? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var textAlignment: UIKit.NSTextAlignment {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override weak dynamic open var delegate: UIKit.UITextViewDelegate? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
 }
 public protocol AuthenticationCredential {
   var requiresRefresh: Swift.Bool { get }
@@ -1653,6 +2117,44 @@ public class AuthenticationInterceptor<AuthenticatorType> : prism_ios_native_sdk
   public func adapt(_ urlRequest: Foundation.URLRequest, for session: prism_ios_native_sdk.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, Swift.Error>) -> Swift.Void)
   public func retry(_ request: prism_ios_native_sdk.Request, for session: prism_ios_native_sdk.Session, dueTo error: Swift.Error, completion: @escaping (prism_ios_native_sdk.RetryResult) -> Swift.Void)
   @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+public let kIQUseDefaultKeyboardDistance: CoreGraphics.CGFloat
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var keyboardDistanceFromTextField: CoreGraphics.CGFloat {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var ignoreSwitchingByNextPrevious: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var enableMode: prism_ios_native_sdk.IQEnableMode {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldResignOnTouchOutsideMode: prism_ios_native_sdk.IQEnableMode {
+    @objc get
+    @objc set(newValue)
+  }
+}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardManager {
+  @objc final public func reloadInputViews()
+}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardManager {
+  @objc final public var canGoPrevious: Swift.Bool {
+    @objc get
+  }
+  @objc final public var canGoNext: Swift.Bool {
+    @objc get
+  }
+  @discardableResult
+  @objc final public func goPrevious() -> Swift.Bool
+  @discardableResult
+  @objc final public func goNext() -> Swift.Bool
 }
 open class Session {
   public static let `default`: prism_ios_native_sdk.Session
@@ -1705,6 +2207,9 @@ extension prism_ios_native_sdk.Session : prism_ios_native_sdk.RequestDelegate {
   public func cleanup(after request: prism_ios_native_sdk.Request)
   public func retryResult(for request: prism_ios_native_sdk.Request, dueTo error: prism_ios_native_sdk.AFError, completion: @escaping (prism_ios_native_sdk.RetryResult) -> Swift.Void)
   public func retryRequest(_ request: prism_ios_native_sdk.Request, withDelay timeDelay: Foundation.TimeInterval?)
+}
+public struct MimeType {
+  public init(type: Swift.String, fileExtension: Swift.String)
 }
 public protocol ParameterEncoder {
   func encode<Parameters>(_ parameters: Parameters?, into request: Foundation.URLRequest) throws -> Foundation.URLRequest where Parameters : Swift.Encodable
@@ -1763,6 +2268,15 @@ extension Foundation.URLRequest {
     set
   }
   public func validate() throws
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func parentIQContainerViewController() -> UIKit.UIViewController?
+  @objc @available(*, deprecated, message: "Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.")
+  @IBOutlet @_Concurrency.MainActor(unsafe) dynamic public var IQLayoutGuideConstraint: UIKit.NSLayoutConstraint? {
+    @objc get
+    @objc set(newValue)
+  }
 }
 public enum AFError : Swift.Error {
   public enum MultipartEncodingFailureReason {
@@ -2176,8 +2690,167 @@ public struct ClientAadhaarData {
 public protocol PrismEntryPointDelegate : ObjectiveC.NSObject {
   func onKYCFinished(data: [Swift.String : Any]?)
 }
+public class DigestMethod {
+  public var algorithm: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.DigestMethod]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Transforms {
+  public var transform: prism_ios_native_sdk.Transform?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Transforms]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class OfflinePaperlessKyc {
+  public var referenceId: Swift.String?
+  public var uidData: prism_ios_native_sdk.UidData?
+  public var signature: prism_ios_native_sdk.Signature?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.OfflinePaperlessKyc]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class UidData {
+  public var poi: prism_ios_native_sdk.Poi?
+  public var poa: prism_ios_native_sdk.Poa?
+  public var pht: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.UidData]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Poa {
+  public var street: Swift.String?
+  public var loc: Swift.String?
+  public var po: Swift.String?
+  public var dist: Swift.String?
+  public var vtc: Swift.String?
+  public var house: Swift.String?
+  public var country: Swift.String?
+  public var subdist: Swift.String?
+  public var pc: Swift.String?
+  public var landmark: Swift.String?
+  public var careof: Swift.String?
+  public var state: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Poa]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Poi {
+  public var name: Swift.String?
+  public var gender: Swift.String?
+  public var m: Swift.String?
+  public var e: Swift.String?
+  public var dob: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Poi]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Json4Swift_Base {
+  public var offlinePaperlessKyc: prism_ios_native_sdk.OfflinePaperlessKyc?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Json4Swift_Base]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Signature {
+  public var xmlns: Swift.String?
+  public var signedInfo: prism_ios_native_sdk.SignedInfo?
+  public var signatureValue: Swift.String?
+  public var keyInfo: prism_ios_native_sdk.KeyInfo?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Signature]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class CanonicalizationMethod {
+  public var algorithm: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.CanonicalizationMethod]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class X509Data {
+  public var x509SubjectName: Swift.String?
+  public var x509Certificate: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.X509Data]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Reference {
+  public var uRI: Swift.String?
+  public var transforms: prism_ios_native_sdk.Transforms?
+  public var digestMethod: prism_ios_native_sdk.DigestMethod?
+  public var digestValue: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Reference]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class SignedInfo {
+  public var canonicalizationMethod: prism_ios_native_sdk.CanonicalizationMethod?
+  public var signatureMethod: prism_ios_native_sdk.SignatureMethod?
+  public var reference: prism_ios_native_sdk.Reference?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.SignedInfo]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class SignatureMethod {
+  public var algorithm: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.SignatureMethod]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class KeyInfo {
+  public var x509Data: prism_ios_native_sdk.X509Data?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.KeyInfo]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Transform {
+  public var algorithm: Swift.String?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Transform]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public protocol WKDownloadHelperDelegate {
+  func canNavigate(toUrl: Foundation.URL) -> Swift.Bool
+  func didDownloadFile(atUrl: Foundation.URL)
+  func didFailDownloadingFile(error: Swift.Error)
+  func localURLForFile(withName: Swift.String) -> Foundation.URL?
+}
+extension prism_ios_native_sdk.WKDownloadHelperDelegate {
+  public func canNavigate(toUrl: Foundation.URL) -> Swift.Bool
+  public func didFailDownloadingFile(error: Swift.Error)
+  public func localURLForFile(withName name: Swift.String) -> Foundation.URL?
+}
+@objc @available(iOS 11.0, *)
+public class WKDownloadHelper : ObjectiveC.NSObject {
+  public init(webView: WebKit.WKWebView, supportedMimeTypes: [prism_ios_native_sdk.MimeType], delegate: prism_ios_native_sdk.WKDownloadHelperDelegate)
+  @objc deinit
+}
 public typealias AFResult<Success> = Swift.Result<Success, prism_ios_native_sdk.AFError>
 public let AF: prism_ios_native_sdk.Session
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQKeyboardManager {
+  @objc final public var movedDistance: CoreGraphics.CGFloat {
+    @objc get
+  }
+  @objc final public var movedDistanceChanged: ((CoreGraphics.CGFloat) -> Swift.Void)? {
+    @objc get
+    @objc set(newValue)
+  }
+}
 extension prism_ios_native_sdk.URLEncodedFormEncoder.ArrayEncoding : Swift.Equatable {}
 extension prism_ios_native_sdk.URLEncodedFormEncoder.ArrayEncoding : Swift.Hashable {}
 extension prism_ios_native_sdk.URLEncodedFormEncoder.BoolEncoding : Swift.Equatable {}
@@ -2190,8 +2863,28 @@ extension prism_ios_native_sdk.URLEncoding.ArrayEncoding : Swift.Equatable {}
 extension prism_ios_native_sdk.URLEncoding.ArrayEncoding : Swift.Hashable {}
 extension prism_ios_native_sdk.URLEncoding.BoolEncoding : Swift.Equatable {}
 extension prism_ios_native_sdk.URLEncoding.BoolEncoding : Swift.Hashable {}
+extension prism_ios_native_sdk.ToastPosition : Swift.Equatable {}
+extension prism_ios_native_sdk.ToastPosition : Swift.Hashable {}
 extension prism_ios_native_sdk.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Equatable {}
 extension prism_ios_native_sdk.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Hashable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQAutoToolbarManageBehaviour : Swift.Equatable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQAutoToolbarManageBehaviour : Swift.Hashable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQAutoToolbarManageBehaviour : Swift.RawRepresentable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQPreviousNextDisplayMode : Swift.Equatable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQPreviousNextDisplayMode : Swift.Hashable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQPreviousNextDisplayMode : Swift.RawRepresentable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQEnableMode : Swift.Equatable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQEnableMode : Swift.Hashable {}
+@available(iOSApplicationExtension, unavailable)
+extension prism_ios_native_sdk.IQEnableMode : Swift.RawRepresentable {}
 extension prism_ios_native_sdk.Request.State : Swift.Equatable {}
 extension prism_ios_native_sdk.Request.State : Swift.Hashable {}
 extension prism_ios_native_sdk.AuthenticationError : Swift.Equatable {}

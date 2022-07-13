@@ -4,17 +4,93 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/IQKeyboardManagerSwift.h</key>
+		<data>
+		8Rqa12d1Ig0xaaGfsElH62/90Ng=
+		</data>
+		<key>Headers/SSZipArchive.h</key>
+		<data>
+		av6ZHVQfw/VJ5dGigWIKx3kcP4A=
+		</data>
+		<key>Headers/SSZipCommon.h</key>
+		<data>
+		RIcb5B+ld+J5JtAl4CxP7ae6qi0=
+		</data>
+		<key>Headers/ZipArchive.h</key>
+		<data>
+		kjq3UtogYj0+Bb2211I+qAwfwMw=
+		</data>
+		<key>Headers/mz.h</key>
+		<data>
+		fhXlv+eqUtFmlhkMIBBdOvxZ7wQ=
+		</data>
+		<key>Headers/mz_compat.h</key>
+		<data>
+		msQTDaGsilylbx8BLqmDjtBLaDk=
+		</data>
+		<key>Headers/mz_crypt.h</key>
+		<data>
+		OIIROdPkoouxlKm1/gGXPWuDc1I=
+		</data>
+		<key>Headers/mz_os.h</key>
+		<data>
+		caUA7vw4ijeSqaEK1KGuLa3n4uU=
+		</data>
+		<key>Headers/mz_strm.h</key>
+		<data>
+		8/LTQ3SXNpvtI16yZy3353TDmEk=
+		</data>
+		<key>Headers/mz_strm_buf.h</key>
+		<data>
+		w3lwXQWAWjuPFDWDa6GJjTaRG7U=
+		</data>
+		<key>Headers/mz_strm_mem.h</key>
+		<data>
+		gU/7q0/Xnjj8iSF4S0qpt8mkls4=
+		</data>
+		<key>Headers/mz_strm_os.h</key>
+		<data>
+		VKgqj29X7t4kpTK4DAI84nkLhoE=
+		</data>
+		<key>Headers/mz_strm_pkcrypt.h</key>
+		<data>
+		xypuSIU0NGvd6s2jYk9u28y/aYY=
+		</data>
+		<key>Headers/mz_strm_split.h</key>
+		<data>
+		luOzfXL74eMNjMEUNM7WhmuuiQU=
+		</data>
+		<key>Headers/mz_strm_wzaes.h</key>
+		<data>
+		li6bNYWtNkTwlSK5OCHwyAipELc=
+		</data>
+		<key>Headers/mz_strm_zlib.h</key>
+		<data>
+		KdWCtgLDMamNKAQTLShwlpGbiN4=
+		</data>
+		<key>Headers/mz_zip.h</key>
+		<data>
+		paa5AXgvgZZGsMrweYvhGJVc578=
+		</data>
+		<key>Headers/mz_zip_rw.h</key>
+		<data>
+		vUs9EfTN5zD/RquNRS3LrbMQSpo=
+		</data>
 		<key>Headers/prism_ios_native_sdk-Swift.h</key>
 		<data>
-		PYKlh43IClemOQH7zBGhvAq1sLQ=
+		J2CRAzb5k1rNVrp2KvQjEsait28=
 		</data>
 		<key>Headers/prism_ios_native_sdk.h</key>
 		<data>
-		pm0vhTO7AQmJrBNcaGiS8eWoSPM=
+		1ncekhPgRCQSctb/7gVi4rfrTJs=
 		</data>
 		<key>Info.plist</key>
 		<data>
 		UVtNsfeqtIAizrsB0D7WejsMmcc=
+		</data>
+		<key>LICENSE</key>
+		<data>
+		F6LTl+RBugQ3i5tHJ0u0h632bEQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -22,27 +98,27 @@
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		jmHcCOoL/Rrh1V6EgG1YjJ1Yprw=
+		5xDVQ55QfRLQTqEEaAD/7n9PDjs=
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Zw+2wjpXr/x01VMivmcopruqky0=
+		gqGjvDGHAIuxR7rCIpsUozuxDtI=
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Cbzcjxf6De41liXp/rAF5Azcplk=
+		X07CsKzuXaS+6Y8dA4Y5KD/jwCI=
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Gd6vjuNoqiYdPx5KZJt0QGFTaEw=
+		Lqt6czuYpVzsFdggShszkp6C6HM=
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		oTjxoWTaY0C3R8RuNW+LUhWmOCE=
+		4erXRCCdNSjBG7cCdiiQAXZwKxM=
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cKpRa6WktMwlmjqktU4kfihOd/4=
+		XtzdM8+GQsBQVF/KRoBkdas7lUA=
 		</data>
 		<key>Prism.storyboardc/DigiLockerViewController.nib</key>
 		<data>
@@ -50,27 +126,200 @@
 		</data>
 		<key>Prism.storyboardc/Info.plist</key>
 		<data>
-		4k5uxVlHxS/Vz2WS7fyr2CR+7zA=
+		qBfjNgxIHC/1fnWLStnUZbM5K6Y=
+		</data>
+		<key>Prism.storyboardc/Jz7-TQ-mm6-view-zVe-h5-r4n.nib</key>
+		<data>
+		RCQDLqJvMi8Rb9GFvJR9YWe4Qlk=
+		</data>
+		<key>Prism.storyboardc/OldAadhaarFlowVC.nib</key>
+		<data>
+		aKpW6+2xvAmVt+OatbfG7UFdoZk=
+		</data>
+		<key>Prism.storyboardc/TermsConditionVC.nib</key>
+		<data>
+		HtOWOBuw36x3rQZDFjemNyuIFHQ=
 		</data>
 		<key>Prism.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib</key>
 		<data>
-		2eQrLogvtAz+Wkm18O+Nu4N+XrA=
+		2Op58L6u1Ck0gyNsNW3rKyDIhYM=
+		</data>
+		<key>Prism.storyboardc/q0L-zR-BD6-view-WGY-cR-sBU.nib</key>
+		<data>
+		99g61WvhRTW1aIxZqVdHqgZ0+GQ=
+		</data>
+		<key>Uncheck_box.png</key>
+		<data>
+		+hUWrlSkez09Lvy7vY0amhZo5/M=
+		</data>
+		<key>backIco.png</key>
+		<data>
+		lzXQUeH23ddXewKv9upv0L3e/ao=
+		</data>
+		<key>check_box.png</key>
+		<data>
+		x8C3Q/9I7leqycfwhyDiaPqkHuY=
+		</data>
+		<key>invoid_logo_small.png</key>
+		<data>
+		jQb5C6928hibNGAK4piLoGBsFMw=
+		</data>
+		<key>offlineaadhaar.xml</key>
+		<data>
+		DxSEYFsFPdueKKoeI9m0nfIC5gc=
+		</data>
+		<key>refresh.png</key>
+		<data>
+		rPsAMKPANr5PYIpokd8irWuMi3g=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/IQKeyboardManagerSwift.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l6fxX4VZ4vK/22WyBfZA9q1KY9RGP7Ta9XC5s4M1uAs=
+			</data>
+		</dict>
+		<key>Headers/SSZipArchive.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Bs7miCMTRQQ96JYVFEoJyORr1eEw8KLY7bKT7SYcFRw=
+			</data>
+		</dict>
+		<key>Headers/SSZipCommon.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NF/uhH//cPMZJDgLudzWL3Q/SgXGTIkzaL9svHEogVY=
+			</data>
+		</dict>
+		<key>Headers/ZipArchive.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			X2AXQ8pHZttRT0VlxZDZG/xpx6CHxChvrJ0sLWI7pbo=
+			</data>
+		</dict>
+		<key>Headers/mz.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Z/gi2kwPRHgtFsl45pIRFhLNWXru5xw8vJ8BZ6qczUk=
+			</data>
+		</dict>
+		<key>Headers/mz_compat.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZBoZS8czovzXOVhP6v27cZ/9/5ou2UeaZ9CGwv/LRVw=
+			</data>
+		</dict>
+		<key>Headers/mz_crypt.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sDcuUF+iNkCXe6Uujjlx5DBZS1aMM7Gf1wITqa2LaZo=
+			</data>
+		</dict>
+		<key>Headers/mz_os.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wTH/X2sBoRyJbaD38F/ZJAIGF7qNtTIJo8mZvjHnIWk=
+			</data>
+		</dict>
+		<key>Headers/mz_strm.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1c+pAShvJH0GoZ53x8CcmKWBvsk5Zk4qwx42P4vWsnU=
+			</data>
+		</dict>
+		<key>Headers/mz_strm_buf.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oAWUBnrWEzT+TRhwDG20n7u9BkExB0a8wex4W2vcasY=
+			</data>
+		</dict>
+		<key>Headers/mz_strm_mem.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			S7pdJz8KkDzuFAdNZu0mXts9KedC714+b0y/1ffrm8A=
+			</data>
+		</dict>
+		<key>Headers/mz_strm_os.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VLOCnCLqRHJbYrIN00Sr0l8xr+qpq1z2vzTtNS4firA=
+			</data>
+		</dict>
+		<key>Headers/mz_strm_pkcrypt.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tO8e5vZHCg7oWwQ/NX8gXRe/rAHyg2rcpMGUp0aXjP0=
+			</data>
+		</dict>
+		<key>Headers/mz_strm_split.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bxFvYVKwZQEkqTq67aueJD53jIa3DkXNzmQpW2Hg5U4=
+			</data>
+		</dict>
+		<key>Headers/mz_strm_wzaes.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6+6BB86qSK4d0RXq7Q71XX6MKsIa+6FiHFosSpSBsNs=
+			</data>
+		</dict>
+		<key>Headers/mz_strm_zlib.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LKDTl4/KZkuJACaj6aozBo43rPjqOoaJO+KUQkgZQ+I=
+			</data>
+		</dict>
+		<key>Headers/mz_zip.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7/bJkrOwbED3NOTIke5CiOk3+l16mDzXsQ5K7CbONGk=
+			</data>
+		</dict>
+		<key>Headers/mz_zip_rw.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ujkNKhZkDn9R8UkTXanghb2tXhYLzoU0tZSnSYSnOEs=
+			</data>
+		</dict>
 		<key>Headers/prism_ios_native_sdk-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5G9Gr6Wn3bA83Gm6QIdoIITfhh8mtXHSE+HO3wAsTL0=
+			wZwzsGUjfQ0S1loVKEWH51TwyHZ4C3dQYVeviDNR3L4=
 			</data>
 		</dict>
 		<key>Headers/prism_ios_native_sdk.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+cztkGyY07pXTnbljTjpjv2mMKRu/xpHyzQPRFrwt9E=
+			JdFH49lLocWPSYNNllPwwXBDkv1vHFfNS8CGZqyTb98=
+			</data>
+		</dict>
+		<key>LICENSE</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Z1GBwD/BMCochVTAD3vpu0IMXbydzCATQzzsFEQT3gM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -84,42 +333,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4h0KFvNDh8QLd01vDx4KhIDp7txbEyTFKpkEciYSTSA=
+			i5QMTjCPqjPn3QtUtQ7VhwaYi0cDTagM00B5GuCH/VI=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BrmZE9LrR5cF2dNzuYnDrhRGoU9HbpEvAbyEX+OWJtc=
+			bZxlxQEJ0W3BpUqy4W5PHKaWwESYNSItURwdRV1MjEk=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qXsRw4VAbBacm8sPxLfdqwbsW7O/U+6ZU9MHjAAw7ag=
+			LVNu9FRC9Z3bWB0aM7HWBl2V/yuJEhTXKiuv+el94xE=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p5+OvcN+bA47U15tvWzrogpyN4aJ8tbbcEDDfjCxWnM=
+			n6nZdJS5UDxiXNH9hSfF8Dye764ECp1Ft3fiaH9zQXs=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/zIQrAKQsroGrSP3gqk6i40AITEKLDgSTn5SsjqweH8=
+			NBOoQ0mpmY0Fe8b6NfYcIgvzcGGA/2KQsflUSEjoU8w=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Ila4xsOON3YMiS4aQn73ZsisajbPfrGsC59cWiyvxY=
+			jsNfi+mG6E40Ri/DMily6XGOuyrPpcu6Apm0TavB11k=
 			</data>
 		</dict>
 		<key>Prism.storyboardc/DigiLockerViewController.nib</key>
@@ -133,14 +382,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			balJq7aVq8hRS6V94BbASnVq7nxG7eM0x5nSyluwSE4=
+			+lep6aR6wp6LWZm3vl0H2Wa5nDo0OgjooYYzjT6h2eU=
+			</data>
+		</dict>
+		<key>Prism.storyboardc/Jz7-TQ-mm6-view-zVe-h5-r4n.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aap4B0suTFCOjdw+HdmT7+s4qkJSQv3DAdoikB7hOLo=
+			</data>
+		</dict>
+		<key>Prism.storyboardc/OldAadhaarFlowVC.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nQymOnjwGui2J4sUGReU/W7pFbSKoVa3gwnfNb4Znpc=
+			</data>
+		</dict>
+		<key>Prism.storyboardc/TermsConditionVC.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Bw6Amsv2eLlyt/GbentMz5xSpDLLKcNr53K8C1OFmOI=
 			</data>
 		</dict>
 		<key>Prism.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R1c94/0KsojKEXKZFiYdpruEE60DtL0LEEnKWqibu7g=
+			WQnZ4XsE/oNY42SVHlcO6rpXYiynMuxYAyCNwXbOrFo=
+			</data>
+		</dict>
+		<key>Prism.storyboardc/q0L-zR-BD6-view-WGY-cR-sBU.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			R5W7VpYcutpcLNs8jObeKp/fZ7Xe+z8P3B88/HF8GDY=
+			</data>
+		</dict>
+		<key>Uncheck_box.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/YllXsRtQwyHuXwfoK59z6j/Z3QE8eGYBWUp1kRzeSE=
+			</data>
+		</dict>
+		<key>backIco.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1MNhDI273chYhrOZ6qhPqIM2+6G+sB7IXdnHKoMMiS8=
+			</data>
+		</dict>
+		<key>check_box.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cfaPWe4wfCwviaONu0d9h6ySTc2qjTLXvP5C/Ekd5aM=
+			</data>
+		</dict>
+		<key>invoid_logo_small.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			d3ctv5ZBiDWU4qtZRMGEGMr9s3AOJunKURXAXDV9kKc=
+			</data>
+		</dict>
+		<key>offlineaadhaar.xml</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7L0YAtsiUZwiCu6MdByrzdepff3Y8wHT+wZeVaji80g=
+			</data>
+		</dict>
+		<key>refresh.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CywntbLQuqTY+Rc/Ykw0Bn/1fCD0RKzhxYTv02PmknA=
 			</data>
 		</dict>
 	</dict>

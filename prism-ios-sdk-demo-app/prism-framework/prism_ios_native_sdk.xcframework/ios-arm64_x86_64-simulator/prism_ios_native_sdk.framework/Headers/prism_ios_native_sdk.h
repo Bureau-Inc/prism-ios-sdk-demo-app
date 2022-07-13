@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SSZipArchive.h"
 //! Project version number for prism_ios_native_sdk.
 FOUNDATION_EXPORT double prism_ios_native_sdkVersionNumber;
 
