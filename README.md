@@ -1,11 +1,16 @@
 # Aadhaar verification - Prism SDK User Guide
 
-## DigiLocker Flow: 
+Enables your user to download compliant UIDAI Aadhaar XML inside your existing Android App using offline aadhaar verification as well allows for digilocker verification method.
+
+This SDK (Android) provides a set of screens and functionality to let your user complete Android Application itself. This reduces customer drop off as they do not need to navigate to UIDAI Aadhaar Website to download the same.
+
 Aadhaar Offline or Digilocker is the only valid method to submit your Aadhaar identity to any RBI Regulated Entity in order to complete KYC. The Bureau SDK provides an easy to use Verification suite which will enable the most seamless customer onboarding.
 
-> Aadhar old and new flow will coming soon.
+> Aadhar new flow will coming soon.
 
-### Steps in the SDK: 
+## Steps in the SDK: 
+
+### For DigiLocker:
 1. User is guided to the Digilocker website to submit their Aadhaar details.
 2. Input for "Aadhaar Number" are filled by the end user.
 3. On continuing
@@ -13,9 +18,17 @@ Aadhaar Offline or Digilocker is the only valid method to submit your Aadhaar id
 4. Once the details entered are authenticated, the Aadhaar details are recieved by bureau backend server.
 5. App backend server will make an API call to bureau backend server and fetch the details of the user.
 
+### For aadhaar Flow:
+1. User is guided to the UIDAI website to download the paperless e-KYC (Aadhaar .xml)
+2. Inputs for "Aadhaar Number" & Captcha are filled by the end user.
+3. On continuing
+    - [x] An OTP is received by the end user which is then auto read by the SDK. The inVOID SDK only reads the then received OTP message through the screen.
+4. Once the details entered are authenticated, the Aadhaar .xml is downloaded in a .zip which is password(share code) protected
+
+
 ## Minimum Requirements
   1. Xcode 11.0 +
-  2. Deployment Target **< 13.0**
+  2. Deployment Target ** >13.0**
 
 ## Integration Of SDK
   1. Drag and drop the prism_ios_native_sdk.xcframework into the project
@@ -65,7 +78,9 @@ extension ViewController:PrismEntryPointDelegate { }
 func onKYCFinished(data: [String : Any]?) { }
      // data returning blow key values
      // "status -> Bool"
-     // suppose if status == false "errorCode -> String"
+     // suppose if status == false "error -> [String:Any]"
+     // For old aadhaarflow if status == true "userInfo -> [String:Any]" // userInfo is the complete aadhaarinformation
+     
      
 ```
 #### _You can show error or Toast message based on status returns 'True' in your client side application_
