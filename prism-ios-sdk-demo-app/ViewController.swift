@@ -21,12 +21,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func initSDKAct(_ sender: Any) {
-        if(clientIdTF.text != "" || userNameTF.text != ""){
+        if(clientIdTF.text?.trimmingCharacters(in: .whitespaces) == ""){
+            Toast.show(message: "Please enter the valid client key", controller: self)
+        }else if(userNameTF.text?.trimmingCharacters(in: .whitespaces) == ""){
+            Toast.show(message: "Please enter a valid userId", controller: self)
+        }else{
             self.view.endEditing(true)
             self.digiLockerBtn.isHidden = false
             self.oldAadhaarBtn.isHidden = false
-        }else{
-            Toast.show(message: "Please Enter the valid ClientID & Username", controller: self)
+            Toast.show(message: "Sdk initialised successfully", controller: self)
         }
     }
     
@@ -49,10 +52,10 @@ class ViewController: UIViewController {
 extension ViewController:PrismEntryPointDelegate{
     func onKYCFinished(data: [String : Any]?) {
         if(data?["status"] as? Bool ?? false){
-            Toast.show(message: "Authentication Successfully Done!", controller: self)
+            Toast.show(message: "Authentication successfully done!", controller: self)
         }else{
             if let errorMsg = (data?["error"] as? NSDictionary){
-                Toast.show(message: "\((errorMsg.value(forKey: "message") as? String ?? "").capitalized)", controller: self)
+                Toast.show(message: "\((errorMsg.value(forKey: "message") as? String ?? ""))", controller: self)
                 return
             }
             Toast.show(message: "KYC not verified, please try again later", controller: self)

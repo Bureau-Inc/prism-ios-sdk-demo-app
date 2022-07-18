@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1819AD5E287EFDFE00748FA2 /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1819AD5C287EFD7A00748FA2 /* prism_ios_native_sdk.xcframework */; };
-		1819AD5F287EFDFE00748FA2 /* prism_ios_native_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1819AD5C287EFD7A00748FA2 /* prism_ios_native_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1823E4FD28488CB500E9A1A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823E4FC28488CB500E9A1A1 /* AppDelegate.swift */; };
 		1823E4FF28488CB500E9A1A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823E4FE28488CB500E9A1A1 /* SceneDelegate.swift */; };
 		1823E50128488CB500E9A1A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823E50028488CB500E9A1A1 /* ViewController.swift */; };
 		1823E50428488CB500E9A1A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50228488CB500E9A1A1 /* Main.storyboard */; };
 		1823E50628488CB700E9A1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50528488CB700E9A1A1 /* Assets.xcassets */; };
 		1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50728488CB700E9A1A1 /* LaunchScreen.storyboard */; };
+		18A6FB15288549DF009A4850 /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A6FB13288549DA009A4850 /* prism_ios_native_sdk.xcframework */; };
+		18A6FB16288549DF009A4850 /* prism_ios_native_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18A6FB13288549DA009A4850 /* prism_ios_native_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1819AD5F287EFDFE00748FA2 /* prism_ios_native_sdk.xcframework in Embed Frameworks */,
+				18A6FB16288549DF009A4850 /* prism_ios_native_sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +32,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1819AD5C287EFD7A00748FA2 /* prism_ios_native_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_native_sdk.xcframework; sourceTree = "<group>"; };
 		1823E4F928488CB500E9A1A1 /* prism-ios-sdk-demo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prism-ios-sdk-demo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1823E4FC28488CB500E9A1A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1823E4FE28488CB500E9A1A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		1823E50528488CB700E9A1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1823E50828488CB700E9A1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1823E50A28488CB700E9A1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18A6FB13288549DA009A4850 /* prism_ios_native_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_native_sdk.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1819AD5E287EFDFE00748FA2 /* prism_ios_native_sdk.xcframework in Frameworks */,
+				18A6FB15288549DF009A4850 /* prism_ios_native_sdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 		1823E51028488CBE00E9A1A1 /* prism-framework */ = {
 			isa = PBXGroup;
 			children = (
-				1819AD5C287EFD7A00748FA2 /* prism_ios_native_sdk.xcframework */,
+				18A6FB13288549DA009A4850 /* prism_ios_native_sdk.xcframework */,
 			);
 			path = "prism-framework";
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -361,7 +361,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
