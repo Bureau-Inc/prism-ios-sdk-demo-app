@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     @IBAction func startKYCOldAadhaarAct(_ sender: Any) {
         entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .stage,refVC: self)
         entryPoint?.prismEntryDelegate = self
-        entryPoint?.addConfig(config: [.residentUidaiAadhaarFlow, .myAadhaarUidaiFlow, .digilockerFlow])
+        entryPoint?.addConfig(config: [.residentUidaiAadhaarFlow, .digilockerFlow, .myAadhaarUidaiFlow])
         entryPoint?.beginKYCFLow()
     }
     
