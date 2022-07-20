@@ -199,7 +199,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
-@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -761,36 +760,6 @@ SWIFT_AVAILABILITY(ios_app_extension,unavailable)
 @end
 
 
-
-
-/// Takes care of downloading file with a WKWebview
-/// The object becomes the navigation delegate of the WKWebView and has to be configured with supported MIME types and a <code>WKDownloadHelperDelegate</code> object to receive updated about file downloads.
-SWIFT_CLASS("_TtC20prism_ios_native_sdk16WKDownloadHelper") SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface WKDownloadHelper : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class WKDownload;
-@class NSURLResponse;
-
-SWIFT_AVAILABILITY(ios,introduced=14.5)
-@interface WKDownloadHelper (SWIFT_EXTENSION(prism_ios_native_sdk)) <WKDownloadDelegate>
-- (void)download:(WKDownload * _Nonnull)download decideDestinationUsingResponse:(NSURLResponse * _Nonnull)response suggestedFilename:(NSString * _Nonnull)suggestedFilename completionHandler:(void (^ _Nonnull)(NSURL * _Nullable))completionHandler;
-- (void)download:(WKDownload * _Nonnull)download didFailWithError:(NSError * _Nonnull)error resumeData:(NSData * _Nullable)resumeData;
-- (void)downloadDidFinish:(WKDownload * _Nonnull)download;
-@end
-
-@class WKWebView;
-@class WKNavigationAction;
-@class WKNavigationResponse;
-
-SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface WKDownloadHelper (SWIFT_EXTENSION(prism_ios_native_sdk)) <WKNavigationDelegate>
-- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
-- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse decisionHandler:(void (^ _Nonnull)(WKNavigationResponsePolicy))decisionHandler;
-- (void)webView:(WKWebView * _Nonnull)webView navigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse didBecomeDownload:(WKDownload * _Nonnull)download SWIFT_AVAILABILITY(ios,introduced=14.5);
-@end
 
 
 #if __has_attribute(external_source_symbol)

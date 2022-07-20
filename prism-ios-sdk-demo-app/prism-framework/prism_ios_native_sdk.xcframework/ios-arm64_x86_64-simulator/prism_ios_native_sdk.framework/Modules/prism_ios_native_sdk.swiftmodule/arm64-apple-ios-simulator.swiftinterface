@@ -1408,19 +1408,6 @@ extension prism_ios_native_sdk.SessionDelegate : Foundation.URLSessionDownloadDe
     @objc set(newValue)
   }
 }
-@available(iOS 11.0, *)
-extension prism_ios_native_sdk.WKDownloadHelper : WebKit.WKNavigationDelegate {
-  @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
-  @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
-  @available(iOS 14.5, *)
-  @objc dynamic public func webView(_ webView: WebKit.WKWebView, navigationResponse: WebKit.WKNavigationResponse, didBecome download: WebKit.WKDownload)
-}
-@available(iOS 14.5, *)
-extension prism_ios_native_sdk.WKDownloadHelper : WebKit.WKDownloadDelegate {
-  @objc dynamic public func download(_ download: WebKit.WKDownload, decideDestinationUsing response: Foundation.URLResponse, suggestedFilename: Swift.String, completionHandler: @escaping (Foundation.URL?) -> Swift.Void)
-  @objc dynamic public func download(_ download: WebKit.WKDownload, didFailWithError error: Swift.Error, resumeData: Foundation.Data?)
-  @objc dynamic public func downloadDidFinish(_ download: WebKit.WKDownload)
-}
 @available(iOSApplicationExtension, unavailable)
 @objc public enum IQAutoToolbarManageBehaviour : Swift.Int {
   case bySubviews
@@ -2208,9 +2195,6 @@ extension prism_ios_native_sdk.Session : prism_ios_native_sdk.RequestDelegate {
   public func retryResult(for request: prism_ios_native_sdk.Request, dueTo error: prism_ios_native_sdk.AFError, completion: @escaping (prism_ios_native_sdk.RetryResult) -> Swift.Void)
   public func retryRequest(_ request: prism_ios_native_sdk.Request, withDelay timeDelay: Foundation.TimeInterval?)
 }
-public struct MimeType {
-  public init(type: Swift.String, fileExtension: Swift.String)
-}
 public protocol ParameterEncoder {
   func encode<Parameters>(_ parameters: Parameters?, into request: Foundation.URLRequest) throws -> Foundation.URLRequest where Parameters : Swift.Encodable
 }
@@ -2821,22 +2805,6 @@ public class Transform {
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [prism_ios_native_sdk.Transform]
   required public init?(dictionary: Foundation.NSDictionary)
   public func dictionaryRepresentation() -> Foundation.NSDictionary
-  @objc deinit
-}
-public protocol WKDownloadHelperDelegate {
-  func canNavigate(toUrl: Foundation.URL) -> Swift.Bool
-  func didDownloadFile(atUrl: Foundation.URL)
-  func didFailDownloadingFile(error: Swift.Error)
-  func localURLForFile(withName: Swift.String) -> Foundation.URL?
-}
-extension prism_ios_native_sdk.WKDownloadHelperDelegate {
-  public func canNavigate(toUrl: Foundation.URL) -> Swift.Bool
-  public func didFailDownloadingFile(error: Swift.Error)
-  public func localURLForFile(withName name: Swift.String) -> Foundation.URL?
-}
-@objc @available(iOS 11.0, *)
-public class WKDownloadHelper : ObjectiveC.NSObject {
-  public init(webView: WebKit.WKWebView, supportedMimeTypes: [prism_ios_native_sdk.MimeType], delegate: prism_ios_native_sdk.WKDownloadHelperDelegate)
   @objc deinit
 }
 public typealias AFResult<Success> = Swift.Result<Success, prism_ios_native_sdk.AFError>

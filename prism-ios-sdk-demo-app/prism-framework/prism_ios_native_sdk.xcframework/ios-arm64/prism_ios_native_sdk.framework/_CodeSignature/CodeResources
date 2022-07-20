@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/prism_ios_native_sdk-Swift.h</key>
 		<data>
-		pC6G64TysHGQAsDnySwgiUuxbj0=
+		luf9nFWo49nl5nYj57SFGKvToJo=
 		</data>
 		<key>Headers/prism_ios_native_sdk.h</key>
 		<data>
@@ -98,15 +98,15 @@
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		mtPZibsbWISfvad0Vj9AMLnnJwE=
+		79F8YC7nBH+xd8GiTT9Ueg4vfYg=
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		YVVyn2ZfZM1IIsxyXBTzU5shJq8=
+		23QkfE/f2ZY74DlX0iugRRGbJEE=
 		</data>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		3fJgftXfl2AWy0aXlYk5/s8SMFk=
+		6frtKjPDtDR1175pR3+N+KH+XJE=
 		</data>
 		<key>Prism.storyboardc/DigiLockerViewController.nib</key>
 		<data>
@@ -301,7 +301,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RNtVs3hDRR1ESmqTBlJ709gjx9210Qbsb6yN/BeMC5M=
+			R4pWJ2AFPZxPUOXdt0zS+G8TsB344pRek4ZOzjhW7q4=
 			</data>
 		</dict>
 		<key>Headers/prism_ios_native_sdk.h</key>
@@ -329,21 +329,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iBmlDnsirAM0W7V8x7DmTQQbHNI1wsJfrYRfPDIcNxM=
+			CCbkB5EZ/uaoY9b/CnrwSl/dwjRmAQGyIKHB8jv7YyM=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dk/e65aDfaQYnL41+l/bRq6U2KVUkeFDOUUG2yd3lPI=
+			KVDD/R7oVx9D5RiB+iaejnKV6QZ0ZPlujXB08kHd6Wc=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_native_sdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZVJeKy0tosteM7k5cwRQV3M/gs72M2gu7ZHkRuq2xpg=
+			aOiDcsd8Zcluwr+ZLmIZUSWuNg9rPmoilvEByVNGAvw=
 			</data>
 		</dict>
 		<key>Prism.storyboardc/DigiLockerViewController.nib</key>
