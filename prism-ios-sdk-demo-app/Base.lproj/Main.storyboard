@@ -191,6 +191,7 @@
                     <connections>
                         <outlet property="clientIdTF" destination="1Xo-gy-feE" id="sN2-EI-Pzh"/>
                         <outlet property="digiLockerBtn" destination="ejr-5B-ZcN" id="SnR-Mw-xcD"/>
+                        <outlet property="newAadhaarBtn" destination="RRM-3o-Xfp" id="Cxh-aT-waU"/>
                         <outlet property="oldAadhaarBtn" destination="Yh8-iR-OHG" id="QfJ-5W-CCf"/>
                         <outlet property="userNameTF" destination="wao-sh-8Bw" id="Fu6-Q2-XIY"/>
                     </connections>

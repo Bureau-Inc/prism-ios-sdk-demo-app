@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var digiLockerBtn: UIButton!
     @IBOutlet weak var oldAadhaarBtn: UIButton!
+    @IBOutlet weak var newAadhaarBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
             self.view.endEditing(true)
             self.digiLockerBtn.isHidden = false
             self.oldAadhaarBtn.isHidden = false
+            self.newAadhaarBtn.isHidden = false
             Toast.show(message: "Sdk initialised successfully", controller: self)
         }
     }
