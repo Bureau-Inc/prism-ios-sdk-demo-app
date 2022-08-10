@@ -19,15 +19,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var newAadhaarBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     @IBAction func initSDKAct(_ sender: Any) {
+        self.view.endEditing(true)
         if(clientIdTF.text?.trimmingCharacters(in: .whitespaces) == ""){
             Toast.show(message: "Please enter the valid client key", controller: self)
         }else if(userNameTF.text?.trimmingCharacters(in: .whitespaces) == ""){
             Toast.show(message: "Please enter a valid userId", controller: self)
         }else{
-            self.view.endEditing(true)
             self.digiLockerBtn.isHidden = false
             self.oldAadhaarBtn.isHidden = false
             self.newAadhaarBtn.isHidden = false

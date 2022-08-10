@@ -841,6 +841,87 @@ public enum ToastPosition {
     get
   }
 }
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension Foundation.NSNotification.Name {
+  public static let reachabilityChanged: Foundation.Notification.Name
+}
+public class Reachability {
+  public typealias NetworkReachable = (prism_ios_native_sdk.Reachability) -> ()
+  public typealias NetworkUnreachable = (prism_ios_native_sdk.Reachability) -> ()
+  @available(*, unavailable, renamed: "Connection")
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable, reachableViaWiFi, reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: prism_ios_native_sdk.Reachability.NetworkStatus, b: prism_ios_native_sdk.Reachability.NetworkStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Connection : Swift.CustomStringConvertible {
+    case unavailable, wifi, cellular
+    public var description: Swift.String {
+      get
+    }
+    @available(*, deprecated, renamed: "unavailable")
+    public static let none: prism_ios_native_sdk.Reachability.Connection
+    public static func == (a: prism_ios_native_sdk.Reachability.Connection, b: prism_ios_native_sdk.Reachability.Connection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var whenReachable: prism_ios_native_sdk.Reachability.NetworkReachable?
+  public var whenUnreachable: prism_ios_native_sdk.Reachability.NetworkUnreachable?
+  @available(*, deprecated, renamed: "allowsCellularConnection")
+  final public let reachableOnWWAN: Swift.Bool
+  public var allowsCellularConnection: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  @available(*, deprecated, renamed: "connection.description")
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  @available(*, unavailable, renamed: "connection")
+  public var currentReachabilityStatus: prism_ios_native_sdk.Reachability.Connection {
+    get
+  }
+  public var connection: prism_ios_native_sdk.Reachability.Connection {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+}
+extension prism_ios_native_sdk.Reachability {
+  public func startNotifier() throws
+  public func stopNotifier()
+  @available(*, deprecated, message: "Please use `connection != .none`")
+  public var isReachable: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .cellular`")
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .wifi`")
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers open class NetworkReachabilityManager {
   public enum NetworkReachabilityStatus {
     case unknown
@@ -2833,6 +2914,12 @@ extension prism_ios_native_sdk.URLEncoding.BoolEncoding : Swift.Equatable {}
 extension prism_ios_native_sdk.URLEncoding.BoolEncoding : Swift.Hashable {}
 extension prism_ios_native_sdk.ToastPosition : Swift.Equatable {}
 extension prism_ios_native_sdk.ToastPosition : Swift.Hashable {}
+@available(*, unavailable, renamed: "Connection")
+extension prism_ios_native_sdk.Reachability.NetworkStatus : Swift.Equatable {}
+@available(*, unavailable, renamed: "Connection")
+extension prism_ios_native_sdk.Reachability.NetworkStatus : Swift.Hashable {}
+extension prism_ios_native_sdk.Reachability.Connection : Swift.Equatable {}
+extension prism_ios_native_sdk.Reachability.Connection : Swift.Hashable {}
 extension prism_ios_native_sdk.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Equatable {}
 extension prism_ios_native_sdk.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Hashable {}
 @available(iOSApplicationExtension, unavailable)
