@@ -6,8 +6,6 @@ This SDK (Android) provides a set of screens and functionality to let your user 
 
 Aadhaar Offline or Digilocker is the only valid method to submit your Aadhaar identity to any RBI Regulated Entity in order to complete KYC. The Bureau SDK provides an easy to use Verification suite which will enable the most seamless customer onboarding.
 
-> Aadhar new flow will coming soon.
-
 ## Steps in the SDK: 
 
 ### For DigiLocker:
@@ -83,6 +81,26 @@ func onKYCFinished(data: [String : Any]?) { }
      
      
 ```
+
+## Backend API call to get data for a user completing the KYC flow
+
+> UserId and AuthHeader will have to be replaced in the requests below.
+
+```Curl
+// In Staging
+
+curl --location --request GET 'https://api.overwatch.stg.bureau.id/v1/id/UserId/suppliers/offline-aadhaar' \
+--header 'Authorization: Basic AuthHeader'
+
+// In Production
+
+curl --location --request GET 'https://api.overwatch.bureau.id/v1/id/UserId/suppliers/offline-aadhaar' \
+--header 'Authorization: Basic AuthHeader'
+
+```
+
+
+
 #### _You can show error or Toast message based on status returns 'True' in your client side application_
 
 
