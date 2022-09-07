@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mFO-dh-Ea8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CW3-0j-Hms">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,6 +10,106 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="3iq-6e-CzG">
+            <objects>
+                <viewController storyboardIdentifier="AuthViewController" id="CW3-0j-Hms" customClass="AuthViewController" customModule="prism_ios_sdk_demo_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q5h-uB-iBT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BureauLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="iX5-vp-Nk8">
+                                <rect key="frame" x="0.0" y="68.5" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nqJ-Zg-hnH"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-4y-S6p">
+                                <rect key="frame" x="40" y="148.5" width="295" height="270"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KYC verify aadhaar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8M-FV-nSa">
+                                        <rect key="frame" x="57.5" y="30" width="180" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bureau sample app for KYC verification of the Aadhaar holder." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKy-Jn-Djo">
+                                        <rect key="frame" x="20" y="74" width="255" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS2-kf-aU2">
+                                        <rect key="frame" x="65" y="175" width="165" height="45"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Jkk-W7-C8X"/>
+                                            <constraint firstAttribute="width" constant="165" id="hRc-fJ-vCs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="AUTHENTICATE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="authAct:" destination="CW3-0j-Hms" eventType="touchUpInside" id="3qC-BC-gDz"/>
+                                            <action selector="initSDKAct:" destination="mFO-dh-Ea8" eventType="touchUpInside" id="mas-u6-PEh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="A8M-FV-nSa" firstAttribute="centerX" secondItem="6fr-4y-S6p" secondAttribute="centerX" id="AYf-qm-gQo"/>
+                                    <constraint firstItem="OS2-kf-aU2" firstAttribute="top" secondItem="hKy-Jn-Djo" secondAttribute="bottom" constant="40" id="ArP-gD-Mbw"/>
+                                    <constraint firstItem="A8M-FV-nSa" firstAttribute="top" secondItem="6fr-4y-S6p" secondAttribute="top" constant="30" id="EZd-pG-smC"/>
+                                    <constraint firstItem="hKy-Jn-Djo" firstAttribute="top" secondItem="A8M-FV-nSa" secondAttribute="bottom" constant="20" id="Giw-ob-YVf"/>
+                                    <constraint firstAttribute="bottom" secondItem="OS2-kf-aU2" secondAttribute="bottom" constant="50" id="Q0t-Ru-gi6"/>
+                                    <constraint firstItem="hKy-Jn-Djo" firstAttribute="leading" secondItem="6fr-4y-S6p" secondAttribute="leading" constant="20" id="XFh-4h-6H2"/>
+                                    <constraint firstAttribute="trailing" secondItem="hKy-Jn-Djo" secondAttribute="trailing" constant="20" id="lyd-al-mLu"/>
+                                    <constraint firstItem="hKy-Jn-Djo" firstAttribute="centerX" secondItem="6fr-4y-S6p" secondAttribute="centerX" id="rc5-eu-iwN"/>
+                                    <constraint firstItem="OS2-kf-aU2" firstAttribute="centerX" secondItem="6fr-4y-S6p" secondAttribute="centerX" id="sUc-SN-Wla"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JOZ-LC-NI4">
+                                <rect key="frame" x="177.5" y="273.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fSo-V4-bzB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6fr-4y-S6p" secondAttribute="trailing" constant="40" id="6gl-YT-Ngc"/>
+                            <constraint firstItem="6fr-4y-S6p" firstAttribute="centerY" secondItem="Q5h-uB-iBT" secondAttribute="centerY" constant="-50" id="Lkx-Qs-7gj"/>
+                            <constraint firstItem="6fr-4y-S6p" firstAttribute="top" secondItem="iX5-vp-Nk8" secondAttribute="bottom" constant="40" id="M6d-Gb-gHR"/>
+                            <constraint firstItem="iX5-vp-Nk8" firstAttribute="centerX" secondItem="Q5h-uB-iBT" secondAttribute="centerX" id="NnN-Od-ZrY"/>
+                            <constraint firstItem="JOZ-LC-NI4" firstAttribute="centerX" secondItem="6fr-4y-S6p" secondAttribute="centerX" id="OEr-zR-M2h"/>
+                            <constraint firstItem="6fr-4y-S6p" firstAttribute="centerX" secondItem="Q5h-uB-iBT" secondAttribute="centerX" id="fiI-dm-5Hd"/>
+                            <constraint firstItem="iX5-vp-Nk8" firstAttribute="trailing" secondItem="fSo-V4-bzB" secondAttribute="trailing" id="gIj-Jg-wni"/>
+                            <constraint firstItem="iX5-vp-Nk8" firstAttribute="leading" secondItem="fSo-V4-bzB" secondAttribute="leading" id="gJ1-zt-eI0"/>
+                            <constraint firstItem="6fr-4y-S6p" firstAttribute="leading" secondItem="Q5h-uB-iBT" secondAttribute="leading" constant="40" id="ghq-hh-hbQ"/>
+                            <constraint firstItem="JOZ-LC-NI4" firstAttribute="centerY" secondItem="6fr-4y-S6p" secondAttribute="centerY" id="uOn-rP-mfg"/>
+                            <constraint firstItem="JOZ-LC-NI4" firstAttribute="centerX" secondItem="Q5h-uB-iBT" secondAttribute="centerX" id="ytM-IU-5gD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authBtn" destination="OS2-kf-aU2" id="x8o-sW-BzN"/>
+                        <outlet property="shadowView" destination="6fr-4y-S6p" id="TqM-Ug-zC9"/>
+                        <outlet property="spinner" destination="JOZ-LC-NI4" id="N0X-0U-9QR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDD-rc-Str" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-805.60000000000002" y="-9.4452773613193415"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="2Oq-rC-bPN">
             <objects>
@@ -34,6 +134,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="mFO-dh-Ea8" id="SaQ-j8-ajH"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qiq-EJ-DPj">
                                                 <rect key="frame" x="0.0" y="49" width="315" height="1"/>
@@ -202,8 +305,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BureauLogo.png" width="495" height="102"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

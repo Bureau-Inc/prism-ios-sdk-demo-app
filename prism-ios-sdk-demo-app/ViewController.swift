@@ -17,9 +17,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var digiLockerBtn: UIButton!
     @IBOutlet weak var oldAadhaarBtn: UIButton!
     @IBOutlet weak var newAadhaarBtn: UIButton!
+    
+    var clientKey:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        clientIdTF.text = clientKey
     }
     
     @IBAction func initSDKAct(_ sender: Any) {
@@ -37,21 +40,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startKYCOldAadhaarAct(_ sender: Any) {
-        entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .stage,refVC: self)
+        entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .production,refVC: self)
         entryPoint?.prismEntryDelegate = self
         entryPoint?.addConfig(config: [.residentUidaiAadhaarFlow, .digilockerFlow, .myAadhaarUidaiFlow])
         entryPoint?.beginKYCFLow()
     }
     
     @IBAction func startKYCNewAadhaarAct(_ sender: Any) {
-        entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .stage,refVC: self)
+        entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .production,refVC: self)
         entryPoint?.prismEntryDelegate = self
         entryPoint?.addConfig(config: [.myAadhaarUidaiFlow, .digilockerFlow, .residentUidaiAadhaarFlow])
         entryPoint?.beginKYCFLow()
     }
     
     @IBAction func startKYCDigiLockerAct(_ sender: Any) {
-        entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .stage,refVC: self)
+        entryPoint = PrismEntryPoint.init(merchantId: self.clientIdTF.text ?? "", userId: userNameTF.text ?? "", successRedirectURL: "https://successi23.net/", failureRedirectURL: "https://faili23.net/", runOnProduction: .production,refVC: self)
         entryPoint?.prismEntryDelegate = self
         entryPoint?.addConfig(config: [.digilockerFlow, .residentUidaiAadhaarFlow, .myAadhaarUidaiFlow])
         entryPoint?.beginKYCFLow()
@@ -116,4 +119,14 @@ public class Toast {
             })
         })
     }
+}
+
+extension ViewController:UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if(textField == clientIdTF){
+            return false
+        }
+        return true
+    }
+
 }

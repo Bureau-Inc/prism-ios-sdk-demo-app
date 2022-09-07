@@ -15,6 +15,10 @@
 		1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50728488CB700E9A1A1 /* LaunchScreen.storyboard */; };
 		18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; };
 		18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18A73F3028B5098A00867795 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 18A73F2F28B5098A00867795 /* Auth0 */; };
+		18A73F3228B50A5700867795 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A73F3128B50A5700867795 /* Auth0.plist */; };
+		18A740DA28B5FB9000867795 /* BureauLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A740D928B5FB9000867795 /* BureauLogo.png */; };
+		18A740DC28B5FD4C00867795 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A740DB28B5FD4C00867795 /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +45,9 @@
 		1823E50828488CB700E9A1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1823E50A28488CB700E9A1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_native_sdk.xcframework; sourceTree = "<group>"; };
+		18A73F3128B50A5700867795 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		18A740D928B5FB9000867795 /* BureauLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BureauLogo.png; sourceTree = "<group>"; };
+		18A740DB28B5FD4C00867795 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */,
+				18A73F3028B5098A00867795 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +87,13 @@
 				1823E4FC28488CB500E9A1A1 /* AppDelegate.swift */,
 				1823E4FE28488CB500E9A1A1 /* SceneDelegate.swift */,
 				1823E50028488CB500E9A1A1 /* ViewController.swift */,
+				18A740DB28B5FD4C00867795 /* AuthViewController.swift */,
 				1823E50228488CB500E9A1A1 /* Main.storyboard */,
+				18A740D928B5FB9000867795 /* BureauLogo.png */,
 				1823E50528488CB700E9A1A1 /* Assets.xcassets */,
 				1823E50728488CB700E9A1A1 /* LaunchScreen.storyboard */,
 				1823E50A28488CB700E9A1A1 /* Info.plist */,
+				18A73F3128B50A5700867795 /* Auth0.plist */,
 			);
 			path = "prism-ios-sdk-demo-app";
 			sourceTree = "<group>";
@@ -119,6 +130,9 @@
 			dependencies = (
 			);
 			name = "prism-ios-sdk-demo-app";
+			packageProductDependencies = (
+				18A73F2F28B5098A00867795 /* Auth0 */,
+			);
 			productName = "prism-ios-sdk-demo-app";
 			productReference = 1823E4F928488CB500E9A1A1 /* prism-ios-sdk-demo-app.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 1823E4F028488CB500E9A1A1;
+			packageReferences = (
+				18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */,
+			);
 			productRefGroup = 1823E4FA28488CB500E9A1A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,7 +180,9 @@
 			files = (
 				1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */,
 				1823E50628488CB700E9A1A1 /* Assets.xcassets in Resources */,
+				18A740DA28B5FB9000867795 /* BureauLogo.png in Resources */,
 				1823E50428488CB500E9A1A1 /* Main.storyboard in Resources */,
+				18A73F3228B50A5700867795 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A740DC28B5FD4C00867795 /* AuthViewController.swift in Sources */,
 				1823E50128488CB500E9A1A1 /* ViewController.swift in Sources */,
 				1823E4FD28488CB500E9A1A1 /* AppDelegate.swift in Sources */,
 				1823E4FF28488CB500E9A1A1 /* SceneDelegate.swift in Sources */,
@@ -323,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -361,7 +381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -414,6 +434,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18A73F2F28B5098A00867795 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1823E4F128488CB500E9A1A1 /* Project object */;
 }
