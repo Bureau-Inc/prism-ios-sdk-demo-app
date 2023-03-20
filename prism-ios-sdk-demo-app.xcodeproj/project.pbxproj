@@ -13,12 +13,24 @@
 		1823E50428488CB500E9A1A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50228488CB500E9A1A1 /* Main.storyboard */; };
 		1823E50628488CB700E9A1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50528488CB700E9A1A1 /* Assets.xcassets */; };
 		1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50728488CB700E9A1A1 /* LaunchScreen.storyboard */; };
+		1839FD8029BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */; };
+		1839FD8129BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; };
 		18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18A73F3028B5098A00867795 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 18A73F2F28B5098A00867795 /* Auth0 */; };
 		18A73F3228B50A5700867795 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A73F3128B50A5700867795 /* Auth0.plist */; };
 		18A740DA28B5FB9000867795 /* BureauLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A740D928B5FB9000867795 /* BureauLogo.png */; };
 		18A740DC28B5FD4C00867795 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A740DB28B5FD4C00867795 /* AuthViewController.swift */; };
+		18B4643F29225A6F0008D695 /* DeviceFingerPrintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4643E29225A6F0008D695 /* DeviceFingerPrintVC.swift */; };
+		18D9EBB628DB4184007FCE2B /* Lexend-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D9EBB428DB417E007FCE2B /* Lexend-Medium.ttf */; };
+		18D9EBB728DB4184007FCE2B /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D9EBB228DB417D007FCE2B /* Lexend-Bold.ttf */; };
+		18D9EBB828DB4184007FCE2B /* Lexend-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D9EBB528DB417E007FCE2B /* Lexend-Regular.ttf */; };
+		18D9EBB928DB4184007FCE2B /* Lexend-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D9EBB328DB417E007FCE2B /* Lexend-Light.ttf */; };
+		18D9EBBE28DC353D007FCE2B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBBD28DC353D007FCE2B /* MainViewController.swift */; };
+		18D9EBC128DC3842007FCE2B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 18D9EBC028DC3842007FCE2B /* SideMenu */; };
+		18D9EBC328DC3B49007FCE2B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC228DC3B48007FCE2B /* SideMenuViewController.swift */; };
+		18D9EBC528DC43FB007FCE2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC428DC43FA007FCE2B /* BaseViewController.swift */; };
+		18D9EBC728DC8604007FCE2B /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +41,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */,
+				1839FD8129BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,10 +57,20 @@
 		1823E50528488CB700E9A1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1823E50828488CB700E9A1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1823E50A28488CB700E9A1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
 		18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_native_sdk.xcframework; sourceTree = "<group>"; };
 		18A73F3128B50A5700867795 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		18A740D928B5FB9000867795 /* BureauLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BureauLogo.png; sourceTree = "<group>"; };
 		18A740DB28B5FD4C00867795 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		18B4643E29225A6F0008D695 /* DeviceFingerPrintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFingerPrintVC.swift; sourceTree = "<group>"; };
+		18D9EBB228DB417D007FCE2B /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
+		18D9EBB328DB417E007FCE2B /* Lexend-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Light.ttf"; sourceTree = "<group>"; };
+		18D9EBB428DB417E007FCE2B /* Lexend-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Medium.ttf"; sourceTree = "<group>"; };
+		18D9EBB528DB417E007FCE2B /* Lexend-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Regular.ttf"; sourceTree = "<group>"; };
+		18D9EBBD28DC353D007FCE2B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		18D9EBC228DC3B48007FCE2B /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		18D9EBC428DC43FA007FCE2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +79,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */,
+				1839FD8029BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
+				18D9EBC128DC3842007FCE2B /* SideMenu in Frameworks */,
 				18A73F3028B5098A00867795 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,11 +108,11 @@
 		1823E4FB28488CB500E9A1A1 /* prism-ios-sdk-demo-app */ = {
 			isa = PBXGroup;
 			children = (
+				18D9EBBB28DC3518007FCE2B /* MVVM */,
+				18D9EBB128DB4171007FCE2B /* Assets */,
 				1823E51028488CBE00E9A1A1 /* prism-framework */,
 				1823E4FC28488CB500E9A1A1 /* AppDelegate.swift */,
 				1823E4FE28488CB500E9A1A1 /* SceneDelegate.swift */,
-				1823E50028488CB500E9A1A1 /* ViewController.swift */,
-				18A740DB28B5FD4C00867795 /* AuthViewController.swift */,
 				1823E50228488CB500E9A1A1 /* Main.storyboard */,
 				18A740D928B5FB9000867795 /* BureauLogo.png */,
 				1823E50528488CB700E9A1A1 /* Assets.xcassets */,
@@ -101,6 +126,7 @@
 		1823E51028488CBE00E9A1A1 /* prism-framework */ = {
 			isa = PBXGroup;
 			children = (
+				1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */,
 				18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */,
 			);
 			path = "prism-framework";
@@ -111,6 +137,47 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18D9EBB128DB4171007FCE2B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				18D9EBBA28DB4187007FCE2B /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		18D9EBBA28DB4187007FCE2B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18D9EBB228DB417D007FCE2B /* Lexend-Bold.ttf */,
+				18D9EBB328DB417E007FCE2B /* Lexend-Light.ttf */,
+				18D9EBB428DB417E007FCE2B /* Lexend-Medium.ttf */,
+				18D9EBB528DB417E007FCE2B /* Lexend-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		18D9EBBB28DC3518007FCE2B /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				18D9EBBC28DC3521007FCE2B /* ViewController */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		18D9EBBC28DC3521007FCE2B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18A740DB28B5FD4C00867795 /* AuthViewController.swift */,
+				1823E50028488CB500E9A1A1 /* ViewController.swift */,
+				18B4643E29225A6F0008D695 /* DeviceFingerPrintVC.swift */,
+				18D9EBBD28DC353D007FCE2B /* MainViewController.swift */,
+				18D9EBC228DC3B48007FCE2B /* SideMenuViewController.swift */,
+				18D9EBC428DC43FA007FCE2B /* BaseViewController.swift */,
+				18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +199,7 @@
 			name = "prism-ios-sdk-demo-app";
 			packageProductDependencies = (
 				18A73F2F28B5098A00867795 /* Auth0 */,
+				18D9EBC028DC3842007FCE2B /* SideMenu */,
 			);
 			productName = "prism-ios-sdk-demo-app";
 			productReference = 1823E4F928488CB500E9A1A1 /* prism-ios-sdk-demo-app.app */;
@@ -163,6 +231,7 @@
 			mainGroup = 1823E4F028488CB500E9A1A1;
 			packageReferences = (
 				18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */,
+				18D9EBBF28DC3842007FCE2B /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 1823E4FA28488CB500E9A1A1 /* Products */;
 			projectDirPath = "";
@@ -179,9 +248,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */,
+				18D9EBB928DB4184007FCE2B /* Lexend-Light.ttf in Resources */,
 				1823E50628488CB700E9A1A1 /* Assets.xcassets in Resources */,
 				18A740DA28B5FB9000867795 /* BureauLogo.png in Resources */,
+				18D9EBB628DB4184007FCE2B /* Lexend-Medium.ttf in Resources */,
 				1823E50428488CB500E9A1A1 /* Main.storyboard in Resources */,
+				18D9EBB828DB4184007FCE2B /* Lexend-Regular.ttf in Resources */,
+				18D9EBB728DB4184007FCE2B /* Lexend-Bold.ttf in Resources */,
 				18A73F3228B50A5700867795 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,9 +267,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A740DC28B5FD4C00867795 /* AuthViewController.swift in Sources */,
+				18B4643F29225A6F0008D695 /* DeviceFingerPrintVC.swift in Sources */,
 				1823E50128488CB500E9A1A1 /* ViewController.swift in Sources */,
 				1823E4FD28488CB500E9A1A1 /* AppDelegate.swift in Sources */,
 				1823E4FF28488CB500E9A1A1 /* SceneDelegate.swift in Sources */,
+				18D9EBC328DC3B49007FCE2B /* SideMenuViewController.swift in Sources */,
+				18D9EBC528DC43FB007FCE2B /* BaseViewController.swift in Sources */,
+				18D9EBC728DC8604007FCE2B /* SuccessViewController.swift in Sources */,
+				18D9EBBE28DC353D007FCE2B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,10 +420,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
-				ENABLE_BITCODE = YES;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/prism-ios-sdk-demo-app/prism-framework",
@@ -354,6 +434,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "prism-ios-sdk-demo-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Prism iOS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Prism allow your currect location to identify your device";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Prism allow your currect location to identify your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -368,6 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = PrismSDKDist;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -380,10 +464,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
-				ENABLE_BITCODE = YES;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/prism-ios-sdk-demo-app/prism-framework",
@@ -392,6 +478,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "prism-ios-sdk-demo-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Prism iOS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Prism allow your currect location to identify your device";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Prism allow your currect location to identify your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -406,6 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = PrismSDKDist;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -444,6 +534,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		18D9EBBF28DC3842007FCE2B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -451,6 +549,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */;
 			productName = Auth0;
+		};
+		18D9EBC028DC3842007FCE2B /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D9EBBF28DC3842007FCE2B /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

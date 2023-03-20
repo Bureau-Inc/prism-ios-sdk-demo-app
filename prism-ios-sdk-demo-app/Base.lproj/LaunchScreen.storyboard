@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -14,21 +14,36 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prism-iOS-SDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeh-vD-dMa">
-                                <rect key="frame" x="80.5" y="407" width="253.5" height="42"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBG" translatesAutoresizingMaskIntoConstraints="NO" id="ygd-as-vOJ">
+                                <rect key="frame" x="177" y="0.0" width="198" height="198.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bureau Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pmo-bH-UYK">
+                                <rect key="frame" x="79.5" y="291.5" width="216" height="44"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-kL-u1p">
+                                <rect key="frame" x="73" y="559" width="229.5" height="73"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBtmTxt" translatesAutoresizingMaskIntoConstraints="NO" id="wjf-jg-hfj">
+                                        <rect key="frame" x="0.0" y="0.0" width="229.5" height="25"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bureauWebsiteTxt" translatesAutoresizingMaskIntoConstraints="NO" id="2pV-4u-7iB">
+                                        <rect key="frame" x="0.0" y="60" width="229.5" height="13"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Jeh-vD-dMa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="H5t-wr-oIU"/>
-                            <constraint firstItem="Jeh-vD-dMa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-20" id="NiS-hz-X9i"/>
+                            <constraint firstItem="ygd-as-vOJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JcS-um-8ET"/>
+                            <constraint firstItem="Pmo-bH-UYK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Toa-eb-dz2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s4b-kL-u1p" secondAttribute="bottom" constant="35" id="XiE-ig-C6d"/>
+                            <constraint firstItem="s4b-kL-u1p" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="b16-bl-fpR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ygd-as-vOJ" secondAttribute="trailing" id="l5p-Lx-dkJ"/>
+                            <constraint firstItem="Pmo-bH-UYK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-20" id="pmw-zq-DeW"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +53,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bureau Logo" width="216" height="44"/>
+        <image name="bureauWebsiteTxt" width="113.5" height="13"/>
+        <image name="splashBG" width="198" height="198.5"/>
+        <image name="splashBtmTxt" width="229.5" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
