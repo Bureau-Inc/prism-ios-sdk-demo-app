@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		7I87ZSl7MjJu9UToY6WDDo0TZhg=
+		hM9tcBw50IjVbo99D6Bjf9jyQnA=
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aYWTI1Fu+b+Qy5ZRr2GxDPwduYY=
+		lfDso+Jb905iJ5QlnqnC9DSbfNc=
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		7I87ZSl7MjJu9UToY6WDDo0TZhg=
+		hM9tcBw50IjVbo99D6Bjf9jyQnA=
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		d47u3omwWmrQ+f//2/9UNZ0KIBg=
+		v0WsAcufGAQ5HRabG5uy2mIZeys=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -88,7 +88,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			krDR3kZ7C+2O9B9kw90HsnwowRRFOgPzIqCN81YiILM=
+			wUFlkjKpLzxq0e6/IafKyQJMZrDpjd3XJlBCLxgdPdI=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -116,14 +116,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vdi/g9aQyaE+uS5/hWlrb1UpXj9CcUBvy7v+jx8DFU0=
+			iLvbZhqJJ6be5CruRNI6dqt9mJuzPT1U9ZzWENvdhmc=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			krDR3kZ7C+2O9B9kw90HsnwowRRFOgPzIqCN81YiILM=
+			wUFlkjKpLzxq0e6/IafKyQJMZrDpjd3XJlBCLxgdPdI=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -151,7 +151,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zEGcehPzJXZLK38Filnyaw3tfmDW9VuP9Dk0nWWCaew=
+			oiEwx++b03e+wf6lyv6DVItOPiJPRkG1d53LqRZclhk=
 			</data>
 		</dict>
 	</dict>

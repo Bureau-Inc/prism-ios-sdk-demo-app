@@ -6070,9 +6070,44 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 446,
+      "offset": 420,
+      "length": 30,
+      "value": "\"https:\/\/api.moonsense.cloud\/\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
+      "kind": "StringLiteral",
+      "offset": 487,
+      "length": 7,
+      "value": "\"1.0.0\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
+      "kind": "StringLiteral",
+      "offset": 557,
       "length": 32,
       "value": "\"v1\/deviceService\/iosDeviceData\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
+      "kind": "StringLiteral",
+      "offset": 625,
+      "length": 11,
+      "value": "\"v2\/pc\/img\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
+      "kind": "StringLiteral",
+      "offset": 697,
+      "length": 138,
+      "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJVUXlWcnY5aXpBU1dFMm9TWFFQZFdUIiwidHlwZSI6MX0.9IRhoqSGjjduDWhAz0nx30PFL3Mf6hPEvUKRABTK_No\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
+      "kind": "StringLiteral",
+      "offset": 889,
+      "length": 138,
+      "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJFTlJiRFZOQTVvamZUZWhZR0dQbjdBIiwidHlwZSI6MX0.4vxoFbCjbPSzUZB6Dkr3MTybu5LracwuRCodOMAEWOI\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IdentifierHarvester.swift",

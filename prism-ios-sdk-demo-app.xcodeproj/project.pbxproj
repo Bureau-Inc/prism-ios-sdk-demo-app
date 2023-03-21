@@ -13,14 +13,14 @@
 		1823E50428488CB500E9A1A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50228488CB500E9A1A1 /* Main.storyboard */; };
 		1823E50628488CB700E9A1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50528488CB700E9A1A1 /* Assets.xcassets */; };
 		1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50728488CB700E9A1A1 /* LaunchScreen.storyboard */; };
-		1839FD8029BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */; };
-		1839FD8129BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; };
 		18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18A73F3028B5098A00867795 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 18A73F2F28B5098A00867795 /* Auth0 */; };
 		18A73F3228B50A5700867795 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A73F3128B50A5700867795 /* Auth0.plist */; };
 		18A740DA28B5FB9000867795 /* BureauLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A740D928B5FB9000867795 /* BureauLogo.png */; };
 		18A740DC28B5FD4C00867795 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A740DB28B5FD4C00867795 /* AuthViewController.swift */; };
+		18AAC9DE29C99CA7009B2BA5 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AAC9DC29C99C9D009B2BA5 /* prism_ios_fingerprint_sdk.xcframework */; };
+		18AAC9DF29C99CA7009B2BA5 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18AAC9DC29C99C9D009B2BA5 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18B4643F29225A6F0008D695 /* DeviceFingerPrintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4643E29225A6F0008D695 /* DeviceFingerPrintVC.swift */; };
 		18D9EBB628DB4184007FCE2B /* Lexend-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D9EBB428DB417E007FCE2B /* Lexend-Medium.ttf */; };
 		18D9EBB728DB4184007FCE2B /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D9EBB228DB417D007FCE2B /* Lexend-Bold.ttf */; };
@@ -41,7 +41,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */,
-				1839FD8129BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
+				18AAC9DF29C99CA7009B2BA5 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,11 +57,11 @@
 		1823E50528488CB700E9A1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1823E50828488CB700E9A1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1823E50A28488CB700E9A1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
 		18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_native_sdk.xcframework; sourceTree = "<group>"; };
 		18A73F3128B50A5700867795 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		18A740D928B5FB9000867795 /* BureauLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BureauLogo.png; sourceTree = "<group>"; };
 		18A740DB28B5FD4C00867795 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		18AAC9DC29C99C9D009B2BA5 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
 		18B4643E29225A6F0008D695 /* DeviceFingerPrintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFingerPrintVC.swift; sourceTree = "<group>"; };
 		18D9EBB228DB417D007FCE2B /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
 		18D9EBB328DB417E007FCE2B /* Lexend-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Light.ttf"; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */,
-				1839FD8029BF105F008CB0D4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
+				18AAC9DE29C99CA7009B2BA5 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
 				18D9EBC128DC3842007FCE2B /* SideMenu in Frameworks */,
 				18A73F3028B5098A00867795 /* Auth0 in Frameworks */,
 			);
@@ -126,7 +126,7 @@
 		1823E51028488CBE00E9A1A1 /* prism-framework */ = {
 			isa = PBXGroup;
 			children = (
-				1839FD7E29BF1059008CB0D4 /* prism_ios_fingerprint_sdk.xcframework */,
+				18AAC9DC29C99C9D009B2BA5 /* prism_ios_fingerprint_sdk.xcframework */,
 				18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */,
 			);
 			path = "prism-framework";

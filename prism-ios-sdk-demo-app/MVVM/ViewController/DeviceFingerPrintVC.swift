@@ -11,6 +11,8 @@ import prism_ios_fingerprint_sdk
 class DeviceFingerPrintVC: UIViewController {
 
     var entrypoint:BureauAPI?
+    var sessionID:String?
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var IPLocationView: UIView!
     @IBOutlet weak var IPSecurityView: UIView!
@@ -29,7 +31,8 @@ class DeviceFingerPrintVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
-        entrypoint = BureauAPI(clientID: "1b87dd79-8504-425c-90c3-56f4cad27b0f", environment: .sandbox, sessionID: "DemoAppSessionId-"+(UIDevice.current.identifierForVendor?.uuidString ?? ""), refVC: self)
+        sessionID = "DemoAppSessionId-Hari_test-new"
+        entrypoint = BureauAPI(clientID: "1b87dd79-8504-425c-90c3-56f4cad27b0f", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
         entrypoint?.fingerprintDelegate = self
         entrypoint?.submit()
     }
@@ -80,7 +83,7 @@ extension DeviceFingerPrintVC : PrismFingerPrintDelegate{
         print(data ?? "")
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200 || statusCode == 409){
-            loadSessionData(sessionID: "DemoAppSessionId-"+(UIDevice.current.identifierForVendor?.uuidString ?? ""))
+            loadSessionData(sessionID: self.sessionID ?? "")
         }else{
             self.spinner.stopAnimating()
             DispatchQueue.main.async {
