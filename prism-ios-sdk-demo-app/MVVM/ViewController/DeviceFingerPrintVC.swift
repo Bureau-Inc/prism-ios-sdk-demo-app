@@ -54,7 +54,7 @@ class DeviceFingerPrintVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
-        sessionID = "DemoAppSession-"+(UIDevice.current.identifierForVendor?.uuidString ?? "")
+        sessionID = "DemoAppSession-ID-"+(UIDevice.current.identifierForVendor?.uuidString ?? "")
         entrypoint = BureauAPI(clientID: "1b87dd79-8504-425c-90c3-56f4cad27b0f", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
         entrypoint?.fingerprintDelegate = self
         entrypoint?.submit()
@@ -130,13 +130,18 @@ class DeviceFingerPrintVC: UIViewController {
 
 extension DeviceFingerPrintVC : PrismFingerPrintDelegate{
     func onFinished(data: [String : Any]?) {
-        print(data ?? "")
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200 || statusCode == 409){
             loadSessionData(sessionID: self.sessionID ?? "")
-        }else{
-            self.spinner.stopAnimating()
+        }else if statusCode == 401{
             DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                let apiResponse = data?["apiResponse"] as? NSDictionary
+                self.view.makeToast(apiResponse?.value(forKeyPath: "errors.errorCode") as? String ?? "")
+            }
+        }else{
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
                 self.view.makeToast(apiResponse?.value(forKeyPath: "error.message") as? String ?? "")
             }

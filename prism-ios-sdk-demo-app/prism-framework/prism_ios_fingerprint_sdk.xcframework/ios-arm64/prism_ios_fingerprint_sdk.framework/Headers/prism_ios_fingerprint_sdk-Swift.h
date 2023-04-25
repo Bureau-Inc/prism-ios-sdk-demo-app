@@ -278,7 +278,6 @@ SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk9BureauAPI")
 
 
 
-
 #endif
 #if defined(__cplusplus)
 #endif

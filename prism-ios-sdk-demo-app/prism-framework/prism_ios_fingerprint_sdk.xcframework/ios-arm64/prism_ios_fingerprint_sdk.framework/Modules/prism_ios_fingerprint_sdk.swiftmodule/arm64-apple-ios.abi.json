@@ -1336,8 +1336,7 @@
         "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintJSVersionO",
         "moduleName": "prism_ios_fingerprint_sdk",
         "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
+          "AccessControl"
         ],
         "conformances": [
           {
@@ -1396,63 +1395,103 @@
             "declKind": "EnumElement",
             "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO6sha256yA2CmF",
             "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintAlgorithmO6sha256yA2CmF",
+            "moduleName": "prism_ios_fingerprint_sdk"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FingerprintAlgorithm",
+                "printedName": "prism_ios_fingerprint_sdk.FingerprintAlgorithm",
+                "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FingerprintAlgorithm",
+                "printedName": "prism_ios_fingerprint_sdk.FingerprintAlgorithm",
+                "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintAlgorithmO2eeoiySbAC_ACtFZ",
             "moduleName": "prism_ios_fingerprint_sdk",
-            "declAttributes": [
-              "RawDocComment"
-            ]
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Var",
-            "name": "custom",
-            "printedName": "custom",
+            "name": "hashValue",
+            "printedName": "hashValue",
             "children": [
               {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(prism_ios_fingerprint_sdk.FingerprintAlgorithm.Type) -> (prism_ios_fingerprint_sdk.FingerprintFunction) -> prism_ios_fingerprint_sdk.FingerprintAlgorithm",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(prism_ios_fingerprint_sdk.FingerprintFunction) -> prism_ios_fingerprint_sdk.FingerprintAlgorithm",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "FingerprintAlgorithm",
-                        "printedName": "prism_ios_fingerprint_sdk.FingerprintAlgorithm",
-                        "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "FingerprintFunction",
-                        "printedName": "prism_ios_fingerprint_sdk.FingerprintFunction",
-                        "usr": "s:25prism_ios_fingerprint_sdk19FingerprintFunctionP"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "prism_ios_fingerprint_sdk.FingerprintAlgorithm.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "FingerprintAlgorithm",
-                        "printedName": "prism_ios_fingerprint_sdk.FingerprintAlgorithm",
-                        "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO"
-                      }
-                    ]
-                  }
-                ]
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
               }
             ],
-            "declKind": "EnumElement",
-            "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO6customyAcA0E8Function_pcACmF",
-            "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintAlgorithmO6customyAcA0E8Function_pcACmF",
+            "declKind": "Var",
+            "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO9hashValueSivp",
+            "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintAlgorithmO9hashValueSivp",
             "moduleName": "prism_ios_fingerprint_sdk",
-            "declAttributes": [
-              "RawDocComment"
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO9hashValueSivg",
+                "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintAlgorithmO9hashValueSivg",
+                "moduleName": "prism_ios_fingerprint_sdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25prism_ios_fingerprint_sdk20FingerprintAlgorithmO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintAlgorithmO4hash4intoys6HasherVz_tF",
+            "moduleName": "prism_ios_fingerprint_sdk",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -1460,8 +1499,23 @@
         "mangledName": "$s25prism_ios_fingerprint_sdk20FingerprintAlgorithmO",
         "moduleName": "prism_ios_fingerprint_sdk",
         "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
         ]
       },
       {
@@ -1510,8 +1564,7 @@
         "mangledName": "$s25prism_ios_fingerprint_sdk13ConfigurationV",
         "moduleName": "prism_ios_fingerprint_sdk",
         "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
+          "AccessControl"
         ]
       },
       {
@@ -6085,27 +6138,27 @@
       "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
       "offset": 557,
-      "length": 32,
-      "value": "\"v1\/deviceService\/iosDeviceData\""
+      "length": 33,
+      "value": "\"v1\/deviceService\/deviceData\/ios\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 625,
-      "length": 11,
-      "value": "\"v2\/pc\/img\""
+      "offset": 626,
+      "length": 7,
+      "value": "\"v2\/pc\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 697,
+      "offset": 694,
       "length": 138,
       "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJVUXlWcnY5aXpBU1dFMm9TWFFQZFdUIiwidHlwZSI6MX0.9IRhoqSGjjduDWhAz0nx30PFL3Mf6hPEvUKRABTK_No\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 889,
+      "offset": 886,
       "length": 138,
       "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJFTlJiRFZOQTVvamZUZWhZR0dQbjdBIiwidHlwZSI6MX0.4vxoFbCjbPSzUZB6Dkr3MTybu5LracwuRCodOMAEWOI\""
     },

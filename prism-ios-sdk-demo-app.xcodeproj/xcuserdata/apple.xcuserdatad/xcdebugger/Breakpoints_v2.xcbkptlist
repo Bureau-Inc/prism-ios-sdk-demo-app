@@ -3,4 +3,70 @@
    uuid = "FCF3316A-2E84-4BD7-9817-81AB775515D7"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C10FC52D-C7E5-4A0F-B293-641C9843F9A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "prism-ios-sdk-demo-app/MVVM/ViewController/DeviceFingerPrintVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "onFinished(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C10FC52D-C7E5-4A0F-B293-641C9843F9A7 - fcfa5e3e09249cfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prism_ios_sdk_demo_app.DeviceFingerPrintVC.onFinished(data: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "prism-ios-sdk-demo-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/Hari/Bureau%20Git/prism-ios-sdk-demo-app/prism-ios-sdk-demo-app/MVVM/ViewController/DeviceFingerPrintVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "C10FC52D-C7E5-4A0F-B293-641C9843F9A7 - fcfa5e3e09249cfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prism_ios_sdk_demo_app.DeviceFingerPrintVC.onFinished(data: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "prism-ios-sdk-demo-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/Hari/Bureau%20Git/prism-ios-sdk-demo-app/prism-ios-sdk-demo-app/MVVM/ViewController/DeviceFingerPrintVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "365">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20B4262B-B1A6-4F21-B2F5-B3CFAF3C9B6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "prism-ios-sdk-demo-app/MVVM/ViewController/DeviceFingerPrintVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "onFinished(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

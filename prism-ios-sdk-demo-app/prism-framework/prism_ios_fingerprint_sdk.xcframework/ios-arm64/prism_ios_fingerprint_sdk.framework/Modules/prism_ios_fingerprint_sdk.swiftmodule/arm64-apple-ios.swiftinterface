@@ -79,7 +79,11 @@ public enum FingerprintJSVersion {
 }
 public enum FingerprintAlgorithm {
   case sha256
-  case custom(prism_ios_fingerprint_sdk.FingerprintFunction)
+  public static func == (a: prism_ios_fingerprint_sdk.FingerprintAlgorithm, b: prism_ios_fingerprint_sdk.FingerprintAlgorithm) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public struct Configuration {
   public init(version: prism_ios_fingerprint_sdk.FingerprintJSVersion = .v2, algorithm: prism_ios_fingerprint_sdk.FingerprintAlgorithm = .sha256)
@@ -165,3 +169,5 @@ extension prism_ios_fingerprint_sdk.Mode : Swift.Equatable {}
 extension prism_ios_fingerprint_sdk.Mode : Swift.Hashable {}
 extension prism_ios_fingerprint_sdk.FingerprintJSVersion : Swift.Equatable {}
 extension prism_ios_fingerprint_sdk.FingerprintJSVersion : Swift.Hashable {}
+extension prism_ios_fingerprint_sdk.FingerprintAlgorithm : Swift.Equatable {}
+extension prism_ios_fingerprint_sdk.FingerprintAlgorithm : Swift.Hashable {}

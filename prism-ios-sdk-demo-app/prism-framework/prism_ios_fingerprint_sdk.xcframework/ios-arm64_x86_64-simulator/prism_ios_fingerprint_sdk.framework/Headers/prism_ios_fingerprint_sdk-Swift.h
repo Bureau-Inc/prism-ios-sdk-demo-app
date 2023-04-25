@@ -278,7 +278,6 @@ SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk9BureauAPI")
 
 
 
-
 #endif
 #if defined(__cplusplus)
 #endif
@@ -560,7 +559,6 @@ SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk9BureauAPI")
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 @end
-
 
 
 
