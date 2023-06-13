@@ -54,8 +54,8 @@ class DeviceFingerPrintVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
-        sessionID = "DemoAppSession-ID-"+(UIDevice.current.identifierForVendor?.uuidString ?? "")
-        entrypoint = BureauAPI(clientID: "1b87dd79-8504-425c-90c3-56f4cad27b0f", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
+        sessionID = "Demo-"+NSUUID().uuidString
+        entrypoint = BureauAPI(clientID: "******", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
         entrypoint?.fingerprintDelegate = self
         entrypoint?.submit()
     }
@@ -65,7 +65,7 @@ class DeviceFingerPrintVC: UIViewController {
         var request = URLRequest(url: serviceUrl)
         print(request)
         request.httpMethod = "GET"
-        request.setValue("Basic OTA1MmU3MjEtZTJkMS00NDk5LWFmMTItYzk2OGI5OGRjN2M5OmI3N2IzMmM0LWFlMjEtNDAwZi1hMDhhLWU0YWU0MzJhYTNjMA==", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic <<token>>", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
@@ -103,7 +103,7 @@ class DeviceFingerPrintVC: UIViewController {
         IPregionLbl.text = dic.value(forKeyPath: "IPLocation.region") as? String
         
         crawlerLbl.text = CheckBool(dic.value(forKeyPath: "IPSecurity.is_crawler") as? Bool)
-        proxyLbl.text = CheckBool((dic.value(forKeyPath: "IPSecurity.is_proxy") as? Bool))
+        proxyLbl.text = CheckBool((dic.value(forKeyPath: "IPSecurity.VPN") as? Bool))
         torLbl.text = CheckBool(dic.value(forKeyPath: "IPSecurity.is_tor") as? Bool)
         threatLevelLbl.text = dic.value(forKeyPath: "IPSecurity.threat_level") as? String
         debuggableLbl.text = CheckBool(dic.value(forKeyPath: "debuggable") as? Bool)

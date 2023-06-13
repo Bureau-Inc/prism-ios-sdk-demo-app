@@ -56,6 +56,7 @@ class MainViewController: BaseViewController {
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
                 self.arrCrentials = try JSONSerialization.jsonObject(with: data!) as? [NSDictionary] ?? []
+                print(self.arrCrentials)
             } catch {
                 print("error")
             }
