@@ -13,8 +13,6 @@
 		1823E50428488CB500E9A1A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50228488CB500E9A1A1 /* Main.storyboard */; };
 		1823E50628488CB700E9A1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50528488CB700E9A1A1 /* Assets.xcassets */; };
 		1823E50928488CB700E9A1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1823E50728488CB700E9A1A1 /* LaunchScreen.storyboard */; };
-		18268B6D2A1CF9FA004E0569 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18268B6B2A1CF9F4004E0569 /* prism_ios_fingerprint_sdk.xcframework */; };
-		18268B6E2A1CF9FA004E0569 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18268B6B2A1CF9F4004E0569 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1889BCF82A0BE8CE00E377DE /* prism_ios_sdk_demo_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889BCF72A0BE8CE00E377DE /* prism_ios_sdk_demo_appTests.swift */; };
 		1889BD232A0CEF3300E377DE /* prism_ios_sdk_demo_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889BD222A0CEF3300E377DE /* prism_ios_sdk_demo_appUITests.swift */; };
 		1889BD252A0CEF3300E377DE /* prism_ios_sdk_demo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889BD242A0CEF3300E377DE /* prism_ios_sdk_demo_appUITestsLaunchTests.swift */; };
@@ -35,6 +33,7 @@
 		18D9EBC328DC3B49007FCE2B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC228DC3B48007FCE2B /* SideMenuViewController.swift */; };
 		18D9EBC528DC43FB007FCE2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC428DC43FA007FCE2B /* BaseViewController.swift */; };
 		18D9EBC728DC8604007FCE2B /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */; };
+		CE21C9772A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */,
-				18268B6E2A1CF9FA004E0569 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +76,6 @@
 		1823E50528488CB700E9A1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1823E50828488CB700E9A1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1823E50A28488CB700E9A1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18268B6B2A1CF9F4004E0569 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
 		1889BCF52A0BE8CE00E377DE /* prism-ios-sdk-demo-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "prism-ios-sdk-demo-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1889BCF72A0BE8CE00E377DE /* prism_ios_sdk_demo_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prism_ios_sdk_demo_appTests.swift; sourceTree = "<group>"; };
 		1889BD202A0CEF3300E377DE /* prism-ios-sdk-demo-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "prism-ios-sdk-demo-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +94,7 @@
 		18D9EBC228DC3B48007FCE2B /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		18D9EBC428DC43FA007FCE2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */,
-				18268B6D2A1CF9FA004E0569 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
+				CE21C9772A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
 				18D9EBC128DC3842007FCE2B /* SideMenu in Frameworks */,
 				18A73F3028B5098A00867795 /* Auth0 in Frameworks */,
 			);
@@ -172,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */,
-				18268B6B2A1CF9F4004E0569 /* prism_ios_fingerprint_sdk.xcframework */,
+				CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */,
 			);
 			path = "prism-framework";
 			sourceTree = "<group>";
@@ -572,11 +570,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 28;
+				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -605,7 +601,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -618,11 +613,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 28;
+				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -651,7 +644,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
