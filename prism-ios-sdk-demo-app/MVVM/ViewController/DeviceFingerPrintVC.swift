@@ -7,11 +7,14 @@
 
 import UIKit
 import prism_ios_fingerprint_sdk
+import CoreLocation
 
 class DeviceFingerPrintVC: UIViewController {
 
     var entrypoint:BureauAPI?
     var sessionID:String?
+    var locationManager = CLLocationManager()
+    var location:CLLocation?
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var GPSLocationView: UIView!
@@ -47,13 +50,20 @@ class DeviceFingerPrintVC: UIViewController {
     @IBOutlet weak var rootedLbl: UILabel!
     @IBOutlet weak var screenMirrorLbl: UILabel!
     @IBOutlet weak var userIDLbl: UILabel!
-    
-//    @IBOutlet weak var debugerLbl: UILabel!
+    @IBOutlet weak var sessionIDTxt: UITextView!
+    //    @IBOutlet weak var debugerLbl: UILabel!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
+    }
+    func InitSDK(){
+        
         sessionID = "Demo-"+NSUUID().uuidString
         entrypoint = BureauAPI(clientID: "******", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
         entrypoint?.fingerprintDelegate = self
@@ -114,7 +124,7 @@ class DeviceFingerPrintVC: UIViewController {
         DeviceModelLbl.text = (dic.value(forKeyPath: "model") as? String)
         appPackageLbl.text = (dic.value(forKeyPath: "package") as? String)
         rootedLbl.text = CheckBool(dic.value(forKeyPath: "jailbreak") as? Bool)
-        userIDLbl.text = (dic.value(forKeyPath: "sessionId") as? String)
+        sessionIDTxt.text = (dic.value(forKeyPath: "sessionId") as? String)
         OSLbl.text = (dic.value(forKeyPath: "OS") as? String)
         firstSeenLbl.text = String(dic.value(forKeyPath: "firstSeenDays") as? Int ?? 0)
     }
@@ -125,6 +135,12 @@ class DeviceFingerPrintVC: UIViewController {
     
     func CheckBool(_ val:Bool?) -> String{
         return val ?? false ? "Yes" : "No"
+    }
+}
+
+extension DeviceFingerPrintVC: CLLocationManagerDelegate{
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        InitSDK()
     }
 }
 

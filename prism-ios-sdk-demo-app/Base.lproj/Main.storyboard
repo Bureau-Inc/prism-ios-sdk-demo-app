@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CW3-0j-Hms">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CW3-0j-Hms">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -118,7 +118,7 @@ Demo App</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-9v-fdk">
-                                <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3f1-GF-Yuy">
                                         <rect key="frame" x="20" y="0.0" width="90" height="50"/>
@@ -147,7 +147,7 @@ Demo App</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhn-cH-trX">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDw-IW-IF7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="795"/>
@@ -640,7 +640,7 @@ Verification Flow</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-ch-F5e">
-                                <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoP-RV-Hde">
                                         <rect key="frame" x="20" y="0.0" width="90" height="50"/>
@@ -669,10 +669,10 @@ Verification Flow</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amW-0j-DrQ">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thn-G7-lJh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1679"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1729"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oGU-Ms-PNT">
                                                 <rect key="frame" x="25" y="30" width="325" height="100"/>
@@ -712,7 +712,7 @@ Verification Flow</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0X2-oT-ddS">
-                                                <rect key="frame" x="0.0" y="145" width="375" height="1534"/>
+                                                <rect key="frame" x="0.0" y="145" width="375" height="1584"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yff-V2-UmW">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="316"/>
@@ -1300,13 +1300,13 @@ Verification Flow</string>
                                                                                         <rect key="frame" x="162.5" y="0.0" width="162.5" height="60"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Threat Level" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn7-Qm-Bek">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="20"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="25"/>
                                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="16"/>
                                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEm-t9-RJj">
-                                                                                                <rect key="frame" x="0.0" y="30" width="162.5" height="30"/>
+                                                                                                <rect key="frame" x="0.0" y="35" width="162.5" height="25"/>
                                                                                                 <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="20"/>
                                                                                                 <color key="textColor" name="ThemeFontColor"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -1356,10 +1356,10 @@ Verification Flow</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0r-GA-6uI">
-                                                        <rect key="frame" x="0.0" y="873" width="375" height="661"/>
+                                                        <rect key="frame" x="0.0" y="873" width="375" height="711"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ikX-l3-tJc">
-                                                                <rect key="frame" x="25" y="10" width="325" height="630"/>
+                                                                <rect key="frame" x="25" y="10" width="325" height="680"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLd-Jg-I2U">
                                                                         <rect key="frame" x="0.0" y="0.0" width="325" height="50"/>
@@ -1389,7 +1389,7 @@ Verification Flow</string>
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-Sn-5O8">
-                                                                        <rect key="frame" x="0.0" y="70" width="325" height="560"/>
+                                                                        <rect key="frame" x="0.0" y="70" width="325" height="610"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WqU-9C-cdW">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="55"/>
@@ -1692,10 +1692,10 @@ Verification Flow</string>
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xK4-fz-ajR">
-                                                                                <rect key="frame" x="0.0" y="500" width="325" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="500" width="325" height="110"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOk-Nw-dtp">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="60"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="110"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session ID" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU1-l0-iG2">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="20"/>
@@ -1703,21 +1703,35 @@ Verification Flow</string>
                                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veP-SO-O6h">
-                                                                                                <rect key="frame" x="0.0" y="30" width="325" height="30"/>
+                                                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="awerwqr" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veP-SO-O6h">
+                                                                                                <rect key="frame" x="0.0" y="30" width="325" height="80"/>
                                                                                                 <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="20"/>
                                                                                                 <color key="textColor" name="ThemeFontColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
+                                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="----" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GkM-F7-NUh">
+                                                                                                <rect key="frame" x="0.0" y="30" width="325" height="80"/>
+                                                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="80" id="dpH-M3-jY9"/>
+                                                                                                </constraints>
+                                                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                                                <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="20"/>
+                                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                            </textView>
                                                                                         </subviews>
                                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                         <constraints>
+                                                                                            <constraint firstItem="GkM-F7-NUh" firstAttribute="trailing" secondItem="veP-SO-O6h" secondAttribute="trailing" id="5F4-Bo-6CJ"/>
+                                                                                            <constraint firstItem="GkM-F7-NUh" firstAttribute="top" secondItem="veP-SO-O6h" secondAttribute="top" id="IEM-t7-cWr"/>
                                                                                             <constraint firstItem="CU1-l0-iG2" firstAttribute="leading" secondItem="sOk-Nw-dtp" secondAttribute="leading" id="WRx-1S-AJm"/>
                                                                                             <constraint firstItem="veP-SO-O6h" firstAttribute="top" secondItem="CU1-l0-iG2" secondAttribute="bottom" constant="10" id="a0Z-Gd-vdP"/>
                                                                                             <constraint firstItem="veP-SO-O6h" firstAttribute="leading" secondItem="sOk-Nw-dtp" secondAttribute="leading" id="cjt-LY-gL2"/>
-                                                                                            <constraint firstAttribute="bottom" secondItem="veP-SO-O6h" secondAttribute="bottom" id="nsu-As-S8V"/>
+                                                                                            <constraint firstItem="GkM-F7-NUh" firstAttribute="leading" secondItem="veP-SO-O6h" secondAttribute="leading" id="ggq-S7-QTd"/>
+                                                                                            <constraint firstAttribute="bottom" secondItem="GkM-F7-NUh" secondAttribute="bottom" id="jO1-fW-NH0"/>
                                                                                             <constraint firstItem="veP-SO-O6h" firstAttribute="leading" secondItem="sOk-Nw-dtp" secondAttribute="leading" id="r2f-8W-jbr"/>
                                                                                             <constraint firstItem="CU1-l0-iG2" firstAttribute="top" secondItem="sOk-Nw-dtp" secondAttribute="top" id="r35-Vb-x7g"/>
+                                                                                            <constraint firstItem="GkM-F7-NUh" firstAttribute="bottom" secondItem="veP-SO-O6h" secondAttribute="bottom" id="tR0-4m-Qft"/>
                                                                                             <constraint firstAttribute="trailing" secondItem="veP-SO-O6h" secondAttribute="trailing" id="th5-Z1-4Tb"/>
                                                                                         </constraints>
                                                                                     </view>
@@ -1735,7 +1749,7 @@ Verification Flow</string>
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hf-0h-r1C">
-                                                                <rect key="frame" x="0.0" y="660" width="375" height="1"/>
+                                                                <rect key="frame" x="0.0" y="710" width="375" height="1"/>
                                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="M9f-Uf-gUq"/>
@@ -1823,6 +1837,7 @@ Verification Flow</string>
                         <outlet property="proxyLbl" destination="4lf-Mk-rNw" id="AeA-NG-7yV"/>
                         <outlet property="rootedLbl" destination="0po-xq-amw" id="2pU-Eq-cci"/>
                         <outlet property="screenMirrorLbl" destination="shT-cI-8mX" id="gCY-ud-bHG"/>
+                        <outlet property="sessionIDTxt" destination="GkM-F7-NUh" id="5wq-pH-Q18"/>
                         <outlet property="simulatorLbl" destination="GXG-oK-xwn" id="lDD-nT-ByL"/>
                         <outlet property="spinner" destination="iFF-aO-nXH" id="8Fo-Bx-DRz"/>
                         <outlet property="threatLevelLbl" destination="NEm-t9-RJj" id="zhb-hY-o3e"/>
@@ -1843,7 +1858,7 @@ Verification Flow</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZ5-9w-sHL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eon-ao-q0N">
                                         <rect key="frame" x="25" y="0.0" width="75" height="44"/>
@@ -1871,7 +1886,7 @@ Verification Flow</string>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M33-ib-DNH">
-                                <rect key="frame" x="25" y="69" width="325" height="69"/>
+                                <rect key="frame" x="25" y="89" width="325" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Features" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ple-Du-95h">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
@@ -1888,7 +1903,7 @@ Verification Flow</string>
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6l-51-z66">
-                                <rect key="frame" x="0.0" y="138" width="375" height="529"/>
+                                <rect key="frame" x="0.0" y="158" width="375" height="509"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bem-mc-yLa">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
@@ -2155,7 +2170,7 @@ Verification Flow</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-Nt-63r">
-                                <rect key="frame" x="25" y="30" width="75" height="35"/>
+                                <rect key="frame" x="25" y="50" width="75" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="7j8-7U-Aq3"/>
                                     <constraint firstAttribute="height" constant="35" id="NAt-sf-TDh"/>
@@ -2171,20 +2186,20 @@ Verification Flow</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImg" translatesAutoresizingMaskIntoConstraints="NO" id="yXw-q7-JgY">
-                                <rect key="frame" x="25" y="90" width="80" height="80"/>
+                                <rect key="frame" x="25" y="110" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="BUY-A4-UUv"/>
                                     <constraint firstAttribute="height" constant="80" id="z6L-AC-iRn"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Features" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="prd-WB-xd2">
-                                <rect key="frame" x="25" y="195" width="315" height="21.5"/>
+                                <rect key="frame" x="25" y="215" width="315" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="17"/>
                                 <color key="textColor" name="ThemeFontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t49-QO-Q0B">
-                                <rect key="frame" x="25" y="286.5" width="150" height="45"/>
+                                <rect key="frame" x="25" y="306.5" width="150" height="45"/>
                                 <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="kIw-2g-XaW"/>
@@ -2425,6 +2440,9 @@ Verification Flow</string>
         <namedColor name="ThemeSecFontColor">
             <color red="0.44705882352941179" green="0.48627450980392156" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
