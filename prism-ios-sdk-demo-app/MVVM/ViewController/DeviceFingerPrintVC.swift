@@ -141,6 +141,7 @@ class DeviceFingerPrintVC: UIViewController {
 extension DeviceFingerPrintVC: CLLocationManagerDelegate{
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         InitSDK()
+        manager.delegate = nil
     }
 }
 

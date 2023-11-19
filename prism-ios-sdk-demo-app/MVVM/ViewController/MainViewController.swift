@@ -44,6 +44,13 @@ class MainViewController: BaseViewController {
 
     }
     
+    @IBAction func livenessCheckAct(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let VC = storyboard.instantiateViewController(withIdentifier: "LivenessPageVC") as! LivenessPageVC
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
+    
+    
     
     func getCredentials(){
         spinnerView.startAnimating()

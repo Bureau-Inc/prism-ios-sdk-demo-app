@@ -35,6 +35,9 @@
 		18D9EBC728DC8604007FCE2B /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */; };
 		CE21C9782A4AFF1D0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */; };
 		CE21C9792A4AFF1D0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEAACBF52A82799D002F44C3 /* liveness_checker_ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAACBF32A827991002F44C3 /* liveness_checker_ios.xcframework */; };
+		CEAACBF62A82799D002F44C3 /* liveness_checker_ios.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEAACBF32A827991002F44C3 /* liveness_checker_ios.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEAACBFA2A8281DB002F44C3 /* LivenessPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACBF92A8281DB002F44C3 /* LivenessPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CEAACBF62A82799D002F44C3 /* liveness_checker_ios.xcframework in Embed Frameworks */,
 				18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */,
 				CE21C9792A4AFF1D0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
 			);
@@ -97,6 +101,8 @@
 		18D9EBC428DC43FA007FCE2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
+		CEAACBF32A827991002F44C3 /* liveness_checker_ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = liveness_checker_ios.xcframework; sourceTree = "<group>"; };
+		CEAACBF92A8281DB002F44C3 /* LivenessPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivenessPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 			files = (
 				18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */,
 				CE21C9782A4AFF1D0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
+				CEAACBF52A82799D002F44C3 /* liveness_checker_ios.xcframework in Frameworks */,
 				18D9EBC128DC3842007FCE2B /* SideMenu in Frameworks */,
 				18A73F3028B5098A00867795 /* Auth0 in Frameworks */,
 			);
@@ -173,6 +180,7 @@
 			children = (
 				18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */,
 				CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */,
+				CEAACBF32A827991002F44C3 /* liveness_checker_ios.xcframework */,
 			);
 			path = "prism-framework";
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 				1823E50028488CB500E9A1A1 /* ViewController.swift */,
 				18B4643E29225A6F0008D695 /* DeviceFingerPrintVC.swift */,
 				18D9EBBD28DC353D007FCE2B /* MainViewController.swift */,
+				CEAACBF92A8281DB002F44C3 /* LivenessPageVC.swift */,
 				18D9EBC228DC3B48007FCE2B /* SideMenuViewController.swift */,
 				18D9EBC428DC43FA007FCE2B /* BaseViewController.swift */,
 				18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */,
@@ -388,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAACBFA2A8281DB002F44C3 /* LivenessPageVC.swift in Sources */,
 				18A740DC28B5FD4C00867795 /* AuthViewController.swift in Sources */,
 				18B4643F29225A6F0008D695 /* DeviceFingerPrintVC.swift in Sources */,
 				1823E50128488CB500E9A1A1 /* ViewController.swift in Sources */,
@@ -587,6 +597,7 @@
 				INFOPLIST_FILE = "prism-ios-sdk-demo-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Prism iOS";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "App would like to access camera for identification";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for Fraud Prevention";
@@ -633,6 +644,7 @@
 				INFOPLIST_FILE = "prism-ios-sdk-demo-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Prism iOS";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "App would like to access camera for identification";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for Fraud Prevention";
