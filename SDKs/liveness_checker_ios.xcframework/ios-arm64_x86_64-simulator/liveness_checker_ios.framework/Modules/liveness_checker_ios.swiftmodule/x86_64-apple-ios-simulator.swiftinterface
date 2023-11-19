@@ -1,0 +1,105 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name liveness_checker_ios
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import CoreML
+import Foundation
+import Swift
+import UIKit
+import Vision
+import _Concurrency
+import _StringProcessing
+@_exported import liveness_checker_ios
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class LivenessHelper : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var delegate: UIKit.UIViewController?
+  @_Concurrency.MainActor(unsafe) public var livenessDelegate: (any liveness_checker_ios.LivenessCheckerDelegate)?
+  @_Concurrency.MainActor(unsafe) required public init(merchantId: Swift.String, isRetryEnabled: Swift.Bool, mode: liveness_checker_ios.Mode, selectedLang: Swift.String, refVC: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) public func start()
+  @objc deinit
+}
+public enum Mode {
+  case sandbox
+  case production
+  case stage
+  public static func == (a: liveness_checker_ios.Mode, b: liveness_checker_ios.Mode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CredentialBuilder {
+}
+public protocol LivenessCheckerDelegate : ObjectiveC.NSObject {
+  func onSuccessLivenessChecker(data: [Swift.String : Any]?, imageData: UIKit.UIImage?)
+  func onFailLivenessChecker(data: [Swift.String : Any]?)
+}
+public protocol LivenessPopDeleagate : ObjectiveC.NSObject {
+  func passValueToVC(data: [Swift.String : Any]?)
+}
+extension UIKit.UIFont {
+  public static func bureau_registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
+}
+public class LivenessCheckModel {
+  public var merchantId: Swift.String?
+  public var message: Swift.String?
+  public var requestId: Swift.String?
+  public var result: liveness_checker_ios.ResultModel?
+  public var statusCode: Swift.Int?
+  public var timestamp: Swift.Int?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [liveness_checker_ios.LivenessCheckModel]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class ResultModel {
+  public var faces: liveness_checker_ios.FacesModels?
+  public var liveness: liveness_checker_ios.LivenessModel?
+  public var moderation: liveness_checker_ios.ModerationModel?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [liveness_checker_ios.ResultModel]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class ModerationModel {
+  public var blackAndWhite: Swift.Bool?
+  public var gore: Swift.Bool?
+  public var nudity: Swift.Bool?
+  public var poorQuality: Swift.Bool?
+  public var skinOrChest: Swift.Double?
+  public var whiteBackground: Swift.Bool?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [liveness_checker_ios.ModerationModel]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class FacesModels {
+  public var accessories: liveness_checker_ios.Accessories?
+  public var eyesOpen: Swift.Bool?
+  public var multipleFacesDetected: Swift.Bool?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [liveness_checker_ios.FacesModels]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class LivenessModel {
+  public var live: Swift.Bool?
+  public var livenessScore: Swift.Int?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [liveness_checker_ios.LivenessModel]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+public class Accessories {
+  public var clothing: Swift.Double?
+  public var glasses: Swift.Double?
+  public var headgear: Swift.Double?
+  public var hijab: Swift.Double?
+  public var mask: Swift.Double?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [liveness_checker_ios.Accessories]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public func dictionaryRepresentation() -> Foundation.NSDictionary
+  @objc deinit
+}
+extension liveness_checker_ios.Mode : Swift.Equatable {}
+extension liveness_checker_ios.Mode : Swift.Hashable {}
