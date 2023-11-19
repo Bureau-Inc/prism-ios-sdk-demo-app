@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA4ACC72AF292D000B2801B /* IQKeyboardManagerSwift */; };
+		CEF11AA62AEF9DD80030CBD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */; };
+		CEF11AA82AEF9DD80030CBD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */; };
+		CEF11AAD2AEF9DD80030CBD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF11AAB2AEF9DD80030CBD4 /* Main.storyboard */; };
+		CEF11AAF2AEF9DDA0030CBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF11AAE2AEF9DDA0030CBD4 /* Assets.xcassets */; };
+		CEF11AB22AEF9DDA0030CBD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF11AB02AEF9DDA0030CBD4 /* LaunchScreen.storyboard */; };
+		CEF11ABD2AEF9DDB0030CBD4 /* bureau_ios_device_bbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11ABC2AEF9DDB0030CBD4 /* bureau_ios_device_bbTests.swift */; };
+		CEF11AC72AEF9DDB0030CBD4 /* bureau_ios_device_bbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AC62AEF9DDB0030CBD4 /* bureau_ios_device_bbUITests.swift */; };
+		CEF11AC92AEF9DDB0030CBD4 /* bureau_ios_device_bbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AC82AEF9DDB0030CBD4 /* bureau_ios_device_bbUITestsLaunchTests.swift */; };
+		CEF11AD62AEF9E150030CBD4 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF11AD52AEF9E150030CBD4 /* Auth0.plist */; };
+		CEF11ADD2AEF9F0D0030CBD4 /* Lexend-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEF11AD92AEF9F0D0030CBD4 /* Lexend-Regular.ttf */; };
+		CEF11ADE2AEF9F0D0030CBD4 /* Lexend-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEF11ADA2AEF9F0D0030CBD4 /* Lexend-Light.ttf */; };
+		CEF11ADF2AEF9F0D0030CBD4 /* Lexend-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEF11ADB2AEF9F0D0030CBD4 /* Lexend-Medium.ttf */; };
+		CEF11AE02AEF9F0D0030CBD4 /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEF11ADC2AEF9F0D0030CBD4 /* Lexend-Bold.ttf */; };
+		CEF11AE22AEF9F500030CBD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AE12AEF9F500030CBD4 /* AuthViewController.swift */; };
+		CEF11AE62AEF9FB20030CBD4 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = CEF11AE52AEF9FB20030CBD4 /* Auth0 */; };
+		CEF11AE92AEF9FBE0030CBD4 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = CEF11AE82AEF9FBE0030CBD4 /* SideMenu */; };
+		CEF11AEB2AEFA18B0030CBD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AEA2AEFA18B0030CBD4 /* BaseViewController.swift */; };
+		CEF11AED2AEFC4490030CBD4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AEC2AEFC4490030CBD4 /* MainViewController.swift */; };
+		CEF11AEF2AEFC4680030CBD4 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AEE2AEFC4680030CBD4 /* SideMenuViewController.swift */; };
+		CEF11AF12AF0F29D0030CBD4 /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF02AF0F29D0030CBD4 /* PINViewController.swift */; };
+		CEF11AF32AF0F2E90030CBD4 /* GetStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */; };
+		CEF11AF52AF0F39B0030CBD4 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */; };
+		CEF11AF72AF0F3A70030CBD4 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */; };
+		CEF11AF92AF0F7810030CBD4 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */; };
+		CEF11B052AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */; };
+		CEF11B062AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEF11B082AF138D60030CBD4 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11B072AF138D60030CBD4 /* AppConstant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEF11AB92AEF9DDB0030CBD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF11A9A2AEF9DD80030CBD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF11AA12AEF9DD80030CBD4;
+			remoteInfo = "bureau-ios-device-bb";
+		};
+		CEF11AC32AEF9DDB0030CBD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF11A9A2AEF9DD80030CBD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF11AA12AEF9DD80030CBD4;
+			remoteInfo = "bureau-ios-device-bb";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEF11AFE2AF107C70030CBD4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEF11B062AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CEF11AA22AEF9DD80030CBD4 /* bureau-ios-device-bb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bureau-ios-device-bb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CEF11AAC2AEF9DD80030CBD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEF11AAE2AEF9DDA0030CBD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEF11AB12AEF9DDA0030CBD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEF11AB32AEF9DDA0030CBD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF11AB82AEF9DDB0030CBD4 /* bureau-ios-device-bbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bureau-ios-device-bbTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF11ABC2AEF9DDB0030CBD4 /* bureau_ios_device_bbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bureau_ios_device_bbTests.swift; sourceTree = "<group>"; };
+		CEF11AC22AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bureau-ios-device-bbUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF11AC62AEF9DDB0030CBD4 /* bureau_ios_device_bbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bureau_ios_device_bbUITests.swift; sourceTree = "<group>"; };
+		CEF11AC82AEF9DDB0030CBD4 /* bureau_ios_device_bbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bureau_ios_device_bbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEF11AD52AEF9E150030CBD4 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		CEF11AD92AEF9F0D0030CBD4 /* Lexend-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Regular.ttf"; sourceTree = "<group>"; };
+		CEF11ADA2AEF9F0D0030CBD4 /* Lexend-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Light.ttf"; sourceTree = "<group>"; };
+		CEF11ADB2AEF9F0D0030CBD4 /* Lexend-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Medium.ttf"; sourceTree = "<group>"; };
+		CEF11ADC2AEF9F0D0030CBD4 /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
+		CEF11AE12AEF9F500030CBD4 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		CEF11AEA2AEFA18B0030CBD4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CEF11AEC2AEFC4490030CBD4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEF11AEE2AEFC4680030CBD4 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		CEF11AF02AF0F29D0030CBD4 /* PINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
+		CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartVC.swift; sourceTree = "<group>"; };
+		CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
+		CEF11B072AF138D60030CBD4 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEF11A9F2AEF9DD80030CBD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF11B052AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
+				CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */,
+				CEF11AE92AEF9FBE0030CBD4 /* SideMenu in Frameworks */,
+				CEF11AE62AEF9FB20030CBD4 /* Auth0 in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF11AB52AEF9DDB0030CBD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF11ABF2AEF9DDB0030CBD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEF11A992AEF9DD80030CBD4 = {
+			isa = PBXGroup;
+			children = (
+				CEF11AA42AEF9DD80030CBD4 /* bureau-ios-device-bb */,
+				CEF11ABB2AEF9DDB0030CBD4 /* bureau-ios-device-bbTests */,
+				CEF11AC52AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests */,
+				CEF11AA32AEF9DD80030CBD4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEF11AA32AEF9DD80030CBD4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEF11AA22AEF9DD80030CBD4 /* bureau-ios-device-bb.app */,
+				CEF11AB82AEF9DDB0030CBD4 /* bureau-ios-device-bbTests.xctest */,
+				CEF11AC22AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF11AA42AEF9DD80030CBD4 /* bureau-ios-device-bb */ = {
+			isa = PBXGroup;
+			children = (
+				CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */,
+				CEF11B072AF138D60030CBD4 /* AppConstant.swift */,
+				CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */,
+				CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */,
+				CEF11AE32AEF9F550030CBD4 /* ViewControllers */,
+				CEF11AAB2AEF9DD80030CBD4 /* Main.storyboard */,
+				CEF11AAE2AEF9DDA0030CBD4 /* Assets.xcassets */,
+				CEF11AB02AEF9DDA0030CBD4 /* LaunchScreen.storyboard */,
+				CEF11AB32AEF9DDA0030CBD4 /* Info.plist */,
+				CEF11AD52AEF9E150030CBD4 /* Auth0.plist */,
+				CEF11AD72AEF9F0D0030CBD4 /* Assets */,
+			);
+			path = "bureau-ios-device-bb";
+			sourceTree = "<group>";
+		};
+		CEF11ABB2AEF9DDB0030CBD4 /* bureau-ios-device-bbTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF11ABC2AEF9DDB0030CBD4 /* bureau_ios_device_bbTests.swift */,
+			);
+			path = "bureau-ios-device-bbTests";
+			sourceTree = "<group>";
+		};
+		CEF11AC52AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF11AC62AEF9DDB0030CBD4 /* bureau_ios_device_bbUITests.swift */,
+				CEF11AC82AEF9DDB0030CBD4 /* bureau_ios_device_bbUITestsLaunchTests.swift */,
+			);
+			path = "bureau-ios-device-bbUITests";
+			sourceTree = "<group>";
+		};
+		CEF11AD72AEF9F0D0030CBD4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CEF11AD82AEF9F0D0030CBD4 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CEF11AD82AEF9F0D0030CBD4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CEF11AD92AEF9F0D0030CBD4 /* Lexend-Regular.ttf */,
+				CEF11ADA2AEF9F0D0030CBD4 /* Lexend-Light.ttf */,
+				CEF11ADB2AEF9F0D0030CBD4 /* Lexend-Medium.ttf */,
+				CEF11ADC2AEF9F0D0030CBD4 /* Lexend-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CEF11AE32AEF9F550030CBD4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEF11AE12AEF9F500030CBD4 /* AuthViewController.swift */,
+				CEF11AEE2AEFC4680030CBD4 /* SideMenuViewController.swift */,
+				CEF11AEC2AEFC4490030CBD4 /* MainViewController.swift */,
+				CEF11AEA2AEFA18B0030CBD4 /* BaseViewController.swift */,
+				CEF11AF02AF0F29D0030CBD4 /* PINViewController.swift */,
+				CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */,
+				CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */,
+				CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */,
+				CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEF11AA12AEF9DD80030CBD4 /* bureau-ios-device-bb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF11ACC2AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bb" */;
+			buildPhases = (
+				CEF11A9E2AEF9DD80030CBD4 /* Sources */,
+				CEF11A9F2AEF9DD80030CBD4 /* Frameworks */,
+				CEF11AA02AEF9DD80030CBD4 /* Resources */,
+				CEF11AFE2AF107C70030CBD4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "bureau-ios-device-bb";
+			packageProductDependencies = (
+				CEF11AE52AEF9FB20030CBD4 /* Auth0 */,
+				CEF11AE82AEF9FBE0030CBD4 /* SideMenu */,
+				CEA4ACC72AF292D000B2801B /* IQKeyboardManagerSwift */,
+			);
+			productName = "bureau-ios-device-bb";
+			productReference = CEF11AA22AEF9DD80030CBD4 /* bureau-ios-device-bb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEF11AB72AEF9DDB0030CBD4 /* bureau-ios-device-bbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF11ACF2AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bbTests" */;
+			buildPhases = (
+				CEF11AB42AEF9DDB0030CBD4 /* Sources */,
+				CEF11AB52AEF9DDB0030CBD4 /* Frameworks */,
+				CEF11AB62AEF9DDB0030CBD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF11ABA2AEF9DDB0030CBD4 /* PBXTargetDependency */,
+			);
+			name = "bureau-ios-device-bbTests";
+			productName = "bureau-ios-device-bbTests";
+			productReference = CEF11AB82AEF9DDB0030CBD4 /* bureau-ios-device-bbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEF11AC12AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF11AD22AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bbUITests" */;
+			buildPhases = (
+				CEF11ABE2AEF9DDB0030CBD4 /* Sources */,
+				CEF11ABF2AEF9DDB0030CBD4 /* Frameworks */,
+				CEF11AC02AEF9DDB0030CBD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF11AC42AEF9DDB0030CBD4 /* PBXTargetDependency */,
+			);
+			name = "bureau-ios-device-bbUITests";
+			productName = "bureau-ios-device-bbUITests";
+			productReference = CEF11AC22AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEF11A9A2AEF9DD80030CBD4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CEF11AA12AEF9DD80030CBD4 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					CEF11AB72AEF9DDB0030CBD4 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = CEF11AA12AEF9DD80030CBD4;
+					};
+					CEF11AC12AEF9DDB0030CBD4 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = CEF11AA12AEF9DD80030CBD4;
+					};
+				};
+			};
+			buildConfigurationList = CEF11A9D2AEF9DD80030CBD4 /* Build configuration list for PBXProject "bureau-ios-device-bb" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEF11A992AEF9DD80030CBD4;
+			packageReferences = (
+				CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */,
+				CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				CEA4ACC62AF292CF00B2801B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
+			productRefGroup = CEF11AA32AEF9DD80030CBD4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEF11AA12AEF9DD80030CBD4 /* bureau-ios-device-bb */,
+				CEF11AB72AEF9DDB0030CBD4 /* bureau-ios-device-bbTests */,
+				CEF11AC12AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEF11AA02AEF9DD80030CBD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF11AB22AEF9DDA0030CBD4 /* LaunchScreen.storyboard in Resources */,
+				CEF11AE02AEF9F0D0030CBD4 /* Lexend-Bold.ttf in Resources */,
+				CEF11ADE2AEF9F0D0030CBD4 /* Lexend-Light.ttf in Resources */,
+				CEF11AAF2AEF9DDA0030CBD4 /* Assets.xcassets in Resources */,
+				CEF11ADD2AEF9F0D0030CBD4 /* Lexend-Regular.ttf in Resources */,
+				CEF11AAD2AEF9DD80030CBD4 /* Main.storyboard in Resources */,
+				CEF11AD62AEF9E150030CBD4 /* Auth0.plist in Resources */,
+				CEF11ADF2AEF9F0D0030CBD4 /* Lexend-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF11AB62AEF9DDB0030CBD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF11AC02AEF9DDB0030CBD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEF11A9E2AEF9DD80030CBD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF11AF12AF0F29D0030CBD4 /* PINViewController.swift in Sources */,
+				CEF11AEB2AEFA18B0030CBD4 /* BaseViewController.swift in Sources */,
+				CEF11AF32AF0F2E90030CBD4 /* GetStartVC.swift in Sources */,
+				CEF11B082AF138D60030CBD4 /* AppConstant.swift in Sources */,
+				CEF11AE22AEF9F500030CBD4 /* AuthViewController.swift in Sources */,
+				CEF11AF52AF0F39B0030CBD4 /* SigninVC.swift in Sources */,
+				CEF11AED2AEFC4490030CBD4 /* MainViewController.swift in Sources */,
+				CEF11AEF2AEFC4680030CBD4 /* SideMenuViewController.swift in Sources */,
+				CEF11AA62AEF9DD80030CBD4 /* AppDelegate.swift in Sources */,
+				CEF11AF92AF0F7810030CBD4 /* ResultVC.swift in Sources */,
+				CEF11AA82AEF9DD80030CBD4 /* SceneDelegate.swift in Sources */,
+				CEF11AF72AF0F3A70030CBD4 /* RegisterVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF11AB42AEF9DDB0030CBD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF11ABD2AEF9DDB0030CBD4 /* bureau_ios_device_bbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF11ABE2AEF9DDB0030CBD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF11AC92AEF9DDB0030CBD4 /* bureau_ios_device_bbUITestsLaunchTests.swift in Sources */,
+				CEF11AC72AEF9DDB0030CBD4 /* bureau_ios_device_bbUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEF11ABA2AEF9DDB0030CBD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF11AA12AEF9DD80030CBD4 /* bureau-ios-device-bb */;
+			targetProxy = CEF11AB92AEF9DDB0030CBD4 /* PBXContainerItemProxy */;
+		};
+		CEF11AC42AEF9DDB0030CBD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF11AA12AEF9DD80030CBD4 /* bureau-ios-device-bb */;
+			targetProxy = CEF11AC32AEF9DDB0030CBD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEF11AAB2AEF9DD80030CBD4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF11AAC2AEF9DD80030CBD4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEF11AB02AEF9DDA0030CBD4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF11AB12AEF9DDA0030CBD4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEF11ACA2AEF9DDB0030CBD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEF11ACB2AEF9DDB0030CBD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEF11ACD2AEF9DDB0030CBD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "bureau-ios-device-bb/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for Fraud Prevention";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEF11ACE2AEF9DDB0030CBD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "bureau-ios-device-bb/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for Fraud Prevention";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEF11AD02AEF9DDB0030CBD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8VHD2K5NF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waioz.bureau-ios-device-bbTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bureau-ios-device-bb.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bureau-ios-device-bb";
+			};
+			name = Debug;
+		};
+		CEF11AD12AEF9DDB0030CBD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8VHD2K5NF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waioz.bureau-ios-device-bbTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bureau-ios-device-bb.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bureau-ios-device-bb";
+			};
+			name = Release;
+		};
+		CEF11AD32AEF9DDB0030CBD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8VHD2K5NF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waioz.bureau-ios-device-bbUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "bureau-ios-device-bb";
+			};
+			name = Debug;
+		};
+		CEF11AD42AEF9DDB0030CBD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8VHD2K5NF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waioz.bureau-ios-device-bbUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "bureau-ios-device-bb";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEF11A9D2AEF9DD80030CBD4 /* Build configuration list for PBXProject "bureau-ios-device-bb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF11ACA2AEF9DDB0030CBD4 /* Debug */,
+				CEF11ACB2AEF9DDB0030CBD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF11ACC2AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF11ACD2AEF9DDB0030CBD4 /* Debug */,
+				CEF11ACE2AEF9DDB0030CBD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF11ACF2AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF11AD02AEF9DDB0030CBD4 /* Debug */,
+				CEF11AD12AEF9DDB0030CBD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF11AD22AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bbUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF11AD32AEF9DDB0030CBD4 /* Debug */,
+				CEF11AD42AEF9DDB0030CBD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEA4ACC62AF292CF00B2801B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEA4ACC72AF292D000B2801B /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA4ACC62AF292CF00B2801B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		CEF11AE52AEF9FB20030CBD4 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
+		};
+		CEF11AE82AEF9FBE0030CBD4 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CEF11A9A2AEF9DD80030CBD4 /* Project object */;
+}
