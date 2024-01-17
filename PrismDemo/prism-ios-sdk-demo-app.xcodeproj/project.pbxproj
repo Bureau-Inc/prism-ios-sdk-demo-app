@@ -19,7 +19,6 @@
 		1889BD4A2A0D059E00E377DE /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; };
 		18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; };
 		18A73F2D28B507FC00867795 /* prism_ios_native_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18A73F2A28B507F000867795 /* prism_ios_native_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		18A73F3028B5098A00867795 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 18A73F2F28B5098A00867795 /* Auth0 */; };
 		18A73F3228B50A5700867795 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A73F3128B50A5700867795 /* Auth0.plist */; };
 		18A740DA28B5FB9000867795 /* BureauLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A740D928B5FB9000867795 /* BureauLogo.png */; };
 		18A740DC28B5FD4C00867795 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A740DB28B5FD4C00867795 /* AuthViewController.swift */; };
@@ -35,6 +34,7 @@
 		18D9EBC728DC8604007FCE2B /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9EBC628DC8604007FCE2B /* SuccessViewController.swift */; };
 		CE21C9782A4AFF1D0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */; };
 		CE21C9792A4AFF1D0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE21C9762A4AE06B0011EF09 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE43AE9B2B175C5D0041510F /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = CE43AE9A2B175C5D0041510F /* Auth0 */; };
 		CEAACBF52A82799D002F44C3 /* liveness_checker_ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAACBF32A827991002F44C3 /* liveness_checker_ios.xcframework */; };
 		CEAACBF62A82799D002F44C3 /* liveness_checker_ios.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEAACBF32A827991002F44C3 /* liveness_checker_ios.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEAACBFA2A8281DB002F44C3 /* LivenessPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACBF92A8281DB002F44C3 /* LivenessPageVC.swift */; };
@@ -113,8 +113,8 @@
 				18A73F2C28B507FC00867795 /* prism_ios_native_sdk.xcframework in Frameworks */,
 				CE21C9782A4AFF1D0011EF09 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
 				CEAACBF52A82799D002F44C3 /* liveness_checker_ios.xcframework in Frameworks */,
+				CE43AE9B2B175C5D0041510F /* Auth0 in Frameworks */,
 				18D9EBC128DC3842007FCE2B /* SideMenu in Frameworks */,
-				18A73F3028B5098A00867795 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +269,8 @@
 			);
 			name = "prism-ios-sdk-demo-app";
 			packageProductDependencies = (
-				18A73F2F28B5098A00867795 /* Auth0 */,
 				18D9EBC028DC3842007FCE2B /* SideMenu */,
+				CE43AE9A2B175C5D0041510F /* Auth0 */,
 			);
 			productName = "prism-ios-sdk-demo-app";
 			productReference = 1823E4F928488CB500E9A1A1 /* prism-ios-sdk-demo-app.app */;
@@ -345,8 +345,8 @@
 			);
 			mainGroup = 1823E4F028488CB500E9A1A1;
 			packageReferences = (
-				18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */,
 				18D9EBBF28DC3842007FCE2B /* XCRemoteSwiftPackageReference "SideMenu" */,
+				CE43AE992B175C5D0041510F /* XCRemoteSwiftPackageReference "Auth0" */,
 			);
 			productRefGroup = 1823E4FA28488CB500E9A1A1 /* Products */;
 			projectDirPath = "";
@@ -790,14 +790,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/auth0/Auth0.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		18D9EBBF28DC3842007FCE2B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
@@ -806,18 +798,26 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		CE43AE992B175C5D0041510F /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		18A73F2F28B5098A00867795 /* Auth0 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 18A73F2E28B5098A00867795 /* XCRemoteSwiftPackageReference "Auth0" */;
-			productName = Auth0;
-		};
 		18D9EBC028DC3842007FCE2B /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 18D9EBBF28DC3842007FCE2B /* XCRemoteSwiftPackageReference "SideMenu" */;
 			productName = SideMenu;
+		};
+		CE43AE9A2B175C5D0041510F /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE43AE992B175C5D0041510F /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

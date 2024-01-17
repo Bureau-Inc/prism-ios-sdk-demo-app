@@ -7,11 +7,17 @@
 
 import UIKit
 import SideMenu
+import CoreLocation
 
 class MainViewController: BaseViewController {
     
     @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     var accessToken:String!
+    var org_id:String?
+    
+    var locationManager = CLLocationManager()
+    var location:CLLocation?
+    
     var arrCrentials = [NSDictionary]()
     @IBOutlet weak var bioMatricView: UIView!
     @IBOutlet weak var diView: UIView!
@@ -21,9 +27,15 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         accessToken = getUserData?.value(forKey: "accessToken") as? String
+        org_id = getUserData?.value(forKey: "org_id") as? String
+
         bioMatricView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
         diView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
         getCredentials()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
     }
     
     @IBAction func menuAct(_ sender: Any) {
@@ -42,6 +54,7 @@ class MainViewController: BaseViewController {
         if behaviourSwitch.isOn{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let VC = storyboard.instantiateViewController(withIdentifier: "PINViewController") as! PINViewController
+            VC.isBBEnable = behaviourSwitch.isOn
             self.navigationController?.pushViewController(VC, animated: true)
 
         }else{
@@ -55,16 +68,17 @@ class MainViewController: BaseViewController {
     
     func getCredentials(){
         spinnerView.startAnimating()
-        var request = URLRequest(url: URL(string: "https://api.overwatch.stg.bureau.id/v1/auth/list")!)
+        var request = URLRequest(url: URL(string: "https://api.overwatch.bureau.id/v1/auth/list")!)
         request.httpMethod = "GET"
+        request.addValue(org_id ?? "", forHTTPHeaderField: "X-Bureau-Auth-Org-Id")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        print("Bearer \(accessToken ?? "")")
         request.addValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        print("Bearer \(accessToken ?? "")")
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
                 self.arrCrentials = try JSONSerialization.jsonObject(with: data!) as? [NSDictionary] ?? []
-                print(self.arrCrentials)
+                UserDefaults.standard.set(self.arrCrentials.first?.value(forKey: "credentialId") as? String, forKey: "credentialId")
             } catch {
                 print("error")
             }
@@ -88,5 +102,13 @@ extension SideMenuPresentationStyle {
         item.backgroundColor = .black
         item.presentingEndAlpha = 0.4
         return item
+    }
+}
+
+extension MainViewController: CLLocationManagerDelegate{
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        manager.stopUpdatingLocation()
+        manager.delegate = nil
     }
 }

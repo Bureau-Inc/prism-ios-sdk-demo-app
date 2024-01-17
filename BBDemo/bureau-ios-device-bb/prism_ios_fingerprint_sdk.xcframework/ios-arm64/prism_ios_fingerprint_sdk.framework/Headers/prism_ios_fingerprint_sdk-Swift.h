@@ -308,6 +308,38 @@ SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk9BureauAPI")
 
 
 
+@class UIScrollView;
+
+SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk20UserBehaviourCapture")
+@interface UserBehaviourCapture : UIViewController <UIScrollViewDelegate>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+@class UIGestureRecognizer;
+@class UITouch;
+
+@interface UserBehaviourCapture (SWIFT_EXTENSION(prism_ios_fingerprint_sdk)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class UITextField;
+
+@interface UserBehaviourCapture (SWIFT_EXTENSION(prism_ios_fingerprint_sdk)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+@end
+
+@class NSURLSession;
+@class NSURLSessionWebSocketTask;
+@class NSURLSessionTask;
+
+@interface UserBehaviourCapture (SWIFT_EXTENSION(prism_ios_fingerprint_sdk)) <NSURLSessionWebSocketDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didOpenWithProtocol:(NSString * _Nullable)protocol;
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
+@end
+
 #endif
 #if defined(__cplusplus)
 #endif

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE43AEA82B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */; };
+		CE43AEA92B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA4ACC72AF292D000B2801B /* IQKeyboardManagerSwift */; };
 		CEF11AA62AEF9DD80030CBD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */; };
 		CEF11AA82AEF9DD80030CBD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */; };
@@ -32,8 +34,6 @@
 		CEF11AF52AF0F39B0030CBD4 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */; };
 		CEF11AF72AF0F3A70030CBD4 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */; };
 		CEF11AF92AF0F7810030CBD4 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */; };
-		CEF11B052AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */; };
-		CEF11B062AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEF11B082AF138D60030CBD4 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11B072AF138D60030CBD4 /* AppConstant.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CEF11B062AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
+				CE43AEA92B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
 		CEF11AA22AEF9DD80030CBD4 /* bureau-ios-device-bb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bureau-ios-device-bb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
-		CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
 		CEF11B072AF138D60030CBD4 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF11B052AF120320030CBD4 /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
 				CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */,
+				CE43AEA82B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
 				CEF11AE92AEF9FBE0030CBD4 /* SideMenu in Frameworks */,
 				CEF11AE62AEF9FB20030CBD4 /* Auth0 in Frameworks */,
 			);
@@ -154,7 +154,7 @@
 				CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */,
 				CEF11B072AF138D60030CBD4 /* AppConstant.swift */,
 				CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */,
-				CEF11B032AF1202E0030CBD4 /* prism_ios_fingerprint_sdk.xcframework */,
+				CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */,
 				CEF11AE32AEF9F550030CBD4 /* ViewControllers */,
 				CEF11AAB2AEF9DD80030CBD4 /* Main.storyboard */,
 				CEF11AAE2AEF9DDA0030CBD4 /* Assets.xcassets */,
@@ -553,32 +553,36 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "bureau-ios-device-bb/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for Fraud Prevention";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bureau Behaviour Device AI";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We require your location for fraud prevention and to enhance your experience. This information helps us ensure the security of our services and provide you with relevant content based on your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We require your location for fraud prevention and to enhance your experience. This information helps us ensure the security of our services and provide you with relevant content based on your location.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use device identification for fraud prevention to ensure the security and integrity of our services. This helps us protect against unauthorized activities and maintain a safe environment for all users.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bureau.deviceBB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Bureau BB DI Dev";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -589,32 +593,36 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X8VHD2K5NF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "bureau-ios-device-bb/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App would like to access Location for Fraud Prevention";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for Fraud Prevention";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bureau Behaviour Device AI";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We require your location for fraud prevention and to enhance your experience. This information helps us ensure the security of our services and provide you with relevant content based on your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We require your location for fraud prevention and to enhance your experience. This information helps us ensure the security of our services and provide you with relevant content based on your location.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use device identification for fraud prevention to ensure the security and integrity of our services. This helps us protect against unauthorized activities and maintain a safe environment for all users.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bureau.prism-ios-native-sdk-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bureau.deviceBB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PrismSDKDev;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Bureau BB DI Dev";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

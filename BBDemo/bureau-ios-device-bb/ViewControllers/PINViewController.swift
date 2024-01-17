@@ -11,9 +11,12 @@ class PINViewController: UIViewController {
 
     @IBOutlet weak var pinTF: UITextField!
     @IBOutlet weak var pinView: UIView!
+
+    var isBBEnable = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pinTF.text = "000000"
         pinView.layer.borderColor = UIColor.systemGray5.cgColor
     }
     
@@ -21,6 +24,7 @@ class PINViewController: UIViewController {
         if pinTF.text == "000000"{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let VC = storyboard.instantiateViewController(withIdentifier: "GetStartVC") as! GetStartVC
+            VC.isBBEnable = isBBEnable
             self.navigationController?.pushViewController(VC, animated: true)
         }else{
             print("Incorrect PIN")

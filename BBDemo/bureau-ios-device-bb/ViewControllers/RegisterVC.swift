@@ -16,6 +16,8 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var userIDInnerView: UIView!
     @IBOutlet weak var pwdInnerView: UIView!
     
+    var isBBEnable = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userIDInnerView.layer.borderColor = UIColor.systemGray5.cgColor
@@ -24,14 +26,26 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func submitAct(_ sender: UIButton) {
-        if sender.currentTitle == "Next"{
-            passwordView.isHidden = false
-            sender.setTitle("Create User ID", for: .normal)
+        if userIdTF.text?.trimmingCharacters(in: .whitespaces) == ""{
+            self.showAlert(title: "Error", message: "Invalid Email")
         }else{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let VC = storyboard.instantiateViewController(withIdentifier: "ResultVC") as! ResultVC
-            self.navigationController?.pushViewController(VC, animated: true)
+            if sender.currentTitle == "Next"{
+                passwordView.isHidden = false
+                sender.setTitle("Create User ID", for: .normal)
+            }else{
+                if passwordTF.text?.trimmingCharacters(in: .whitespaces) == ""{
+                    self.showAlert(title: "Error", message: "Invalid password")
+                }else{
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let VC = storyboard.instantiateViewController(withIdentifier: "ResultVC") as! ResultVC
+                    VC.userName = userIdTF.text
+                    VC.password = passwordTF.text
+                    VC.isBBEnable = isBBEnable
+                    self.navigationController?.pushViewController(VC, animated: true)
+                }
+            }
         }
+        
     }
     
     @IBAction func popAct(_ sender: Any) {

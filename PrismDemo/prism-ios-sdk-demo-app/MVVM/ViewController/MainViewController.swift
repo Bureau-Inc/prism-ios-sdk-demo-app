@@ -12,10 +12,12 @@ class MainViewController: BaseViewController {
     
     @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     var accessToken:String!
+    var org_id:String!
     var arrCrentials = [NSDictionary]()
     override func viewDidLoad() {
         super.viewDidLoad()
         accessToken = getUserData?.value(forKey: "accessToken") as? String
+        org_id = getUserData?.value(forKey: "org_id") as? String
         getCredentials()
     }
     
@@ -57,6 +59,7 @@ class MainViewController: BaseViewController {
         var request = URLRequest(url: URL(string: "https://api.overwatch.stg.bureau.id/v1/auth/list")!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(org_id, forHTTPHeaderField: "X-Bureau-Auth-Org-Id")
         print("Bearer \(accessToken ?? "")")
         request.addValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared

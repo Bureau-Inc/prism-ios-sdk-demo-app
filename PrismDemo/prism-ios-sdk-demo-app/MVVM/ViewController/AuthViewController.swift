@@ -28,16 +28,17 @@ class AuthViewController: BaseViewController {
                 self.accessToken = credentials.accessToken
                 guard let jwt = try? decode(jwt: credentials.idToken),
                       let name = jwt["name"].string,
-                      let picture = jwt["picture"].string else { return }
+                      let picture = jwt["picture"].string,
+                        let org_id = jwt["org_id"].string else { return }
                 print("Name: \(name)")
                 print("Picture URL: \(picture)")
-                let userDic = ["accessToken" : self.accessToken, "userID": jwt["sub"].string, "userName" : name, "picture" : picture]
+                print("org_id: \(org_id)")
+                print(jwt)
+                let userDic = ["accessToken" : self.accessToken, "userID": jwt["sub"].string, "userName" : name, "picture" : picture, "org_id" : org_id]
                 try? UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: userDic,requiringSecureCoding: true), forKey: "USERDATA")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let VC = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
                 self.navigationController?.pushViewController(VC, animated: true)
-
-                
             case .failure(let error):
                 self.spinner.stopAnimating()
                 print("Failed with: \(error)")

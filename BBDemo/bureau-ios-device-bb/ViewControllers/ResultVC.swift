@@ -14,7 +14,19 @@ class ResultVC: UIViewController {
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var bioWarnView: UIView!
     @IBOutlet weak var bioWarinnerView: UIView!
+    @IBOutlet weak var bioResultView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    @IBOutlet weak var bioRiskLevelView: UIView!
+    @IBOutlet weak var bioRiskIco: UIImageView!
+    @IBOutlet weak var bioRistTitle: UILabel!
+    @IBOutlet weak var bioRiskValue: UILabel!
+    @IBOutlet weak var bioRiskScore: UILabel!
+    @IBOutlet weak var appFamiliScore: UILabel!
+    @IBOutlet weak var dataFamiliScore: UILabel!
+    @IBOutlet weak var exportUserScore: UILabel!
+    @IBOutlet weak var botScore: UILabel!
+    
     
     @IBOutlet weak var riskLevelView: UIView!
     @IBOutlet weak var riskIco: UIImageView!
@@ -87,6 +99,8 @@ class ResultVC: UIViewController {
     @IBOutlet weak var gpsLocLbl: UILabel!
     @IBOutlet weak var iplocationLbl: UILabel!
     @IBOutlet weak var fingerprintIDLbl: UILabel!
+    @IBOutlet weak var ispLbl: UILabel!
+    
     
     @IBOutlet weak var iplatlong: UILabel!
     @IBOutlet weak var ipTypeLbl: UILabel!
@@ -107,40 +121,55 @@ class ResultVC: UIViewController {
     var locationManager = CLLocationManager()
     var location:CLLocation?
     
+    var userName:String?
+    var password:String?
+    var isBBEnable:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
         spinner.startAnimating()
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.startUpdatingLocation()
+//        self.locationManager.delegate = self
+//        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        self.locationManager.requestAlwaysAuthorization()
+//        self.locationManager.startUpdatingLocation()
+        if isBBEnable ?? false{
+            checkPriorityUser((userName ?? "") + ("@newbank.com") + (password ?? ""))
+        }
         InitSDK()
     }
     
     func InitSDK(){
+        let _ = UserDefaults.standard.string(forKey: "credentialId")
         sessionID = "Demo-"+NSUUID().uuidString
-        entrypoint = BureauAPI(clientID: "1b87dd79-8504-425c-90c3-56f4cad27b0f", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
+//        entrypoint = BureauAPI(clientID: "1b87dd79-8504-425c-90c3-56f4cad27b0f", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
+
+        entrypoint = BureauAPI(clientID: "1896dd6b-024f-400c-b38a-623d92e39dd7", environment: .production, sessionID: sessionID ?? "", refVC: self)
         entrypoint?.fingerprintDelegate = self
-        entrypoint?.setUserID("demo-user")
+        entrypoint?.setUserID(userName ?? "")
         entrypoint?.submit()
     }
     
     func loadSessionData(sessionID:String){
-        guard let serviceUrl = URL(string: ("https://api.overwatch.dev.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
+//        guard let serviceUrl = URL(string: ("https://api.overwatch.dev.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
+
+        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
         var request = URLRequest(url: serviceUrl)
-        print(request)
         request.httpMethod = "GET"
-        request.setValue("Basic OTA1MmU3MjEtZTJkMS00NDk5LWFmMTItYzk2OGI5OGRjN2M5OmI3N2IzMmM0LWFlMjEtNDAwZi1hMDhhLWU0YWU0MzJhYTNjMA==", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic MTg5NmRkNmItMDI0Zi00MDBjLWIzOGEtNjIzZDkyZTM5ZGQ3OjcxYmYxZDQwLWRjMjctNGE5Zi05YWE0LTZlYzllOWM2NzgwMQ==", forHTTPHeaderField: "Authorization")
+//        request.setValue("Basic OTA1MmU3MjEtZTJkMS00NDk5LWFmMTItYzk2OGI5OGRjN2M5OmI3N2IzMmM0LWFlMjEtNDAwZi1hMDhhLWU0YWU0MzJhYTNjMA==", forHTTPHeaderField: "Authorization")
+
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 self.spinner.stopAnimating()
                 self.spinnerView.isHidden = true
+                self.showAlert(title: "Error", message: error?.localizedDescription ?? "Failed Get Fingerprint API")
                 return
             }
+            print( NSString(data: data, encoding: NSUTF8StringEncoding)! as String)
+
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? NSDictionary {
                 print(responseJSON)
@@ -220,11 +249,12 @@ class ResultVC: UIViewController {
             gpsLong.text = String(dic.value(forKeyPath: "GPSLocation.longitude") as? Double ?? 0.0)
         }
         fingerprintIDLbl.text = (dic.value(forKeyPath: "fingerprint") as? String)
+        ispLbl.text = (dic.value(forKeyPath: "networkInformation.isp") as? String)
         ipTypeLbl.text = (dic.value(forKeyPath: "networkInformation.ipType") as? String)?.capitalized
         threadLvlLbl.text = (dic.value(forKeyPath: "IPSecurity.threat_level") as? String)?.capitalized
         firstSeen.text = String()
         var dateComponents = DateComponents()
-        dateComponents.day = dic.value(forKeyPath: "firstSeenDays") as? Int ?? 0
+        dateComponents.day =  -(dic.value(forKeyPath: "firstSeenDays") as? Int ?? 0)
         let currentYear = Calendar.current.component(.year, from: Date())
         dateComponents.year = currentYear
         if let date = Calendar.current.date(from: dateComponents){
@@ -240,43 +270,77 @@ class ResultVC: UIViewController {
         uniqueUserID.text = uniqueUserIds
         userID.text = dic.value(forKeyPath: "userId") as? String
         CSScore.text = String(dic.value(forKeyPath: "confidenceScore") as? Double ?? 0.0)
-        
-
-        //firstSeen.text = (dic.value(forKeyPath: "firstSeenDays") as? String)
-         
-        
-//        if((dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0 || (dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0){
-//            GPSLocationView.isHidden = true
-//        }else{
-//            GPSLocationView.isHidden = false
-//        }
-//        gpsCityNameLbl.text = dic.value(forKeyPath: "GPSLocation.city") as? String
-//        gpsCountryNameLbl.text = dic.value(forKeyPath: "GPSLocation.country") as? String
-//        gpsLatLbl.text = String(dic.value(forKeyPath: "GPSLocation.latitude") as? Double ?? 0.0)
-//        gpsLongLbl.text = String(dic.value(forKeyPath: "GPSLocation.longitude") as? Double ?? 0.0)
-//        gpsRegionLbl.text = dic.value(forKeyPath: "GPSLocation.region") as? String
-//
-//        IPCityNameLbl.text = dic.value(forKeyPath: "IPLocation.city") as? String
-//        IPcountryNameLbl.text = dic.value(forKeyPath: "IPLocation.country") as? String
-//        IPlatLbl.text = String(dic.value(forKeyPath: "IPLocation.latitude") as? Double ?? 0.0)
-//        IPlongLbl.text = String(dic.value(forKeyPath: "IPLocation.longitude") as? Double ?? 0.0)
-//        IPregionLbl.text = dic.value(forKeyPath: "IPLocation.region") as? String
-//
-//        crawlerLbl.text = CheckBool(dic.value(forKeyPath: "IPSecurity.is_crawler") as? Bool)
-//        proxyLbl.text = CheckBool((dic.value(forKeyPath: "IPSecurity.VPN") as? Bool))
-//        torLbl.text = CheckBool(dic.value(forKeyPath: "IPSecurity.is_tor") as? Bool)
-//        threatLevelLbl.text = dic.value(forKeyPath: "IPSecurity.threat_level") as? String
-//        debuggableLbl.text = CheckBool(dic.value(forKeyPath: "debuggable") as? Bool)
-//        simulatorLbl.text = CheckBool(dic.value(forKeyPath: "emulator") as? Bool)
-//        mockGPSLbl.text = CheckBool(dic.value(forKeyPath: "mockgps") as? Bool)
-//        screenMirrorLbl.text = CheckBool(dic.value(forKeyPath: "remoteDesktop") as? Bool)
-//        finerprintIDLbl.text = (dic.value(forKeyPath: "fingerprint") as? String)
-//        DeviceModelLbl.text = (dic.value(forKeyPath: "model") as? String)
-//        appPackageLbl.text = (dic.value(forKeyPath: "package") as? String)
-//        rootedLbl.text = CheckBool(dic.value(forKeyPath: "jailbreak") as? Bool)
-//        sessionIDTxt.text = (dic.value(forKeyPath: "sessionId") as? String)
-//        OSLbl.text = (dic.value(forKeyPath: "OS") as? String)
-//        firstSeenLbl.text = String(dic.value(forKeyPath: "firstSeenDays") as? Int ?? 0)
+    }
+    @IBAction func restartAct(_ sender: Any) {
+        let alertController = UIAlertController(title: "Bureau Device Intelligence", message: "Do you want to restart?", preferredStyle: .alert)
+        let cancelButton = UIAlertAction(title: "NO", style: .cancel) { (action) in
+            print("Cancel tapped")
+        }
+        let okayButton = UIAlertAction(title: "YES", style: .default) { (action) in
+            self.navigationController?.backToViewController(viewController: MainViewController.self)
+        }
+        alertController.addAction(cancelButton)
+        alertController.addAction(okayButton)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func checkPriorityUser(_ userID:String?){
+        setBehaviouralData()
+        var riskLevel = 0
+        switch userID {
+        case "johnwick123@newbank.com12345678", "ganesh@newbank.com12345678":
+            let riskValue = Int.random(in: 10 ... 25)
+            bioRiskScore.text = String(riskValue)
+            bioRiskScore.textColor = AppConstant.RedTitleColor
+            riskLevel = AppConstant.VIEW_NEGATIVE
+        case "johnwick123@newbank.com123456789", "ganesh@newbank.com123456789":
+            let riskValue = Int.random(in: 80 ... 97)
+            bioRiskScore.text = String(riskValue)
+            bioRiskScore.textColor = AppConstant.GreenTitleColor
+            riskLevel = AppConstant.VIEW_POSITIVE
+        case "marypoppins123@newbank.com123456780", "ganesh@newbank.com123456780":
+            let riskValue = Int.random(in: 10 ... 25)
+            bioRiskScore.text = String(riskValue)
+            bioRiskScore.textColor = AppConstant.RedTitleColor
+            riskLevel = AppConstant.VIEW_NEGATIVE
+            break
+        case "marypoppins123@newbank.com1234567890", "ganesh@newbank.com1234567890":
+            let riskValue = Int.random(in: 80 ... 97)
+            bioRiskScore.text = String(riskValue)
+            bioRiskScore.textColor = AppConstant.GreenTitleColor
+            riskLevel = AppConstant.VIEW_POSITIVE
+        default:
+            bioWarnView.isHidden = false
+            bioResultView.isHidden = true
+        }
+        setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, riskLevel)
+    }
+    
+    private func setBehaviouralData() {
+        showBehaviouralBiometrics()
+        updateDeviceBehaviouralData(self.appFamiliScore, AppConstant.medium)
+        updateDeviceBehaviouralData(self.dataFamiliScore, AppConstant.High)
+        updateDeviceBehaviouralData(self.exportUserScore, AppConstant.High)
+        updateDeviceBehaviouralData(self.botScore, AppConstant.Low)
+    }
+    
+    private func updateDeviceBehaviouralData(_ valueId: UILabel, _ value: String) {
+        valueId.text = value
+        var titleColor:UIColor?
+        switch value {
+        case AppConstant.High:
+            titleColor = AppConstant.RedTitleColor
+        case AppConstant.medium:
+            titleColor = AppConstant.OrangeTitleColor
+        default:
+            titleColor = AppConstant.GreenTitleColor
+        }
+        valueId.textColor = titleColor
+    }
+    
+    func showBehaviouralBiometrics(){
+        bioWarnView.isHidden = true
+        bioResultView.isHidden = false
     }
     
     func setViewTheme(_ bgView:UIView, _ titleLbl:UILabel, _ valueLbl:UILabel, _ icon:UIImageView, _ viewType: Int){
@@ -304,12 +368,14 @@ class ResultVC: UIViewController {
     
 }
 
-extension ResultVC: CLLocationManagerDelegate{
-    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        InitSDK()
-        manager.delegate = nil
-    }
-}
+//extension ResultVC: CLLocationManagerDelegate{
+//    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+//    {
+//        InitSDK()
+//        manager.stopUpdatingLocation()
+//        manager.delegate = nil
+//    }
+//}
 
 extension ResultVC : PrismFingerPrintDelegate{
     func onFinished(data: [String : Any]?) {
@@ -320,13 +386,13 @@ extension ResultVC : PrismFingerPrintDelegate{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
-                //self.view.makeToast(apiResponse?.value(forKeyPath: "errors.errorCode") as? String ?? "")
+                print("apiResponse", apiResponse ?? "")
             }
         }else{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
-                //self.view.makeToast(apiResponse?.value(forKeyPath: "error.message") as? String ?? "")
+                print("apiResponse", apiResponse ?? "")
             }
         }
         
