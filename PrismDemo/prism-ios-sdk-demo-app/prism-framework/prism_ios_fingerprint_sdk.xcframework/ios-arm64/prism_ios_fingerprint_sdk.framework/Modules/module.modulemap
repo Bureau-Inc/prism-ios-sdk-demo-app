@@ -1,0 +1,11 @@
+framework module prism_ios_fingerprint_sdk {
+  umbrella header "prism_ios_fingerprint_sdk.h"
+
+  export *
+  module * { export * }
+}
+
+module prism_ios_fingerprint_sdk.Swift {
+  header "prism_ios_fingerprint_sdk-Swift.h"
+  requires objc
+}
