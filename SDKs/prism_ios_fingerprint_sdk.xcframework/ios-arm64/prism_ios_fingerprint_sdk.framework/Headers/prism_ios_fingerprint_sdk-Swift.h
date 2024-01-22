@@ -279,6 +279,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import CoreLocation;
 @import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -300,15 +301,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-@class NSCoder;
-@class NSString;
-@class NSBundle;
 
 SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk9BureauAPI")
-@interface BureauAPI : UIViewController
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@interface BureauAPI : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BureauAPI * _Nonnull shared;)
++ (BureauAPI * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)submit;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
 @class CLLocationManager;
@@ -324,6 +324,45 @@ SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk9BureauAPI")
 
 
 
+
+@class NSCoder;
+@class UIScrollView;
+@class NSString;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC25prism_ios_fingerprint_sdk20UserBehaviourCapture")
+@interface UserBehaviourCapture : UIViewController <UIScrollViewDelegate>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+@class UIGestureRecognizer;
+@class UITouch;
+
+@interface UserBehaviourCapture (SWIFT_EXTENSION(prism_ios_fingerprint_sdk)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class NSURLSession;
+@class NSURLSessionWebSocketTask;
+@class NSData;
+@class NSURLSessionTask;
+
+@interface UserBehaviourCapture (SWIFT_EXTENSION(prism_ios_fingerprint_sdk)) <NSURLSessionWebSocketDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didOpenWithProtocol:(NSString * _Nullable)protocol;
+- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didCloseWithCode:(NSURLSessionWebSocketCloseCode)closeCode reason:(NSData * _Nullable)reason;
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
+@end
+
+@class UITextField;
+
+@interface UserBehaviourCapture (SWIFT_EXTENSION(prism_ios_fingerprint_sdk)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textFieldShouldBeginEditing:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
+@end
 
 #endif
 #if __has_attribute(external_source_symbol)

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name prism_ios_fingerprint_sdk
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -10,6 +10,7 @@ import SystemConfiguration.CaptiveNetwork
 import CommonCrypto
 import CoreGraphics
 import CoreLocation
+import CoreMotion
 import CryptoKit
 import Dispatch
 import Foundation
@@ -24,6 +25,7 @@ import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 @_exported import prism_ios_fingerprint_sdk
 public struct BinaryDecodingOptions : Swift.Sendable {
   public var messageDepthLimit: Swift.Int
@@ -103,17 +105,20 @@ extension prism_ios_fingerprint_sdk.DeviceInfoProvider : prism_ios_fingerprint_s
   #endif
   public func getDeviceInfo(_ completion: @escaping (prism_ios_fingerprint_sdk.DeviceInfo) -> Swift.Void)
 }
-@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class BureauAPI : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public var delegate: UIKit.UIViewController?
-  @_Concurrency.MainActor(unsafe) public var fingerprintDelegate: (any prism_ios_fingerprint_sdk.PrismFingerPrintDelegate)?
-  @_Concurrency.MainActor(unsafe) required public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", refVC: UIKit.UIViewController)
-  @_Concurrency.MainActor(unsafe) public func setUserID(_ userId: Swift.String)
-  @objc @_Concurrency.MainActor(unsafe) public func submit()
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BureauAPI : ObjectiveC.NSObject {
+  public var delegate: UIKit.UIViewController?
+  public var fingerprintDelegate: (any prism_ios_fingerprint_sdk.PrismFingerPrintDelegate)?
+  @objc public static let shared: prism_ios_fingerprint_sdk.BureauAPI
+  public func configure(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", enableBehavioralBiometrics: Swift.Bool)
+  required public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", refVC: UIKit.UIViewController, enableBehavioralBiometrics: Swift.Bool)
+  public func startSession()
+  public func setUserID(_ userId: Swift.String)
+  @objc public func submit()
   @objc deinit
 }
 extension prism_ios_fingerprint_sdk.BureauAPI : CoreLocation.CLLocationManagerDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
 }
 public struct CredentialBuilder {
 }
@@ -138,20 +143,24 @@ public protocol ProtobufAPIVersionCheck {
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class UserBehaviourCapture : UIKit.UIViewController, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) public var prismBehaviouralDelegate: (any prism_ios_fingerprint_sdk.PrismBehaviouralDelegate)?
   @_Concurrency.MainActor(unsafe) public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "")
-  @_Concurrency.MainActor(unsafe) public func startSession(limit: Swift.Int)
+  @_Concurrency.MainActor(unsafe) public func startSession()
+  @_Concurrency.MainActor(unsafe) public func setUserID(_ userId: Swift.String)
   @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func stopSession()
+  @_Concurrency.MainActor(unsafe) public func stopSession() -> [Swift.String : Any]
   @objc deinit
 }
 extension prism_ios_fingerprint_sdk.UserBehaviourCapture : UIKit.UITextFieldDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
 }
 extension prism_ios_fingerprint_sdk.UserBehaviourCapture : UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
 }
 extension prism_ios_fingerprint_sdk.UserBehaviourCapture : Foundation.URLSessionWebSocketDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didOpenWithProtocol protocol: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didCloseWith closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data?)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
 }
 public protocol PrismBehaviouralDelegate : ObjectiveC.NSObject {

@@ -9,7 +9,7 @@ import UIKit
 import prism_ios_fingerprint_sdk
 import CoreLocation
 
-class ResultVC: UIViewController {
+class ResultVC: BaseViewController {
 
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var bioWarnView: UIView!
@@ -22,11 +22,17 @@ class ResultVC: UIViewController {
     @IBOutlet weak var bioRistTitle: UILabel!
     @IBOutlet weak var bioRiskValue: UILabel!
     @IBOutlet weak var bioRiskScore: UILabel!
-    @IBOutlet weak var appFamiliScore: UILabel!
-    @IBOutlet weak var dataFamiliScore: UILabel!
-    @IBOutlet weak var exportUserScore: UILabel!
-    @IBOutlet weak var botScore: UILabel!
     
+    @IBOutlet weak var userFamiliScore: UILabel!
+    @IBOutlet weak var botScore: UILabel!
+    @IBOutlet weak var autoFillScore: UILabel!
+    @IBOutlet weak var bPushActivityScore: UILabel!
+    @IBOutlet weak var sessionDurationLbl: UILabel!
+    @IBOutlet weak var swipeActivityScore: UILabel!
+    @IBOutlet weak var copyPasteLbl: UILabel!
+    @IBOutlet weak var fieldFocusLbl: UILabel!
+    
+
     
     @IBOutlet weak var riskLevelView: UIView!
     @IBOutlet weak var riskIco: UIImageView!
@@ -93,6 +99,26 @@ class ResultVC: UIViewController {
     @IBOutlet weak var cdTitle: UILabel!
     @IBOutlet weak var cdValue: UILabel!
     
+    @IBOutlet weak var accModeView: UIView!
+    @IBOutlet weak var accModeIco: UIImageView!
+    @IBOutlet weak var accModeTitle: UILabel!
+    @IBOutlet weak var accModeValue: UILabel!
+    
+    @IBOutlet weak var devModeView: UIView!
+    @IBOutlet weak var devModeIco: UIImageView!
+    @IBOutlet weak var devModeTitle: UILabel!
+    @IBOutlet weak var devModeValue: UILabel!
+    
+    @IBOutlet weak var adbView: UIView!
+    @IBOutlet weak var adbIco: UIImageView!
+    @IBOutlet weak var adbTitle: UILabel!
+    @IBOutlet weak var adbValue: UILabel!
+    
+    @IBOutlet weak var isAppstoreView: UIView!
+    @IBOutlet weak var isAppstoreIco: UIImageView!
+    @IBOutlet weak var isAppstoreTitle: UILabel!
+    @IBOutlet weak var isAppstoreValue: UILabel!
+    
     
     @IBOutlet weak var osLbl: UILabel!
     @IBOutlet weak var ipaddressLbl: UILabel!
@@ -116,8 +142,7 @@ class ResultVC: UIViewController {
     @IBOutlet weak var gpsLong: UILabel!
     
     
-    var entrypoint:BureauAPI?
-    var sessionID:String?
+    
     var locationManager = CLLocationManager()
     var location:CLLocation?
     
@@ -133,31 +158,29 @@ class ResultVC: UIViewController {
 //        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
 //        self.locationManager.requestAlwaysAuthorization()
 //        self.locationManager.startUpdatingLocation()
-        if isBBEnable ?? false{
-            checkPriorityUser((userName ?? "") + ("@newbank.com") + (password ?? ""))
-        }
         InitSDK()
     }
     
     func InitSDK(){
         let _ = UserDefaults.standard.string(forKey: "credentialId")
-        sessionID = "Demo-"+NSUUID().uuidString
-//        entrypoint = BureauAPI(clientID: "1b87dd79-8504-425c-90c3-56f4cad27b0f", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
-
-        entrypoint = BureauAPI(clientID: "1896dd6b-024f-400c-b38a-623d92e39dd7", environment: .production, sessionID: sessionID ?? "", refVC: self)
-        entrypoint?.fingerprintDelegate = self
-        entrypoint?.setUserID(userName ?? "")
-        entrypoint?.submit()
+        
+//        entrypoint = BureauAPI(clientID: "1896dd6b-024f-400c-b38a-623d92e39dd7", environment: .production, sessionID: sessionID ?? "", refVC: self)
+//        entrypoint?.fingerprintDelegate = self
+//        entrypoint?.setUserID(userName ?? "")
+//        entrypoint?.submit()
+        
+        BureauAPI.shared.fingerprintDelegate = self
+        BureauAPI.shared.submit()
     }
     
     func loadSessionData(sessionID:String){
-//        guard let serviceUrl = URL(string: ("https://api.overwatch.dev.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
+        guard let serviceUrl = URL(string: ("https://api.overwatch.dev.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
 
-        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
+//        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-        request.setValue("Basic MTg5NmRkNmItMDI0Zi00MDBjLWIzOGEtNjIzZDkyZTM5ZGQ3OjcxYmYxZDQwLWRjMjctNGE5Zi05YWE0LTZlYzllOWM2NzgwMQ==", forHTTPHeaderField: "Authorization")
-//        request.setValue("Basic OTA1MmU3MjEtZTJkMS00NDk5LWFmMTItYzk2OGI5OGRjN2M5OmI3N2IzMmM0LWFlMjEtNDAwZi1hMDhhLWU0YWU0MzJhYTNjMA==", forHTTPHeaderField: "Authorization")
+//        request.setValue("Basic MTg5NmRkNmItMDI0Zi00MDBjLWIzOGEtNjIzZDkyZTM5ZGQ3OjcxYmYxZDQwLWRjMjctNGE5Zi05YWE0LTZlYzllOWM2NzgwMQ==", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic OTA1MmU3MjEtZTJkMS00NDk5LWFmMTItYzk2OGI5OGRjN2M5OmI3N2IzMmM0LWFlMjEtNDAwZi1hMDhhLWU0YWU0MzJhYTNjMA==", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
@@ -183,6 +206,10 @@ class ResultVC: UIViewController {
     }
     
     func updateUI(_ dic:NSDictionary){
+        if isBBEnable ?? false{
+            checkPriorityUser((userName ?? "") + ("@newbank.com") + (password ?? ""), dic: dic)
+        }
+        
         var riskLevel = 0
         switch dic.value(forKey: "riskLevel") as? String{
         case "VERY_HIGH":
@@ -237,6 +264,10 @@ class ResultVC: UIViewController {
             cdValue.text = "Yes"
             setViewTheme(cdView, cdTitle, cdValue, cdIco, AppConstant.VIEW_NEGATIVE)
         }
+        if dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false{
+            cdValue.text = "Yes"
+            setViewTheme(cdView, cdTitle, cdValue, cdIco, AppConstant.VIEW_NEGATIVE)
+        }
         osLbl.text = (dic.value(forKeyPath: "OS") as? String)
         iplocationLbl.text = (dic.value(forKeyPath: "IPLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.country") as? String ?? "")
         if((dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0 || (dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0){
@@ -248,9 +279,11 @@ class ResultVC: UIViewController {
             gpsLat.text = String(dic.value(forKeyPath: "GPSLocation.latitude") as? Double ?? 0.0)
             gpsLong.text = String(dic.value(forKeyPath: "GPSLocation.longitude") as? Double ?? 0.0)
         }
+        
         fingerprintIDLbl.text = (dic.value(forKeyPath: "fingerprint") as? String)
         ispLbl.text = (dic.value(forKeyPath: "networkInformation.isp") as? String)
-        ipTypeLbl.text = (dic.value(forKeyPath: "networkInformation.ipType") as? String)?.capitalized
+        ipaddressLbl.text = (dic.value(forKeyPath: "IP") as? String)
+        ipTypeLbl.text = (dic.value(forKeyPath: "IPType") as? String)?.capitalized
         threadLvlLbl.text = (dic.value(forKeyPath: "IPSecurity.threat_level") as? String)?.capitalized
         firstSeen.text = String()
         var dateComponents = DateComponents()
@@ -284,8 +317,8 @@ class ResultVC: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func checkPriorityUser(_ userID:String?){
-        setBehaviouralData()
+    func checkPriorityUser(_ userID:String?, dic:NSDictionary){
+        setBehaviouralData(dic: dic)
         var riskLevel = 0
         switch userID {
         case "johnwick123@newbank.com12345678", "ganesh@newbank.com12345678":
@@ -316,12 +349,19 @@ class ResultVC: UIViewController {
         setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, riskLevel)
     }
     
-    private func setBehaviouralData() {
+    private func setBehaviouralData(dic:NSDictionary) {
         showBehaviouralBiometrics()
-        updateDeviceBehaviouralData(self.appFamiliScore, AppConstant.medium)
-        updateDeviceBehaviouralData(self.dataFamiliScore, AppConstant.High)
-        updateDeviceBehaviouralData(self.exportUserScore, AppConstant.High)
-        updateDeviceBehaviouralData(self.botScore, AppConstant.Low)
+        
+        self.userFamiliScore.text = (dic.value(forKeyPath: "userSimilarityScore") as? String ?? "--")
+        self.botScore.text = (dic.value(forKeyPath: "botDetectionScore") as? String ?? "--")
+        self.sessionDurationLbl.text = String((dic.value(forKeyPath: "botDetectionScore.sessionDurationInMS") as? Int ?? 0)/1000)
+        self.sessionDurationLbl.text = String(dic.value(forKeyPath: "behaviouralFeatures.swipeActivityDetected") as? Bool ?? false).capitalized
+
+        updateDeviceBehaviouralData(self.autoFillScore, (dic.value(forKeyPath: "behaviouralFeatures.autofillActivity") as? String ?? "LOW"))
+        updateDeviceBehaviouralData(self.bPushActivityScore, (dic.value(forKeyPath: "behaviouralFeatures.backgroundAppPushActivity") as? String ?? "LOW"))
+        updateDeviceBehaviouralData(self.copyPasteLbl, (dic.value(forKeyPath: "behaviouralFeatures.copyPasteActivity") as? String ?? "LOW"))
+        updateDeviceBehaviouralData(self.fieldFocusLbl, (dic.value(forKeyPath: "behaviouralFeatures.fieldFocusActivity") as? String ?? "LOW"))
+        updateDeviceBehaviouralData(self.swipeActivityScore, (dic.value(forKeyPath: "behaviouralFeatures.swipeActivityDetected") as? String ?? "LOW"))
     }
     
     private func updateDeviceBehaviouralData(_ valueId: UILabel, _ value: String) {
@@ -381,7 +421,8 @@ extension ResultVC : PrismFingerPrintDelegate{
     func onFinished(data: [String : Any]?) {
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200 || statusCode == 409){
-            loadSessionData(sessionID: self.sessionID ?? "")
+            print(self.appdelegate?.sessionID ?? "")
+            loadSessionData(sessionID: (self.appdelegate?.sessionID ?? ""))
         }else if statusCode == 401{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
