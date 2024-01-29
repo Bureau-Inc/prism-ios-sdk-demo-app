@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import prism_ios_fingerprint_sdk
 
-class SigninVC: UIViewController {
+class SigninVC: BaseViewController {
 
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var userIdTF: UITextField!
@@ -19,6 +20,9 @@ class SigninVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isBBEnable{
+            BureauAPI.shared.startSubSession(NSUUID().uuidString)
+        }
         userIDInnerView.layer.borderColor = UIColor.systemGray5.cgColor
         pwdInnerView.layer.borderColor = UIColor.systemGray5.cgColor
     }

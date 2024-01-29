@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import prism_ios_fingerprint_sdk
 
 class BaseViewController: UIViewController {
 
     var getUserData:NSDictionary?
     
+    var appdelegate:AppDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appdelegate = UIApplication.shared.delegate as? AppDelegate
+        
         if(UserDefaults.standard.value(forKey: "USERDATA") as? Data != nil){
             do {
                 getUserData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(UserDefaults.standard.object(forKey: "USERDATA") as! Data) as? NSDictionary
