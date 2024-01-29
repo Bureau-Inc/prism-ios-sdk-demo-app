@@ -111,7 +111,8 @@ extension prism_ios_fingerprint_sdk.DeviceInfoProvider : prism_ios_fingerprint_s
   @objc public static let shared: prism_ios_fingerprint_sdk.BureauAPI
   public func configure(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", enableBehavioralBiometrics: Swift.Bool)
   required public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", refVC: UIKit.UIViewController, enableBehavioralBiometrics: Swift.Bool)
-  public func startSession()
+  public func startSubSession(_ subSessionID: Swift.String)
+  public func stopSubSession()
   public func setUserID(_ userId: Swift.String)
   @objc public func submit()
   @objc deinit
@@ -143,7 +144,7 @@ public protocol ProtobufAPIVersionCheck {
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class UserBehaviourCapture : UIKit.UIViewController, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) public var prismBehaviouralDelegate: (any prism_ios_fingerprint_sdk.PrismBehaviouralDelegate)?
   @_Concurrency.MainActor(unsafe) public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "")
-  @_Concurrency.MainActor(unsafe) public func startSession()
+  @_Concurrency.MainActor(unsafe) public func startSession(_ subSessionID: Swift.String)
   @_Concurrency.MainActor(unsafe) public func setUserID(_ userId: Swift.String)
   @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func stopSession() -> [Swift.String : Any]

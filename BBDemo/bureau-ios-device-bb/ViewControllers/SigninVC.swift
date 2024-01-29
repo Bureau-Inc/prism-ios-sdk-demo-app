@@ -21,7 +21,7 @@ class SigninVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if isBBEnable{
-            BureauAPI.shared.startSession()
+            BureauAPI.shared.startSubSession(NSUUID().uuidString)
         }
         userIDInnerView.layer.borderColor = UIColor.systemGray5.cgColor
         pwdInnerView.layer.borderColor = UIColor.systemGray5.cgColor

@@ -319,43 +319,57 @@ class ResultVC: BaseViewController {
     
     func checkPriorityUser(_ userID:String?, dic:NSDictionary){
         setBehaviouralData(dic: dic)
+//        switch userID {
+//        case "johnwick123@newbank.com12345678", "ganesh@newbank.com12345678":
+//            let riskValue = Int.random(in: 10 ... 25)
+//            bioRiskScore.text = String(riskValue)
+//            riskLevel = AppConstant.VIEW_NEGATIVE
+//            break
+//        case "johnwick123@newbank.com123456789", "ganesh@newbank.com123456789":
+//            let riskValue = Int.random(in: 80 ... 97)
+//            bioRiskScore.text = String(riskValue)
+//            bioRiskScore.textColor = AppConstant.GreenTitleColor
+//            riskLevel = AppConstant.VIEW_POSITIVE
+//            break
+//        case "marypoppins123@newbank.com123456780", "ganesh@newbank.com123456780":
+//            let riskValue = Int.random(in: 10 ... 25)
+//            bioRiskScore.text = String(riskValue)
+//            bioRiskScore.textColor = AppConstant.RedTitleColor
+//            riskLevel = AppConstant.VIEW_NEGATIVE
+//            break
+//        case "marypoppins123@newbank.com1234567890", "ganesh@newbank.com1234567890":
+//            let riskValue = Int.random(in: 80 ... 97)
+//            bioRiskScore.text = String(riskValue)
+//            bioRiskScore.textColor = AppConstant.GreenTitleColor
+//            break
+//        default:
+//            bioWarnView.isHidden = false
+//            bioResultView.isHidden = true
+//        }
+        let behaviourScore = dic.value(forKeyPath: "behaviouralAnomalyscore") as? Float ?? 0.0
         var riskLevel = 0
-        switch userID {
-        case "johnwick123@newbank.com12345678", "ganesh@newbank.com12345678":
-            let riskValue = Int.random(in: 10 ... 25)
-            bioRiskScore.text = String(riskValue)
+        bioRiskScore.text = String(behaviourScore)
+        switch behaviourScore{
+        case ...24.0:
             bioRiskScore.textColor = AppConstant.RedTitleColor
             riskLevel = AppConstant.VIEW_NEGATIVE
-        case "johnwick123@newbank.com123456789", "ganesh@newbank.com123456789":
-            let riskValue = Int.random(in: 80 ... 97)
-            bioRiskScore.text = String(riskValue)
-            bioRiskScore.textColor = AppConstant.GreenTitleColor
-            riskLevel = AppConstant.VIEW_POSITIVE
-        case "marypoppins123@newbank.com123456780", "ganesh@newbank.com123456780":
-            let riskValue = Int.random(in: 10 ... 25)
-            bioRiskScore.text = String(riskValue)
-            bioRiskScore.textColor = AppConstant.RedTitleColor
-            riskLevel = AppConstant.VIEW_NEGATIVE
+        case 25.0...79.0:
+            bioRiskScore.textColor = AppConstant.OrangeTitleColor
+            riskLevel = AppConstant.VIEW_WARNING
             break
-        case "marypoppins123@newbank.com1234567890", "ganesh@newbank.com1234567890":
-            let riskValue = Int.random(in: 80 ... 97)
-            bioRiskScore.text = String(riskValue)
+        default:
             bioRiskScore.textColor = AppConstant.GreenTitleColor
             riskLevel = AppConstant.VIEW_POSITIVE
-        default:
-            bioWarnView.isHidden = false
-            bioResultView.isHidden = true
+            break
         }
         setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, riskLevel)
     }
     
     private func setBehaviouralData(dic:NSDictionary) {
         showBehaviouralBiometrics()
-        
         self.userFamiliScore.text = (dic.value(forKeyPath: "userSimilarityScore") as? String ?? "--")
         self.botScore.text = (dic.value(forKeyPath: "botDetectionScore") as? String ?? "--")
         self.sessionDurationLbl.text = String((dic.value(forKeyPath: "botDetectionScore.sessionDurationInMS") as? Int ?? 0)/1000)
-        self.sessionDurationLbl.text = String(dic.value(forKeyPath: "behaviouralFeatures.swipeActivityDetected") as? Bool ?? false).capitalized
 
         updateDeviceBehaviouralData(self.autoFillScore, (dic.value(forKeyPath: "behaviouralFeatures.autofillActivity") as? String ?? "LOW"))
         updateDeviceBehaviouralData(self.bPushActivityScore, (dic.value(forKeyPath: "behaviouralFeatures.backgroundAppPushActivity") as? String ?? "LOW"))
