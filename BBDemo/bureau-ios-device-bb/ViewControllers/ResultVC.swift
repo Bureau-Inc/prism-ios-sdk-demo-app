@@ -164,7 +164,7 @@ class ResultVC: BaseViewController {
     func InitSDK(){
         let _ = UserDefaults.standard.string(forKey: "credentialId")
         
-//        entrypoint = BureauAPI(clientID: "1896dd6b-024f-400c-b38a-623d92e39dd7", environment: .production, sessionID: sessionID ?? "", refVC: self)
+//        entrypoint = BureauAPI(clientID: "**", environment: .production, sessionID: sessionID ?? "", refVC: self)
 //        entrypoint?.fingerprintDelegate = self
 //        entrypoint?.setUserID(userName ?? "")
 //        entrypoint?.submit()
@@ -179,8 +179,8 @@ class ResultVC: BaseViewController {
 //        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-//        request.setValue("Basic MTg5NmRkNmItMDI0Zi00MDBjLWIzOGEtNjIzZDkyZTM5ZGQ3OjcxYmYxZDQwLWRjMjctNGE5Zi05YWE0LTZlYzllOWM2NzgwMQ==", forHTTPHeaderField: "Authorization")
-        request.setValue("Basic OTA1MmU3MjEtZTJkMS00NDk5LWFmMTItYzk2OGI5OGRjN2M5OmI3N2IzMmM0LWFlMjEtNDAwZi1hMDhhLWU0YWU0MzJhYTNjMA==", forHTTPHeaderField: "Authorization")
+//        request.setValue("Basic <Token>", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic <Token>", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
