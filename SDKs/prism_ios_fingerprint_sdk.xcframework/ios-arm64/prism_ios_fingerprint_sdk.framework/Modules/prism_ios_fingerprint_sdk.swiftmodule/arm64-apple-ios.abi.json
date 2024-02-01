@@ -7869,7 +7869,14 @@
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 9979,
+      "offset": 9872,
+      "length": 7,
+      "value": "\"en_US\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 10025,
       "length": 75,
       "value": "\"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_,\""
     },
@@ -8429,22 +8436,22 @@
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3012,
-      "length": 14,
+      "offset": 3010,
+      "length": 13,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3025,
+      "offset": 3022,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3110,
-      "length": 13,
+      "offset": 3109,
+      "length": 14,
       "value": "\"\""
     },
     {
@@ -8457,98 +8464,98 @@
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3213,
+      "offset": 3214,
       "length": 16,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3228,
+      "offset": 3229,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3293,
+      "offset": 3294,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3347,
+      "offset": 3348,
       "length": 3,
       "value": "\"}\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3710,
+      "offset": 3711,
       "length": 29,
       "value": "\"Error: Failed to set a key.\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 3885,
+      "offset": 3886,
       "length": 41,
       "value": "\"Error: Failed to set an initial vector.\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 4660,
+      "offset": 4661,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 5268,
+      "offset": 5269,
       "length": 47,
       "value": "\"Error: Failed to crypt data. Status \""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 5314,
+      "offset": 5315,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 5595,
+      "offset": 5596,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 5600,
+      "offset": 5601,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "Array",
-      "offset": 5666,
+      "offset": 5667,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 5734,
+      "offset": 5735,
       "length": 8,
       "value": "\"%02hhX\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
       "kind": "StringLiteral",
-      "offset": 5745,
+      "offset": 5746,
       "length": 8,
       "value": "\"%02hhx\""
     },
