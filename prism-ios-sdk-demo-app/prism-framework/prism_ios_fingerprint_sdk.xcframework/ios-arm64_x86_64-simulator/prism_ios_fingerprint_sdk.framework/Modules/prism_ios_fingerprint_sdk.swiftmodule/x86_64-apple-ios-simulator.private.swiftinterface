@@ -46,7 +46,7 @@ extension prism_ios_fingerprint_sdk.DeviceInfoProvider : prism_ios_fingerprint_s
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class BureauAPI : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var delegate: UIKit.UIViewController?
   @_Concurrency.MainActor(unsafe) public var fingerprintDelegate: (any prism_ios_fingerprint_sdk.PrismFingerPrintDelegate)?
-  @_Concurrency.MainActor(unsafe) required public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, refVC: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) required public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String)
   @_Concurrency.MainActor(unsafe) public func setUserID(_ userId: Swift.String)
   @objc @_Concurrency.MainActor(unsafe) public func submit()
   @objc deinit
