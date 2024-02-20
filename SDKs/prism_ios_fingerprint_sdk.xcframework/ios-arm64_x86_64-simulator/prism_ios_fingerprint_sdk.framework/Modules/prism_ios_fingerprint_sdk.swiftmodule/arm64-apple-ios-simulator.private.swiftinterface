@@ -17,6 +17,7 @@ import Foundation
 import JavaScriptCore
 import LocalAuthentication
 import MachO
+import MessageUI
 import Network
 import Swift
 import SwiftUI
@@ -114,6 +115,7 @@ extension prism_ios_fingerprint_sdk.DeviceInfoProvider : prism_ios_fingerprint_s
   public func startSubSession(_ subSessionID: Swift.String)
   public func stopSubSession()
   public func setUserID(_ userId: Swift.String)
+  public func setFlow(_ flow: Swift.String)
   @objc public func submit()
   @objc deinit
 }
@@ -146,6 +148,7 @@ public protocol ProtobufAPIVersionCheck {
   @_Concurrency.MainActor(unsafe) public init(clientID: Swift.String, environment: prism_ios_fingerprint_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "")
   @_Concurrency.MainActor(unsafe) public func startSession(_ subSessionID: Swift.String)
   @_Concurrency.MainActor(unsafe) public func setUserID(_ userId: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func setFlow(_ flow: Swift.String)
   @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func stopSession() -> [Swift.String : Any]
   @objc deinit

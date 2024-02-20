@@ -3374,13 +3374,13 @@ Demo App</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session per hour" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5q-Tj-9kO">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-qx-F8X">
-                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3401,13 +3401,13 @@ Demo App</string>
                                                                         <rect key="frame" x="162.5" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session per day" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1D7-XG-lJq">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Dl-csI">
-                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3691,6 +3691,7 @@ Demo App</string>
                         <outlet property="adbView" destination="aaU-EL-GBL" id="lbu-yK-ScF"/>
                         <outlet property="autoFillScore" destination="QMt-Lj-Mfd" id="bDb-7A-DTM"/>
                         <outlet property="bPushActivityScore" destination="BaY-jB-n4I" id="jhK-yx-Cbe"/>
+                        <outlet property="bbWarningMsgLbl" destination="Jre-gR-5Ih" id="6Rt-xh-hxL"/>
                         <outlet property="bioResultView" destination="NzX-1K-BHR" id="Owd-c4-S3h"/>
                         <outlet property="bioRiskIco" destination="6Ko-Hy-CgF" id="SVE-fM-3mQ"/>
                         <outlet property="bioRiskLevelView" destination="Swi-13-N3J" id="PTD-mu-mCA"/>
@@ -3817,10 +3818,10 @@ Demo App</string>
         <image name="progressImg" width="307.5" height="154"/>
         <image name="splashBtmBG" width="288" height="194"/>
         <namedColor name="ThemeColor">
-            <color red="0.26666666666666666" green="0.3843137254901961" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.2669999897480011" green="0.38400000333786011" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeFontColor">
-            <color red="0.0039215686274509803" green="0.019607843137254902" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0040000001899898052" green="0.019999999552965164" blue="0.20800000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeSecFontColor">
             <color red="0.44699999690055847" green="0.48600000143051147" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

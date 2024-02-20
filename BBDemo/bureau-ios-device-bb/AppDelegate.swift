@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         sessionID = "Demo-"+NSUUID().uuidString
         BureauAPI.shared.configure(clientID: "***", environment: .sandbox, sessionID: sessionID ?? "", enableBehavioralBiometrics: true)
-        BureauAPI.shared.setUserID("Bureau-user")
         return true
     }
 

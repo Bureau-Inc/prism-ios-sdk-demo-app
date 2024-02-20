@@ -141,6 +141,7 @@ class ResultVC: BaseViewController {
     @IBOutlet weak var gpsLat: UILabel!
     @IBOutlet weak var gpsLong: UILabel!
     
+    @IBOutlet weak var bbWarningMsgLbl: UILabel!
     
     
     var locationManager = CLLocationManager()
@@ -163,12 +164,12 @@ class ResultVC: BaseViewController {
     
     func InitSDK(){
         let _ = UserDefaults.standard.string(forKey: "credentialId")
-        
 //        entrypoint = BureauAPI(clientID: "**", environment: .production, sessionID: sessionID ?? "", refVC: self)
 //        entrypoint?.fingerprintDelegate = self
 //        entrypoint?.setUserID(userName ?? "")
 //        entrypoint?.submit()
-        
+//        bureauFingerPrintSdk.setUserId())
+        BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
         BureauAPI.shared.submit()
     }
@@ -179,7 +180,6 @@ class ResultVC: BaseViewController {
 //        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-//        request.setValue("Basic <Token>", forHTTPHeaderField: "Authorization")
         request.setValue("Basic <Token>", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
@@ -215,12 +215,15 @@ class ResultVC: BaseViewController {
         case "VERY_HIGH":
             riskLevel = AppConstant.VIEW_NEGATIVE
             riskValue.text = "High"
+            bioRiskScore.textColor = AppConstant.RedTitleColor
         case "MEDIUM":
             riskLevel = AppConstant.VIEW_WARNING
             riskValue.text = "Medium"
+            bioRiskScore.textColor = AppConstant.OrangeTitleColor
         default:
             riskLevel = AppConstant.VIEW_POSITIVE
             riskValue.text = "Low"
+            bioRiskScore.textColor = AppConstant.GreenTitleColor
         }
         setViewTheme(riskLevelView, ristTitle, riskValue, riskIco, riskLevel)
         
@@ -346,36 +349,59 @@ class ResultVC: BaseViewController {
 //            bioWarnView.isHidden = false
 //            bioResultView.isHidden = true
 //        }
-        let behaviourScore = dic.value(forKeyPath: "behaviouralAnomalyscore") as? Float ?? 0.0
-        var riskLevel = 0
+        let behaviourScore = dic.value(forKeyPath: "riskScore") as? Double ?? 0.0
         bioRiskScore.text = String(behaviourScore)
-        switch behaviourScore{
-        case ...24.0:
-            bioRiskScore.textColor = AppConstant.RedTitleColor
-            riskLevel = AppConstant.VIEW_NEGATIVE
-        case 25.0...79.0:
-            bioRiskScore.textColor = AppConstant.OrangeTitleColor
-            riskLevel = AppConstant.VIEW_WARNING
-            break
-        default:
-            bioRiskScore.textColor = AppConstant.GreenTitleColor
-            riskLevel = AppConstant.VIEW_POSITIVE
-            break
-        }
-        setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, riskLevel)
+//        switch behaviourScore{
+//        case ...24.0:
+//            bioRiskScore.textColor = AppConstant.RedTitleColor
+//            riskLevel = AppConstant.VIEW_NEGATIVE
+//        case 25.0...79.0:
+//            bioRiskScore.textColor = AppConstant.OrangeTitleColor
+//            riskLevel = AppConstant.VIEW_WARNING
+//            break
+//        default:
+//            bioRiskScore.textColor = AppConstant.GreenTitleColor
+//            riskLevel = AppConstant.VIEW_POSITIVE
+//            break
+//        }
+//        setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, riskLevel)
     }
     
     private func setBehaviouralData(dic:NSDictionary) {
-        showBehaviouralBiometrics()
-        self.userFamiliScore.text = (dic.value(forKeyPath: "userSimilarityScore") as? String ?? "--")
-        self.botScore.text = (dic.value(forKeyPath: "botDetectionScore") as? String ?? "--")
-        self.sessionDurationLbl.text = String((dic.value(forKeyPath: "botDetectionScore.sessionDurationInMS") as? Int ?? 0)/1000)
+        let userSimilarityScore = (dic.value(forKeyPath: "userSimilarityScore") as? Double)
+        let isTrainingSession = (dic.value(forKeyPath: "isTrainingSession") as? Bool)
+        if (userSimilarityScore != nil){
+            showBehaviouralBiometrics()
+            var bbRiskLevel = 0
+            switch dic.value(forKey: "behaviouralRiskLevel") as? String{
+            case "VERY_HIGH":
+                bbRiskLevel = AppConstant.VIEW_NEGATIVE
+                bioRiskValue.text = "High"
+            case "MEDIUM":
+                bbRiskLevel = AppConstant.VIEW_WARNING
+                bioRiskValue.text = "Medium"
+            default:
+                bbRiskLevel = AppConstant.VIEW_POSITIVE
+                bioRiskValue.text = "Low"
+            }
+            setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, bbRiskLevel)
+            self.userFamiliScore.text = String(userSimilarityScore ?? 0.0)
+            self.botScore.text = String(dic.value(forKeyPath: "botDetectionScore") as? Double ?? 0)
+            self.sessionDurationLbl.text = String((dic.value(forKeyPath: "behaviouralFeatures.sessionDurationInMS") as? Int ?? 0)/1000)
 
-        updateDeviceBehaviouralData(self.autoFillScore, (dic.value(forKeyPath: "behaviouralFeatures.autofillActivity") as? String ?? "LOW"))
-        updateDeviceBehaviouralData(self.bPushActivityScore, (dic.value(forKeyPath: "behaviouralFeatures.backgroundAppPushActivity") as? String ?? "LOW"))
-        updateDeviceBehaviouralData(self.copyPasteLbl, (dic.value(forKeyPath: "behaviouralFeatures.copyPasteActivity") as? String ?? "LOW"))
-        updateDeviceBehaviouralData(self.fieldFocusLbl, (dic.value(forKeyPath: "behaviouralFeatures.fieldFocusActivity") as? String ?? "LOW"))
-        updateDeviceBehaviouralData(self.swipeActivityScore, (dic.value(forKeyPath: "behaviouralFeatures.swipeActivityDetected") as? String ?? "LOW"))
+            updateDeviceBehaviouralData(self.autoFillScore, (dic.value(forKeyPath: "behaviouralFeatures.autofillActivity") as? String ?? "LOW"))
+            updateDeviceBehaviouralData(self.bPushActivityScore, (dic.value(forKeyPath: "behaviouralFeatures.backgroundAppPushActivity") as? String ?? "LOW"))
+            updateDeviceBehaviouralData(self.copyPasteLbl, (dic.value(forKeyPath: "behaviouralFeatures.copyPasteActivity") as? String ?? "LOW"))
+            updateDeviceBehaviouralData(self.fieldFocusLbl, (dic.value(forKeyPath: "behaviouralFeatures.fieldFocusActivity") as? String ?? "LOW"))
+            updateDeviceBehaviouralData(self.swipeActivityScore, (dic.value(forKeyPath: "behaviouralFeatures.swipeActivityDetected") as? String ?? "LOW"))
+        }else if isTrainingSession ?? true{
+            bioWarnView.isHidden = false
+            bbWarningMsgLbl.text = "This is a training session for Behavioural Biometrics."
+            bioResultView.isHidden = true
+        }else{
+            bioWarnView.isHidden = false
+            bioResultView.isHidden = true
+        }
     }
     
     private func updateDeviceBehaviouralData(_ valueId: UILabel, _ value: String) {

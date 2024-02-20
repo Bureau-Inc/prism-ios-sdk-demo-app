@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		jNOGG3MN9tg4ZAXU7/+via26x7w=
+		cH9b7l+u+ACdQDs0bn8WFZdMTYY=
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		u1jS+rzcItfB3KLXin3Ikh5ATtU=
+		eLQyZBFgB57KOtYstHIGgMVfJd0=
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		u1jS+rzcItfB3KLXin3Ikh5ATtU=
+		eLQyZBFgB57KOtYstHIGgMVfJd0=
 		</data>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		DMPd0NzldvGXDqGEUxbn8qFQlis=
+		+eLJ7X4DN4I6PbiwcrkFBHNuXNg=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -79,14 +79,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			no/OLcN9JiPJlR2MJcVsTl4GGitmg6kFtnwTeC7bzIM=
+			Q3XLoiESuTH4cB7BNRWx9R3k0YMzTLwpZvdk2DbYaqc=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z4Sbd80zD+7eWDE9jcRPIQyLn2zKgHhOa9tvnGvF2xo=
+			m/HRA+XBUcRGIZrBW7zvfzGaXpR2QxRKGJ8Pw+yeugA=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -100,14 +100,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z4Sbd80zD+7eWDE9jcRPIQyLn2zKgHhOa9tvnGvF2xo=
+			m/HRA+XBUcRGIZrBW7zvfzGaXpR2QxRKGJ8Pw+yeugA=
 			</data>
 		</dict>
 		<key>Modules/prism_ios_fingerprint_sdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NKik96n0NQE7f0jQIH1otjRhCTLQ55V0lmTqiiDXpA0=
+			QGpf+rTLUh7g0yuxB7JkAMuuFTyWRscNXLhAOJXmnuM=
 			</data>
 		</dict>
 	</dict>
