@@ -271,6 +271,22 @@ class ResultVC: BaseViewController {
             cdValue.text = "Yes"
             setViewTheme(cdView, cdTitle, cdValue, cdIco, AppConstant.VIEW_NEGATIVE)
         }
+        if dic.value(forKeyPath: "developerMode") as? Bool ?? false{
+            devModeValue.text = "Yes"
+            setViewTheme(devModeView, devModeTitle, devModeValue, devModeIco, AppConstant.VIEW_NEGATIVE)
+        }
+        if !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false){
+            isAppstoreValue.text = "NO"
+            setViewTheme(isAppstoreView, isAppstoreTitle, isAppstoreValue, isAppstoreIco, AppConstant.VIEW_NEGATIVE)
+        }
+        if (dic.value(forKeyPath: "accessibilityEnabled") as? Bool ?? false){
+            accModeValue.text = "Yes"
+            setViewTheme(accModeView, accModeTitle, accModeValue, accModeIco, AppConstant.VIEW_NEGATIVE)
+        }
+        if (dic.value(forKeyPath: "fridaDetected") as? Bool ?? false){
+            adbValue.text = "Yes"
+            setViewTheme(adbView, adbTitle, adbValue, adbIco, AppConstant.VIEW_NEGATIVE)
+        }
         osLbl.text = (dic.value(forKeyPath: "OS") as? String)
         iplocationLbl.text = (dic.value(forKeyPath: "IPLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.country") as? String ?? "")
         if((dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0 || (dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0){
@@ -350,7 +366,7 @@ class ResultVC: BaseViewController {
 //            bioResultView.isHidden = true
 //        }
         let behaviourScore = dic.value(forKeyPath: "riskScore") as? Double ?? 0.0
-        bioRiskScore.text = String(behaviourScore)
+        bioRiskScore.text = String(format: "%.2f", behaviourScore)
 //        switch behaviourScore{
 //        case ...24.0:
 //            bioRiskScore.textColor = AppConstant.RedTitleColor

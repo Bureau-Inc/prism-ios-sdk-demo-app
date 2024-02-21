@@ -2913,7 +2913,7 @@ Demo App</string>
                                                                                         <color key="textColor" name="ThemeSecFontColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLO-OP-FtU">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLO-OP-FtU">
                                                                                         <rect key="frame" x="0.0" y="40" width="77.5" height="20"/>
                                                                                         <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                         <color key="textColor" name="ThemeSecFontColor"/>
@@ -3303,13 +3303,13 @@ Demo App</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Seen Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-f3-B3l">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkV-di-jLV">
-                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3330,13 +3330,13 @@ Demo App</string>
                                                                         <rect key="frame" x="162.5" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unique User IDs" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVj-u6-ZI3">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-MT-siI">
-                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3374,13 +3374,13 @@ Demo App</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session per hour" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5q-Tj-9kO">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-qx-F8X">
-                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3401,13 +3401,13 @@ Demo App</string>
                                                                         <rect key="frame" x="162.5" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session per day" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1D7-XG-lJq">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Dl-csI">
-                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
