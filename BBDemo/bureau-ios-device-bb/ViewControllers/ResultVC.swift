@@ -295,8 +295,8 @@ class ResultVC: BaseViewController {
             gpsLong.text = "0.0"
         }else{
             gpsLocLbl.text = (dic.value(forKeyPath: "GPSLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "GPSLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "GPSLocation.country") as? String ?? "")
-            gpsLat.text = String(dic.value(forKeyPath: "GPSLocation.latitude") as? Double ?? 0.0)
-            gpsLong.text = String(dic.value(forKeyPath: "GPSLocation.longitude") as? Double ?? 0.0)
+            gpsLat.text = String(format: "%.5f", dic.value(forKeyPath: "GPSLocation.latitude") as? Double ?? 0.0)
+            gpsLong.text = String(format: "%.5f", dic.value(forKeyPath: "GPSLocation.longitude") as? Double ?? 0.0)
         }
         
         fingerprintIDLbl.text = (dic.value(forKeyPath: "fingerprint") as? String)
@@ -315,7 +315,7 @@ class ResultVC: BaseViewController {
             let formattedDate = dateFormatter.string(from: date)
             firstSeen.text = formattedDate
         }
-        var uniqueUserIds = "1"
+        var uniqueUserIds = "1 Risk"
         if (dic.value(forKeyPath: "totalUniqueUserId") as? Int ?? 1 > 1){
             uniqueUserIds = String(dic.value(forKeyPath: "totalUniqueUserId") as? Int ?? 1) + " Risks"
         }
@@ -401,7 +401,7 @@ class ResultVC: BaseViewController {
                 bioRiskValue.text = "Low"
             }
             setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, bbRiskLevel)
-            self.userFamiliScore.text = String(userSimilarityScore ?? 0.0)
+            self.userFamiliScore.text = String(format: "%.5f", userSimilarityScore ?? 0.0)
             self.botScore.text = String(dic.value(forKeyPath: "botDetectionScore") as? Double ?? 0)
             self.sessionDurationLbl.text = String((dic.value(forKeyPath: "behaviouralFeatures.sessionDurationInMS") as? Int ?? 0)/1000)
 
