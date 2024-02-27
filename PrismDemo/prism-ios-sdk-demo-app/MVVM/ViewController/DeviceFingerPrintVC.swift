@@ -65,7 +65,7 @@ class DeviceFingerPrintVC: UIViewController {
     func InitSDK(){
         
         sessionID = "Demo-"+NSUUID().uuidString
-        entrypoint = BureauAPI(clientID: "******", environment: .sandbox, sessionID: sessionID ?? "", refVC: self)
+        entrypoint = BureauAPI(clientID: "******", environment: .sandbox, sessionID: sessionID ?? "")
         entrypoint?.fingerprintDelegate = self
         entrypoint?.submit()
     }

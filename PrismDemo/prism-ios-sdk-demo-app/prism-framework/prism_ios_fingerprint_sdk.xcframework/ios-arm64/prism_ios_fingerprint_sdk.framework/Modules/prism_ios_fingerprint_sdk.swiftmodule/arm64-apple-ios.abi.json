@@ -560,7 +560,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(clientID:environment:sessionID:refVC:)",
+            "printedName": "init(clientID:environment:sessionID:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -585,17 +585,11 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIViewController",
-                "printedName": "UIKit.UIViewController",
-                "usr": "c:objc(cs)UIViewController"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:25prism_ios_fingerprint_sdk9BureauAPIC8clientID11environment07sessionH05refVCACSS_AA4ModeOSSSo16UIViewControllerCtcfc",
-            "mangledName": "$s25prism_ios_fingerprint_sdk9BureauAPIC8clientID11environment07sessionH05refVCACSS_AA4ModeOSSSo16UIViewControllerCtcfc",
+            "usr": "s:25prism_ios_fingerprint_sdk9BureauAPIC8clientID11environment07sessionH0ACSS_AA4ModeOSStcfc",
+            "mangledName": "$s25prism_ios_fingerprint_sdk9BureauAPIC8clientID11environment07sessionH0ACSS_AA4ModeOSStcfc",
             "moduleName": "prism_ios_fingerprint_sdk",
             "declAttributes": [
               "Custom",
@@ -603,6 +597,33 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserID",
+            "printedName": "setUserID(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25prism_ios_fingerprint_sdk9BureauAPIC9setUserIDyySSF",
+            "mangledName": "$s25prism_ios_fingerprint_sdk9BureauAPIC9setUserIDyySSF",
+            "moduleName": "prism_ios_fingerprint_sdk",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -829,6 +850,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -3511,6 +3539,30 @@
         "declAttributes": [
           "AccessControl"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "prism_ios_fingerprint_sdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "prism_ios_fingerprint_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "prism_ios_fingerprint_sdk"
       },
       {
         "kind": "Import",
@@ -6333,77 +6385,77 @@
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "StringLiteral",
-      "offset": 1862,
+      "offset": 1874,
       "length": 9,
       "value": "\"unknown\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "Array",
-      "offset": 2690,
+      "offset": 2702,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "IntegerLiteral",
-      "offset": 2784,
+      "offset": 2796,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "IntegerLiteral",
-      "offset": 3339,
+      "offset": 3351,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "IntegerLiteral",
-      "offset": 3526,
+      "offset": 3538,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "BooleanLiteral",
-      "offset": 3860,
+      "offset": 3872,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "StringLiteral",
-      "offset": 3964,
+      "offset": 3976,
       "length": 12,
       "value": "\"__SCOPED__\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "BooleanLiteral",
-      "offset": 4062,
+      "offset": 4074,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "Array",
-      "offset": 4129,
+      "offset": 4141,
       "length": 56,
       "value": "[\"tap\", \"tun\", \"ppp\", \"ipsec\", \"utun\", \"utun1\", \"utun2\"]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "BooleanLiteral",
-      "offset": 4354,
+      "offset": 4366,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/Harvesters\/IPMonitor.swift",
       "kind": "BooleanLiteral",
-      "offset": 4398,
+      "offset": 4410,
       "length": 5,
       "value": "false"
     },
@@ -6424,352 +6476,373 @@
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 1078,
+      "offset": 1050,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 1088,
+      "offset": 1060,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 1764,
+      "offset": 1431,
       "length": 17,
       "value": "\"<---initSDK--->\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "FloatLiteral",
-      "offset": 1840,
+      "kind": "Dictionary",
+      "offset": 1656,
       "length": 3,
-      "value": "0.5"
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 2093,
-      "length": 17,
-      "value": "\"enable tracking\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 2171,
-      "length": 18,
-      "value": "\"disable tracking\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 2443,
+      "offset": 1878,
       "length": 39,
       "value": "\"init(coder:) has not been implemented\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 3035,
+      "offset": 2207,
       "length": 43,
       "value": "\"not determined - hence ask for Permission\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2296,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 2359,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 2375,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 3149,
+      "offset": 2488,
       "length": 19,
       "value": "\"permission denied\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 3214,
+      "offset": 2553,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 3277,
+      "offset": 2616,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 3293,
+      "offset": 2632,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 3425,
-      "length": 104,
-      "value": "\"Apple delegate gives the call back here once user taps Allow option, Make sure delegate is set to self\""
+      "offset": 2764,
+      "length": 103,
+      "value": "\"Apple delegate gves the call back here once user taps Allow option, Make sure delegate is set to self\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2908,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3054,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3120,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3174,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3247,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3316,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3402,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3464,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3468,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3509,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3577,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 3592,
+      "offset": 3700,
       "length": 21,
       "value": "\"Permission Approved\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 3691,
+      "offset": 3782,
       "length": 21,
       "value": "\"Location not enable\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "Dictionary",
-      "offset": 3987,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 3848,
+      "length": 30,
+      "value": "\"Error : Location not enabled\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 4199,
+      "offset": 3920,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3979,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 3995,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "FloatLiteral",
+      "offset": 4155,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 4408,
+      "length": 17,
+      "value": "\"enable tracking\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 4486,
+      "length": 18,
+      "value": "\"disable tracking\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4825,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "Dictionary",
-      "offset": 4370,
+      "offset": 4996,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 5232,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 5371,
-      "length": 6,
-      "value": "\"POST\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 5403,
-      "length": 18,
-      "value": "\"Application\/json\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 5443,
-      "length": 14,
-      "value": "\"Content-Type\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 5535,
-      "length": 29,
-      "value": "\"x-bureau-auth-credential-id\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "Array",
-      "offset": 5671,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 6020,
-      "length": 9,
-      "value": "\"No data\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 6053,
-      "length": 15,
-      "value": "\"Fail Response\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "Array",
-      "offset": 6232,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 6309,
-      "length": 12,
-      "value": "\"statusCode\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 6443,
+      "offset": 5269,
       "length": 13,
       "value": "\"apiResponse\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 6803,
-      "length": 15,
-      "value": "\"authorization\""
+      "offset": 6110,
+      "length": 9,
+      "value": "\"userId_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 6903,
-      "length": 25,
-      "value": "\"client_session_group_id\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 6999,
-      "length": 10,
-      "value": "\"labels[]\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 7018,
-      "length": 5,
-      "value": "\"iOS\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 7057,
-      "length": 10,
-      "value": "\"labels[]\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 7139,
-      "length": 10,
-      "value": "\"labels[]\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 7379,
-      "length": 11,
-      "value": "\"MOONSENSE\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 7606,
-      "length": 34,
-      "value": "\"<--Moonsense Recorded Failure-->\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 7689,
+      "offset": 6342,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 7701,
-      "length": 19,
-      "value": "\"networkSessionId_\""
+      "offset": 6415,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 6562,
+      "length": 6,
+      "value": "\"POST\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 6598,
+      "length": 18,
+      "value": "\"Application\/json\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 6638,
+      "length": 14,
+      "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 6739,
+      "length": 29,
+      "value": "\"x-bureau-auth-credential-id\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 6799,
+      "length": 7,
+      "value": "\"1.0.0\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "StringLiteral",
+      "offset": 6828,
+      "length": 22,
+      "value": "\"x-bureau-api-version\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "Dictionary",
+      "offset": 6944,
+      "length": 3,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "Array",
-      "offset": 7874,
+      "offset": 6958,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 7914,
-      "length": 14,
-      "value": "\"responseJSON\""
+      "offset": 7339,
+      "length": 9,
+      "value": "\"No data\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 7945,
+      "offset": 7376,
+      "length": 15,
+      "value": "\"Fail Response\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
+      "kind": "Array",
+      "offset": 7571,
       "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7988,
-      "length": 3,
-      "value": "200"
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 8056,
-      "length": 11,
-      "value": "\"sessionId\""
+      "offset": 7656,
+      "length": 12,
+      "value": "\"statusCode\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 8083,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 8096,
-      "length": 19,
-      "value": "\"networkSessionId_\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 8224,
-      "length": 34,
-      "value": "\"<--Moonsense Recorded Success-->\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 8355,
-      "length": 34,
-      "value": "\"<--Moonsense Recorded Failure-->\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 8438,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
-      "kind": "StringLiteral",
-      "offset": 8450,
-      "length": 19,
-      "value": "\"networkSessionId_\""
+      "offset": 7798,
+      "length": 13,
+      "value": "\"apiResponse\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
@@ -6781,91 +6854,91 @@
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 8734,
+      "offset": 8124,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 8832,
+      "offset": 8222,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 8883,
+      "offset": 8273,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 8887,
+      "offset": 8277,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 8916,
+      "offset": 8306,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 8960,
+      "offset": 8350,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 9309,
+      "offset": 8699,
       "length": 43,
       "value": "\"not determined - hence ask for Permission\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 9459,
+      "offset": 8849,
       "length": 19,
       "value": "\"permission denied\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 9511,
+      "offset": 8901,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 9566,
+      "offset": 8956,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 9582,
+      "offset": 8972,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 9685,
+      "offset": 9075,
       "length": 104,
       "value": "\"Apple delegate gives the call back here once user taps Allow option, Make sure delegate is set to self\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 9836,
+      "offset": 9226,
       "length": 21,
       "value": "\"Permission Approved\""
     },
@@ -6970,693 +7043,840 @@
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "Array",
-      "offset": 872,
+      "offset": 817,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1352,
+      "offset": 1198,
+      "length": 28,
+      "value": "\"devicePersonalizationInfo_\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 1295,
       "length": 10,
       "value": "\"ndkInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1433,
+      "offset": 1376,
       "length": 15,
       "value": "\"emulatorInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1519,
+      "offset": 1462,
       "length": 15,
       "value": "\"debuggerInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1611,
+      "offset": 1554,
       "length": 22,
       "value": "\"isVoiceCallDetected_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1709,
+      "offset": 1652,
       "length": 20,
       "value": "\"remoteDesktopInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1798,
+      "offset": 1741,
       "length": 10,
       "value": "\"webInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1888,
+      "offset": 1831,
       "length": 12,
       "value": "\"sessionId_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 1975,
+      "offset": 1918,
       "length": 22,
       "value": "\"bioMetricSensorInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2068,
+      "offset": 2011,
       "length": 13,
       "value": "\"cameraInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2153,
+      "offset": 2096,
       "length": 13,
       "value": "\"iCloudInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
-      "kind": "Array",
-      "offset": 2208,
-      "length": 2,
+      "kind": "StringLiteral",
+      "offset": 2183,
+      "length": 18,
+      "value": "\"appStoreInstall_\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 2282,
+      "length": 16,
+      "value": "\"developerMode_\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 2371,
+      "length": 16,
+      "value": "\"adbEnablement_\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2428,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 2444,
+      "length": 20,
+      "value": "\"accessibilityMode_\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "Dictionary",
+      "offset": 2506,
+      "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2772,
+      "offset": 3071,
       "length": 18,
       "value": "\"currentLocation_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2792,
+      "offset": 3091,
       "length": 7,
       "value": "\"city_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2802,
+      "offset": 3101,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2806,
+      "offset": 3105,
       "length": 10,
       "value": "\"country_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2819,
+      "offset": 3118,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2823,
+      "offset": 3122,
       "length": 11,
       "value": "\"latitude_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "FloatLiteral",
-      "offset": 2837,
+      "offset": 3136,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2842,
+      "offset": 3141,
       "length": 12,
       "value": "\"longitude_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "FloatLiteral",
-      "offset": 2857,
+      "offset": 3156,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2863,
+      "offset": 3162,
       "length": 20,
       "value": "\"isLocationEnabled_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2909,
+      "offset": 3208,
       "length": 12,
       "value": "\"isMockGPS_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2935,
+      "offset": 3234,
       "length": 10,
       "value": "\"altitude\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 2967,
+      "offset": 3266,
       "length": 18,
       "value": "\"verticalAccuracy\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3094,
+      "offset": 3393,
       "length": 18,
       "value": "\"currentLocation_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3114,
+      "offset": 3413,
       "length": 7,
       "value": "\"city_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3130,
+      "offset": 3429,
       "length": 10,
       "value": "\"country_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3152,
+      "offset": 3451,
       "length": 11,
       "value": "\"latitude_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3196,
+      "offset": 3495,
       "length": 12,
       "value": "\"longitude_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3243,
+      "offset": 3542,
       "length": 20,
       "value": "\"isLocationEnabled_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3289,
+      "offset": 3588,
       "length": 12,
       "value": "\"isMockGPS_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3315,
+      "offset": 3614,
       "length": 10,
       "value": "\"altitude\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3347,
+      "offset": 3646,
       "length": 18,
       "value": "\"verticalAccuracy\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3546,
+      "offset": 3845,
       "length": 15,
       "value": "\"locationInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3620,
+      "offset": 3919,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3632,
+      "offset": 3931,
       "length": 16,
       "value": "\"advertisingID_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "Array",
-      "offset": 3690,
+      "offset": 3989,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3784,
-      "length": 19,
-      "value": "\"availableLocales_\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
-      "kind": "StringLiteral",
-      "offset": 3835,
+      "offset": 4083,
       "length": 18,
       "value": "\"defaultLanguage_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3887,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
-      "kind": "StringLiteral",
-      "offset": 3891,
+      "offset": 4141,
       "length": 18,
       "value": "\"regionOrCountry_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3941,
+      "offset": 4191,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 3945,
+      "offset": 4195,
       "length": 11,
       "value": "\"timeZone_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 4105,
+      "offset": 4360,
       "length": 16,
       "value": "\"applicationId_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 4156,
+      "offset": 4411,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 4160,
+      "offset": 4415,
       "length": 14,
       "value": "\"installPath_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 4316,
+      "offset": 4571,
       "length": 21,
       "value": "\"isDebuggerAttached_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 4369,
+      "offset": 4624,
       "length": 11,
       "value": "\"isRooted_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 4713,
+      "offset": 4939,
       "length": 13,
       "value": "\"isemulator_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 4730,
+      "offset": 4956,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 5106,
+      "offset": 5324,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5391,
+      "offset": 5609,
       "length": 14,
       "value": "\"hasConnected\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5427,
+      "offset": 5645,
       "length": 12,
       "value": "\"isOutgoing\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5459,
+      "offset": 5677,
       "length": 10,
       "value": "\"isOnHold\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5487,
+      "offset": 5705,
       "length": 10,
       "value": "\"hasEnded\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5574,
+      "offset": 5792,
       "length": 14,
       "value": "\"hasConnected\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 5591,
+      "offset": 5809,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5598,
+      "offset": 5816,
       "length": 12,
       "value": "\"isOutgoing\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 5613,
+      "offset": 5831,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5620,
+      "offset": 5838,
       "length": 10,
       "value": "\"isOnHold\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 5633,
+      "offset": 5851,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5640,
+      "offset": 5858,
       "length": 10,
       "value": "\"hasEnded\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 5653,
+      "offset": 5871,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5732,
+      "offset": 5950,
       "length": 17,
       "value": "\"isScreenMirror_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6312,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6353,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5844,
+      "offset": 6523,
       "length": 12,
       "value": "\"userAgent_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5885,
+      "offset": 6564,
       "length": 11,
       "value": "\"userAgent\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5912,
+      "offset": 6591,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 5987,
+      "offset": 6666,
       "length": 13,
       "value": "\"sensorType_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6161,
+      "offset": 6840,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6195,
+      "offset": 6874,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6311,
+      "offset": 6990,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6389,
+      "offset": 7068,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6426,
+      "offset": 7105,
       "length": 13,
       "value": "\"cameraName_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "IntegerLiteral",
-      "offset": 6491,
+      "offset": 7170,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6494,
+      "offset": 7173,
       "length": 13,
       "value": "\"cameraType_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6555,
+      "offset": 7234,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6559,
+      "offset": 7238,
       "length": 19,
       "value": "\"cameraDeviceType_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6631,
+      "offset": 7310,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6635,
+      "offset": 7314,
       "length": 15,
       "value": "\"manufacturer_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6697,
+      "offset": 7376,
       "length": 13,
       "value": "\"cameraName_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "IntegerLiteral",
-      "offset": 6761,
+      "offset": 7440,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6764,
+      "offset": 7443,
       "length": 13,
       "value": "\"cameraType_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6824,
+      "offset": 7503,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6829,
+      "offset": 7508,
       "length": 19,
       "value": "\"cameraDeviceType_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6900,
+      "offset": 7579,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6904,
+      "offset": 7583,
       "length": 15,
       "value": "\"manufacturer_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 6957,
+      "offset": 7636,
       "length": 17,
       "value": "\"cameraCoreInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7053,
+      "offset": 7732,
       "length": 12,
       "value": "\"mediaInfo_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7111,
+      "offset": 7790,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7743,
+      "offset": 8422,
       "length": 13,
       "value": "\"isLoggedin_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 7759,
+      "offset": 8438,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7766,
+      "offset": 8445,
       "length": 14,
       "value": "\"iCloud_token\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7810,
+      "offset": 8489,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7849,
+      "offset": 8528,
       "length": 13,
       "value": "\"isLoggedin_\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 7865,
+      "offset": 8544,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7871,
+      "offset": 8550,
       "length": 14,
       "value": "\"iCloud_token\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 7915,
+      "offset": 8594,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
       "kind": "StringLiteral",
-      "offset": 8270,
+      "offset": 8709,
+      "length": 10,
+      "value": "\"embedded\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 8729,
+      "length": 17,
+      "value": "\"mobileprovision\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8776,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8817,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8908,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 9078,
+      "length": 15,
+      "value": "\"kern.procargs\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9113,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9119,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 9248,
+      "length": 15,
+      "value": "\"kern.procargs\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9286,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9292,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 9524,
+      "length": 7,
+      "value": "\"frida\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9542,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9627,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 9872,
+      "length": 7,
+      "value": "\"en_US\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/DataMapper.swift",
+      "kind": "StringLiteral",
+      "offset": 10025,
       "length": 75,
       "value": "\"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_,\""
     },
@@ -7997,6 +8217,349 @@
       "value": "\"Undefined\""
     },
     {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 306,
+      "length": 6,
+      "value": "\"5RPM\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 322,
+      "length": 13,
+      "value": "\"deviceDelta\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "Dictionary",
+      "offset": 405,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 654,
+      "length": 8,
+      "value": "\"%02hhx\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 717,
+      "length": 13,
+      "value": "\"deviceDelta\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 776,
+      "length": 7,
+      "value": "\"ghval\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 830,
+      "length": 34,
+      "value": "\"ba1dbc6f9504e23cc65d58a56fab894b\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 912,
+      "length": 18,
+      "value": "\"cc296be48ff9de57\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "Dictionary",
+      "offset": 1095,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 1258,
+      "length": 9,
+      "value": "\"payload\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 1315,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 1432,
+      "length": 3,
+      "value": "\"{\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1458,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 1593,
+      "length": 3,
+      "value": "\",\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1644,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 1691,
+      "length": 13,
+      "value": "\"\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 1700,
+      "length": 1,
+      "value": "\"\":\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 1930,
+      "length": 3,
+      "value": "\"[\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2101,
+      "length": 20,
+      "value": "\"\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2118,
+      "length": 1,
+      "value": "\"\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2217,
+      "length": 14,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2230,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2325,
+      "length": 13,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2337,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2438,
+      "length": 16,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2453,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2669,
+      "length": 6,
+      "value": "\"null\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2778,
+      "length": 3,
+      "value": "\",\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2813,
+      "length": 3,
+      "value": "\"]\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2906,
+      "length": 20,
+      "value": "\"\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 2923,
+      "length": 1,
+      "value": "\"\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3010,
+      "length": 13,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3022,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3109,
+      "length": 14,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3122,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3214,
+      "length": 16,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3229,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3294,
+      "length": 6,
+      "value": "\"null\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3348,
+      "length": 3,
+      "value": "\"}\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3711,
+      "length": 29,
+      "value": "\"Error: Failed to set a key.\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 3886,
+      "length": 41,
+      "value": "\"Error: Failed to set an initial vector.\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4661,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 5269,
+      "length": 47,
+      "value": "\"Error: Failed to crypt data. Status \""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 5315,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5596,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5601,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "Array",
+      "offset": 5667,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 5735,
+      "length": 8,
+      "value": "\"%02hhX\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/Encryption.swift",
+      "kind": "StringLiteral",
+      "offset": 5746,
+      "length": 8,
+      "value": "\"%02hhx\""
+    },
+    {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
       "offset": 190,
@@ -8021,43 +8584,22 @@
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
       "offset": 420,
-      "length": 30,
-      "value": "\"https:\/\/api.moonsense.cloud\/\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
-      "kind": "StringLiteral",
-      "offset": 487,
       "length": 7,
       "value": "\"1.0.0\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 557,
+      "offset": 490,
       "length": 33,
       "value": "\"v1\/deviceService\/deviceData\/ios\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 626,
+      "offset": 559,
       "length": 7,
       "value": "\"v2\/pc\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
-      "kind": "StringLiteral",
-      "offset": 694,
-      "length": 138,
-      "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJVUXlWcnY5aXpBU1dFMm9TWFFQZFdUIiwidHlwZSI6MX0.9IRhoqSGjjduDWhAz0nx30PFL3Mf6hPEvUKRABTK_No\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/AppConstant.swift",
-      "kind": "StringLiteral",
-      "offset": 886,
-      "length": 138,
-      "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJFTlJiRFZOQTVvamZUZWhZR0dQbjdBIiwidHlwZSI6MX0.4vxoFbCjbPSzUZB6Dkr3MTybu5LracwuRCodOMAEWOI\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Hari\/Bureau Git\/fingerprint-ios\/prism-ios-fingerprint-sdk\/FingerprintJS\/SystemControl\/DataConvertible.swift",

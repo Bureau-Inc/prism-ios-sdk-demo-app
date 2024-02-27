@@ -21,20 +21,18 @@ class AuthViewController: BaseViewController {
     
     @IBAction func authAct(_ sender: Any) {
         self.spinner.startAnimating()
-        Auth0.webAuth().audience("https://api.overwatch.stg.bureau.id").start { result in
+        Auth0.webAuth().audience("https://api.overwatch.bureau.id").start { result in
             switch result {
             case .success(let credentials):
                 print("idToken-->",credentials)
                 self.accessToken = credentials.accessToken
                 guard let jwt = try? decode(jwt: credentials.idToken),
                       let name = jwt["name"].string,
-                      let picture = jwt["picture"].string,
-                        let org_id = jwt["org_id"].string else { return }
+                      let picture = jwt["picture"].string else { return }
                 print("Name: \(name)")
                 print("Picture URL: \(picture)")
-                print("org_id: \(org_id)")
-                print(jwt)
-                let userDic = ["accessToken" : self.accessToken, "userID": jwt["sub"].string, "userName" : name, "picture" : picture, "org_id" : org_id]
+                print("org_id: \("org_id")")
+                let userDic = ["accessToken" : self.accessToken, "userID": jwt["sub"].string, "userName" : name, "picture" : picture, "org_id" : "org_id"]
                 try? UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: userDic,requiringSecureCoding: true), forKey: "USERDATA")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let VC = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
@@ -43,7 +41,6 @@ class AuthViewController: BaseViewController {
                 self.spinner.stopAnimating()
                 print("Failed with: \(error)")
                 //Toast.show(message: error.debugDescription, controller: self)
-                self.view.makeToast(error.debugDescription)
             }
         }
     }

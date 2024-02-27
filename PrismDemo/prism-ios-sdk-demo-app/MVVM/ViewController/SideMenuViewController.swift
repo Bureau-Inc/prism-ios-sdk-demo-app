@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Auth0
 
 class SideMenuViewController: BaseViewController {
 
@@ -23,9 +24,18 @@ class SideMenuViewController: BaseViewController {
     }
     
     @IBAction func logoutAct(_ sender: Any) {
+        
         let alertController = UIAlertController(title: NSLocalizedString("Logout", comment: ""), message: NSLocalizedString("Are you sure to logout?", comment: ""), preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("YES", comment: ""), style: UIAlertAction.Style.default) {
             UIAlertAction in
+            Auth0.webAuth().clearSession { result in
+                switch result {
+                case .success:
+                    print("Logged out")
+                case .failure(let error):
+                    print("Failed with: \(error)")
+                }
+            }
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
             let rootNC = UINavigationController(rootViewController: vc)
