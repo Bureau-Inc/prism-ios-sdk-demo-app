@@ -1,7 +1,7 @@
 framework module prism_ios_fingerprint_sdk {
   umbrella header "prism_ios_fingerprint_sdk.h"
-
   export *
+
   module * { export * }
 }
 
