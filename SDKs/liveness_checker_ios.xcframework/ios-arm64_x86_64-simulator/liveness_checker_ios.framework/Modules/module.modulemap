@@ -1,0 +1,11 @@
+framework module liveness_checker_ios {
+  umbrella header "liveness_checker_ios.h"
+
+  export *
+  module * { export * }
+}
+
+module liveness_checker_ios.Swift {
+  header "liveness_checker_ios-Swift.h"
+  requires objc
+}
