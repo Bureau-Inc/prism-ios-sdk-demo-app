@@ -28,7 +28,7 @@ class prism_ios_sdk_demo_appTests: XCTestCase, PrismFingerPrintDelegate {
 
     func testInitSDK() throws {
         numbersExpectation = expectation(description: "Numbers")
-        entrypoint = BureauAPI(clientID: "***", environment: .sandbox, sessionID: "Demo-"+NSUUID().uuidString , refVC: UIViewController())
+        entrypoint = BureauAPI(clientID: "***", environment: .sandbox, sessionID: "Demo-"+NSUUID().uuidString)
         entrypoint?.fingerprintDelegate = self
         entrypoint?.submit()
         waitForExpectations (timeout: 100)

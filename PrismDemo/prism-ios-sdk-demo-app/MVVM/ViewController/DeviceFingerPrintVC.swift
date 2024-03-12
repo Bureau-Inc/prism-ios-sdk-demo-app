@@ -62,8 +62,8 @@ class DeviceFingerPrintVC: UIViewController {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.startUpdatingLocation()
     }
+    
     func InitSDK(){
-        
         sessionID = "Demo-"+NSUUID().uuidString
         entrypoint = BureauAPI(clientID: "******", environment: .sandbox, sessionID: sessionID ?? "")
         entrypoint?.fingerprintDelegate = self
@@ -139,8 +139,10 @@ class DeviceFingerPrintVC: UIViewController {
 }
 
 extension DeviceFingerPrintVC: CLLocationManagerDelegate{
-    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
         InitSDK()
+        manager.stopUpdatingLocation()
         manager.delegate = nil
     }
 }
