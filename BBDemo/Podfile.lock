@@ -11,24 +11,21 @@ PODS:
   - SwiftProtobuf (1.25.2)
 
 DEPENDENCIES:
-  - bureau-id-fraud-sdk (from `/Users/user/Documents/Hari/Bureau Git/bureau-id-fraud-sdk`)
+  - bureau-id-fraud-sdk
 
 SPEC REPOS:
   trunk:
+    - bureau-id-fraud-sdk
     - Sentry
     - SentryPrivate
     - SwiftProtobuf
 
-EXTERNAL SOURCES:
-  bureau-id-fraud-sdk:
-    :path: "/Users/user/Documents/Hari/Bureau Git/bureau-id-fraud-sdk"
-
 SPEC CHECKSUMS:
-  bureau-id-fraud-sdk: c9fe4b1d932407519c898ed853befbe69076e6eb
+  bureau-id-fraud-sdk: 48946439770ffca967606cdd39ab42e27e8e914a
   Sentry: ebc12276bd17613a114ab359074096b6b3725203
   SentryPrivate: d651efb234cf385ec9a1cdd3eff94b5e78a0e0fe
   SwiftProtobuf: 407a385e97fd206c4fbe880cc84123989167e0d1
 
-PODFILE CHECKSUM: 9eec2f6582d6b02bde20ee803f7e63f25c4060ff
+PODFILE CHECKSUM: 2e07fce1251c024ea5d26fa24f7f1ce54a826865
 
 COCOAPODS: 1.14.3
