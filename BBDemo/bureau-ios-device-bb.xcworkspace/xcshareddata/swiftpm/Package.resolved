@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "auth0.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/Auth0.swift",
+      "state" : {
+        "revision" : "a4da5b3f8c962357b67620dae8d5e2a4f9ca02fd",
+        "version" : "2.6.0"
+      }
+    },
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
+      "state" : {
+        "revision" : "c00b1ae9fa1ad8af4465bb6ca901f6943fc98eba",
+        "version" : "6.5.16"
+      }
+    },
+    {
+      "identity" : "jwtdecode.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/JWTDecode.swift.git",
+      "state" : {
+        "revision" : "58af7278797871e460d79496621b3e5366b865b2",
+        "version" : "3.1.0"
+      }
+    },
+    {
+      "identity" : "sidemenu",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jonkykong/SideMenu.git",
+      "state" : {
+        "revision" : "8bd4fd128923cf5494fa726839af8afe12908ad9",
+        "version" : "6.5.0"
+      }
+    },
+    {
+      "identity" : "simplekeychain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/SimpleKeychain.git",
+      "state" : {
+        "revision" : "f082494aab8056139a4fe234c920a9f92f681aff",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}

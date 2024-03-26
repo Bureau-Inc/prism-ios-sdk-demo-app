@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import prism_ios_fingerprint_sdk
+import bureau_id_fraud_sdk
 
 class BaseViewController: UIViewController {
 

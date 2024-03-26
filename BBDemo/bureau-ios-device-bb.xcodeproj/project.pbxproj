@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE43AEA82B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */; };
-		CE43AEA92B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		91FCE52E3E5183D0833DEFFE /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DA59712DBD71CDF349258E /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework */; };
+		A04B7913053874B2BFF01BB1 /* Pods_bureau_ios_device_bb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FC9605AEBF5A690C7B165B /* Pods_bureau_ios_device_bb.framework */; };
+		BF2F509CBDE0D1B6AB3D11AB /* Pods_bureau_ios_device_bbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199930B85D72818DD6C86175 /* Pods_bureau_ios_device_bbTests.framework */; };
 		CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA4ACC72AF292D000B2801B /* IQKeyboardManagerSwift */; };
 		CEF11AA62AEF9DD80030CBD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */; };
 		CEF11AA82AEF9DD80030CBD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */; };
@@ -61,7 +62,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CE43AEA92B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +69,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = prism_ios_fingerprint_sdk.xcframework; sourceTree = "<group>"; };
+		199930B85D72818DD6C86175 /* Pods_bureau_ios_device_bbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FC9605AEBF5A690C7B165B /* Pods_bureau_ios_device_bb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C7D8F49627ABA1B71EFD454 /* Pods-bureau-ios-device-bbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bureau-ios-device-bbTests.debug.xcconfig"; path = "Target Support Files/Pods-bureau-ios-device-bbTests/Pods-bureau-ios-device-bbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F91C6491544E954D3B66EC7 /* Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.release.xcconfig"; path = "Target Support Files/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.release.xcconfig"; sourceTree = "<group>"; };
+		60A0FE0851DA562791597EC8 /* Pods-bureau-ios-device-bbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bureau-ios-device-bbTests.release.xcconfig"; path = "Target Support Files/Pods-bureau-ios-device-bbTests/Pods-bureau-ios-device-bbTests.release.xcconfig"; sourceTree = "<group>"; };
+		62DA59712DBD71CDF349258E /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69657D7E112620C135AA7AB9 /* Pods-bureau-ios-device-bb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bureau-ios-device-bb.release.xcconfig"; path = "Target Support Files/Pods-bureau-ios-device-bb/Pods-bureau-ios-device-bb.release.xcconfig"; sourceTree = "<group>"; };
+		88B36F4A84E8C9DD183A70BB /* Pods-bureau-ios-device-bb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bureau-ios-device-bb.debug.xcconfig"; path = "Target Support Files/Pods-bureau-ios-device-bb/Pods-bureau-ios-device-bb.debug.xcconfig"; sourceTree = "<group>"; };
+		B7692C2CE9FB37F1AFBA37BF /* Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.debug.xcconfig"; path = "Target Support Files/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEF11AA22AEF9DD80030CBD4 /* bureau-ios-device-bb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bureau-ios-device-bb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,9 +113,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */,
-				CE43AEA82B18AA460041510F /* prism_ios_fingerprint_sdk.xcframework in Frameworks */,
 				CEF11AE92AEF9FBE0030CBD4 /* SideMenu in Frameworks */,
 				CEF11AE62AEF9FB20030CBD4 /* Auth0 in Frameworks */,
+				A04B7913053874B2BFF01BB1 /* Pods_bureau_ios_device_bb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2F509CBDE0D1B6AB3D11AB /* Pods_bureau_ios_device_bbTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,12 +131,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FCE52E3E5183D0833DEFFE /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58C51886EA9075099FE6632F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88B36F4A84E8C9DD183A70BB /* Pods-bureau-ios-device-bb.debug.xcconfig */,
+				69657D7E112620C135AA7AB9 /* Pods-bureau-ios-device-bb.release.xcconfig */,
+				B7692C2CE9FB37F1AFBA37BF /* Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.debug.xcconfig */,
+				3F91C6491544E954D3B66EC7 /* Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.release.xcconfig */,
+				2C7D8F49627ABA1B71EFD454 /* Pods-bureau-ios-device-bbTests.debug.xcconfig */,
+				60A0FE0851DA562791597EC8 /* Pods-bureau-ios-device-bbTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CEF11A992AEF9DD80030CBD4 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +158,8 @@
 				CEF11ABB2AEF9DDB0030CBD4 /* bureau-ios-device-bbTests */,
 				CEF11AC52AEF9DDB0030CBD4 /* bureau-ios-device-bbUITests */,
 				CEF11AA32AEF9DD80030CBD4 /* Products */,
+				58C51886EA9075099FE6632F /* Pods */,
+				F355D30AE358931C85383818 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,7 +179,6 @@
 				CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */,
 				CEF11B072AF138D60030CBD4 /* AppConstant.swift */,
 				CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */,
-				CE43AEA62B18AA400041510F /* prism_ios_fingerprint_sdk.xcframework */,
 				CEF11AE32AEF9F550030CBD4 /* ViewControllers */,
 				CEF11AAB2AEF9DD80030CBD4 /* Main.storyboard */,
 				CEF11AAE2AEF9DDA0030CBD4 /* Assets.xcassets */,
@@ -218,6 +242,16 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F355D30AE358931C85383818 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26FC9605AEBF5A690C7B165B /* Pods_bureau_ios_device_bb.framework */,
+				62DA59712DBD71CDF349258E /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework */,
+				199930B85D72818DD6C86175 /* Pods_bureau_ios_device_bbTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,10 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF11ACC2AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bb" */;
 			buildPhases = (
+				5E10DCC316C5099234686163 /* [CP] Check Pods Manifest.lock */,
 				CEF11A9E2AEF9DD80030CBD4 /* Sources */,
 				CEF11A9F2AEF9DD80030CBD4 /* Frameworks */,
 				CEF11AA02AEF9DD80030CBD4 /* Resources */,
 				CEF11AFE2AF107C70030CBD4 /* Embed Frameworks */,
+				DA0B9385AFBAAE7773A45E23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,6 +284,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF11ACF2AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bbTests" */;
 			buildPhases = (
+				26E2BAF0EA5660E79EFF870A /* [CP] Check Pods Manifest.lock */,
 				CEF11AB42AEF9DDB0030CBD4 /* Sources */,
 				CEF11AB52AEF9DDB0030CBD4 /* Frameworks */,
 				CEF11AB62AEF9DDB0030CBD4 /* Resources */,
@@ -266,9 +303,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF11AD22AEF9DDB0030CBD4 /* Build configuration list for PBXNativeTarget "bureau-ios-device-bbUITests" */;
 			buildPhases = (
+				0666CEA79E40E2B1D87568F5 /* [CP] Check Pods Manifest.lock */,
 				CEF11ABE2AEF9DDB0030CBD4 /* Sources */,
 				CEF11ABF2AEF9DDB0030CBD4 /* Frameworks */,
 				CEF11AC02AEF9DDB0030CBD4 /* Resources */,
+				4D816DEA7B968AF6968F2123 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,8 +352,8 @@
 			);
 			mainGroup = CEF11A992AEF9DD80030CBD4;
 			packageReferences = (
-				CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */,
-				CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
+				CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu.git" */,
 				CEA4ACC62AF292CF00B2801B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = CEF11AA32AEF9DD80030CBD4 /* Products */;
@@ -359,6 +398,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0666CEA79E40E2B1D87568F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26E2BAF0EA5660E79EFF870A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bureau-ios-device-bbTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D816DEA7B968AF6968F2123 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E10DCC316C5099234686163 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bureau-ios-device-bb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA0B9385AFBAAE7773A45E23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bureau-ios-device-bb/Pods-bureau-ios-device-bb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bureau-ios-device-bb/Pods-bureau-ios-device-bb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bureau-ios-device-bb/Pods-bureau-ios-device-bb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEF11A9E2AEF9DD80030CBD4 /* Sources */ = {
@@ -548,6 +690,7 @@
 		};
 		CEF11ACD2AEF9DDB0030CBD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88B36F4A84E8C9DD183A70BB /* Pods-bureau-ios-device-bb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -588,6 +731,7 @@
 		};
 		CEF11ACE2AEF9DDB0030CBD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69657D7E112620C135AA7AB9 /* Pods-bureau-ios-device-bb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -628,6 +772,7 @@
 		};
 		CEF11AD02AEF9DDB0030CBD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C7D8F49627ABA1B71EFD454 /* Pods-bureau-ios-device-bbTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -648,6 +793,7 @@
 		};
 		CEF11AD12AEF9DDB0030CBD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60A0FE0851DA562791597EC8 /* Pods-bureau-ios-device-bbTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -668,6 +814,7 @@
 		};
 		CEF11AD32AEF9DDB0030CBD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7692C2CE9FB37F1AFBA37BF /* Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -686,6 +833,7 @@
 		};
 		CEF11AD42AEF9DDB0030CBD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F91C6491544E954D3B66EC7 /* Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -752,7 +900,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+		CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift";
 			requirement = {
@@ -760,7 +908,7 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+		CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
 			requirement = {
@@ -778,12 +926,12 @@
 		};
 		CEF11AE52AEF9FB20030CBD4 /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */;
+			package = CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
 			productName = Auth0;
 		};
 		CEF11AE82AEF9FBE0030CBD4 /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			package = CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu.git" */;
 			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
