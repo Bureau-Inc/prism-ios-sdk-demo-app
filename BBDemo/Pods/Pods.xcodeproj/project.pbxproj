@@ -1434,7 +1434,7 @@
 		F4BBDE1E68BC12F7551B989AECDDE91F /* SentryNSURLRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryNSURLRequest.h; path = Sources/Sentry/include/SentryNSURLRequest.h; sourceTree = "<group>"; };
 		F5049CE7D4E44FCABC927760C2B90E50 /* SentryCrashReportFixer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = SentryCrashReportFixer.c; path = Sources/SentryCrash/Recording/SentryCrashReportFixer.c; sourceTree = "<group>"; };
 		F6F916710EF825B11618764B356B6735 /* SentryCrashDebug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryCrashDebug.h; path = Sources/SentryCrash/Recording/Tools/SentryCrashDebug.h; sourceTree = "<group>"; };
-		F8D3BD4D9822CCA748FAD09C5EEC4543 /* Pods-bureau-ios-device-bb */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-bureau-ios-device-bb"; path = Pods_bureau_ios_device_bb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8D3BD4D9822CCA748FAD09C5EEC4543 /* Pods_bureau_ios_device_bb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F946D07D52CE6C27D772502F6A5933BA /* SentryNSDataSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryNSDataSwizzling.h; path = Sources/Sentry/include/SentryNSDataSwizzling.h; sourceTree = "<group>"; };
 		F960A41410BA9B4A4298BCE7D14269BA /* api.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = api.pb.swift; path = Sources/SwiftProtobuf/api.pb.swift; sourceTree = "<group>"; };
 		F9877F26202838472672F1F550F6EB02 /* TextFormatDecodingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFormatDecodingOptions.swift; path = Sources/SwiftProtobuf/TextFormatDecodingOptions.swift; sourceTree = "<group>"; };
@@ -2335,7 +2335,7 @@
 		D3AE0121F60EC1F0EACCCB74640D70C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8D3BD4D9822CCA748FAD09C5EEC4543 /* Pods-bureau-ios-device-bb */,
+				F8D3BD4D9822CCA748FAD09C5EEC4543 /* Pods_bureau_ios_device_bb.framework */,
 				6F0BED5B50637CA64486E6B4772745D9 /* Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests */,
 				1DED666686966984E8E9F7877156FA39 /* Pods-bureau-ios-device-bbTests */,
 				0115C3C00C175D77422084DD0542CE6F /* Sentry */,
@@ -2788,7 +2788,7 @@
 			);
 			name = "Pods-bureau-ios-device-bb";
 			productName = Pods_bureau_ios_device_bb;
-			productReference = F8D3BD4D9822CCA748FAD09C5EEC4543 /* Pods-bureau-ios-device-bb */;
+			productReference = F8D3BD4D9822CCA748FAD09C5EEC4543 /* Pods_bureau_ios_device_bb.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6CC5482777061A697DD907B622A6CE15 /* SentryPrivate */ = {
