@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/bureau-id-fraud-sdk/bureau-id-fraud-sdk-xcframeworks.sh
-${PODS_ROOT}/../../../bureau-id-fraud-sdk/Framework/bureau_id_fraud_sdk.xcframework
+${PODS_ROOT}/bureau-id-fraud-sdk/Framework/bureau_id_fraud_sdk.xcframework
