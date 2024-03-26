@@ -1,0 +1,34 @@
+PODS:
+  - bureau-id-fraud-sdk (1.0.2):
+    - Sentry (= 8.21.0)
+    - SwiftProtobuf (= 1.25.2)
+  - Sentry (8.21.0):
+    - Sentry/Core (= 8.21.0)
+    - SentryPrivate (= 8.21.0)
+  - Sentry/Core (8.21.0):
+    - SentryPrivate (= 8.21.0)
+  - SentryPrivate (8.21.0)
+  - SwiftProtobuf (1.25.2)
+
+DEPENDENCIES:
+  - bureau-id-fraud-sdk (from `/Users/user/Documents/Hari/Bureau Git/bureau-id-fraud-sdk`)
+
+SPEC REPOS:
+  trunk:
+    - Sentry
+    - SentryPrivate
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  bureau-id-fraud-sdk:
+    :path: "/Users/user/Documents/Hari/Bureau Git/bureau-id-fraud-sdk"
+
+SPEC CHECKSUMS:
+  bureau-id-fraud-sdk: c9fe4b1d932407519c898ed853befbe69076e6eb
+  Sentry: ebc12276bd17613a114ab359074096b6b3725203
+  SentryPrivate: d651efb234cf385ec9a1cdd3eff94b5e78a0e0fe
+  SwiftProtobuf: 407a385e97fd206c4fbe880cc84123989167e0d1
+
+PODFILE CHECKSUM: 9eec2f6582d6b02bde20ee803f7e63f25c4060ff
+
+COCOAPODS: 1.14.3
