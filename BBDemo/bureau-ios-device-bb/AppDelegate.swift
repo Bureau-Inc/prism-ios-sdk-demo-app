@@ -7,19 +7,18 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import prism_ios_fingerprint_sdk
+import bureau_id_fraud_sdk
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var sessionID:String?
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         sessionID = "Demo-"+NSUUID().uuidString
-        BureauAPI.shared.configure(clientID: "***", environment: .sandbox, sessionID: sessionID ?? "", enableBehavioralBiometrics: true)
+        BureauAPI.shared.configure(clientID: "3e8449fb-d8a0-4e38-a643-ab4bb6d8d775", environment: .sandbox, sessionID: sessionID ?? "", enableBehavioralBiometrics: true)
         return true
     }
 

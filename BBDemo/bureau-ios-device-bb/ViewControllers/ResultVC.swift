@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import prism_ios_fingerprint_sdk
+import bureau_id_fraud_sdk
 import CoreLocation
 
 class ResultVC: BaseViewController {
@@ -155,20 +155,11 @@ class ResultVC: BaseViewController {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
         spinner.startAnimating()
-//        self.locationManager.delegate = self
-//        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        self.locationManager.requestAlwaysAuthorization()
-//        self.locationManager.startUpdatingLocation()
         InitSDK()
     }
     
     func InitSDK(){
         let _ = UserDefaults.standard.string(forKey: "credentialId")
-//        entrypoint = BureauAPI(clientID: "**", environment: .production, sessionID: sessionID ?? "", refVC: self)
-//        entrypoint?.fingerprintDelegate = self
-//        entrypoint?.setUserID(userName ?? "")
-//        entrypoint?.submit()
-//        bureauFingerPrintSdk.setUserId())
         BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
         BureauAPI.shared.submit()
@@ -176,11 +167,9 @@ class ResultVC: BaseViewController {
     
     func loadSessionData(sessionID:String){
         guard let serviceUrl = URL(string: ("https://api.overwatch.dev.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
-
-//        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-        request.setValue("Basic <Token>", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic M2U4NDQ5ZmItZDhhMC00ZTM4LWE2NDMtYWI0YmI2ZDhkNzc1OjEwYjYwZTQyLTA3MDAtNDNhMy04NzE5LWJhNGFiNmRlZGIxZA==", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
