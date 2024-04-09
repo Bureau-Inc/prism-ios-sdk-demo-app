@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		zSFujnKNSHry7FTSu7Uezpv7BuU=
+		dqRtiJAUn4hQMCxVlCw0v4LVmdk=
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		gRVVtroh4g12Mnf0DQCqsungr70=
+		5sbr+hiP2itgXv0a/ucgewVQC5U=
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		zSFujnKNSHry7FTSu7Uezpv7BuU=
+		dqRtiJAUn4hQMCxVlCw0v4LVmdk=
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ktkdpisHXfPy1fgLp5eVXki4EN8=
+		td+3A+7tZO8/zZnKe0Zdtrf8wC8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aZoloZ8RLUYKVYvROLzn9z6EZDuDhycU6kBy34MXtXE=
+			4EYg1CeWbrJyEP8J+a3Uq6fZPi0kJZb8Uz7SYk9YQ3Q=
 			</data>
 		</dict>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -109,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UtAH3s+wrcoDOCjnKCFEmEBa22qULDogicEsGij7iFw=
+			azv0PbB0UvEPqI708OC/aRSy3BpBsfd/4glp/L2nsJc=
 			</data>
 		</dict>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aZoloZ8RLUYKVYvROLzn9z6EZDuDhycU6kBy34MXtXE=
+			4EYg1CeWbrJyEP8J+a3Uq6fZPi0kJZb8Uz7SYk9YQ3Q=
 			</data>
 		</dict>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			duO6jrBdP3eM3vxL5mqXkfJUFIhaMW2DiJVvIgBmMAQ=
+			IhdmwaRuJ3bFl9QkOt48xRZm+Qcfcc5dV8cJ6YqUQhU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
