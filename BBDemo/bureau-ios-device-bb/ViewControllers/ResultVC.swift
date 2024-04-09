@@ -169,7 +169,7 @@ class ResultVC: BaseViewController {
         guard let serviceUrl = URL(string: ("https://api.overwatch.dev.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-        request.setValue("Basic M2U4NDQ5ZmItZDhhMC00ZTM4LWE2NDMtYWI0YmI2ZDhkNzc1OjEwYjYwZTQyLTA3MDAtNDNhMy04NzE5LWJhNGFiNmRlZGIxZA==", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic <TOKEN>>", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
