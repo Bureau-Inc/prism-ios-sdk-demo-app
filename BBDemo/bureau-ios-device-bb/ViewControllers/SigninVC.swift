@@ -17,9 +17,12 @@ class SigninVC: BaseViewController {
     @IBOutlet weak var pwdInnerView: UIView!
 
     var isBBEnable = false
+    var sessionID:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sessionID = "Demo-"+NSUUID().uuidString
+        BureauAPI.shared.configure(clientID: "***ClientID***", environment: .production, sessionID: sessionID ?? "", enableBehavioralBiometrics: false)
         if isBBEnable{
             BureauAPI.shared.startSubSession(NSUUID().uuidString)
         }
@@ -38,6 +41,7 @@ class SigninVC: BaseViewController {
             VC.userName = userIdTF.text
             VC.password = passwordTF.text
             VC.isBBEnable = isBBEnable
+            VC.sessionID = sessionID
             self.navigationController?.pushViewController(VC, animated: true)
         }
     }

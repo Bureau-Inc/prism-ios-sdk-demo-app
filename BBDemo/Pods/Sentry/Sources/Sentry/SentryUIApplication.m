@@ -1,8 +1,8 @@
 #import "SentryUIApplication.h"
 #import "SentryDependencyContainer.h"
 #import "SentryDispatchQueueWrapper.h"
-@import SentryPrivate;
 #import "SentryNSNotificationCenterWrapper.h"
+#import "SentrySwift.h"
 
 #if SENTRY_HAS_UIKIT
 
@@ -174,7 +174,7 @@
             // Sometimes a view controller is used as container for a navigation controller
             // If the navigation is occupying the whole view controller we will consider this the
             // case.
-            if ([self isContainerViewController:childVC]
+            if ([self isContainerViewController:childVC] && childVC.isViewLoaded
                 && CGRectEqualToRect(childVC.view.frame, topVC.view.bounds)) {
                 relevantChild = childVC;
                 break;

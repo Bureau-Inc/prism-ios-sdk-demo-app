@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		iTu0S0zH8R2MR/lLZhWjSTGdmmo=
+		BWH1vINTs59fR74n0KYXyAwKUMw=
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		xHLgXqf07GTvXml0xIDU7iY/BE4=
+		8wXTSe6i36GiIE8nNKP9mhPl7Qc=
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -30,15 +30,19 @@
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		xHLgXqf07GTvXml0xIDU7iY/BE4=
+		8wXTSe6i36GiIE8nNKP9mhPl7Qc=
 		</data>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		Myfa3Z3sg1YcQjCyC4FU2n+xMME=
+		PVqCJxD/VTj/ZjDrWHoSogIpYvU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		3goDnNgQ/Zloy/FKN27hChYSN8E=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		1P2fGR7sR7KjfFCHZhRbKNMwHBE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -61,14 +65,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZyOFHKtjegtfyoHPiRxgSHYLK+lBoXfSOi8JNEmvz8I=
+			zwAWNxYlYM/P0M3AcVxOFu+8grU5jmLGzlcR6Pw74fg=
 			</data>
 		</dict>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/a4eO0d0Va3rojwex7XwWbDOVDOGgm0/CBtb+azP3TE=
+			fZGhzuxhb07+2Ouian2skapzUDVBsGdZpXvZn0yRng4=
 			</data>
 		</dict>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -82,14 +86,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/a4eO0d0Va3rojwex7XwWbDOVDOGgm0/CBtb+azP3TE=
+			fZGhzuxhb07+2Ouian2skapzUDVBsGdZpXvZn0yRng4=
 			</data>
 		</dict>
 		<key>Modules/bureau_id_fraud_sdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ct2aAD4AvOHd1Syqu50hcplgzXnMj2iXFQCSN8eBeBI=
+			I+HNr36334UDRhKBRxIAZ2VnbkHTNIDnZtZfbC6cUZA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -97,6 +101,13 @@
 			<key>hash2</key>
 			<data>
 			9hx/eE7iP60deGJenV53ywAEELqhrzH2oja+om5MVic=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hC0x5WNfgUcyLWNO0YynJp8WP4GA8UJ3jzsP9pXfTJ0=
 			</data>
 		</dict>
 	</dict>

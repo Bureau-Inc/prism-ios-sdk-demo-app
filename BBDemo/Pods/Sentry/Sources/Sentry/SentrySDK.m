@@ -7,7 +7,6 @@
 #import "SentryClient+Private.h"
 #import "SentryCrash.h"
 #import "SentryCrashWrapper.h"
-#import "SentryCurrentDateProvider.h"
 #import "SentryDependencyContainer.h"
 #import "SentryDispatchQueueWrapper.h"
 #import "SentryFileManager.h"
@@ -20,9 +19,14 @@
 #import "SentrySamplingContext.h"
 #import "SentryScope.h"
 #import "SentrySerialization.h"
+#import "SentrySwift.h"
 #import "SentryThreadWrapper.h"
 #import "SentryTransactionContext.h"
-#import "SentryUIDeviceWrapper.h"
+
+#if SENTRY_HAS_UIKIT
+#    import "SentryUIDeviceWrapper.h"
+#    import "SentryUIViewControllerPerformanceTracker.h"
+#endif // SENTRY_HAS_UIKIT
 
 #if SENTRY_TARGET_PROFILING_SUPPORTED
 #    import "SentryLaunchProfiling.h"
@@ -43,6 +47,7 @@ static BOOL crashedLastRunCalled;
 static SentryAppStartMeasurement *sentrySDKappStartMeasurement;
 static NSObject *sentrySDKappStartMeasurementLock;
 static BOOL _detectedStartUpCrash;
+static SentryOptions *_Nullable startOption;
 
 /**
  * @brief We need to keep track of the number of times @c +[startWith...] is called, because our OOM
@@ -77,7 +82,7 @@ static NSDate *_Nullable startTimestamp = nil;
 + (nullable SentryOptions *)options
 {
     @synchronized(self) {
-        return [[currentHub getClient] options];
+        return startOption;
     }
 }
 
@@ -86,6 +91,13 @@ static NSDate *_Nullable startTimestamp = nil;
 {
     @synchronized(self) {
         currentHub = hub;
+    }
+}
+/** Internal, only needed for testing. */
++ (void)setStartOptions:(nullable SentryOptions *)options
+{
+    @synchronized(self) {
+        startOption = options;
     }
 }
 
@@ -97,6 +109,11 @@ static NSDate *_Nullable startTimestamp = nil;
 + (BOOL)isEnabled
 {
     return currentHub != nil && [currentHub getClient] != nil;
+}
+
++ (SentryMetricsAPI *)metrics
+{
+    return currentHub.metrics;
 }
 
 + (BOOL)crashedLastRunCalled
@@ -166,6 +183,7 @@ static NSDate *_Nullable startTimestamp = nil;
 
 + (void)startWithOptions:(SentryOptions *)options
 {
+    startOption = options;
     [SentryLog configure:options.debug diagnosticLevel:options.diagnosticLevel];
 
     // We accept the tradeoff that the SDK might not be fully initialized directly after
@@ -205,8 +223,19 @@ static NSDate *_Nullable startTimestamp = nil;
 #endif // TARGET_OS_IOS && SENTRY_HAS_UIKIT
 
 #if SENTRY_TARGET_PROFILING_SUPPORTED
+        BOOL shouldstopAndTransmitLaunchProfile = YES;
+#    if SENTRY_HAS_UIKIT
+        if (SentryUIViewControllerPerformanceTracker.shared.enableWaitForFullDisplay) {
+            shouldstopAndTransmitLaunchProfile = NO;
+        }
+#    endif // SENTRY_HAS_UIKIT
+
         [SentryDependencyContainer.sharedInstance.dispatchQueueWrapper dispatchAsyncWithBlock:^{
-            stopLaunchProfile(hub);
+            if (shouldstopAndTransmitLaunchProfile) {
+                SENTRY_LOG_DEBUG(@"Stopping launch profile in SentrySDK.start because there will "
+                                 @"be no automatic trace to attach it to.");
+                stopAndTransmitLaunchProfile(hub);
+            }
             configureLaunchProfiling(options);
         }];
 #endif // SENTRY_TARGET_PROFILING_SUPPORTED

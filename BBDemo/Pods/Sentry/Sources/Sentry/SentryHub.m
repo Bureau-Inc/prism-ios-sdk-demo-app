@@ -1,18 +1,18 @@
 #import "SentryClient+Private.h"
 #import "SentryCrashWrapper.h"
-#import "SentryCurrentDateProvider.h"
 #import "SentryDependencyContainer.h"
+#import "SentryDispatchQueueWrapper.h"
 #import "SentryEnvelope.h"
 #import "SentryEnvelopeItemHeader.h"
 #import "SentryEnvelopeItemType.h"
 #import "SentryEvent+Private.h"
 #import "SentryFileManager.h"
 #import "SentryHub+Private.h"
-#import "SentryId.h"
 #import "SentryInstallation.h"
 #import "SentryLevelMapper.h"
 #import "SentryLog.h"
 #import "SentryNSTimerFactory.h"
+#import "SentryOptions.h"
 #import "SentryPerformanceTracker.h"
 #import "SentryProfilingConditionals.h"
 #import "SentrySDK+Private.h"
@@ -22,6 +22,8 @@
 #import "SentryScope+Private.h"
 #import "SentrySerialization.h"
 #import "SentrySession+Private.h"
+#import "SentryStatsdClient.h"
+#import "SentrySwift.h"
 #import "SentryTraceOrigins.h"
 #import "SentryTracer.h"
 #import "SentryTransaction.h"
@@ -34,7 +36,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface
-SentryHub ()
+SentryHub () <SentryMetricsAPIDelegate>
 
 @property (nullable, nonatomic, strong) SentryClient *client;
 @property (nullable, nonatomic, strong) SentryScope *scope;
@@ -56,12 +58,26 @@ SentryHub ()
     if (self = [super init]) {
         _client = client;
         _scope = scope;
+        SentryStatsdClient *statsdClient = [[SentryStatsdClient alloc] initWithClient:client];
+        SentryMetricsClient *metricsClient =
+            [[SentryMetricsClient alloc] initWithClient:statsdClient];
+        _metrics = [[SentryMetricsAPI alloc]
+             initWithEnabled:client.options.enableMetrics
+                      client:metricsClient
+                 currentDate:SentryDependencyContainer.sharedInstance.dateProvider
+               dispatchQueue:SentryDependencyContainer.sharedInstance.dispatchQueueWrapper
+                      random:SentryDependencyContainer.sharedInstance.random
+            beforeEmitMetric:client.options.beforeEmitMetric];
+        [_metrics setDelegate:self];
+
         _sessionLock = [[NSObject alloc] init];
         _integrationsLock = [[NSObject alloc] init];
         _installedIntegrations = [[NSMutableArray alloc] init];
         _installedIntegrationNames = [[NSMutableSet alloc] init];
         _crashWrapper = [SentryCrashWrapper sharedInstance];
         _errorsBeforeSession = 0;
+
+        [SentryDependencyContainer.sharedInstance.crashWrapper enrichScope:scope];
     }
     return self;
 }
@@ -499,6 +515,8 @@ SentryHub ()
             } else {
                 _scope = [[SentryScope alloc] init];
             }
+
+            [SentryDependencyContainer.sharedInstance.crashWrapper enrichScope:_scope];
         }
         return _scope;
     }
@@ -669,6 +687,7 @@ SentryHub ()
 
 - (void)flush:(NSTimeInterval)timeout
 {
+    [_metrics flush];
     SentryClient *client = _client;
     if (client != nil) {
         [client flush:timeout];
@@ -677,8 +696,41 @@ SentryHub ()
 
 - (void)close
 {
+    [_metrics close];
     [_client close];
     SENTRY_LOG_DEBUG(@"Closed the Hub.");
+}
+
+- (LocalMetricsAggregator *_Nullable)getLocalMetricsAggregator
+{
+    id<SentrySpan> currentSpan = _scope.span;
+
+    // We don't want to add them LocalMetricsAggregator to the SentrySpan protocol and make it
+    // public. Instead, we check if the span responds to the getLocalMetricsAggregator which, every
+    // span should do.
+    if ([currentSpan isKindOfClass:SentrySpan.class]) {
+        return [(SentrySpan *)currentSpan getLocalMetricsAggregator];
+    }
+
+    return nil;
+}
+
+- (NSDictionary<NSString *, NSString *> *)getDefaultTagsForMetrics
+{
+    SentryOptions *options = [_client options];
+    if (options == nil || options.enableDefaultTagsForMetrics == NO) {
+        return @{};
+    }
+
+    NSMutableDictionary<NSString *, NSString *> *defaultTags = [NSMutableDictionary dictionary];
+
+    if (options.releaseName != nil) {
+        defaultTags[@"release"] = options.releaseName;
+    }
+
+    defaultTags[@"environment"] = options.environment;
+
+    return defaultTags;
 }
 
 #pragma mark - Protected

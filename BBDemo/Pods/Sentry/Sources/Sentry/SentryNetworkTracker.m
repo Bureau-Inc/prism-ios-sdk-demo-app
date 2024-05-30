@@ -11,12 +11,14 @@
 #import "SentryLog.h"
 #import "SentryMechanism.h"
 #import "SentryNoOpSpan.h"
+#import "SentryOptions.h"
 #import "SentryPropagationContext.h"
 #import "SentryRequest.h"
 #import "SentrySDK+Private.h"
 #import "SentryScope+Private.h"
 #import "SentrySerialization.h"
 #import "SentryStacktrace.h"
+#import "SentrySwift.h"
 #import "SentryThread.h"
 #import "SentryThreadInspector.h"
 #import "SentryTraceContext.h"
@@ -25,7 +27,6 @@
 #import "SentryTracer.h"
 #import "SentryUser.h"
 #import <objc/runtime.h>
-@import SentryPrivate;
 
 /**
  * WARNING: We had issues in the past with this code on older iOS versions. We don't run unit tests
