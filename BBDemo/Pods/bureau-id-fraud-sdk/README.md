@@ -8,6 +8,15 @@
 # Podfile
 pod 'bureau-id-fraud-sdk'
 
+#Add below lines to end of your pod file
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end
+
 ```
 
 2. "import bureau_id_fraud_sdk" in your UIViewcontroller
@@ -81,7 +90,7 @@ curl --location --request POST 'https://api.sandbox.bureau.id/v1/suppliers/devic
 --header 'Authorization: Basic MzNiNxxxx2ItZGU2M==' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "sessionKey": "697bb2d6-1111-1111-1111-548d6a809360"
+    "sessionId": "697bb2d6-1111-1111-1111-548d6a809360"
 }'
 ```
 
@@ -91,6 +100,6 @@ curl --location --request POST 'https://api.bureau.id/v1/suppliers/device-finger
 --header 'Authorization: Basic MzNiNxxxx2ItZGU2M==' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "sessionKey": "697bb2d6-1111-1111-1111-548d6a809360"
+    "sessionId": "697bb2d6-1111-1111-1111-548d6a809360"
 }'
 ```

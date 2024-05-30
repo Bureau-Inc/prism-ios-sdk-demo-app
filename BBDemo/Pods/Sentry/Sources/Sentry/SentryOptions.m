@@ -128,10 +128,14 @@ NSString *const kSentryDefaultEnvironment = @"production";
 #endif // SENTRY_TARGET_PROFILING_SUPPORTED
         self.enableCoreDataTracing = YES;
         _enableSwizzling = YES;
+        self.swizzleClassNameExcludes = [NSSet new];
         self.sendClientReports = YES;
         self.swiftAsyncStacktraces = NO;
         self.enableSpotlight = NO;
         self.spotlightUrl = @"http://localhost:8969/stream";
+        self.enableMetrics = NO;
+        self.enableDefaultTagsForMetrics = YES;
+        self.enableSpanLocalMetricAggregation = YES;
 
 #if TARGET_OS_OSX
         NSString *dsn = [[[NSProcessInfo processInfo] environment] objectForKey:@"SENTRY_DSN"];
@@ -446,6 +450,11 @@ NSString *const kSentryDefaultEnvironment = @"production";
     [self setBool:options[@"enableSwizzling"]
             block:^(BOOL value) { self->_enableSwizzling = value; }];
 
+    if ([options[@"swizzleClassNameExcludes"] isKindOfClass:[NSSet class]]) {
+        _swizzleClassNameExcludes =
+            [options[@"swizzleClassNameExcludes"] filteredSetUsingPredicate:isNSString];
+    }
+
     [self setBool:options[@"enableCoreDataTracing"]
             block:^(BOOL value) { self->_enableCoreDataTracing = value; }];
 
@@ -495,6 +504,18 @@ NSString *const kSentryDefaultEnvironment = @"production";
 
     if ([options[@"spotlightUrl"] isKindOfClass:[NSString class]]) {
         self.spotlightUrl = options[@"spotlightUrl"];
+    }
+
+    [self setBool:options[@"enableMetrics"] block:^(BOOL value) { self->_enableMetrics = value; }];
+
+    [self setBool:options[@"enableDefaultTagsForMetrics"]
+            block:^(BOOL value) { self->_enableDefaultTagsForMetrics = value; }];
+
+    [self setBool:options[@"enableSpanLocalMetricAggregation"]
+            block:^(BOOL value) { self->_enableSpanLocalMetricAggregation = value; }];
+
+    if ([self isBlock:options[@"beforeEmitMetric"]]) {
+        self.beforeEmitMetric = options[@"beforeEmitMetric"];
     }
 
     return YES;

@@ -374,5 +374,5 @@ SWIFT_CLASS("_TtC19bureau_id_fraud_sdk20UserBehaviourCapture")
 #endif
 
 #else
-//#error unsupported Swift architecture
+#error unsupported Swift architecture
 #endif

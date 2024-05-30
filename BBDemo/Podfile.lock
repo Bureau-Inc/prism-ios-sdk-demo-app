@@ -1,31 +1,26 @@
 PODS:
-  - bureau-id-fraud-sdk (1.0.5):
-    - Sentry (= 8.21.0)
+  - bureau-id-fraud-sdk (1.0.6):
+    - Sentry (= 8.23.0)
     - SwiftProtobuf (= 1.26.0)
-  - Sentry (8.21.0):
-    - Sentry/Core (= 8.21.0)
-    - SentryPrivate (= 8.21.0)
-  - Sentry/Core (8.21.0):
-    - SentryPrivate (= 8.21.0)
-  - SentryPrivate (8.21.0)
+  - Sentry (8.23.0):
+    - Sentry/Core (= 8.23.0)
+  - Sentry/Core (8.23.0)
   - SwiftProtobuf (1.26.0)
 
 DEPENDENCIES:
-  - bureau-id-fraud-sdk
+  - bureau-id-fraud-sdk (= 1.0.6)
 
 SPEC REPOS:
   trunk:
     - bureau-id-fraud-sdk
     - Sentry
-    - SentryPrivate
     - SwiftProtobuf
 
 SPEC CHECKSUMS:
-  bureau-id-fraud-sdk: 975025072ff57f5c2ad82e9ba0b13c17973b87e2
-  Sentry: ebc12276bd17613a114ab359074096b6b3725203
-  SentryPrivate: d651efb234cf385ec9a1cdd3eff94b5e78a0e0fe
+  bureau-id-fraud-sdk: 3083a012f3cf73be79f499cc42c842635a29c429
+  Sentry: 1b0c990ea2a722f4ab91a5e1487ff64751ab94d1
   SwiftProtobuf: 5e8349171e7c2f88f5b9e683cb3cb79d1dc780b3
 
-PODFILE CHECKSUM: 9b70f0cb993cf70f13be88b4b07b6437a7eef659
+PODFILE CHECKSUM: 100a3184c9505f5e535a37b7303481c509af6b31
 
 COCOAPODS: 1.14.3
