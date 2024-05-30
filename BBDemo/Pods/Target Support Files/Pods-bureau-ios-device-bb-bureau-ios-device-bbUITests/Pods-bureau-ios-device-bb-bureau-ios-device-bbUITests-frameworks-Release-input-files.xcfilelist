@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests/Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework
-${BUILT_PRODUCTS_DIR}/SentryPrivate/SentryPrivate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/bureau-id-fraud-sdk/bureau_id_fraud_sdk.framework/bureau_id_fraud_sdk

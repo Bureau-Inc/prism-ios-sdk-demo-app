@@ -1,7 +1,5 @@
-#import "NSDictionary+SentrySanitize.h"
 #import "PrivateSentrySDKOnly.h"
 #import "SentryClient.h"
-#import "SentryCurrentDateProvider.h"
 #import "SentryDebugImageProvider.h"
 #import "SentryDependencyContainer.h"
 #import "SentryEvent+Private.h"
@@ -9,6 +7,7 @@
 #import "SentryHub+Private.h"
 #import "SentryInternalDefines.h"
 #import "SentryLog.h"
+#import "SentryNSDictionarySanitize.h"
 #import "SentryNSTimerFactory.h"
 #import "SentryNoOpSpan.h"
 #import "SentryProfilingConditionals.h"
@@ -20,6 +19,7 @@
 #import "SentrySpanContext+Private.h"
 #import "SentrySpanContext.h"
 #import "SentrySpanId.h"
+#import "SentrySwift.h"
 #import "SentryThreadWrapper.h"
 #import "SentryTime.h"
 #import "SentryTraceContext.h"
@@ -32,7 +32,6 @@
 #import <SentryDispatchQueueWrapper.h>
 #import <SentryMeasurementValue.h>
 #import <SentrySpanOperations.h>
-@import SentryPrivate;
 
 #if SENTRY_TARGET_PROFILING_SUPPORTED
 #    import "SentryLaunchProfiling.h"
@@ -99,7 +98,6 @@ SentryTracer ()
     dispatch_block_t _idleTimeoutBlock;
     NSMutableArray<id<SentrySpan>> *_children;
     BOOL _startTimeChanged;
-    NSDate *_originalStartTimestamp;
     NSObject *_idleTimeoutLock;
 
 #if SENTRY_HAS_UIKIT
@@ -190,7 +188,8 @@ static BOOL appStartMeasurementRead;
 #endif // SENTRY_HAS_UIKIT
 
 #if SENTRY_TARGET_PROFILING_SUPPORTED
-    if (_configuration.profilesSamplerDecision.decision == kSentrySampleDecisionYes) {
+    if (_configuration.profilesSamplerDecision.decision == kSentrySampleDecisionYes
+        || isTracingAppLaunch) {
         _internalID = [[SentryId alloc] init];
         if ((_isProfiling = [SentryProfiler startWithTracer:_internalID])) {
             SENTRY_LOG_DEBUG(@"Started profiler for trace %@ with internal id %@",
@@ -548,10 +547,6 @@ static BOOL appStartMeasurementRead;
         self.finishCallback = nil;
     }
 
-    if (self.shouldIgnoreWaitForChildrenCallback) {
-        self.shouldIgnoreWaitForChildrenCallback = nil;
-    }
-
     // Prewarming can execute code up to viewDidLoad of a UIViewController, and keep the app in the
     // background. This can lead to auto-generated transactions lasting for minutes or even hours.
     // Therefore, we drop transactions lasting longer than SENTRY_AUTO_TRANSACTION_MAX_DURATION.
@@ -564,13 +559,7 @@ static BOOL appStartMeasurementRead;
         return;
     }
 
-    BOOL shouldBailWithNilHub = _hub == nil;
-#if SENTRY_TARGET_PROFILING_SUPPORTED
-    if (isTracingAppLaunch) {
-        shouldBailWithNilHub = NO;
-    }
-#endif // SENTRY_TARGET_PROFILING_SUPPORTED
-    if (shouldBailWithNilHub) {
+    if (_hub == nil) {
         SENTRY_LOG_DEBUG(
             @"Hub was nil for tracer %@, nothing to do.", _traceContext.traceId.sentryIdString);
         return;
@@ -608,7 +597,24 @@ static BOOL appStartMeasurementRead;
 
 #if SENTRY_TARGET_PROFILING_SUPPORTED
     if (self.isProfiling) {
-        [self captureTransactionWithProfile:transaction];
+        NSDate *startTimestamp;
+
+#    if SENTRY_HAS_UIKIT
+        if (appStartMeasurement != nil) {
+            startTimestamp = appStartMeasurement.runtimeInitTimestamp;
+        }
+#    endif // SENTRY_HAS_UIKIT
+
+        if (startTimestamp == nil) {
+            startTimestamp = self.startTimestamp;
+        }
+        if (!SENTRY_ASSERT_RETURN(startTimestamp != nil,
+                @"A transaction with a profile should have a start timestamp already. We will "
+                @"assign the current time but this will be incorrect.")) {
+            startTimestamp = [SentryDependencyContainer.sharedInstance.dateProvider date];
+        }
+
+        [self captureTransactionWithProfile:transaction startTimestamp:startTimestamp];
         return;
     }
 #endif // SENTRY_TARGET_PROFILING_SUPPORTED
@@ -618,17 +624,19 @@ static BOOL appStartMeasurementRead;
 
 #if SENTRY_TARGET_PROFILING_SUPPORTED
 - (void)captureTransactionWithProfile:(SentryTransaction *)transaction
+                       startTimestamp:(NSDate *)startTimestamp
 {
     SentryEnvelopeItem *profileEnvelopeItem =
-        [SentryProfiler createProfilingEnvelopeItemForTransaction:transaction];
+        [SentryProfiler createProfilingEnvelopeItemForTransaction:transaction
+                                                   startTimestamp:startTimestamp];
 
     if (!profileEnvelopeItem) {
         [_hub captureTransaction:transaction withScope:_hub.scope];
         return;
     }
 
-    SENTRY_LOG_DEBUG(@"Capturing transaction with profiling data attached for tracer id %@.",
-        self.internalID.sentryIdString);
+    SENTRY_LOG_DEBUG(@"Capturing transaction id %@ with profiling data attached for tracer id %@.",
+        transaction.eventId.sentryIdString, self.internalID.sentryIdString);
     [_hub captureTransaction:transaction
                       withScope:_hub.scope
         additionalEnvelopeItems:@[ profileEnvelopeItem ]];
@@ -654,7 +662,6 @@ static BOOL appStartMeasurementRead;
 
 - (void)updateStartTime:(NSDate *)startTime
 {
-    _originalStartTimestamp = self.startTimestamp;
     super.startTimestamp = startTime;
     _startTimeChanged = YES;
 }
@@ -687,7 +694,19 @@ static BOOL appStartMeasurementRead;
 
 #if SENTRY_TARGET_PROFILING_SUPPORTED
     if (self.isProfiling) {
+        // if we have an app start span, use its app start timestamp. otherwise use the tracer's
+        // start system time as we currently do
+        SENTRY_LOG_DEBUG(@"Tracer start time: %llu", self.startSystemTime);
+
         transaction.startSystemTime = self.startSystemTime;
+#    if SENTRY_HAS_UIKIT
+        if (appStartMeasurement != nil) {
+            SENTRY_LOG_DEBUG(@"Assigning transaction start time as app start system time (%llu)",
+                appStartMeasurement.runtimeInitSystemTimestamp);
+            transaction.startSystemTime = appStartMeasurement.runtimeInitSystemTimestamp;
+        }
+#    endif // SENTRY_HAS_UIKIT
+
         [SentryProfiler recordMetrics];
         transaction.endSystemTime
             = SentryDependencyContainer.sharedInstance.dateProvider.systemTime;
@@ -806,7 +825,7 @@ static BOOL appStartMeasurementRead;
             NSMutableDictionary *context =
                 [[NSMutableDictionary alloc] initWithDictionary:[transaction context]];
             NSDictionary *appContext = @{ @"app" : @ { @"start_type" : appStartType } };
-            [context mergeEntriesFromDictionary:appContext];
+            [SentryDictionary mergeEntriesFromDictionary:appContext intoDictionary:context];
             [transaction setContext:context];
 
             // The backend calculates statistics on the number and size of debug images for app
@@ -872,11 +891,6 @@ static BOOL appStartMeasurementRead;
         return [(SentrySpan *)span tracer];
     }
     return nil;
-}
-
-- (NSDate *)originalStartTimestamp
-{
-    return _startTimeChanged ? _originalStartTimestamp : self.startTimestamp;
 }
 
 @end

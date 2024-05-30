@@ -150,26 +150,22 @@ class ResultVC: BaseViewController {
     var userName:String?
     var password:String?
     var isBBEnable:Bool?
+    var sessionID:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
         spinner.startAnimating()
-        InitSDK()
-    }
-    
-    func InitSDK(){
-        let _ = UserDefaults.standard.string(forKey: "credentialId")
         BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
         BureauAPI.shared.submit()
     }
     
     func loadSessionData(sessionID:String){
-        guard let serviceUrl = URL(string: ("https://api.overwatch.dev.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
+        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-        request.setValue("Basic <TOKEN>>", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic <<TOKEN>>", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
@@ -197,6 +193,9 @@ class ResultVC: BaseViewController {
     func updateUI(_ dic:NSDictionary){
         if isBBEnable ?? false{
             checkPriorityUser((userName ?? "") + ("@newbank.com") + (password ?? ""), dic: dic)
+        }else{
+            bioWarnView.isHidden = false
+            bioResultView.isHidden = true
         }
         
         var riskLevel = 0
@@ -453,32 +452,24 @@ class ResultVC: BaseViewController {
     
 }
 
-//extension ResultVC: CLLocationManagerDelegate{
-//    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-//    {
-//        InitSDK()
-//        manager.stopUpdatingLocation()
-//        manager.delegate = nil
-//    }
-//}
-
 extension ResultVC : PrismFingerPrintDelegate{
     func onFinished(data: [String : Any]?) {
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200 || statusCode == 409){
-            print(self.appdelegate?.sessionID ?? "")
-            loadSessionData(sessionID: (self.appdelegate?.sessionID ?? ""))
+            loadSessionData(sessionID: self.sessionID ?? "")
         }else if statusCode == 401{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
                 print("apiResponse", apiResponse ?? "")
+                self.navigationController?.backToViewController(viewController: MainViewController.self)
             }
         }else{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
                 print("apiResponse", apiResponse ?? "")
+                self.navigationController?.backToViewController(viewController: MainViewController.self)
             }
         }
         

@@ -18,9 +18,7 @@ import LocalAuthentication
 import MachO
 import MessageUI
 import Network
-import Sentry
 import Swift
-import SwiftProtobuf
 import SwiftUI
 import SystemConfiguration
 import UIKit
@@ -49,12 +47,14 @@ extension bureau_id_fraud_sdk.DeviceInfoProvider : bureau_id_fraud_sdk.DeviceInf
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BureauAPI : ObjectiveC.NSObject {
   public var delegate: UIKit.UIViewController?
   public var fingerprintDelegate: (any bureau_id_fraud_sdk.PrismFingerPrintDelegate)?
+  public var localSignalDelegate: (any bureau_id_fraud_sdk.LocalSignalDelegate)?
   @objc public static let shared: bureau_id_fraud_sdk.BureauAPI
   public func configure(clientID: Swift.String, environment: bureau_id_fraud_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", enableBehavioralBiometrics: Swift.Bool)
   required public init(clientID: Swift.String, environment: bureau_id_fraud_sdk.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", refVC: UIKit.UIViewController, enableBehavioralBiometrics: Swift.Bool)
   public func startSubSession(_ subSessionID: Swift.String)
   public func stopSubSession()
   public func setUserID(_ userId: Swift.String)
+  public func setCustomUrl(_ customUrl: Swift.String)
   public func setFlow(_ flow: Swift.String)
   @objc public func submit()
   @objc deinit
@@ -77,6 +77,18 @@ public enum Mode {
 }
 public protocol PrismFingerPrintDelegate : ObjectiveC.NSObject {
   func onFinished(data: [Swift.String : Any]?)
+}
+public protocol LocalSignalDelegate : AnyObject {
+  func deviceLocation(isMocked: Swift.Bool)
+  func device(isJailBreak: Swift.Bool)
+  func appDebugMode(enable: Swift.Bool)
+  func isVPNEnable(enable: Swift.Bool)
+}
+extension bureau_id_fraud_sdk.LocalSignalDelegate {
+  public func deviceLocation(isMocked: Swift.Bool)
+  public func device(isJailBreak: Swift.Bool)
+  public func appDebugMode(enable: Swift.Bool)
+  public func isVPNEnable(enable: Swift.Bool)
 }
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class UserBehaviourCapture : UIKit.UIViewController, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) public var prismBehaviouralDelegate: (any bureau_id_fraud_sdk.PrismBehaviouralDelegate)?

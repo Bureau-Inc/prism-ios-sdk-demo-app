@@ -11,12 +11,12 @@
 #    import <Foundation/Foundation.h>
 #    import <PrivateSentrySDKOnly.h>
 #    import <SentryAppState.h>
-#    import <SentryCurrentDateProvider.h>
 #    import <SentryDependencyContainer.h>
 #    import <SentryDispatchQueueWrapper.h>
 #    import <SentryInternalNotificationNames.h>
 #    import <SentryLog.h>
 #    import <SentrySDK+Private.h>
+#    import <SentrySwift.h>
 #    import <UIKit/UIKit.h>
 
 static NSDate *runtimeInit = nil;
@@ -213,6 +213,7 @@ SentryAppStartTracker () <SentryFramesTrackerListener>
             [[SentryAppStartMeasurement alloc] initWithType:appStartType
                                                 isPreWarmed:isPreWarmed
                                           appStartTimestamp:appStartTimestamp
+                                 runtimeInitSystemTimestamp:sysctl.runtimeInitSystemTimestamp
                                                    duration:appStartDuration
                                        runtimeInitTimestamp:runtimeInit
                               moduleInitializationTimestamp:sysctl.moduleInitializationTimestamp
