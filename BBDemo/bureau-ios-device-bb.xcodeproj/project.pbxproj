@@ -78,6 +78,7 @@
 		8D309C3D3DE52CC0E9010F3F /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D02B80BFD93050F3FCF357E /* Pods_bureau_ios_device_bbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F69E0A3DE9C735539A46780 /* Pods_bureau_ios_device_bb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE16EBB52C08AE2000CBF607 /* bureau-ios-device-bb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bureau-ios-device-bb.entitlements"; sourceTree = "<group>"; };
 		CEF11AA22AEF9DD80030CBD4 /* bureau-ios-device-bb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bureau-ios-device-bb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		CEF11AA42AEF9DD80030CBD4 /* bureau-ios-device-bb */ = {
 			isa = PBXGroup;
 			children = (
+				CE16EBB52C08AE2000CBF607 /* bureau-ios-device-bb.entitlements */,
 				CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */,
 				CEF11B072AF138D60030CBD4 /* AppConstant.swift */,
 				CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */,
@@ -352,8 +354,8 @@
 			);
 			mainGroup = CEF11A992AEF9DD80030CBD4;
 			packageReferences = (
-				CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
-				CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu.git" */,
+				CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */,
+				CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */,
 				CEA4ACC62AF292CF00B2801B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = CEF11AA32AEF9DD80030CBD4 /* Products */;
@@ -694,9 +696,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "bureau-ios-device-bb/bureau-ios-device-bb.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -735,9 +738,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "bureau-ios-device-bb/bureau-ios-device-bb.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -900,7 +904,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
+		CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift";
 			requirement = {
@@ -908,7 +912,7 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu.git" */ = {
+		CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
 			requirement = {
@@ -926,12 +930,12 @@
 		};
 		CEF11AE52AEF9FB20030CBD4 /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
+			package = CEF11AE42AEF9FB20030CBD4 /* XCRemoteSwiftPackageReference "Auth0" */;
 			productName = Auth0;
 		};
 		CEF11AE82AEF9FBE0030CBD4 /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu.git" */;
+			package = CEF11AE72AEF9FBE0030CBD4 /* XCRemoteSwiftPackageReference "SideMenu" */;
 			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
