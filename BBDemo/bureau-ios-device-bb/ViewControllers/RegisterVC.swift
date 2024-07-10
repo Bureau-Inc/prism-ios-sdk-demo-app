@@ -37,7 +37,7 @@ class RegisterVC: UIViewController {
                     self.showAlert(title: "Error", message: "Invalid password")
                 }else{
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let VC = storyboard.instantiateViewController(withIdentifier: "ResultVC") as! ResultVC
+                    let VC = storyboard.instantiateViewController(withIdentifier: "ResultNewVC") as! ResultNewVC
                     VC.userName = userIdTF.text
                     VC.password = passwordTF.text
                     VC.isBBEnable = isBBEnable
