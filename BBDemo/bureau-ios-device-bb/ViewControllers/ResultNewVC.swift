@@ -47,6 +47,7 @@ class ResultNewVC: BaseViewController {
     @IBOutlet weak var gpsLocLbl: UILabel!
     @IBOutlet weak var iplocationLbl: UILabel!
     @IBOutlet weak var fingerprintIDLbl: UILabel!
+    @IBOutlet weak var sessionIDLbl: UILabel!
     @IBOutlet weak var ispLbl: UILabel!
     
     
@@ -97,8 +98,6 @@ class ResultNewVC: BaseViewController {
     var acceleroMeterGraph:BureauLineGraphView?
     var magneticGraph:BureauLineGraphView?
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
@@ -185,33 +184,29 @@ class ResultNewVC: BaseViewController {
             prepareChip(tagListView: listView, value: "Voice Call Detected", enable: dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "Simulator", enable: dic.value(forKeyPath: "emulator") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "Frida Enable", enable: dic.value(forKeyPath: "fridaDetected") as? Bool ?? false)
+            setLabelTheme(dic.value(forKey: "deviceRiskLevel") as? String ?? "", appRiskValueLbl)
         case appRiskListView:
             prepareChip(tagListView: listView, value: "Debuggable", enable: dic.value(forKeyPath: "debuggable") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "App Cloned", enable: false)
             prepareChip(tagListView: listView, value: "Tampered", enable: false)
             prepareChip(tagListView: listView, value: "Appstore install", enable: !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false))
-            
-            
-            
-//            with(binding.appSignalsLayout.tvRiskLevelValue) {
-//                if (result.debuggable || result.isAppCloned || result.googlePlayStoreInstall != true) {
-//                    text = formatWords(RiskLevel.HIGH.toString())
-//                    setTextColor(this, RiskLevel.HIGH.toString())
-//                } else {
-//                    with(binding.appSignalsLayout.tvRiskLevelValue) {
-//                        text = formatWords(RiskLevel.LOW.toString())
-//                        setTextColor(this, RiskLevel.LOW.toString())
-//                    }
-//                }
-//            }
-            
+            if ((dic.value(forKeyPath: "debuggable") as? Bool ?? false) || !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false)){
+                deviceRiskValueLbl.text = AppConstant.High
+                deviceRiskValueLbl.textColor = AppConstant.RedTitleColor
+            }else{
+                deviceRiskValueLbl.text = AppConstant.Low
+                deviceRiskValueLbl.textColor = AppConstant.GreenTitleColor
+            }
         default:
             prepareChip(tagListView: listView, value: "IP Security:VPN", enable: dic.value(forKeyPath: "IPSecurity.VPN") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:TOR", enable: dic.value(forKeyPath: "IPSecurity.is_tor") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:Proxy", enable: dic.value(forKeyPath: "IPSecurity.is_proxy") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:Crawler", enable: dic.value(forKeyPath: "IPSecurity.is_crawler") as? Bool ?? false)
+            setLabelTheme(dic.value(forKeyPath: "IPSecurity.threat_level") as? String ?? "", networkRiskValueLbl)
         }
     }
+    
+    
     
     func updateUI(_ dic:NSDictionary){
         if isBBEnable ?? false{
@@ -250,6 +245,7 @@ class ResultNewVC: BaseViewController {
         }
         
         fingerprintIDLbl.text = (dic.value(forKeyPath: "fingerprint") as? String)
+        sessionIDLbl.text = (dic.value(forKeyPath: "sessionId") as? String)
         ispLbl.text = (dic.value(forKeyPath: "networkInformation.isp") as? String)
         ipaddressLbl.text = (dic.value(forKeyPath: "IP") as? String)
         ipTypeLbl.text = (dic.value(forKeyPath: "IPType") as? String)?.capitalized
@@ -302,12 +298,15 @@ class ResultNewVC: BaseViewController {
             case "VERY_HIGH":
                 bbRiskLevel = AppConstant.VIEW_NEGATIVE
                 bioRiskValue.text = "High"
+                deviceRiskValueLbl.text = "Very High"
             case "MEDIUM":
                 bbRiskLevel = AppConstant.VIEW_WARNING
                 bioRiskValue.text = "Medium"
+                deviceRiskValueLbl.text = "Medium"
             default:
                 bbRiskLevel = AppConstant.VIEW_POSITIVE
                 bioRiskValue.text = "Low"
+                deviceRiskValueLbl.text = "Low"
             }
             setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, bbRiskLevel)
             self.userFamiliScore.text = String(format: "%.5f", userSimilarityScore ?? 0.0)
@@ -346,6 +345,20 @@ class ResultNewVC: BaseViewController {
     func showBehaviouralBiometrics(){
         bioWarnView.isHidden = true
         bioResultView.isHidden = false
+    }
+    
+    func setLabelTheme(_ value:String, _ lbl:UILabel){
+        let words = value.lowercased().split(separator: "_")
+        let output = words.joined(separator: " ")
+        lbl.text = output.capitalized
+        switch output{
+        case "very high", "high":
+            lbl.textColor = AppConstant.RedTitleColor
+        case "medium":
+            lbl.textColor = AppConstant.OrangeTitleColor
+        default:
+            lbl.textColor = AppConstant.GreenTitleColor
+        }
     }
     
     func setViewTheme(_ bgView:UIView, _ titleLbl:UILabel, _ valueLbl:UILabel, _ icon:UIImageView, _ viewType: Int){
