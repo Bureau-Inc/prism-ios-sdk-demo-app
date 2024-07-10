@@ -25,6 +25,8 @@ class AppConstant: NSObject {
     static let GreenTitleColor = UIColor(named: "GreenTitle")
     static let RedTitleColor = UIColor(named: "RedTitle")
     static let OrangeTitleColor = UIColor(named: "OrangeTitle")
+    static let ThemeColor = UIColor(named: "ThemeColor")
+    static let ThemeFontColor = UIColor(named: "ThemeSecFontColor")
     
     static let NaturalColor = UIColor.systemGray6
     

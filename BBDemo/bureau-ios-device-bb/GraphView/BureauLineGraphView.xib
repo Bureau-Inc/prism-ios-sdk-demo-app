@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lexend-Light.ttf">
+            <string>Lexend-Light</string>
+        </array>
+        <array key="Lexend-Regular.ttf">
+            <string>Lexend-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BureauLineGraphView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+            <connections>
+                <outlet property="Line_1_Lbl" destination="Xm7-j8-AZG" id="foj-Iy-lhm"/>
+                <outlet property="Line_2_Lbl" destination="z5n-uo-w3E" id="BGp-b8-wni"/>
+                <outlet property="Line_3_Lbl" destination="F3v-oO-xxk" id="OtX-rx-D9P"/>
+                <outlet property="Line_4_Lbl" destination="4fi-ci-fDZ" id="5UK-EG-oaW"/>
+                <outlet property="graphParentView" destination="1z5-zv-LU7" id="dmQ-b1-0f8"/>
+                <outlet property="titleIco" destination="uOM-Ue-1Ql" id="Rai-LD-4da"/>
+                <outlet property="titleLbl" destination="nzs-Dw-bB2" id="ccU-JF-PBH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-sd-Wco">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FXo-Ot-1O4">
+                            <rect key="frame" x="20" y="20" width="86" height="30"/>
+                            <subviews>
+                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand-with-phone" translatesAutoresizingMaskIntoConstraints="NO" id="uOM-Ue-1Ql">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="ae4-Xw-MtS"/>
+                                        <constraint firstAttribute="height" constant="30" id="jvZ-6U-Wrb"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magnetic Field" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzs-Dw-bB2">
+                                    <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
+                                    <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="12"/>
+                                    <color key="textColor" red="0.13725490200000001" green="0.23529411759999999" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4qh-ki-tj0">
+                            <rect key="frame" x="20" y="65" width="76.666666666666671" height="75"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="N4Y-qb-lXs">
+                                    <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="10"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-hy-gDg">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                            <color key="backgroundColor" name="ThemeColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="DWc-1t-h9f"/>
+                                                <constraint firstAttribute="width" constant="10" id="gzc-Tb-jGA"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x: 201.189°" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm7-j8-AZG">
+                                            <rect key="frame" x="14.999999999999996" y="0.0" width="61.666666666666657" height="10"/>
+                                            <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="12"/>
+                                            <color key="textColor" name="ThemeSecFontColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="laA-dn-rq5">
+                                    <rect key="frame" x="0.0" y="20" width="76.666666666666671" height="10"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGu-3v-H9c">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                            <color key="backgroundColor" name="OrangeTitle"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="V4O-fB-iOP"/>
+                                                <constraint firstAttribute="height" constant="10" id="qU2-dC-np8"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y: -49.127°" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5n-uo-w3E">
+                                            <rect key="frame" x="14.999999999999996" y="0.0" width="61.666666666666657" height="10"/>
+                                            <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="12"/>
+                                            <color key="textColor" name="ThemeSecFontColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WIh-cU-VwM">
+                                    <rect key="frame" x="0.0" y="40" width="76.666666666666671" height="10"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ML0-JW-gLA">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                            <color key="backgroundColor" name="GreenTitle"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="51r-vg-lcH"/>
+                                                <constraint firstAttribute="height" constant="10" id="yIy-nC-t9K"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="z: -49.127°" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3v-oO-xxk">
+                                            <rect key="frame" x="14.999999999999996" y="0.0" width="61.666666666666657" height="10"/>
+                                            <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="12"/>
+                                            <color key="textColor" name="ThemeSecFontColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 127.3 μT" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fi-ci-fDZ">
+                                    <rect key="frame" x="0.0" y="60" width="76.666666666666671" height="15"/>
+                                    <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="12"/>
+                                    <color key="textColor" name="ThemeFontColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1z5-zv-LU7">
+                            <rect key="frame" x="15" y="160" width="368" height="160"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92549019610000005" green="0.95294117649999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="FXo-Ot-1O4" firstAttribute="leading" secondItem="2JY-sd-Wco" secondAttribute="leading" constant="20" id="8Sx-5R-snR"/>
+                        <constraint firstItem="4qh-ki-tj0" firstAttribute="top" secondItem="FXo-Ot-1O4" secondAttribute="bottom" constant="15" id="9a1-dr-x4M"/>
+                        <constraint firstItem="FXo-Ot-1O4" firstAttribute="top" secondItem="2JY-sd-Wco" secondAttribute="top" constant="20" id="Ubi-rt-Jtm"/>
+                        <constraint firstItem="1z5-zv-LU7" firstAttribute="top" secondItem="4qh-ki-tj0" secondAttribute="bottom" constant="20" id="dji-tC-6gX"/>
+                        <constraint firstItem="4qh-ki-tj0" firstAttribute="leading" secondItem="2JY-sd-Wco" secondAttribute="leading" constant="20" id="rdP-f3-DVD"/>
+                        <constraint firstItem="1z5-zv-LU7" firstAttribute="leading" secondItem="2JY-sd-Wco" secondAttribute="leading" constant="15" id="vXg-m7-ShC"/>
+                        <constraint firstAttribute="trailing" secondItem="1z5-zv-LU7" secondAttribute="trailing" constant="10" id="y5I-g2-tuZ"/>
+                        <constraint firstAttribute="bottom" secondItem="1z5-zv-LU7" secondAttribute="bottom" constant="30" id="yly-4A-LJX"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2JY-sd-Wco" secondAttribute="trailing" id="1O9-2b-Njz"/>
+                <constraint firstAttribute="bottom" secondItem="2JY-sd-Wco" secondAttribute="bottom" id="HLS-98-QAA"/>
+                <constraint firstItem="2JY-sd-Wco" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Krr-Is-25m"/>
+                <constraint firstItem="2JY-sd-Wco" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hLJ-wi-dOW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-11.450381679389313" y="187.32394366197184"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="hand-with-phone" width="32" height="32"/>
+        <namedColor name="GreenTitle">
+            <color red="0.031372549019607843" green="0.56470588235294117" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OrangeTitle">
+            <color red="0.83137254901960789" green="0.44313725490196076" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ThemeColor">
+            <color red="0.26666666666666666" green="0.3843137254901961" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ThemeFontColor">
+            <color red="0.0040000001899898052" green="0.019999999552965164" blue="0.20800000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ThemeSecFontColor">
+            <color red="0.44699999690055847" green="0.48600000143051147" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
