@@ -1465,7 +1465,7 @@ Demo App</string>
             <objects>
                 <viewController storyboardIdentifier="ResultNewVC" id="qJ3-2l-AAY" customClass="ResultNewVC" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUi-Es-cG9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjU-YN-CGj">
@@ -1496,14 +1496,14 @@ Demo App</string>
                                     <constraint firstItem="f0c-4g-T54" firstAttribute="centerY" secondItem="pjU-YN-CGj" secondAttribute="centerY" id="ogc-3h-8PT"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDM-Bh-RWY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDM-Bh-RWY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1936"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sT1-7u-pPK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="3085"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sT1-7u-pPK">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="3165"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-e9-QQv">
-                                                <rect key="frame" x="0.0" y="20" width="375" height="3045"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-e9-QQv">
+                                                <rect key="frame" x="0.0" y="20" width="375" height="3125"/>
                                                 <subviews>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzX-1K-BHR">
                                                         <rect key="frame" x="0.0" y="-555" width="375" height="555"/>
@@ -2138,10 +2138,10 @@ Demo App</string>
                                                             <constraint firstItem="YwW-en-E3Y" firstAttribute="leading" secondItem="AuP-Bc-qC6" secondAttribute="leading" constant="25" id="cZw-l1-uxK"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQx-vY-dJS">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQx-vY-dJS">
                                                         <rect key="frame" x="0.0" y="190" width="375" height="155"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1U-Hw-25b">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1U-Hw-25b">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="155"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-IC-Dr6">
@@ -2186,7 +2186,7 @@ Demo App</string>
                                                                         <color key="textColor" name="ThemeColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rD-vb-naw" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rD-vb-naw" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
                                                                         <rect key="frame" x="15" y="86" width="295" height="49"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -2222,7 +2222,7 @@ Demo App</string>
                                                                     <constraint firstAttribute="bottom" secondItem="8rD-vb-naw" secondAttribute="bottom" constant="20" id="acB-0z-WJm"/>
                                                                     <constraint firstItem="NlC-Eq-Htd" firstAttribute="top" secondItem="qCe-3F-dQF" secondAttribute="bottom" id="afv-ep-Sw8"/>
                                                                     <constraint firstItem="NlC-Eq-Htd" firstAttribute="leading" secondItem="U1U-Hw-25b" secondAttribute="leading" constant="15" id="gOE-Dm-wQW"/>
-                                                                    <constraint firstAttribute="height" constant="155" id="hEh-mb-CGW"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="hEh-mb-CGW"/>
                                                                     <constraint firstItem="VYc-IC-Dr6" firstAttribute="leading" secondItem="U1U-Hw-25b" secondAttribute="leading" constant="15" id="hpQ-bc-zKb"/>
                                                                     <constraint firstAttribute="trailing" secondItem="qCe-3F-dQF" secondAttribute="trailing" constant="15" id="lTQ-Qx-sW1"/>
                                                                     <constraint firstItem="VYc-IC-Dr6" firstAttribute="top" secondItem="U1U-Hw-25b" secondAttribute="top" constant="15" id="uZn-Qs-IvI"/>
@@ -2246,10 +2246,10 @@ Demo App</string>
                                                             <constraint firstItem="U1U-Hw-25b" firstAttribute="leading" secondItem="fQx-vY-dJS" secondAttribute="leading" constant="25" id="rze-Qe-bW8"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVN-yp-AWq">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVN-yp-AWq">
                                                         <rect key="frame" x="0.0" y="360" width="375" height="155"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byv-AU-TgI">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byv-AU-TgI">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="155"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AGQ-mc-roX">
@@ -2294,7 +2294,7 @@ Demo App</string>
                                                                         <color key="textColor" name="ThemeColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTO-6P-MmQ" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTO-6P-MmQ" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
                                                                         <rect key="frame" x="15" y="86" width="295" height="49"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -2333,7 +2333,7 @@ Demo App</string>
                                                                     <constraint firstAttribute="trailing" secondItem="NTO-6P-MmQ" secondAttribute="trailing" constant="15" id="aRe-P5-oF0"/>
                                                                     <constraint firstItem="QbA-np-msf" firstAttribute="top" secondItem="byv-AU-TgI" secondAttribute="top" constant="15" id="awN-en-ucV"/>
                                                                     <constraint firstItem="ZQt-kM-Das" firstAttribute="top" secondItem="QbA-np-msf" secondAttribute="bottom" id="c8s-1N-agt"/>
-                                                                    <constraint firstAttribute="height" constant="155" id="hR9-T7-gDK"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="hR9-T7-gDK"/>
                                                                     <constraint firstItem="AGQ-mc-roX" firstAttribute="leading" secondItem="byv-AU-TgI" secondAttribute="leading" constant="15" id="jHe-nq-Qmb"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
@@ -2354,10 +2354,10 @@ Demo App</string>
                                                             <constraint firstAttribute="bottom" secondItem="byv-AU-TgI" secondAttribute="bottom" id="yzJ-54-erN"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAM-oX-U2v">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAM-oX-U2v">
                                                         <rect key="frame" x="0.0" y="530" width="375" height="155"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZ6-qo-MbU">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZ6-qo-MbU">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="155"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wnL-u3-91g">
@@ -2402,7 +2402,7 @@ Demo App</string>
                                                                         <color key="textColor" name="ThemeColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inP-e7-eby" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="inP-e7-eby" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
                                                                         <rect key="frame" x="15" y="86" width="295" height="49"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -2440,7 +2440,7 @@ Demo App</string>
                                                                     <constraint firstAttribute="bottom" secondItem="inP-e7-eby" secondAttribute="bottom" constant="20" id="WtA-OB-6SW"/>
                                                                     <constraint firstItem="inP-e7-eby" firstAttribute="top" secondItem="aea-3Y-oy2" secondAttribute="bottom" constant="15" id="YBa-z0-9rq"/>
                                                                     <constraint firstItem="igj-1J-HWr" firstAttribute="top" secondItem="hZ6-qo-MbU" secondAttribute="top" constant="15" id="nDK-hK-qIN"/>
-                                                                    <constraint firstAttribute="height" constant="155" id="nun-C4-cTh"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="nun-C4-cTh"/>
                                                                     <constraint firstAttribute="trailing" secondItem="igj-1J-HWr" secondAttribute="trailing" constant="15" id="x8h-1t-jtJ"/>
                                                                     <constraint firstItem="wnL-u3-91g" firstAttribute="leading" secondItem="hZ6-qo-MbU" secondAttribute="leading" constant="15" id="zVN-ah-Ucv"/>
                                                                 </constraints>
@@ -2462,7 +2462,7 @@ Demo App</string>
                                                             <constraint firstItem="hZ6-qo-MbU" firstAttribute="leading" secondItem="FAM-oX-U2v" secondAttribute="leading" constant="25" id="udo-Vd-iR8"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baE-am-O2L">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baE-am-O2L">
                                                         <rect key="frame" x="0.0" y="700" width="375" height="65"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRX-c3-1i0">
@@ -2501,7 +2501,7 @@ Demo App</string>
                                                             <constraint firstAttribute="trailing" secondItem="eRX-c3-1i0" secondAttribute="trailing" constant="25" id="nt3-0H-4dy"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4G-NI-xuG">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4G-NI-xuG">
                                                         <rect key="frame" x="0.0" y="780" width="375" height="65"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZ0-tl-5od">
@@ -2540,7 +2540,7 @@ Demo App</string>
                                                             <constraint firstItem="jZ0-tl-5od" firstAttribute="top" secondItem="n4G-NI-xuG" secondAttribute="top" id="nDV-lc-0Nh"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqw-vC-Ew8">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqw-vC-Ew8">
                                                         <rect key="frame" x="0.0" y="860" width="375" height="65"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksg-FX-jlz">
@@ -2579,7 +2579,7 @@ Demo App</string>
                                                             <constraint firstAttribute="trailing" secondItem="Ksg-FX-jlz" secondAttribute="trailing" constant="25" id="oMz-mx-Yge"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-4Q-eLH">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-4Q-eLH">
                                                         <rect key="frame" x="0.0" y="940" width="375" height="65"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0J-2B-4ef">
@@ -2618,7 +2618,7 @@ Demo App</string>
                                                             <constraint firstAttribute="bottom" secondItem="L0J-2B-4ef" secondAttribute="bottom" id="yb2-aq-Slh"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWm-eo-E4I">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWm-eo-E4I">
                                                         <rect key="frame" x="0.0" y="1020" width="375" height="65"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBI-fL-pHn">
@@ -2657,7 +2657,7 @@ Demo App</string>
                                                             <constraint firstItem="xBI-fL-pHn" firstAttribute="leading" secondItem="wWm-eo-E4I" secondAttribute="leading" constant="25" id="sIQ-8D-gnc"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awt-Us-bsH">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awt-Us-bsH">
                                                         <rect key="frame" x="0.0" y="1100" width="375" height="65"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="af9-kG-zWp">
@@ -2696,7 +2696,7 @@ Demo App</string>
                                                             <constraint firstItem="af9-kG-zWp" firstAttribute="leading" secondItem="awt-Us-bsH" secondAttribute="leading" constant="25" id="wCf-Ti-A2b"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgr-k2-6Gp">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgr-k2-6Gp">
                                                         <rect key="frame" x="0.0" y="1180" width="375" height="65"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W45-8L-OiK">
@@ -2735,8 +2735,47 @@ Demo App</string>
                                                             <constraint firstAttribute="trailing" secondItem="W45-8L-OiK" secondAttribute="trailing" constant="25" id="z0P-b2-uHY"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2t-ce-nLQ">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xyF-Ob-nLn">
                                                         <rect key="frame" x="0.0" y="1260" width="375" height="65"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vZ-pP-red">
+                                                                <rect key="frame" x="25" y="0.0" width="325" height="65"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session ID" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-GG-ppG">
+                                                                        <rect key="frame" x="0.0" y="5" width="325" height="17.5"/>
+                                                                        <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
+                                                                        <color key="textColor" name="ThemeSecFontColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9CFF00123123" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS4-tw-a8L">
+                                                                        <rect key="frame" x="0.0" y="32.5" width="325" height="27.5"/>
+                                                                        <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
+                                                                        <color key="textColor" name="ThemeSecFontColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="PS4-tw-a8L" secondAttribute="bottom" constant="5" id="4mi-n0-in0"/>
+                                                                    <constraint firstItem="PS4-tw-a8L" firstAttribute="top" secondItem="u5B-GG-ppG" secondAttribute="bottom" constant="10" id="Gr3-Ky-Zg1"/>
+                                                                    <constraint firstItem="PS4-tw-a8L" firstAttribute="leading" secondItem="5vZ-pP-red" secondAttribute="leading" id="Ja5-XZ-eLx"/>
+                                                                    <constraint firstItem="u5B-GG-ppG" firstAttribute="top" secondItem="5vZ-pP-red" secondAttribute="top" constant="5" id="e7I-VO-sYF"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="u5B-GG-ppG" secondAttribute="trailing" id="edZ-Vj-IHY"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="PS4-tw-a8L" secondAttribute="trailing" id="jgg-O5-AnH"/>
+                                                                    <constraint firstItem="u5B-GG-ppG" firstAttribute="leading" secondItem="5vZ-pP-red" secondAttribute="leading" id="yWd-dg-UoO"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="5vZ-pP-red" secondAttribute="trailing" constant="25" id="UpW-1A-nER"/>
+                                                            <constraint firstAttribute="bottom" secondItem="5vZ-pP-red" secondAttribute="bottom" id="iAY-J0-Mo1"/>
+                                                            <constraint firstItem="5vZ-pP-red" firstAttribute="top" secondItem="xyF-Ob-nLn" secondAttribute="top" id="nud-Sa-3kN"/>
+                                                            <constraint firstItem="5vZ-pP-red" firstAttribute="leading" secondItem="xyF-Ob-nLn" secondAttribute="leading" constant="25" id="s1d-Pj-yCD"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q2t-ce-nLQ">
+                                                        <rect key="frame" x="0.0" y="1340" width="375" height="65"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bfU-xd-Iql">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="65"/>
@@ -2806,8 +2845,8 @@ Demo App</string>
                                                             <constraint firstItem="bfU-xd-Iql" firstAttribute="leading" secondItem="q2t-ce-nLQ" secondAttribute="leading" constant="25" id="sni-0d-ZeW"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcK-O0-JUc">
-                                                        <rect key="frame" x="0.0" y="1340" width="375" height="65"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcK-O0-JUc">
+                                                        <rect key="frame" x="0.0" y="1420" width="375" height="65"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YKq-7h-nSI">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="65"/>
@@ -2816,13 +2855,13 @@ Demo App</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Seen Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-f3-B3l">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkV-di-jLV">
-                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2843,13 +2882,13 @@ Demo App</string>
                                                                         <rect key="frame" x="162.5" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unique User IDs" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVj-u6-ZI3">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-MT-siI">
-                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2878,7 +2917,7 @@ Demo App</string>
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-B7-FJo">
-                                                        <rect key="frame" x="0.0" y="1412.5" width="375" height="20"/>
+                                                        <rect key="frame" x="0.0" y="1492.5" width="375" height="20"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sin-Y4-w0J">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="20"/>
@@ -2948,8 +2987,8 @@ Demo App</string>
                                                             <constraint firstItem="sin-Y4-w0J" firstAttribute="top" secondItem="OQw-B7-FJo" secondAttribute="top" id="lm1-TZ-qem"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WH-Hp-hHS">
-                                                        <rect key="frame" x="0.0" y="1420" width="375" height="65"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2WH-Hp-hHS">
+                                                        <rect key="frame" x="0.0" y="1500" width="375" height="65"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-Sl-5x7">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="65"/>
@@ -3019,8 +3058,8 @@ Demo App</string>
                                                             <constraint firstAttribute="bottom" secondItem="8cy-Sl-5x7" secondAttribute="bottom" id="xbd-93-Hxy"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-fJ-UkX">
-                                                        <rect key="frame" x="0.0" y="1500" width="375" height="65"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-fJ-UkX">
+                                                        <rect key="frame" x="0.0" y="1580" width="375" height="65"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kXq-WB-oGG">
                                                                 <rect key="frame" x="25" y="0.0" width="325" height="65"/>
@@ -3090,8 +3129,8 @@ Demo App</string>
                                                             <constraint firstItem="kXq-WB-oGG" firstAttribute="top" secondItem="PnS-fJ-UkX" secondAttribute="top" id="wYL-N3-0BV"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLV-Xt-ghs">
-                                                        <rect key="frame" x="0.0" y="1580" width="375" height="85"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLV-Xt-ghs">
+                                                        <rect key="frame" x="0.0" y="1660" width="375" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Sensor Insights" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODl-H5-0Eq">
                                                                 <rect key="frame" x="25" y="10" width="270" height="65"/>
@@ -3119,8 +3158,8 @@ Demo App</string>
                                                             <constraint firstItem="V6i-3U-7Jo" firstAttribute="leading" secondItem="ODl-H5-0Eq" secondAttribute="trailing" constant="20" id="vkN-5w-sGU"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Pc-qR-5RZ">
-                                                        <rect key="frame" x="0.0" y="1680" width="375" height="330"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Pc-qR-5RZ">
+                                                        <rect key="frame" x="0.0" y="1760" width="375" height="330"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smr-zW-Ein">
                                                                 <rect key="frame" x="20" y="0.0" width="335" height="330"/>
@@ -3143,8 +3182,8 @@ Demo App</string>
                                                             <constraint firstAttribute="bottom" secondItem="smr-zW-Ein" secondAttribute="bottom" id="qTP-sL-1dI"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pz2-oz-kax">
-                                                        <rect key="frame" x="0.0" y="2025" width="375" height="330"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pz2-oz-kax">
+                                                        <rect key="frame" x="0.0" y="2105" width="375" height="330"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knr-Fr-ZGg">
                                                                 <rect key="frame" x="20" y="0.0" width="335" height="330"/>
@@ -3167,8 +3206,8 @@ Demo App</string>
                                                             <constraint firstItem="knr-Fr-ZGg" firstAttribute="leading" secondItem="Pz2-oz-kax" secondAttribute="leading" constant="20" id="tKZ-RE-AOy"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PM-id-hq2">
-                                                        <rect key="frame" x="0.0" y="2370" width="375" height="330"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8PM-id-hq2">
+                                                        <rect key="frame" x="0.0" y="2450" width="375" height="330"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-pI-coO">
                                                                 <rect key="frame" x="20" y="0.0" width="335" height="330"/>
@@ -3191,8 +3230,8 @@ Demo App</string>
                                                             <constraint firstItem="bM6-pI-coO" firstAttribute="top" secondItem="8PM-id-hq2" secondAttribute="top" id="sgo-Ik-Nc8"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68z-Ic-vst">
-                                                        <rect key="frame" x="0.0" y="2715" width="375" height="330"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68z-Ic-vst">
+                                                        <rect key="frame" x="0.0" y="2795" width="375" height="330"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqh-pK-FV6">
                                                                 <rect key="frame" x="20" y="0.0" width="335" height="330"/>
@@ -3239,19 +3278,19 @@ Demo App</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="wib-VT-Aip"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBW-fm-jFV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                                 <subviews>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Coo-Er-7OF">
-                                        <rect key="frame" x="169" y="265" width="37" height="37"/>
+                                        <rect key="frame" x="169" y="931.5" width="37" height="37"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait! We’re processing..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiU-gu-5W6">
-                                        <rect key="frame" x="25" y="327" width="325" height="55"/>
+                                        <rect key="frame" x="25" y="993.5" width="325" height="55"/>
                                         <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="22"/>
                                         <color key="textColor" name="ThemeFontColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdf-jJ-syZ">
-                                        <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="1950" width="375" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C9p-96-PP1">
                                                 <rect key="frame" x="45" y="3" width="285" height="44"/>
@@ -3317,6 +3356,7 @@ Demo App</string>
                             <constraint firstItem="6KH-g1-RHa" firstAttribute="bottom" secondItem="hBW-fm-jFV" secondAttribute="bottom" id="yK9-jB-9IZ"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="375" height="2000"/>
                     <connections>
                         <outlet property="CSScore" destination="Z9i-A1-S5T" id="x6f-Pq-olw"/>
                         <outlet property="acceleroMeterView" destination="bM6-pI-coO" id="hXO-KJ-4Lx"/>
@@ -3362,6 +3402,7 @@ Demo App</string>
                         <outlet property="riskValue" destination="lao-yf-pOY" id="Jha-t7-rdD"/>
                         <outlet property="ristTitle" destination="LMs-9u-2Nk" id="PGl-MK-0rq"/>
                         <outlet property="sessionDurationLbl" destination="X5U-1T-X1t" id="H3w-3d-Imm"/>
+                        <outlet property="sessionIDLbl" destination="PS4-tw-a8L" id="RTb-OU-c56"/>
                         <outlet property="sessionPD" destination="obG-Dl-csI" id="U6Q-nX-vjY"/>
                         <outlet property="sessionPH" destination="6rA-qx-F8X" id="x6o-ww-VWH"/>
                         <outlet property="spinner" destination="Coo-Er-7OF" id="1rr-8P-4bp"/>
@@ -5461,13 +5502,13 @@ Demo App</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence Score" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YG-Ox-fsk">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxT-WC-ZsT">
-                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -5488,13 +5529,13 @@ Demo App</string>
                                                                         <rect key="frame" x="162.5" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User ID" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQD-Lx-B64">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu8-o7-MDL">
-                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -5532,13 +5573,13 @@ Demo App</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS Latitude" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-fg-1U3">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR2-Ke-hpB">
-                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -5559,13 +5600,13 @@ Demo App</string>
                                                                         <rect key="frame" x="162.5" y="0.0" width="162.5" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS Longitude" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGz-8x-N1Z">
-                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="25"/>
+                                                                                <rect key="frame" x="0.0" y="5" width="162.5" height="17.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAv-Tg-Xsk">
-                                                                                <rect key="frame" x="0.0" y="40" width="162.5" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="32.5" width="162.5" height="27.5"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="16"/>
                                                                                 <color key="textColor" name="ThemeSecFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -5742,7 +5783,7 @@ Demo App</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yza-vK-zE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="663"/>
+            <point key="canvasLocation" x="2695" y="649"/>
         </scene>
     </scenes>
     <resources>
