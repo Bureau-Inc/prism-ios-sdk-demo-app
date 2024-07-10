@@ -17,7 +17,7 @@ class SigninVC: BaseViewController {
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var userIDInnerView: UIView!
     @IBOutlet weak var pwdInnerView: UIView!
-    @IBOutlet weak var deviceOriendationView: UIView!
+    @IBOutlet weak var deviceOriendationView: UIView!    
     var isBBEnable = false
     var sessionID:String?
     
@@ -29,7 +29,7 @@ class SigninVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sessionID = "Demo-"+NSUUID().uuidString
-        BureauAPI.shared.configure(clientID: "***ClientID***", environment: .production, sessionID: sessionID ?? "", enableBehavioralBiometrics: true)
+        BureauAPI.shared.configure(clientID: "***ClientID***", environment: .production, sessionID: sessionID ?? "", enableBehavioralBiometrics: false)
         if isBBEnable{
             BureauAPI.shared.startSubSession(NSUUID().uuidString)
         }
@@ -58,7 +58,7 @@ class SigninVC: BaseViewController {
             self.showAlert(title: "Error", message: "Invalid Password")
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let VC = storyboard.instantiateViewController(withIdentifier: "ResultVC") as! ResultVC
+            let VC = storyboard.instantiateViewController(withIdentifier: "ResultNewVC") as! ResultNewVC
             VC.userName = userIdTF.text
             VC.password = passwordTF.text
             VC.isBBEnable = isBBEnable
