@@ -12,7 +12,7 @@
 		CE0BF17F2C380CA400114749 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF17C2C380CA300114749 /* CloseButton.swift */; };
 		CE0BF1802C380CA400114749 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF17D2C380CA300114749 /* TagView.swift */; };
 		CE0BF1812C380CA400114749 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF17E2C380CA300114749 /* TagListView.swift */; };
-		CE0BF1842C381B8C00114749 /* ResultNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF1832C381B8C00114749 /* ResultNewVC.swift */; };
+		CE0BF1842C381B8C00114749 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF1832C381B8C00114749 /* ResultVC.swift */; };
 		CE2D16D72C3D5A1700EB0A37 /* BureauLineGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2D16D62C3D5A1600EB0A37 /* BureauLineGraphView.xib */; };
 		CE2D16D92C3D5AC200EB0A37 /* BureauLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D16D82C3D5AC200EB0A37 /* BureauLineGraphView.swift */; };
 		CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA4ACC72AF292D000B2801B /* IQKeyboardManagerSwift */; };
@@ -39,7 +39,6 @@
 		CEF11AF32AF0F2E90030CBD4 /* GetStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */; };
 		CEF11AF52AF0F39B0030CBD4 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */; };
 		CEF11AF72AF0F3A70030CBD4 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */; };
-		CEF11AF92AF0F7810030CBD4 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */; };
 		CEF11B082AF138D60030CBD4 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11B072AF138D60030CBD4 /* AppConstant.swift */; };
 		DE4A761E3656B98E6147AAFF /* Pods_bureau_ios_device_bbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D02B80BFD93050F3FCF357E /* Pods_bureau_ios_device_bbTests.framework */; };
 /* End PBXBuildFile section */
@@ -87,7 +86,7 @@
 		CE0BF17C2C380CA300114749 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		CE0BF17D2C380CA300114749 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		CE0BF17E2C380CA300114749 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
-		CE0BF1832C381B8C00114749 /* ResultNewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultNewVC.swift; sourceTree = "<group>"; };
+		CE0BF1832C381B8C00114749 /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		CE16EBB52C08AE2000CBF607 /* bureau-ios-device-bb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bureau-ios-device-bb.entitlements"; sourceTree = "<group>"; };
 		CE2D16D62C3D5A1600EB0A37 /* BureauLineGraphView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BureauLineGraphView.xib; sourceTree = "<group>"; };
 		CE2D16D82C3D5AC200EB0A37 /* BureauLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BureauLineGraphView.swift; sourceTree = "<group>"; };
@@ -116,7 +115,6 @@
 		CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartVC.swift; sourceTree = "<group>"; };
 		CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		CEF11B072AF138D60030CBD4 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,8 +270,7 @@
 				CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */,
 				CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */,
 				CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */,
-				CE0BF1832C381B8C00114749 /* ResultNewVC.swift */,
-				CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */,
+				CE0BF1832C381B8C00114749 /* ResultVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -555,11 +552,10 @@
 				CEF11AEF2AEFC4680030CBD4 /* SideMenuViewController.swift in Sources */,
 				CEF11AA62AEF9DD80030CBD4 /* AppDelegate.swift in Sources */,
 				CE0BF1812C380CA400114749 /* TagListView.swift in Sources */,
-				CEF11AF92AF0F7810030CBD4 /* ResultVC.swift in Sources */,
 				CE0BF1802C380CA400114749 /* TagView.swift in Sources */,
 				CE2D16D92C3D5AC200EB0A37 /* BureauLineGraphView.swift in Sources */,
 				CEF11AA82AEF9DD80030CBD4 /* SceneDelegate.swift in Sources */,
-				CE0BF1842C381B8C00114749 /* ResultNewVC.swift in Sources */,
+				CE0BF1842C381B8C00114749 /* ResultVC.swift in Sources */,
 				CEF11AF72AF0F3A70030CBD4 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,7 +735,7 @@
 				CODE_SIGN_ENTITLEMENTS = "bureau-ios-device-bb/bureau-ios-device-bb.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -781,7 +777,7 @@
 				CODE_SIGN_ENTITLEMENTS = "bureau-ios-device-bb/bureau-ios-device-bb.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
