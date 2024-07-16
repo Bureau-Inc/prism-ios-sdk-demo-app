@@ -8,6 +8,8 @@
 import UIKit
 import bureau_id_fraud_sdk
 import CoreLocation
+import Charts
+import CoreMotion
 
 class ResultVC: BaseViewController {
 
@@ -39,92 +41,13 @@ class ResultVC: BaseViewController {
     @IBOutlet weak var ristTitle: UILabel!
     @IBOutlet weak var riskValue: UILabel!
     
-    @IBOutlet weak var mockGpsView: UIView!
-    @IBOutlet weak var mockGpsIco: UIImageView!
-    @IBOutlet weak var mockGpsTitle: UILabel!
-    @IBOutlet weak var mockGpsValue: UILabel!
-    
-    @IBOutlet weak var vpnView: UIView!
-    @IBOutlet weak var vpnIco: UIImageView!
-    @IBOutlet weak var vpnTitle: UILabel!
-    @IBOutlet weak var vpnValue: UILabel!
-    
-    @IBOutlet weak var tamparedView: UIView!
-    @IBOutlet weak var tamparedIco: UIImageView!
-    @IBOutlet weak var tamparedTitle: UILabel!
-    @IBOutlet weak var tamparedValue: UILabel!
-    
-    @IBOutlet weak var emulatorView: UIView!
-    @IBOutlet weak var emulatorIco: UIImageView!
-    @IBOutlet weak var emulatorTitle: UILabel!
-    @IBOutlet weak var emulatorValue: UILabel!
-    
-    @IBOutlet weak var clonedView: UIView!
-    @IBOutlet weak var clonedIco: UIImageView!
-    @IBOutlet weak var clonedTitle: UILabel!
-    @IBOutlet weak var clonedValue: UILabel!
-    
-    @IBOutlet weak var rootedView: UIView!
-    @IBOutlet weak var rootedIco: UIImageView!
-    @IBOutlet weak var rootedTitle: UILabel!
-    @IBOutlet weak var rootedValue: UILabel!
-    
-    @IBOutlet weak var debugView: UIView!
-    @IBOutlet weak var debugIco: UIImageView!
-    @IBOutlet weak var debugTitle: UILabel!
-    @IBOutlet weak var debugValue: UILabel!
-    
-    @IBOutlet weak var crowlerView: UIView!
-    @IBOutlet weak var crowlerIco: UIImageView!
-    @IBOutlet weak var crowlerTitle: UILabel!
-    @IBOutlet weak var crowlerValue: UILabel!
-    
-    @IBOutlet weak var proxyView: UIView!
-    @IBOutlet weak var proxyIco: UIImageView!
-    @IBOutlet weak var proxyTitle: UILabel!
-    @IBOutlet weak var proxyValue: UILabel!
-    
-    @IBOutlet weak var torView: UIView!
-    @IBOutlet weak var torIco: UIImageView!
-    @IBOutlet weak var torTitle: UILabel!
-    @IBOutlet weak var torValue: UILabel!
-    
-    @IBOutlet weak var rdView: UIView!
-    @IBOutlet weak var rdIco: UIImageView!
-    @IBOutlet weak var rdTitle: UILabel!
-    @IBOutlet weak var rdValue: UILabel!
-    
-    @IBOutlet weak var cdView: UIView!
-    @IBOutlet weak var cdIco: UIImageView!
-    @IBOutlet weak var cdTitle: UILabel!
-    @IBOutlet weak var cdValue: UILabel!
-    
-    @IBOutlet weak var accModeView: UIView!
-    @IBOutlet weak var accModeIco: UIImageView!
-    @IBOutlet weak var accModeTitle: UILabel!
-    @IBOutlet weak var accModeValue: UILabel!
-    
-    @IBOutlet weak var devModeView: UIView!
-    @IBOutlet weak var devModeIco: UIImageView!
-    @IBOutlet weak var devModeTitle: UILabel!
-    @IBOutlet weak var devModeValue: UILabel!
-    
-    @IBOutlet weak var adbView: UIView!
-    @IBOutlet weak var adbIco: UIImageView!
-    @IBOutlet weak var adbTitle: UILabel!
-    @IBOutlet weak var adbValue: UILabel!
-    
-    @IBOutlet weak var isAppstoreView: UIView!
-    @IBOutlet weak var isAppstoreIco: UIImageView!
-    @IBOutlet weak var isAppstoreTitle: UILabel!
-    @IBOutlet weak var isAppstoreValue: UILabel!
-    
     
     @IBOutlet weak var osLbl: UILabel!
     @IBOutlet weak var ipaddressLbl: UILabel!
     @IBOutlet weak var gpsLocLbl: UILabel!
     @IBOutlet weak var iplocationLbl: UILabel!
     @IBOutlet weak var fingerprintIDLbl: UILabel!
+    @IBOutlet weak var sessionIDLbl: UILabel!
     @IBOutlet weak var ispLbl: UILabel!
     
     
@@ -143,7 +66,19 @@ class ResultVC: BaseViewController {
     
     @IBOutlet weak var bbWarningMsgLbl: UILabel!
     
+    @IBOutlet weak var deviceRiskListView: TagListView!
+    @IBOutlet weak var appRiskListView: TagListView!
+    @IBOutlet weak var networkRiskListView: TagListView!
     
+    @IBOutlet weak var deviceRiskSignalView: UIView!
+    @IBOutlet weak var appRiskSignalView: UIView!
+    @IBOutlet weak var networkRiskSignalView: UIView!
+    
+    @IBOutlet weak var deviceRiskValueLbl: UILabel!
+    @IBOutlet weak var appRiskValueLbl: UILabel!
+    @IBOutlet weak var networkRiskValueLbl: UILabel!
+    
+    let motionManager = CMMotionManager()
     var locationManager = CLLocationManager()
     var location:CLLocation?
     
@@ -152,6 +87,17 @@ class ResultVC: BaseViewController {
     var isBBEnable:Bool?
     var sessionID:String?
     
+    
+    @IBOutlet weak var deviceOriendationView: UIView!
+    @IBOutlet weak var gyroscopeView: UIView!
+    @IBOutlet weak var acceleroMeterView: UIView!
+    @IBOutlet weak var magneticView: UIView!
+    
+    var deviceOriendationGraph:BureauLineGraphView?
+    var gyroscopeGraph:BureauLineGraphView?
+    var acceleroMeterGraph:BureauLineGraphView?
+    var magneticGraph:BureauLineGraphView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
@@ -159,7 +105,32 @@ class ResultVC: BaseViewController {
         BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
         BureauAPI.shared.submit()
+        initAllGraph()
     }
+    
+    func initAllGraph(){
+        deviceOriendationGraph = BureauLineGraphView(frame: CGRect(x: 0, y: 0, width: deviceOriendationView.frame.width, height: deviceOriendationView.frame.height))
+        deviceOriendationGraph?.titleLbl.text = "Device Orientation"
+        self.deviceOriendationView.addSubview(deviceOriendationGraph!)
+        
+        gyroscopeGraph = BureauLineGraphView(frame: CGRect(x: 0, y: 0, width: gyroscopeView.frame.width, height: gyroscopeView.frame.height))
+        gyroscopeGraph?.titleLbl.text = "Gyroscope"
+        self.gyroscopeView.addSubview(gyroscopeGraph!)
+        
+        acceleroMeterGraph = BureauLineGraphView(frame: CGRect(x: 0, y: 0, width: acceleroMeterView.frame.width, height: acceleroMeterView.frame.height))
+        acceleroMeterGraph?.titleLbl.text = "Accelerometer"
+        self.acceleroMeterView.addSubview(acceleroMeterGraph!)
+        
+        magneticGraph = BureauLineGraphView(frame: CGRect(x: 0, y: 0, width: magneticView.frame.width, height: magneticView.frame.height))
+        magneticGraph?.titleLbl.text = "Magnetic Field"
+        self.magneticView.addSubview(magneticGraph!)
+        
+        isDeviceMotionAvailable()
+        isGyroAvailable()
+        isAccelerometerAvailable()
+        isMagnetometerAvailable()
+    }
+    
     
     func loadSessionData(sessionID:String){
         guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
@@ -185,10 +156,57 @@ class ResultVC: BaseViewController {
                     self.spinner.stopAnimating()
                     self.spinnerView.isHidden = true
                     self.updateUI(responseJSON)
+                    self.setUpListView(self.deviceRiskSignalView, self.deviceRiskListView, responseJSON)
+                    self.setUpListView(self.appRiskSignalView, self.appRiskListView, responseJSON)
+                    self.setUpListView(self.networkRiskSignalView, self.networkRiskListView, responseJSON)
                 }
             }
         }.resume()
     }
+    
+    func prepareChip(tagListView:TagListView, value:String, enable:Bool){
+        let tagView = tagListView.addTag(value)
+        if enable{
+            tagView.tagBackgroundColor = AppConstant.RedColor ?? .gray
+            tagView.textColor = AppConstant.RedTitleColor ?? .darkGray
+        }
+    }
+    
+    func setUpListView(_ riskSignalView:UIView, _ listView:TagListView, _ dic:NSDictionary){
+        riskSignalView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
+        listView.textFont = UIFont(name: "Lexend-Regular", size: 14)!
+        switch listView{
+        case deviceRiskListView:
+            prepareChip(tagListView: listView, value: "Mock GPS", enable: dic.value(forKeyPath: "mockgps") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Remote Desktop", enable: dic.value(forKeyPath: "remoteDesktop") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Rooted", enable: dic.value(forKeyPath: "jailbreak") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Developer Mode", enable: dic.value(forKeyPath: "developerMode") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Voice Call Detected", enable: dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Simulator", enable: dic.value(forKeyPath: "emulator") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Frida Enable", enable: dic.value(forKeyPath: "fridaDetected") as? Bool ?? false)
+            setLabelTheme(dic.value(forKey: "deviceRiskLevel") as? String ?? "", appRiskValueLbl)
+        case appRiskListView:
+            prepareChip(tagListView: listView, value: "Debuggable", enable: dic.value(forKeyPath: "debuggable") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "App Cloned", enable: false)
+            prepareChip(tagListView: listView, value: "Tampered", enable: false)
+            prepareChip(tagListView: listView, value: "Appstore install", enable: !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false))
+            if ((dic.value(forKeyPath: "debuggable") as? Bool ?? false) || !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false)){
+                deviceRiskValueLbl.text = AppConstant.High
+                deviceRiskValueLbl.textColor = AppConstant.RedTitleColor
+            }else{
+                deviceRiskValueLbl.text = AppConstant.Low
+                deviceRiskValueLbl.textColor = AppConstant.GreenTitleColor
+            }
+        default:
+            prepareChip(tagListView: listView, value: "IP Security:VPN", enable: dic.value(forKeyPath: "IPSecurity.VPN") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "IP Security:TOR", enable: dic.value(forKeyPath: "IPSecurity.is_tor") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "IP Security:Proxy", enable: dic.value(forKeyPath: "IPSecurity.is_proxy") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "IP Security:Crawler", enable: dic.value(forKeyPath: "IPSecurity.is_crawler") as? Bool ?? false)
+            setLabelTheme(dic.value(forKeyPath: "IPSecurity.threat_level") as? String ?? "", networkRiskValueLbl)
+        }
+    }
+    
+    
     
     func updateUI(_ dic:NSDictionary){
         if isBBEnable ?? false{
@@ -214,67 +232,6 @@ class ResultVC: BaseViewController {
             bioRiskScore.textColor = AppConstant.GreenTitleColor
         }
         setViewTheme(riskLevelView, ristTitle, riskValue, riskIco, riskLevel)
-        
-        if dic.value(forKeyPath: "mockgps") as? Bool ?? false{
-            mockGpsValue.text = "Yes"
-            setViewTheme(mockGpsView, mockGpsTitle, mockGpsValue, mockGpsIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "IPSecurity.VPN") as? Bool ?? false{
-            vpnValue.text = "Yes"
-            setViewTheme(vpnView, vpnTitle, vpnValue, vpnIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "emulator") as? Bool ?? false{
-            emulatorValue.text = "Yes"
-            setViewTheme(emulatorView, emulatorTitle, emulatorValue, emulatorIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "jailbreak") as? Bool ?? false{
-            rootedValue.text = "Yes"
-            setViewTheme(rootedView, rootedTitle, rootedValue, rootedIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "debuggable") as? Bool ?? false{
-            debugValue.text = "Yes"
-            setViewTheme(debugView, debugTitle, debugValue, debugIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "IPSecurity.is_crawler") as? Bool ?? false{
-            crowlerValue.text = "Yes"
-            setViewTheme(crowlerView, crowlerTitle, crowlerValue, crowlerIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "IPSecurity.is_proxy") as? Bool ?? false{
-            proxyValue.text = "Yes"
-            setViewTheme(proxyView, proxyTitle, proxyValue, proxyIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "IPSecurity.is_tor") as? Bool ?? false{
-            torValue.text = "Yes"
-            setViewTheme(torView, torTitle, torValue, torIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "remoteDesktop") as? Bool ?? false{
-            rdValue.text = "Yes"
-            setViewTheme(rdView, rdTitle, rdValue, rdIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false{
-            cdValue.text = "Yes"
-            setViewTheme(cdView, cdTitle, cdValue, cdIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false{
-            cdValue.text = "Yes"
-            setViewTheme(cdView, cdTitle, cdValue, cdIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if dic.value(forKeyPath: "developerMode") as? Bool ?? false{
-            devModeValue.text = "Yes"
-            setViewTheme(devModeView, devModeTitle, devModeValue, devModeIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false){
-            isAppstoreValue.text = "NO"
-            setViewTheme(isAppstoreView, isAppstoreTitle, isAppstoreValue, isAppstoreIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if (dic.value(forKeyPath: "accessibilityEnabled") as? Bool ?? false){
-            accModeValue.text = "Yes"
-            setViewTheme(accModeView, accModeTitle, accModeValue, accModeIco, AppConstant.VIEW_NEGATIVE)
-        }
-        if (dic.value(forKeyPath: "fridaDetected") as? Bool ?? false){
-            adbValue.text = "Yes"
-            setViewTheme(adbView, adbTitle, adbValue, adbIco, AppConstant.VIEW_NEGATIVE)
-        }
         osLbl.text = (dic.value(forKeyPath: "OS") as? String)
         iplocationLbl.text = (dic.value(forKeyPath: "IPLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.country") as? String ?? "")
         if((dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0 || (dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0){
@@ -288,6 +245,7 @@ class ResultVC: BaseViewController {
         }
         
         fingerprintIDLbl.text = (dic.value(forKeyPath: "fingerprint") as? String)
+        sessionIDLbl.text = (dic.value(forKeyPath: "sessionId") as? String)
         ispLbl.text = (dic.value(forKeyPath: "networkInformation.isp") as? String)
         ipaddressLbl.text = (dic.value(forKeyPath: "IP") as? String)
         ipTypeLbl.text = (dic.value(forKeyPath: "IPType") as? String)?.capitalized
@@ -326,49 +284,8 @@ class ResultVC: BaseViewController {
     
     func checkPriorityUser(_ userID:String?, dic:NSDictionary){
         setBehaviouralData(dic: dic)
-//        switch userID {
-//        case "johnwick123@newbank.com12345678", "ganesh@newbank.com12345678":
-//            let riskValue = Int.random(in: 10 ... 25)
-//            bioRiskScore.text = String(riskValue)
-//            riskLevel = AppConstant.VIEW_NEGATIVE
-//            break
-//        case "johnwick123@newbank.com123456789", "ganesh@newbank.com123456789":
-//            let riskValue = Int.random(in: 80 ... 97)
-//            bioRiskScore.text = String(riskValue)
-//            bioRiskScore.textColor = AppConstant.GreenTitleColor
-//            riskLevel = AppConstant.VIEW_POSITIVE
-//            break
-//        case "marypoppins123@newbank.com123456780", "ganesh@newbank.com123456780":
-//            let riskValue = Int.random(in: 10 ... 25)
-//            bioRiskScore.text = String(riskValue)
-//            bioRiskScore.textColor = AppConstant.RedTitleColor
-//            riskLevel = AppConstant.VIEW_NEGATIVE
-//            break
-//        case "marypoppins123@newbank.com1234567890", "ganesh@newbank.com1234567890":
-//            let riskValue = Int.random(in: 80 ... 97)
-//            bioRiskScore.text = String(riskValue)
-//            bioRiskScore.textColor = AppConstant.GreenTitleColor
-//            break
-//        default:
-//            bioWarnView.isHidden = false
-//            bioResultView.isHidden = true
-//        }
         let behaviourScore = dic.value(forKeyPath: "riskScore") as? Double ?? 0.0
         bioRiskScore.text = String(format: "%.2f", behaviourScore)
-//        switch behaviourScore{
-//        case ...24.0:
-//            bioRiskScore.textColor = AppConstant.RedTitleColor
-//            riskLevel = AppConstant.VIEW_NEGATIVE
-//        case 25.0...79.0:
-//            bioRiskScore.textColor = AppConstant.OrangeTitleColor
-//            riskLevel = AppConstant.VIEW_WARNING
-//            break
-//        default:
-//            bioRiskScore.textColor = AppConstant.GreenTitleColor
-//            riskLevel = AppConstant.VIEW_POSITIVE
-//            break
-//        }
-//        setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, riskLevel)
     }
     
     private func setBehaviouralData(dic:NSDictionary) {
@@ -381,12 +298,15 @@ class ResultVC: BaseViewController {
             case "VERY_HIGH":
                 bbRiskLevel = AppConstant.VIEW_NEGATIVE
                 bioRiskValue.text = "High"
+                deviceRiskValueLbl.text = "Very High"
             case "MEDIUM":
                 bbRiskLevel = AppConstant.VIEW_WARNING
                 bioRiskValue.text = "Medium"
+                deviceRiskValueLbl.text = "Medium"
             default:
                 bbRiskLevel = AppConstant.VIEW_POSITIVE
                 bioRiskValue.text = "Low"
+                deviceRiskValueLbl.text = "Low"
             }
             setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, bbRiskLevel)
             self.userFamiliScore.text = String(format: "%.5f", userSimilarityScore ?? 0.0)
@@ -427,6 +347,20 @@ class ResultVC: BaseViewController {
         bioResultView.isHidden = false
     }
     
+    func setLabelTheme(_ value:String, _ lbl:UILabel){
+        let words = value.lowercased().split(separator: "_")
+        let output = words.joined(separator: " ")
+        lbl.text = output.capitalized
+        switch output{
+        case "very high", "high":
+            lbl.textColor = AppConstant.RedTitleColor
+        case "medium":
+            lbl.textColor = AppConstant.OrangeTitleColor
+        default:
+            lbl.textColor = AppConstant.GreenTitleColor
+        }
+    }
+    
     func setViewTheme(_ bgView:UIView, _ titleLbl:UILabel, _ valueLbl:UILabel, _ icon:UIImageView, _ viewType: Int){
         var titleColor:UIColor?
         var bgColor:UIColor?
@@ -449,7 +383,110 @@ class ResultVC: BaseViewController {
         valueLbl.textColor = titleColor
         icon.tintColor = titleColor
     }
+
+    func isDeviceMotionAvailable(){
+        if motionManager.isDeviceMotionAvailable {
+            motionManager.deviceMotionUpdateInterval = 0.1  // Update interval in seconds
+            motionManager.startDeviceMotionUpdates(to: OperationQueue.main) { [weak self] (motion, error) in
+                guard let self = self, let motion = motion else { return }
+                let (xDegrees, yDegrees, angleDegrees) = self.deviceOrientation(from: motion)
+                
+                deviceOriendationGraph?.Line_1_Lbl.text = "Direction: " + String(format: "%.3f", angleDegrees)+"°"
+                deviceOriendationGraph?.Line_2_Lbl.text = "x: " + String(format: "%.3f", xDegrees)+"°"
+                deviceOriendationGraph?.Line_3_Lbl.text = "y: " + String(format: "%.3f", yDegrees)+"°"
+                deviceOriendationGraph?.Line_4_Lbl.text = " "
+                deviceOriendationGraph?.addEntry(randomDouble1: xDegrees, randomDouble2: yDegrees, randomDouble3: angleDegrees)
+            }
+        } else {
+            print("Device motion is not available")
+        }
+    }
+    func deviceOrientation(from motion: CMDeviceMotion) -> (Double, Double, Double) {
+        let attitude = motion.attitude
+        let x = attitude.pitch * 180.0 / Double.pi  // Pitch
+        let y = attitude.roll * 180.0 / Double.pi   // Roll
+        let angle = attitude.yaw * 180.0 / Double.pi // Yaw
+        
+        return (x, y, angle)
+    }
+    func isGyroAvailable(){
+        if motionManager.isGyroAvailable {
+            motionManager.gyroUpdateInterval = 0.1  // Update interval in seconds
+            motionManager.startGyroUpdates(to: OperationQueue.main) { [weak self] (gyroData, error) in
+                guard let self = self, let gyroData = gyroData else { return }
+                let (xRate, yRate, zRate) = self.gyroscopeData(from: gyroData)
+                
+                gyroscopeGraph?.Line_1_Lbl.text = "x: " + String(format: "%.3f", xRate)+"rad/s"
+                gyroscopeGraph?.Line_2_Lbl.text = "y: " + String(format: "%.3f", yRate)+"rad/s"
+                gyroscopeGraph?.Line_3_Lbl.text = "z: " + String(format: "%.3f", zRate)+"rad/s"
+                gyroscopeGraph?.Line_4_Lbl.text = " "
+                gyroscopeGraph?.addEntry(randomDouble1: xRate, randomDouble2: yRate, randomDouble3: zRate)
+            }
+        } else {
+            print("Gyroscope is not available")
+        }
+    }
     
+    func gyroscopeData(from gyroData: CMGyroData) -> (Double, Double, Double) {
+        let xRate = gyroData.rotationRate.x  // Rotation rate around x axis
+        let yRate = gyroData.rotationRate.y  // Rotation rate around y axis
+        let zRate = gyroData.rotationRate.z  // Rotation rate around z axis
+        
+        return (xRate, yRate, zRate)
+    }
+    
+    func isAccelerometerAvailable(){
+        if motionManager.isAccelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 0.1  // Update interval in seconds
+            motionManager.startAccelerometerUpdates(to: OperationQueue.main) { [weak self] (accelerometerData, error) in
+                guard let self = self, let accelerometerData = accelerometerData else { return }
+                let (xAccel, yAccel, zAccel) = self.accelerometerData(from: accelerometerData)
+                acceleroMeterGraph?.Line_1_Lbl.text = "x: " + String(format: "%.3f", xAccel)+"m/s²"
+                acceleroMeterGraph?.Line_2_Lbl.text = "y: " + String(format: "%.3f", yAccel)+"m/s²"
+                acceleroMeterGraph?.Line_3_Lbl.text = "z: " + String(format: "%.3f", zAccel)+"m/s²"
+                acceleroMeterGraph?.Line_4_Lbl.text = " "
+                acceleroMeterGraph?.addEntry(randomDouble1: xAccel, randomDouble2: yAccel, randomDouble3: zAccel)
+            }
+        } else {
+            print("Accelerometer is not available")
+        }
+    }
+    
+    func accelerometerData(from accelerometerData: CMAccelerometerData) -> (Double, Double, Double) {
+        let xAccel = accelerometerData.acceleration.x  // Acceleration along the x axis
+        let yAccel = accelerometerData.acceleration.y  // Acceleration along the y axis
+        let zAccel = accelerometerData.acceleration.z  // Acceleration along the z axis
+        return (xAccel, yAccel, zAccel)
+    }
+    
+    func isMagnetometerAvailable(){
+        if motionManager.isMagnetometerAvailable {
+            motionManager.magnetometerUpdateInterval = 0.1  // Update interval in seconds
+            motionManager.startMagnetometerUpdates(to: OperationQueue.main) { [weak self] (magnetometerData, error) in
+                guard let self = self, let magnetometerData = magnetometerData else { return }
+                
+                let (xField, yField, zField, totalField) = self.magneticFieldData(from: magnetometerData)
+                magneticGraph?.Line_1_Lbl.text = "x: " + String(format: "%.3f", xField)+"μT"
+                magneticGraph?.Line_2_Lbl.text = "y: " + String(format: "%.3f", yField)+"μT"
+                magneticGraph?.Line_3_Lbl.text = "z: " + String(format: "%.3f", zField)+"μT"
+                magneticGraph?.Line_4_Lbl.text = "Total: " + String(format: "%.3f", totalField)+"μT"
+                
+                magneticGraph?.addEntry(randomDouble1: xField, randomDouble2: yField, randomDouble3: zField)
+            }
+        } else {
+            print("Magnetometer is not available")
+        }
+    }
+    
+    func magneticFieldData(from magnetometerData: CMMagnetometerData) -> (Double, Double, Double, Double) {
+        let xField = magnetometerData.magneticField.x  // Magnetic field along the x axis
+        let yField = magnetometerData.magneticField.y  // Magnetic field along the y axis
+        let zField = magnetometerData.magneticField.z  // Magnetic field along the z axis
+
+        let totalField = sqrt(xField * xField + yField * yField + zField * zField) // Total magnetic field
+
+        return (xField, yField, zField, totalField)
+    }
 }
 
 extension ResultVC : PrismFingerPrintDelegate{
