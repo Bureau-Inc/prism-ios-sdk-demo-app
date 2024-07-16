@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5265D5DE8D10B449D9C85164 /* Pods_bureau_ios_device_bb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F69E0A3DE9C735539A46780 /* Pods_bureau_ios_device_bb.framework */; };
 		C94C65B0AF16708EB015DF74 /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D309C3D3DE52CC0E9010F3F /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework */; };
+		CE0BF17F2C380CA400114749 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF17C2C380CA300114749 /* CloseButton.swift */; };
+		CE0BF1802C380CA400114749 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF17D2C380CA300114749 /* TagView.swift */; };
+		CE0BF1812C380CA400114749 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF17E2C380CA300114749 /* TagListView.swift */; };
+		CE0BF1842C381B8C00114749 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BF1832C381B8C00114749 /* ResultVC.swift */; };
+		CE2D16D72C3D5A1700EB0A37 /* BureauLineGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2D16D62C3D5A1600EB0A37 /* BureauLineGraphView.xib */; };
+		CE2D16D92C3D5AC200EB0A37 /* BureauLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D16D82C3D5AC200EB0A37 /* BureauLineGraphView.swift */; };
 		CEA4ACC82AF292D000B2801B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA4ACC72AF292D000B2801B /* IQKeyboardManagerSwift */; };
 		CEF11AA62AEF9DD80030CBD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */; };
 		CEF11AA82AEF9DD80030CBD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */; };
@@ -33,7 +39,6 @@
 		CEF11AF32AF0F2E90030CBD4 /* GetStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */; };
 		CEF11AF52AF0F39B0030CBD4 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */; };
 		CEF11AF72AF0F3A70030CBD4 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */; };
-		CEF11AF92AF0F7810030CBD4 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */; };
 		CEF11B082AF138D60030CBD4 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF11B072AF138D60030CBD4 /* AppConstant.swift */; };
 		DE4A761E3656B98E6147AAFF /* Pods_bureau_ios_device_bbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D02B80BFD93050F3FCF357E /* Pods_bureau_ios_device_bbTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,7 +83,13 @@
 		8D309C3D3DE52CC0E9010F3F /* Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D02B80BFD93050F3FCF357E /* Pods_bureau_ios_device_bbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F69E0A3DE9C735539A46780 /* Pods_bureau_ios_device_bb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bureau_ios_device_bb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0BF17C2C380CA300114749 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		CE0BF17D2C380CA300114749 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		CE0BF17E2C380CA300114749 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		CE0BF1832C381B8C00114749 /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		CE16EBB52C08AE2000CBF607 /* bureau-ios-device-bb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bureau-ios-device-bb.entitlements"; sourceTree = "<group>"; };
+		CE2D16D62C3D5A1600EB0A37 /* BureauLineGraphView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BureauLineGraphView.xib; sourceTree = "<group>"; };
+		CE2D16D82C3D5AC200EB0A37 /* BureauLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BureauLineGraphView.swift; sourceTree = "<group>"; };
 		CEF11AA22AEF9DD80030CBD4 /* bureau-ios-device-bb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bureau-ios-device-bb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +115,6 @@
 		CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartVC.swift; sourceTree = "<group>"; };
 		CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		CEF11B072AF138D60030CBD4 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +162,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE0BF1822C380CAC00114749 /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				CE0BF17C2C380CA300114749 /* CloseButton.swift */,
+				CE0BF17E2C380CA300114749 /* TagListView.swift */,
+				CE0BF17D2C380CA300114749 /* TagView.swift */,
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
+		CE2D16D52C3D59D500EB0A37 /* GraphView */ = {
+			isa = PBXGroup;
+			children = (
+				CE2D16D62C3D5A1600EB0A37 /* BureauLineGraphView.xib */,
+				CE2D16D82C3D5AC200EB0A37 /* BureauLineGraphView.swift */,
+			);
+			path = GraphView;
+			sourceTree = "<group>";
+		};
 		CEF11A992AEF9DD80030CBD4 = {
 			isa = PBXGroup;
 			children = (
@@ -177,10 +206,12 @@
 		CEF11AA42AEF9DD80030CBD4 /* bureau-ios-device-bb */ = {
 			isa = PBXGroup;
 			children = (
+				CE2D16D52C3D59D500EB0A37 /* GraphView */,
 				CE16EBB52C08AE2000CBF607 /* bureau-ios-device-bb.entitlements */,
 				CEF11AA52AEF9DD80030CBD4 /* AppDelegate.swift */,
 				CEF11B072AF138D60030CBD4 /* AppConstant.swift */,
 				CEF11AA72AEF9DD80030CBD4 /* SceneDelegate.swift */,
+				CE0BF1822C380CAC00114749 /* TagView */,
 				CEF11AE32AEF9F550030CBD4 /* ViewControllers */,
 				CEF11AAB2AEF9DD80030CBD4 /* Main.storyboard */,
 				CEF11AAE2AEF9DDA0030CBD4 /* Assets.xcassets */,
@@ -239,7 +270,7 @@
 				CEF11AF22AF0F2E90030CBD4 /* GetStartVC.swift */,
 				CEF11AF42AF0F39B0030CBD4 /* SigninVC.swift */,
 				CEF11AF62AF0F3A70030CBD4 /* RegisterVC.swift */,
-				CEF11AF82AF0F7800030CBD4 /* ResultVC.swift */,
+				CE0BF1832C381B8C00114749 /* ResultVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -379,6 +410,7 @@
 				CEF11ADE2AEF9F0D0030CBD4 /* Lexend-Light.ttf in Resources */,
 				CEF11AAF2AEF9DDA0030CBD4 /* Assets.xcassets in Resources */,
 				CEF11ADD2AEF9F0D0030CBD4 /* Lexend-Regular.ttf in Resources */,
+				CE2D16D72C3D5A1700EB0A37 /* BureauLineGraphView.xib in Resources */,
 				CEF11AAD2AEF9DD80030CBD4 /* Main.storyboard in Resources */,
 				CEF11AD62AEF9E150030CBD4 /* Auth0.plist in Resources */,
 				CEF11ADF2AEF9F0D0030CBD4 /* Lexend-Medium.ttf in Resources */,
@@ -515,11 +547,15 @@
 				CEF11B082AF138D60030CBD4 /* AppConstant.swift in Sources */,
 				CEF11AE22AEF9F500030CBD4 /* AuthViewController.swift in Sources */,
 				CEF11AF52AF0F39B0030CBD4 /* SigninVC.swift in Sources */,
+				CE0BF17F2C380CA400114749 /* CloseButton.swift in Sources */,
 				CEF11AED2AEFC4490030CBD4 /* MainViewController.swift in Sources */,
 				CEF11AEF2AEFC4680030CBD4 /* SideMenuViewController.swift in Sources */,
 				CEF11AA62AEF9DD80030CBD4 /* AppDelegate.swift in Sources */,
-				CEF11AF92AF0F7810030CBD4 /* ResultVC.swift in Sources */,
+				CE0BF1812C380CA400114749 /* TagListView.swift in Sources */,
+				CE0BF1802C380CA400114749 /* TagView.swift in Sources */,
+				CE2D16D92C3D5AC200EB0A37 /* BureauLineGraphView.swift in Sources */,
 				CEF11AA82AEF9DD80030CBD4 /* SceneDelegate.swift in Sources */,
+				CE0BF1842C381B8C00114749 /* ResultVC.swift in Sources */,
 				CEF11AF72AF0F3A70030CBD4 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -699,7 +735,7 @@
 				CODE_SIGN_ENTITLEMENTS = "bureau-ios-device-bb/bureau-ios-device-bb.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -741,7 +777,7 @@
 				CODE_SIGN_ENTITLEMENTS = "bureau-ios-device-bb/bureau-ios-device-bb.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QR4QXCNH74;
 				GENERATE_INFOPLIST_FILE = YES;
