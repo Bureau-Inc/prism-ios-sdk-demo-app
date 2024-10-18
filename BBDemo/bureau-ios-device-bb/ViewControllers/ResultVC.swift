@@ -34,49 +34,52 @@ class ResultVC: BaseViewController {
     @IBOutlet weak var copyPasteLbl: UILabel!
     @IBOutlet weak var fieldFocusLbl: UILabel!
     
-
-    
     @IBOutlet weak var riskLevelView: UIView!
     @IBOutlet weak var riskIco: UIImageView!
     @IBOutlet weak var ristTitle: UILabel!
     @IBOutlet weak var riskValue: UILabel!
     
-    
-    @IBOutlet weak var osLbl: UILabel!
-    @IBOutlet weak var ipaddressLbl: UILabel!
-    @IBOutlet weak var gpsLocLbl: UILabel!
-    @IBOutlet weak var iplocationLbl: UILabel!
-    @IBOutlet weak var fingerprintIDLbl: UILabel!
-    @IBOutlet weak var sessionIDLbl: UILabel!
-    @IBOutlet weak var ispLbl: UILabel!
-    
-    
-    @IBOutlet weak var iplatlong: UILabel!
-    @IBOutlet weak var ipTypeLbl: UILabel!
-    @IBOutlet weak var threadLvlLbl: UILabel!
-    
-    @IBOutlet weak var uniqueUserID: UILabel!
-    @IBOutlet weak var firstSeen: UILabel!
     @IBOutlet weak var sessionPH: UILabel!
     @IBOutlet weak var sessionPD: UILabel!
-    @IBOutlet weak var CSScore: UILabel!
-    @IBOutlet weak var userID: UILabel!
-    @IBOutlet weak var gpsLat: UILabel!
-    @IBOutlet weak var gpsLong: UILabel!
     
     @IBOutlet weak var bbWarningMsgLbl: UILabel!
     
+    //TagList Parent View -> Expand,collapse purpose
+    @IBOutlet weak var deviceRiskListParentView: UIView!
+    @IBOutlet weak var appRiskListParentView: UIView!
+    @IBOutlet weak var persistanceParentRiskListView: UIView!
+    @IBOutlet weak var adminRiskListParentView: UIView!
+    @IBOutlet weak var networkRiskListParentView: UIView!
+    @IBOutlet weak var rulesRiskListParentView: UIView!
+    @IBOutlet weak var locationRiskListParentView: UIView!
+    
+    //Tag View outlet
     @IBOutlet weak var deviceRiskListView: TagListView!
     @IBOutlet weak var appRiskListView: TagListView!
+    @IBOutlet weak var persistanceRiskListView: TagListView!
+    @IBOutlet weak var adminRiskListView: TagListView!
     @IBOutlet weak var networkRiskListView: TagListView!
+    @IBOutlet weak var rulesRiskListView: TagListView!
+    @IBOutlet weak var locationRiskListView: TagListView!
     
+    //RiskSignal MainView -> App, device, network, persistance, etc..
     @IBOutlet weak var deviceRiskSignalView: UIView!
     @IBOutlet weak var appRiskSignalView: UIView!
+    @IBOutlet weak var persistanceRiskSignalView: UIView!
+    @IBOutlet weak var adminRiskSignalView: UIView!
     @IBOutlet weak var networkRiskSignalView: UIView!
+    @IBOutlet weak var rulesRiskSignalView: UIView!
+    @IBOutlet weak var locationIntelRiskSignalView: UIView!
     
+    //Risk Value for every mainView
     @IBOutlet weak var deviceRiskValueLbl: UILabel!
     @IBOutlet weak var appRiskValueLbl: UILabel!
+    @IBOutlet weak var persistanceRiskValueLbl: UIView!
+    @IBOutlet weak var adminRiskValueLbl: UIView!
     @IBOutlet weak var networkRiskValueLbl: UILabel!
+    @IBOutlet weak var rulesRiskValueLbl: UILabel!
+    @IBOutlet weak var locationIntelRiskValueLbl: UILabel!
+    
     
     let motionManager = CMMotionManager()
     var locationManager = CLLocationManager()
@@ -159,6 +162,10 @@ class ResultVC: BaseViewController {
                     self.setUpListView(self.deviceRiskSignalView, self.deviceRiskListView, responseJSON)
                     self.setUpListView(self.appRiskSignalView, self.appRiskListView, responseJSON)
                     self.setUpListView(self.networkRiskSignalView, self.networkRiskListView, responseJSON)
+                    self.setUpListView(self.persistanceRiskSignalView, self.persistanceRiskListView, responseJSON)
+                    self.setUpListView(self.adminRiskSignalView, self.adminRiskListView, responseJSON)
+                    self.setUpListView(self.rulesRiskSignalView, self.rulesRiskListView, responseJSON)
+                    self.setUpListView(self.locationIntelRiskSignalView, self.locationRiskListView, responseJSON)
                 }
             }
         }.resume()
@@ -166,6 +173,7 @@ class ResultVC: BaseViewController {
     
     func prepareChip(tagListView:TagListView, value:String, enable:Bool){
         let tagView = tagListView.addTag(value)
+        tagView.titleLineBreakMode = .byTruncatingTail
         if enable{
             tagView.tagBackgroundColor = AppConstant.RedColor ?? .gray
             tagView.textColor = AppConstant.RedTitleColor ?? .darkGray
@@ -193,21 +201,58 @@ class ResultVC: BaseViewController {
             if ((dic.value(forKeyPath: "debuggable") as? Bool ?? false) || !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false)){
                 deviceRiskValueLbl.text = AppConstant.High
                 deviceRiskValueLbl.textColor = AppConstant.RedTitleColor
+                deviceRiskValueLbl.backgroundColor = AppConstant.RedColor
             }else{
                 deviceRiskValueLbl.text = AppConstant.Low
                 deviceRiskValueLbl.textColor = AppConstant.GreenTitleColor
+                deviceRiskValueLbl.backgroundColor = AppConstant.GreenColor
             }
-        default:
+        case persistanceRiskListView:
+            prepareChip(tagListView: listView, value: "User ID - \(dic.value(forKeyPath: "userId") as? String ?? "")", enable: false)
+            prepareChip(tagListView: listView, value: "Fingerprint - \(dic.value(forKeyPath: "fingerprint") as? String ?? "")", enable: false)
+            prepareChip(tagListView: listView, value: "Confidence Score - \(dic.value(forKeyPath: "confidenceScore") as? Double ?? 0.0)", enable: false)
+            prepareChip(tagListView: listView, value: "Operating System - \(dic.value(forKeyPath: "OS") as? String ?? "")", enable: false)
+            prepareChip(tagListView: listView, value: "Model - \(dic.value(forKeyPath: "model") as? String ?? "")", enable: false)
+        case adminRiskListView:
+            prepareChip(tagListView: listView, value: "Session ID - \(dic.value(forKeyPath: "sessionId") as? String ?? "")", enable: false)
+            prepareChip(tagListView: listView, value: "MIME Attack Detected", enable: dic.value(forKeyPath: "mitmAttackDetected") as? Bool ?? false)
+        case networkRiskListView:
             prepareChip(tagListView: listView, value: "IP Security:VPN", enable: dic.value(forKeyPath: "IPSecurity.VPN") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:TOR", enable: dic.value(forKeyPath: "IPSecurity.is_tor") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:Proxy", enable: dic.value(forKeyPath: "IPSecurity.is_proxy") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:Crawler", enable: dic.value(forKeyPath: "IPSecurity.is_crawler") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "ISP - \(dic.value(forKeyPath: "networkInformation.isp") as? String ?? "")", enable: false)
+            prepareChip(tagListView: listView, value: "IP - \(dic.value(forKeyPath: "IP") as? String ?? "")", enable: false)
+            prepareChip(tagListView: listView, value: "IP Type - \(dic.value(forKeyPath: "IPType") as? String ?? "")", enable: false)
+            let iplocName = (dic.value(forKeyPath: "IPLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.country") as? String ?? "")
+            prepareChip(tagListView: listView, value: "IP Location - \(iplocName)", enable: false)
+            prepareChip(tagListView: listView, value: "IP Latitude - \"\(String(format: "%.5f", dic.value(forKeyPath: "IPLocation.latitude") as? Double ?? 0.0))\"", enable: false)
+            prepareChip(tagListView: listView, value: "IP Longitude - \"\(String(format: "%.5f", dic.value(forKeyPath: "IPLocation.longitude") as? Double ?? 0.0))\"", enable: false)
+
             setLabelTheme(dic.value(forKeyPath: "IPSecurity.threat_level") as? String ?? "", networkRiskValueLbl)
+        case rulesRiskListView:
+            var uniqueUserIds = "1 Risk"
+            if (dic.value(forKeyPath: "totalUniqueUserId") as? Int ?? 1 > 1){
+                uniqueUserIds = String(dic.value(forKeyPath: "totalUniqueUserId") as? Int ?? 1) + " Risks"
+            }
+            prepareChip(tagListView: listView, value: "No. of user IDs - \(uniqueUserIds)", enable: false)
+            var dateComponents = DateComponents()
+            dateComponents.day =  -(dic.value(forKeyPath: "firstSeenDays") as? Int ?? 0)
+            let currentYear = Calendar.current.component(.year, from: Date())
+            dateComponents.year = currentYear
+            if let date = Calendar.current.date(from: dateComponents){
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy" // Define the desired date format
+                let formattedDate = dateFormatter.string(from: date)
+                prepareChip(tagListView: listView, value: "First Seen Date - \(formattedDate)", enable: false)
+            }
+        default:
+            let gpslocName = (dic.value(forKeyPath: "GPSLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "GPSLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "GPSLocation.country") as? String ?? "")
+            prepareChip(tagListView: listView, value: "GPS Location - \(gpslocName)", enable: false)
+            prepareChip(tagListView: listView, value: "GPS Latitude - \"\(String(format: "%.5f", dic.value(forKeyPath: "GPSLocation.latitude") as? Double ?? 0.0))\"", enable: false)
+            prepareChip(tagListView: listView, value: "GPS Longitude - \"\(String(format: "%.5f", dic.value(forKeyPath: "GPSLocation.longitude") as? Double ?? 0.0))\"", enable: false)
         }
     }
-    
-    
-    
     func updateUI(_ dic:NSDictionary){
         if isBBEnable ?? false{
             checkPriorityUser((userName ?? "") + ("@newbank.com") + (password ?? ""), dic: dic)
@@ -232,42 +277,6 @@ class ResultVC: BaseViewController {
             bioRiskScore.textColor = AppConstant.GreenTitleColor
         }
         setViewTheme(riskLevelView, ristTitle, riskValue, riskIco, riskLevel)
-        osLbl.text = (dic.value(forKeyPath: "OS") as? String)
-        iplocationLbl.text = (dic.value(forKeyPath: "IPLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "IPLocation.country") as? String ?? "")
-        if((dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0 || (dic.value(forKeyPath: "GPSLocation.longitude")) as? Int == 0){
-            gpsLocLbl.text = "Unknown"
-            gpsLat.text = "0.0"
-            gpsLong.text = "0.0"
-        }else{
-            gpsLocLbl.text = (dic.value(forKeyPath: "GPSLocation.city") as? String ?? "") + "," + (dic.value(forKeyPath: "GPSLocation.region") as? String ?? "") + "," + (dic.value(forKeyPath: "GPSLocation.country") as? String ?? "")
-            gpsLat.text = String(format: "%.5f", dic.value(forKeyPath: "GPSLocation.latitude") as? Double ?? 0.0)
-            gpsLong.text = String(format: "%.5f", dic.value(forKeyPath: "GPSLocation.longitude") as? Double ?? 0.0)
-        }
-        
-        fingerprintIDLbl.text = (dic.value(forKeyPath: "fingerprint") as? String)
-        sessionIDLbl.text = (dic.value(forKeyPath: "sessionId") as? String)
-        ispLbl.text = (dic.value(forKeyPath: "networkInformation.isp") as? String)
-        ipaddressLbl.text = (dic.value(forKeyPath: "IP") as? String)
-        ipTypeLbl.text = (dic.value(forKeyPath: "IPType") as? String)?.capitalized
-        threadLvlLbl.text = (dic.value(forKeyPath: "IPSecurity.threat_level") as? String)?.capitalized
-        firstSeen.text = String()
-        var dateComponents = DateComponents()
-        dateComponents.day =  -(dic.value(forKeyPath: "firstSeenDays") as? Int ?? 0)
-        let currentYear = Calendar.current.component(.year, from: Date())
-        dateComponents.year = currentYear
-        if let date = Calendar.current.date(from: dateComponents){
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy" // Define the desired date format
-            let formattedDate = dateFormatter.string(from: date)
-            firstSeen.text = formattedDate
-        }
-        var uniqueUserIds = "1 Risk"
-        if (dic.value(forKeyPath: "totalUniqueUserId") as? Int ?? 1 > 1){
-            uniqueUserIds = String(dic.value(forKeyPath: "totalUniqueUserId") as? Int ?? 1) + " Risks"
-        }
-        uniqueUserID.text = uniqueUserIds
-        userID.text = dic.value(forKeyPath: "userId") as? String
-        CSScore.text = String(dic.value(forKeyPath: "confidenceScore") as? Double ?? 0.0)
     }
     @IBAction func restartAct(_ sender: Any) {
         let alertController = UIAlertController(title: "Bureau Device Intelligence", message: "Do you want to restart?", preferredStyle: .alert)
@@ -281,6 +290,38 @@ class ResultVC: BaseViewController {
         alertController.addAction(okayButton)
         present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func expandCollapseAct(_ sender: UIButton) {
+        let currentImage = sender.image(for: .normal)
+        if (UIImage(named: "plusIco")?.pngData() == currentImage?.pngData()){
+            sender.setImage(UIImage(named: "closeIco"), for: .normal)
+            self.expandCollapseView(sender.tag, false)
+        }else{
+            sender.setImage(UIImage(named: "plusIco"), for: .normal)
+            self.expandCollapseView(sender.tag, true)
+        }
+        
+    }
+    
+    func expandCollapseView(_ tag:Int, _ value:Bool){
+        switch tag{
+        case 1:
+            self.deviceRiskListParentView.isHidden = value
+        case 2:
+            self.appRiskListParentView.isHidden = value
+        case 3:
+            self.persistanceParentRiskListView.isHidden = value
+        case 4:
+            self.adminRiskListParentView.isHidden = value
+        case 5:
+            self.networkRiskListParentView.isHidden = value
+        case 6:
+            self.rulesRiskListParentView.isHidden = value
+        default:
+            self.locationRiskListParentView.isHidden = value
+        }
+    }
+    
     
     func checkPriorityUser(_ userID:String?, dic:NSDictionary){
         setBehaviouralData(dic: dic)
@@ -298,7 +339,7 @@ class ResultVC: BaseViewController {
             case "VERY_HIGH":
                 bbRiskLevel = AppConstant.VIEW_NEGATIVE
                 bioRiskValue.text = "High"
-                deviceRiskValueLbl.text = "Very High"
+                deviceRiskValueLbl.text = "High"
             case "MEDIUM":
                 bbRiskLevel = AppConstant.VIEW_WARNING
                 bioRiskValue.text = "Medium"
@@ -350,14 +391,19 @@ class ResultVC: BaseViewController {
     func setLabelTheme(_ value:String, _ lbl:UILabel){
         let words = value.lowercased().split(separator: "_")
         let output = words.joined(separator: " ")
-        lbl.text = output.capitalized
         switch output{
         case "very high", "high":
             lbl.textColor = AppConstant.RedTitleColor
+            lbl.backgroundColor = AppConstant.RedColor
+            lbl.text = "High"
         case "medium":
             lbl.textColor = AppConstant.OrangeTitleColor
+            lbl.backgroundColor = AppConstant.OrangeColor
+            lbl.text = "Medium"
         default:
             lbl.textColor = AppConstant.GreenTitleColor
+            lbl.backgroundColor = AppConstant.GreenColor
+            lbl.text = "Low"
         }
     }
     
@@ -492,20 +538,18 @@ class ResultVC: BaseViewController {
 extension ResultVC : PrismFingerPrintDelegate{
     func onFinished(data: [String : Any]?) {
         let statusCode = data?["statusCode"] as? Int
-        if(statusCode == 200 || statusCode == 409){
+        if(statusCode == 200){
             loadSessionData(sessionID: self.sessionID ?? "")
-        }else if statusCode == 401{
+        }else if statusCode == 401 || statusCode == 409{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
-                print("apiResponse", apiResponse ?? "")
                 self.navigationController?.backToViewController(viewController: MainViewController.self)
             }
         }else{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
-                print("apiResponse", apiResponse ?? "")
                 self.navigationController?.backToViewController(viewController: MainViewController.self)
             }
         }

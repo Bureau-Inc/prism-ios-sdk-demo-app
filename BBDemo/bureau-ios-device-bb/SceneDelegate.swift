@@ -65,9 +65,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             rootNC.setNavigationBarHidden(true, animated: true)
             self.window?.rootViewController = rootNC
             self.window?.makeKeyAndVisible()
-        }
-       
-        
+        }        
     }
     
 

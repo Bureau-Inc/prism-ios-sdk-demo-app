@@ -52,8 +52,12 @@ class MainViewController: BaseViewController {
     @IBAction func getStartBtn(_ sender: Any) {
         
         if behaviourSwitch.isOn{
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let VC = storyboard.instantiateViewController(withIdentifier: "PINViewController") as! PINViewController
+//            VC.isBBEnable = behaviourSwitch.isOn
+//            self.navigationController?.pushViewController(VC, animated: true)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let VC = storyboard.instantiateViewController(withIdentifier: "PINViewController") as! PINViewController
+            let VC = storyboard.instantiateViewController(withIdentifier: "GetStartVC") as! GetStartVC
             VC.isBBEnable = behaviourSwitch.isOn
             self.navigationController?.pushViewController(VC, animated: true)
 

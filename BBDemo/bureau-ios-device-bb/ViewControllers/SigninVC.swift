@@ -28,7 +28,7 @@ class SigninVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sessionID = "Demo-"+NSUUID().uuidString
+        sessionID = NSUUID().uuidString
         BureauAPI.shared.configure(clientID: "***ClientID***", environment: .production, sessionID: sessionID ?? "", enableBehavioralBiometrics: true)
         if isBBEnable{
             BureauAPI.shared.startSubSession(NSUUID().uuidString)
