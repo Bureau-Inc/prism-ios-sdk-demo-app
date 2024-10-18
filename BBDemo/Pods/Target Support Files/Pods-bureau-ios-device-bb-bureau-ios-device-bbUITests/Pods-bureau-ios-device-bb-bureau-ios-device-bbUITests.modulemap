@@ -1,6 +1,0 @@
-framework module Pods_bureau_ios_device_bb_bureau_ios_device_bbUITests {
-  umbrella header "Pods-bureau-ios-device-bb-bureau-ios-device-bbUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

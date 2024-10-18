@@ -6,7 +6,7 @@ target 'bureau-ios-device-bb' do
   use_frameworks!
 
   # Pods for bureau-ios-device-bb
-	pod 'bureau-id-fraud-sdk' , '1.0.8'
+	pod 'bureau-id-fraud-sdk' , '1.1.0'
   pod 'Charts'
 
   target 'bureau-ios-device-bbTests' do
