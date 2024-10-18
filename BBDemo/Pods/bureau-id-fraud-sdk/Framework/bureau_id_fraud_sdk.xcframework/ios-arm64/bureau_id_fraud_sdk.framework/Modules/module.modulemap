@@ -1,4 +1,0 @@
-framework module bureau_id_fraud_sdk {
-  header "bureau_id_fraud_sdk-Swift.h"
-  requires objc
-}

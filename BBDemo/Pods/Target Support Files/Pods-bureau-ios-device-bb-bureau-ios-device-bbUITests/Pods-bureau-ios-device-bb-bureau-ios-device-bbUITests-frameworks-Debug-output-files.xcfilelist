@@ -1,3 +1,0 @@
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bureau_id_fraud_sdk.framework
