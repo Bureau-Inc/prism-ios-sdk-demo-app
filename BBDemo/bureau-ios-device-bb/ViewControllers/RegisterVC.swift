@@ -18,17 +18,16 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var pwdInnerView: UIView!
     
     var isBBEnable = false
-    var sessionID:String?
+    var eventId:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userIDInnerView.layer.borderColor = UIColor.systemGray5.cgColor
         pwdInnerView.layer.borderColor = UIColor.systemGray5.cgColor
-        sessionID = NSUUID().uuidString
-        BureauAPI.shared.configure(clientID: "***ClientID***", environment: .production, sessionID: sessionID ?? "", enableBehavioralBiometrics: true)
-        if isBBEnable{
-            BureauAPI.shared.startSubSession(NSUUID().uuidString)
-        }
+        eventId = NSUUID().uuidString
+        let config = BureauConfig(credentialID: "***ClientID***", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
+        BureauAPI.shared.configure(config: config)
+        BureauAPI.shared.startSubSession(NSUUID().uuidString)
     }
     
     @IBAction func submitAct(_ sender: UIButton) {
@@ -46,7 +45,7 @@ class RegisterVC: UIViewController {
                     let VC = storyboard.instantiateViewController(withIdentifier: "ResultVC") as! ResultVC
                     VC.userName = userIdTF.text
                     VC.password = passwordTF.text
-                    VC.sessionID = self.sessionID
+                    VC.eventId = self.eventId
                     VC.isBBEnable = isBBEnable
                     self.navigationController?.pushViewController(VC, animated: true)
                 }
