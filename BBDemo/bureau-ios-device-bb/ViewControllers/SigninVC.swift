@@ -19,7 +19,7 @@ class SigninVC: BaseViewController {
     @IBOutlet weak var pwdInnerView: UIView!
     @IBOutlet weak var deviceOriendationView: UIView!
     var isBBEnable = false
-    var sessionID:String?
+    var eventId:String?
     
     let motionManager = CMMotionManager()
     
@@ -28,15 +28,25 @@ class SigninVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sessionID = NSUUID().uuidString
-        BureauAPI.shared.configure(clientID: "***ClientID***", environment: .production, sessionID: sessionID ?? "", enableBehavioralBiometrics: true)
-        if isBBEnable{
-            BureauAPI.shared.startSubSession(NSUUID().uuidString)
-        }
+        eventId = NSUUID().uuidString
         userIDInnerView.layer.borderColor = UIColor.systemGray5.cgColor
         pwdInnerView.layer.borderColor = UIColor.systemGray5.cgColor
+        _ = initSDK()
         initGraph()
     }
+    
+    func initSDK() -> Bool {
+        eventId = NSUUID().uuidString
+        let config = BureauConfig(credentialID: "***ClientID***", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
+        BureauAPI.shared.configure(config: config)
+        BureauAPI.shared.localSignalDelegate = self
+        BureauAPI.shared.utilityDelegate = self
+        BureauAPI.shared.enableRiskMonitoring(frequency: .instant)
+        BureauAPI.shared.startMonitoringRiskSignals()
+        BureauAPI.shared.startSubSession(NSUUID().uuidString)
+        return BureauAPI.shared.isSDKInitializationSuccess()
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -62,7 +72,7 @@ class SigninVC: BaseViewController {
             VC.userName = userIdTF.text
             VC.password = passwordTF.text
             VC.isBBEnable = isBBEnable
-            VC.sessionID = sessionID
+            VC.eventId = eventId
             self.navigationController?.pushViewController(VC, animated: true)
         }
     }
@@ -108,5 +118,47 @@ extension UIViewController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension SigninVC: LocalSignalDelegate {
+    func deviceLocation(isMocked: Bool) {
+        if isMocked {
+            print("APP running in MOCK LOCATION")
+        }
+    }
+    
+    func appDebugMode(enable: Bool) {
+        if enable {
+            print("APP running in DEBUG MODE")
+        }
+    }
+    
+    func device(isJailBreak: Bool) {
+        if isJailBreak {
+            print("This device is jailBroken!!!")
+        }
+        else {
+            print("This device is NOT jailBroken!!!")
+        }
+    }
+    
+    func isVPNEnable(enable: Bool) {
+        if enable {
+            print("VPN is enable")
+        }
+        else {
+            print("VPN is not enable")
+        }
+    }
+    
+    func voiceCall(isDetected: Bool) {
+        isDetected == true ? print("VoiceCall is Detected"): print("VoiceCall is not Detected")
+    }
+}
+
+extension SigninVC: UtilityDelegate {
+    func getPayload(payload: NSDictionary) {
+        print(payload)
     }
 }

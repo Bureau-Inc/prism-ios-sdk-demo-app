@@ -11,7 +11,7 @@ import CoreLocation
 import Charts
 import CoreMotion
 
-class ResultVC: BaseViewController {
+class ResultVC: BaseViewController, TagListViewDelegate {
 
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var bioWarnView: UIView!
@@ -88,7 +88,7 @@ class ResultVC: BaseViewController {
     var userName:String?
     var password:String?
     var isBBEnable:Bool?
-    var sessionID:String?
+    var eventId:String?
     
     
     @IBOutlet weak var deviceOriendationView: UIView!
@@ -105,10 +105,16 @@ class ResultVC: BaseViewController {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
         spinner.startAnimating()
+        startSubmitDataCall()
+        initAllGraph()
+    }
+    
+    func startSubmitDataCall(completion: ((Bool) -> Void)? = nil) {
         BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
-        BureauAPI.shared.submit()
-        initAllGraph()
+        BureauAPI.shared.submit { success, error in
+            completion?(success)
+        }
     }
     
     func initAllGraph(){
@@ -135,8 +141,8 @@ class ResultVC: BaseViewController {
     }
     
     
-    func loadSessionData(sessionID:String){
-        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + sessionID)) else { return }
+    func loadSessionData(eventId:String){
+        guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + eventId)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
         request.setValue("Basic <<TOKEN>>", forHTTPHeaderField: "Authorization")
@@ -166,6 +172,9 @@ class ResultVC: BaseViewController {
                     self.setUpListView(self.adminRiskSignalView, self.adminRiskListView, responseJSON)
                     self.setUpListView(self.rulesRiskSignalView, self.rulesRiskListView, responseJSON)
                     self.setUpListView(self.locationIntelRiskSignalView, self.locationRiskListView, responseJSON)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+                        self.stopGraphupdate()
+                    }
                 }
             }
         }.resume()
@@ -173,6 +182,7 @@ class ResultVC: BaseViewController {
     
     func prepareChip(tagListView:TagListView, value:String, enable:Bool){
         let tagView = tagListView.addTag(value)
+        tagListView.delegate = self
         tagView.titleLineBreakMode = .byTruncatingTail
         if enable{
             tagView.tagBackgroundColor = AppConstant.RedColor ?? .gray
@@ -192,20 +202,30 @@ class ResultVC: BaseViewController {
             prepareChip(tagListView: listView, value: "Voice Call Detected", enable: dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "Simulator", enable: dic.value(forKeyPath: "emulator") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "Frida Enable", enable: dic.value(forKeyPath: "fridaDetected") as? Bool ?? false)
-            setLabelTheme(dic.value(forKey: "deviceRiskLevel") as? String ?? "", appRiskValueLbl)
+            if let FRTime = dic.value(forKeyPath: "factoryResetTime") as? Int64{
+                let adjustedTimestamp: TimeInterval
+                if FRTime > 1_000_000_000_000 { // Likely in milliseconds
+                    adjustedTimestamp = TimeInterval(FRTime) / 1000
+                } else { // Likely in seconds
+                    adjustedTimestamp = TimeInterval(FRTime)
+                }
+                let readableDate = convertTimestampToReadableDate(timestamp: TimeInterval(adjustedTimestamp))
+                prepareChip(tagListView: listView, value: "Factory Reset-\(readableDate)", enable: false)
+            }
+            setLabelTheme(dic.value(forKey: "deviceRiskLevel") as? String ?? "", deviceRiskValueLbl)
         case appRiskListView:
             prepareChip(tagListView: listView, value: "Debuggable", enable: dic.value(forKeyPath: "debuggable") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "App Cloned", enable: false)
             prepareChip(tagListView: listView, value: "Tampered", enable: false)
             prepareChip(tagListView: listView, value: "Appstore install", enable: !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false))
             if ((dic.value(forKeyPath: "debuggable") as? Bool ?? false) || !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false)){
-                deviceRiskValueLbl.text = AppConstant.High
-                deviceRiskValueLbl.textColor = AppConstant.RedTitleColor
-                deviceRiskValueLbl.backgroundColor = AppConstant.RedColor
+                appRiskValueLbl.text = AppConstant.High
+                appRiskValueLbl.textColor = AppConstant.RedTitleColor
+                appRiskValueLbl.backgroundColor = AppConstant.RedColor
             }else{
-                deviceRiskValueLbl.text = AppConstant.Low
-                deviceRiskValueLbl.textColor = AppConstant.GreenTitleColor
-                deviceRiskValueLbl.backgroundColor = AppConstant.GreenColor
+                appRiskValueLbl.text = AppConstant.Low
+                appRiskValueLbl.textColor = AppConstant.GreenTitleColor
+                appRiskValueLbl.backgroundColor = AppConstant.GreenColor
             }
         case persistanceRiskListView:
             prepareChip(tagListView: listView, value: "User ID - \(dic.value(forKeyPath: "userId") as? String ?? "")", enable: false)
@@ -339,15 +359,12 @@ class ResultVC: BaseViewController {
             case "VERY_HIGH":
                 bbRiskLevel = AppConstant.VIEW_NEGATIVE
                 bioRiskValue.text = "High"
-                deviceRiskValueLbl.text = "High"
             case "MEDIUM":
                 bbRiskLevel = AppConstant.VIEW_WARNING
                 bioRiskValue.text = "Medium"
-                deviceRiskValueLbl.text = "Medium"
             default:
                 bbRiskLevel = AppConstant.VIEW_POSITIVE
                 bioRiskValue.text = "Low"
-                deviceRiskValueLbl.text = "Low"
             }
             setViewTheme(bioRiskLevelView, bioRistTitle, bioRiskValue, bioRiskIco, bbRiskLevel)
             self.userFamiliScore.text = String(format: "%.5f", userSimilarityScore ?? 0.0)
@@ -533,13 +550,35 @@ class ResultVC: BaseViewController {
 
         return (xField, yField, zField, totalField)
     }
+    
+    func stopGraphupdate(){
+        motionManager.stopDeviceMotionUpdates()
+        motionManager.stopGyroUpdates()
+        motionManager.stopMagnetometerUpdates()
+        motionManager.stopAccelerometerUpdates()
+    }
+    
+    func convertTimestampToReadableDate(timestamp: TimeInterval, dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .medium, locale: Locale = .current) -> String {
+        // Convert timestamp to Date object
+        let date = Date(timeIntervalSince1970: timestamp)
+        
+        // Create and configure DateFormatter
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = dateStyle
+        dateFormatter.timeStyle = timeStyle
+        dateFormatter.locale = locale
+        
+        // Convert Date to String
+        return dateFormatter.string(from: date)
+    }
+    
 }
 
 extension ResultVC : PrismFingerPrintDelegate{
     func onFinished(data: [String : Any]?) {
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200){
-            loadSessionData(sessionID: self.sessionID ?? "")
+            loadSessionData(eventId: self.eventId ?? "")
         }else if statusCode == 401 || statusCode == 409{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
@@ -554,5 +593,10 @@ extension ResultVC : PrismFingerPrintDelegate{
             }
         }
         
+        
+    }
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        self.showAlert(title: "Value", message: title)
     }
 }
+
