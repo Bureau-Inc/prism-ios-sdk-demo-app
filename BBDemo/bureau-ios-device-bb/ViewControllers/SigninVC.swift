@@ -7,7 +7,7 @@
 
 import UIKit
 import bureau_id_fraud_sdk
-import Charts
+import DGCharts
 import CoreMotion
 
 class SigninVC: BaseViewController {

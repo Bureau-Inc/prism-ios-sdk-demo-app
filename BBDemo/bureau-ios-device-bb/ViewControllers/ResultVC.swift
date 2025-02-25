@@ -8,7 +8,7 @@
 import UIKit
 import bureau_id_fraud_sdk
 import CoreLocation
-import Charts
+import DGCharts
 import CoreMotion
 
 class ResultVC: BaseViewController, TagListViewDelegate {
