@@ -25,7 +25,7 @@ class RegisterVC: UIViewController {
         userIDInnerView.layer.borderColor = UIColor.systemGray5.cgColor
         pwdInnerView.layer.borderColor = UIColor.systemGray5.cgColor
         eventId = NSUUID().uuidString
-        let config = BureauConfig(credentialID: "***ClientID***", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
+        let config = BureauConfig(credentialID: "80925a29-7e4b-47b8-b4d3-7f2fc2d69e57", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
         BureauAPI.shared.configure(config: config)
         BureauAPI.shared.startSubSession(NSUUID().uuidString)
     }
