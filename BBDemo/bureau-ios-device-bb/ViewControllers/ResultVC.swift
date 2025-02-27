@@ -80,6 +80,10 @@ class ResultVC: BaseViewController, TagListViewDelegate {
     @IBOutlet weak var rulesRiskValueLbl: UILabel!
     @IBOutlet weak var locationIntelRiskValueLbl: UILabel!
     
+    @IBOutlet weak var onDeviceMetricsView: UIView!
+    @IBOutlet weak var onDeviceMetricsInnerView: UIView!
+    @IBOutlet weak var ondeviceMetricsResultLbl: UILabel!
+    @IBOutlet weak var ondeviceMetricsLoader: UIActivityIndicatorView!
     
     let motionManager = CMMotionManager()
     var locationManager = CLLocationManager()
@@ -89,7 +93,8 @@ class ResultVC: BaseViewController, TagListViewDelegate {
     var password:String?
     var isBBEnable:Bool?
     var eventId:String?
-    
+    var analyticsData: NSDictionary?
+
     
     @IBOutlet weak var deviceOriendationView: UIView!
     @IBOutlet weak var gyroscopeView: UIView!
@@ -107,6 +112,14 @@ class ResultVC: BaseViewController, TagListViewDelegate {
         spinner.startAnimating()
         startSubmitDataCall()
         initAllGraph()
+        updateAnalyticsUI(data: analyticsData)
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveAnalyticsData(_:)), name: NSNotification.Name("AnalyticsDataReady"), object: nil)
+    }
+    
+    @objc func receiveAnalyticsData(_ notification: Notification) {
+        if let data = notification.object as? NSDictionary {
+            updateAnalyticsUI(data: data)
+        }
     }
     
     func startSubmitDataCall(completion: ((Bool) -> Void)? = nil) {
@@ -114,6 +127,53 @@ class ResultVC: BaseViewController, TagListViewDelegate {
         BureauAPI.shared.fingerprintDelegate = self
         BureauAPI.shared.submit { success, error in
             completion?(success)
+        }
+    }
+    
+    func updateAnalyticsUI(data: NSDictionary?) {
+        onDeviceMetricsInnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
+        DispatchQueue.main.async {
+            if data == nil{
+                self.ondeviceMetricsResultLbl.text = "Loading...."
+                self.ondeviceMetricsLoader.startAnimating()
+            }else{
+                self.ondeviceMetricsLoader.stopAnimating()
+                
+                let specialCharCount = data?["specialCharCount"] as? Int ?? 0
+                let keystrokeCount = data?["keystrokeCount"] as? Int ?? 0
+                let backspaceCount = data?["backspaceCount"] as? Int ?? 0
+                let fieldCount = data?["fieldCount"] as? Int ?? 0
+                let sessionDuration = data?["sessionDuration"] as? Double ?? 0.0
+                
+                let tapCount = data?["tapCount"] as? Int ?? 0
+                let swipeCount = data?["swipeCount"] as? Int ?? 0
+                let scrollCount = data?["scrollCount"] as? Int ?? 0
+                
+                let rotationRate = data?["rotationRate"] as? Double ?? 0.0
+                let accelerationRate = data?["accelerationRate"] as? Double ?? 0.0
+                let gyrationRate = data?["gyrationRate"] as? Double ?? 0.0
+                
+                let attributes = data?["attributes"] as? [String: Any] ?? [:]
+
+                // Create formatted display text
+                let analyticsText = """
+                        Special Chars: \(specialCharCount)
+                        Keystrokes: \(keystrokeCount)
+                        Backspaces: \(backspaceCount)
+                        Fields: \(fieldCount)
+                        Taps: \(tapCount)
+                        Swipes: \(swipeCount)
+                        Scrolls: \(scrollCount)
+                        Rotation Rate: \(String(format: "%.5f", rotationRate))
+                        Acceleration Rate: \(String(format: "%.5f", accelerationRate))
+                        Gyration Rate: \(String(format: "%.5f", gyrationRate))
+                        Session Duration: \(String(format: "%.5f", sessionDuration))s
+                        Attributes: \(attributes)
+                        """
+                
+                // Update UI label
+                self.ondeviceMetricsResultLbl.text = analyticsText
+            }
         }
     }
     
@@ -145,7 +205,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
         guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + eventId)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-        request.setValue("Basic <<TOKEN>>", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic ODA5MjVhMjktN2U0Yi00N2I4LWI0ZDMtN2YyZmMyZDY5ZTU3OmEzZjEyZWFkLWI0OWEtNDdkNi05Mzg4LTRiYzkzZWM3N2RhNQ==", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in

@@ -20,7 +20,8 @@ class SigninVC: BaseViewController {
     @IBOutlet weak var deviceOriendationView: UIView!
     var isBBEnable = false
     var eventId:String?
-    
+    var analyticsData: NSDictionary?
+
     let motionManager = CMMotionManager()
     
     var deviceOriendationGraph:BureauLineGraphView?
@@ -37,13 +38,18 @@ class SigninVC: BaseViewController {
     
     func initSDK() -> Bool {
         eventId = NSUUID().uuidString
-        let config = BureauConfig(credentialID: "***ClientID***", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
+        let config = BureauConfig(credentialID: "80925a29-7e4b-47b8-b4d3-7f2fc2d69e57", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
         BureauAPI.shared.configure(config: config)
         BureauAPI.shared.localSignalDelegate = self
         BureauAPI.shared.utilityDelegate = self
         BureauAPI.shared.enableRiskMonitoring(frequency: .instant)
         BureauAPI.shared.startMonitoringRiskSignals()
         BureauAPI.shared.startSubSession(NSUUID().uuidString)
+        
+        BureauAPI.shared.behavioralAnalyticsDelegate = self
+        BureauAPI.shared.getBehaviouralAnalytics(15, "BureauUser", attributes: ["tag" : "login"])
+
+    
         return BureauAPI.shared.isSDKInitializationSuccess()
     }
     
@@ -73,6 +79,7 @@ class SigninVC: BaseViewController {
             VC.password = passwordTF.text
             VC.isBBEnable = isBBEnable
             VC.eventId = eventId
+            VC.analyticsData = self.analyticsData
             self.navigationController?.pushViewController(VC, animated: true)
         }
     }
@@ -160,5 +167,13 @@ extension SigninVC: LocalSignalDelegate {
 extension SigninVC: UtilityDelegate {
     func getPayload(payload: NSDictionary) {
         print(payload)
+    }
+}
+
+extension SigninVC:BehavioralAnalyticsDelegate{
+    func didCompleteBehaviouralAnalytics(analyticsData: NSDictionary) {
+        print("didCompleteBehaviouralAnalytics-->",analyticsData)
+        self.analyticsData = analyticsData
+        NotificationCenter.default.post(name: NSNotification.Name("AnalyticsDataReady"), object: analyticsData)// Store data locally
     }
 }
