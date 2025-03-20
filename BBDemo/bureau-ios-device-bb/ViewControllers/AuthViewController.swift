@@ -20,8 +20,6 @@ class AuthViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.username.text = "login@admin.id"
-        self.password.text = "Admin@1234"
     }
     
     @IBAction func authAct(_ sender: Any) {
