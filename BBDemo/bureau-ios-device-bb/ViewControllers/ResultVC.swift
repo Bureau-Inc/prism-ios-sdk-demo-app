@@ -294,7 +294,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
             prepareChip(tagListView: listView, value: "Operating System - \(dic.value(forKeyPath: "OS") as? String ?? "")", enable: false)
             prepareChip(tagListView: listView, value: "Model - \(dic.value(forKeyPath: "model") as? String ?? "")", enable: false)
         case adminRiskListView:
-            prepareChip(tagListView: listView, value: "Session ID - \(dic.value(forKeyPath: "sessionId") as? String ?? "")", enable: false)
+            prepareChip(tagListView: listView, value: "Event ID - \(dic.value(forKeyPath: "sessionId") as? String ?? "")", enable: false)
             prepareChip(tagListView: listView, value: "MIME Attack Detected", enable: dic.value(forKeyPath: "mitmAttackDetected") as? Bool ?? false)
         case networkRiskListView:
             prepareChip(tagListView: listView, value: "IP Security:VPN", enable: dic.value(forKeyPath: "IPSecurity.VPN") as? Bool ?? false)
