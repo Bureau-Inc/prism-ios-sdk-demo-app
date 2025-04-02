@@ -12,7 +12,7 @@ class BureauLineGraphView: UIView {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var titleIco: UIImageView!
-
+    
     @IBOutlet weak var Line_1_Lbl: UILabel!
     @IBOutlet weak var Line_2_Lbl: UILabel!
     @IBOutlet weak var Line_3_Lbl: UILabel!
@@ -58,7 +58,7 @@ class BureauLineGraphView: UIView {
         xAxis.drawGridLinesEnabled = false
         xAxis.drawAxisLineEnabled = false
         xAxis.centerAxisLabelsEnabled = true
-
+        
         
         // Customize Y-axis (left and right)
         let leftAxis = graphView.leftAxis
@@ -68,7 +68,7 @@ class BureauLineGraphView: UIView {
         leftAxis.labelTextColor = AppConstant.ThemeFontColor ?? .gray
         leftAxis.labelAlignment = .left
         leftAxis.setLabelCount(5, force: true)
-
+        
         let rightAxis = graphView.rightAxis
         rightAxis.drawGridLinesEnabled = false
         rightAxis.drawLabelsEnabled = false
@@ -131,6 +131,7 @@ class BureauLineGraphView: UIView {
         xAxis.axisMinimum = 0
         xAxis.axisMaximum = counter > 10 ? counter : 10
         graphView.notifyDataSetChanged()
-    }    
+    }
     
 }
+

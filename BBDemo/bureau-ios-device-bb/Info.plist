@@ -2,11 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fb</string>
-        <string>twitter</string>
-    </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fb</string>
+		<string>twitter</string>
+        <string>tvsqcustomer1</string>
+        <string>tvopen</string>
+        <string>tvcontrol</string>
+        <string>teamviewer</string>
+        <string>anydesk</string>
+        <string>sandstudio-airdroid</string>
+        <string>st-personal</string>
+        <string>zohoassist</string>
+        <string>com.googleusercontent.apps.946791103989-7ac0qp32qfbc226vo64d6cic49juljbi</string>
+        <string>chromeremotedesktop</string>
+        <string>vnc</string>
+        <string>screenmirroringz</string>
+        
+        <string>checkra1n</string>
+        <string>unc0ver</string>
+        <string>loader</string>
+        <string>palera1n</string>
+        <string>undecimus</string>
+        <string>sileo</string>
+        <string>zbra</string>
+        <string>filza</string>
+
+        <string>UTM</string>
+        
+        <string>altstore</string>
+        <string>trollstore</string>
+        <string>tutuapp</string>
+        <string>appcake</string>
+        <string>scarlet</string>
+        <string>pandahelper</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -101,11 +101,19 @@ class ResultVC: BaseViewController, TagListViewDelegate {
     @IBOutlet weak var acceleroMeterView: UIView!
     @IBOutlet weak var magneticView: UIView!
     
+    @IBOutlet weak var heatMapView: UIView!
+    @IBOutlet weak var touchReplayView: UIView!
+    
     var deviceOriendationGraph:BureauLineGraphView?
     var gyroscopeGraph:BureauLineGraphView?
     var acceleroMeterGraph:BureauLineGraphView?
     var magneticGraph:BureauLineGraphView?
-
+    
+    var bubbleGraph: BehaviouralInsightsGraph?
+    var lineGraph: BehaviouralInsightsGraph?
+    
+    var tapLocations: [(x: CGFloat, y: CGFloat)] = []  // Store tap locations
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
@@ -125,7 +133,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
     func startSubmitDataCall(completion: ((Bool) -> Void)? = nil) {
         BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
-        BureauAPI.shared.submit { success, error in
+        BureauAPI.shared.submit { success, error,arg  in
             completion?(success)
         }
     }
@@ -194,18 +202,34 @@ class ResultVC: BaseViewController, TagListViewDelegate {
         magneticGraph?.titleLbl.text = "Magnetic Field"
         self.magneticView.addSubview(magneticGraph!)
         
+        bubbleGraph = BehaviouralInsightsGraph(frame: CGRect(x: 0, y: 0, width: heatMapView.frame.width, height: heatMapView.frame.height))
+        bubbleGraph?.initBubbleGraph()
+        heatMapView.addSubview(bubbleGraph!)
+        
+        lineGraph = BehaviouralInsightsGraph(frame: CGRect(x: 0, y: 0, width: touchReplayView.frame.width, height: touchReplayView.frame.height))
+        lineGraph?.initLineGraph()
+        touchReplayView?.addSubview(lineGraph!)
+        
+        loadTapLocationsToGraph()
+
         isDeviceMotionAvailable()
         isGyroAvailable()
         isAccelerometerAvailable()
         isMagnetometerAvailable()
     }
     
+    func loadTapLocationsToGraph() {
+        for location in tapLocations {
+            self.bubbleGraph?.addBubbleGraphEntry(randomDouble1: location.x, randomDouble2: location.y, randomDouble3: Double.random(in: 25.0...35.0))
+            self.lineGraph?.addLineGraphEntry(randomDouble1: location.x, randomDouble2: location.y, randomDouble3: Double.random(in: 25.0...35.0))
+        }
+    }
     
     func loadSessionData(eventId:String){
         guard let serviceUrl = URL(string: ("https://api.overwatch.bureau.id/v1/deviceService/fingerprint/" + eventId)) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "GET"
-        request.setValue("Basic ODA5MjVhMjktN2U0Yi00N2I4LWI0ZDMtN2YyZmMyZDY5ZTU3OmEzZjEyZWFkLWI0OWEtNDdkNi05Mzg4LTRiYzkzZWM3N2RhNQ==", forHTTPHeaderField: "Authorization")
+        request.setValue("Basic <<TOKEN>>", forHTTPHeaderField: "Authorization")
 
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
@@ -364,7 +388,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
             print("Cancel tapped")
         }
         let okayButton = UIAlertAction(title: "YES", style: .default) { (action) in
-            self.navigationController?.backToViewController(viewController: MainViewController.self)
+            self.navigationController?.backToViewController(viewController: MainPageViewController.self)
         }
         alertController.addAction(cancelButton)
         alertController.addAction(okayButton)
@@ -635,7 +659,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
 }
 
 extension ResultVC : PrismFingerPrintDelegate{
-    func onFinished(data: [String : Any]?) {
+    func onFinished(eventID: String?, data: [String : Any]?) {
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200){
             loadSessionData(eventId: self.eventId ?? "")
@@ -643,13 +667,13 @@ extension ResultVC : PrismFingerPrintDelegate{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
-                self.navigationController?.backToViewController(viewController: MainViewController.self)
+                self.navigationController?.backToViewController(viewController: MainPageViewController.self)
             }
         }else{
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 let apiResponse = data?["apiResponse"] as? NSDictionary
-                self.navigationController?.backToViewController(viewController: MainViewController.self)
+                self.navigationController?.backToViewController(viewController: MainPageViewController.self)
             }
         }
         
