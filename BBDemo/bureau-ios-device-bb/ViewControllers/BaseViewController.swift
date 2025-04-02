@@ -9,12 +9,12 @@ import UIKit
 import bureau_id_fraud_sdk
 
 class BaseViewController: UIViewController {
-
+    
     var getUserData:NSDictionary?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         if(UserDefaults.standard.value(forKey: "USERDATA") as? Data != nil){
             do {
                 getUserData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(UserDefaults.standard.object(forKey: "USERDATA") as! Data) as? NSDictionary
@@ -23,11 +23,11 @@ class BaseViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 extension UINavigationController {
-   
+    
     func fadeTo(_ viewController: UIViewController) {
         let transition: CATransition = CATransition()
         transition.duration = 0.3
@@ -36,13 +36,15 @@ extension UINavigationController {
         pushViewController(viewController, animated: false)
     }
     
-  func backToViewController(viewController: Swift.AnyClass) {
-     
-    for element in viewControllers as Array {
-      if element.isKind(of: viewController) {
-        self.popToViewController(element, animated: true)
-        break
-      }
+    func backToViewController(viewController: Swift.AnyClass) {
+        
+        for element in viewControllers as Array {
+            if element.isKind(of: viewController) {
+                DispatchQueue.main.async {
+                    self.popToViewController(element, animated: true)
+                }
+                break
+            }
+        }
     }
-  }
 }

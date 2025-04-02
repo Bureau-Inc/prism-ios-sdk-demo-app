@@ -60,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         else
         {
-            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPageViewController") as? MainPageViewController
             let rootNC = UINavigationController(rootViewController: rootVC!)
             rootNC.setNavigationBarHidden(true, animated: true)
             self.window?.rootViewController = rootNC

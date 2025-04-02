@@ -35,7 +35,7 @@ class AuthViewController: BaseViewController {
                 let userDic = ["accessToken" : self.accessToken, "userID": jwt["sub"].string, "userName" : name, "picture" : picture, "org_id" : "org_id"]
                 try? UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: userDic,requiringSecureCoding: true), forKey: "USERDATA")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let VC = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                let VC = storyboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
                 self.navigationController?.pushViewController(VC, animated: true)
             case .failure(let error):
                 self.spinner.stopAnimating()
