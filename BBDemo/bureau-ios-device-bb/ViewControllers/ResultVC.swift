@@ -125,7 +125,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
     func startSubmitDataCall(completion: ((Bool) -> Void)? = nil) {
         BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
-        BureauAPI.shared.submit { success, error in
+        BureauAPI.shared.submit { success, eventId, error in
             completion?(success)
         }
     }
@@ -635,7 +635,8 @@ class ResultVC: BaseViewController, TagListViewDelegate {
 }
 
 extension ResultVC : PrismFingerPrintDelegate{
-    func onFinished(data: [String : Any]?) {
+    
+    func onFinished(eventID: String?, data: [String : Any]?) {
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200){
             loadSessionData(eventId: self.eventId ?? "")

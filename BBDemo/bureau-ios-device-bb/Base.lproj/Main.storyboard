@@ -27,7 +27,7 @@
         <!--Auth View Controller-->
         <scene sceneID="m6d-3h-wEo">
             <objects>
-                <viewController storyboardIdentifier="AuthViewController" id="UVR-tS-Qit" customClass="AuthViewController" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthViewController" id="UVR-tS-Qit" customClass="AuthViewController" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3s-s0-XKv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +135,7 @@ Demo App</string>
         <!--Main View Controller-->
         <scene sceneID="6jf-fn-xfo">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="CTq-Ft-Qtx" customClass="MainViewController" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="CTq-Ft-Qtx" customClass="MainViewController" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UDU-ZS-5bt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,11 +168,11 @@ Demo App</string>
                                     <constraint firstAttribute="bottom" secondItem="vqf-e6-Th7" secondAttribute="bottom" id="ymz-lb-yoP"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newBankLogo" translatesAutoresizingMaskIntoConstraints="NO" id="opz-sw-3pQ">
-                                <rect key="frame" x="25" y="79" width="128" height="24"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hexaware-logo" translatesAutoresizingMaskIntoConstraints="NO" id="opz-sw-3pQ">
+                                <rect key="frame" x="25" y="79" width="225" height="45"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oON-zm-YLc">
-                                <rect key="frame" x="25" y="118" width="325" height="65"/>
+                                <rect key="frame" x="25" y="134" width="325" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Action" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJS-Oa-995">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="30"/>
@@ -189,7 +189,7 @@ Demo App</string>
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2s0-Zg-ycw">
-                                <rect key="frame" x="0.0" y="183" width="375" height="484"/>
+                                <rect key="frame" x="0.0" y="199" width="375" height="468"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyX-hi-JGH">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="312.5"/>
@@ -413,7 +413,7 @@ Demo App</string>
                             <constraint firstAttribute="trailing" secondItem="oON-zm-YLc" secondAttribute="trailing" constant="25" id="Ij2-xt-sl9"/>
                             <constraint firstItem="Xx2-xT-bNU" firstAttribute="trailing" secondItem="98t-ao-fhr" secondAttribute="trailing" id="Mvq-eT-7dl"/>
                             <constraint firstItem="zGF-vl-y1I" firstAttribute="centerX" secondItem="UDU-ZS-5bt" secondAttribute="centerX" id="Pdm-A8-1HE"/>
-                            <constraint firstItem="oON-zm-YLc" firstAttribute="top" secondItem="opz-sw-3pQ" secondAttribute="bottom" constant="15" id="WSW-CX-Tve"/>
+                            <constraint firstItem="oON-zm-YLc" firstAttribute="top" secondItem="opz-sw-3pQ" secondAttribute="bottom" constant="10" id="WSW-CX-Tve"/>
                             <constraint firstItem="opz-sw-3pQ" firstAttribute="top" secondItem="yzT-aO-Mlt" secondAttribute="bottom" constant="15" id="XvI-eK-OPb"/>
                             <constraint firstItem="Xx2-xT-bNU" firstAttribute="leading" secondItem="98t-ao-fhr" secondAttribute="leading" id="YWq-EV-X4O"/>
                             <constraint firstItem="2s0-Zg-ycw" firstAttribute="bottom" secondItem="98t-ao-fhr" secondAttribute="bottom" id="ZKM-G6-xvw"/>
@@ -443,7 +443,7 @@ Demo App</string>
         <!--Get StartVC-->
         <scene sceneID="pcq-Mo-RX0">
             <objects>
-                <viewController storyboardIdentifier="GetStartVC" id="s5j-U0-wKV" customClass="GetStartVC" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetStartVC" id="s5j-U0-wKV" customClass="GetStartVC" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z34-GA-6in">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,7 +579,7 @@ Demo App</string>
         <!--RegisterVC-->
         <scene sceneID="K8P-vt-Qci">
             <objects>
-                <viewController storyboardIdentifier="RegisterVC" id="wCw-MZ-7BM" customClass="RegisterVC" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterVC" id="wCw-MZ-7BM" customClass="RegisterVC" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mmP-ns-vY0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -807,7 +807,7 @@ Demo App</string>
         <!--SigninVC-->
         <scene sceneID="lpY-Wi-QxQ">
             <objects>
-                <viewController storyboardIdentifier="SigninVC" id="279-Dm-bVP" customClass="SigninVC" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SigninVC" id="279-Dm-bVP" customClass="SigninVC" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WSq-nO-0uC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1071,7 +1071,7 @@ Demo App</string>
         <!--View Controller-->
         <scene sceneID="oNc-BD-EKC">
             <objects>
-                <viewController storyboardIdentifier="PINViewController" id="TIh-38-gmi" customClass="PINViewController" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PINViewController" id="TIh-38-gmi" customClass="PINViewController" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uG2-rh-ew0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1240,7 +1240,7 @@ Demo App</string>
         <!--Side Menu View Controller-->
         <scene sceneID="thf-iq-yuk">
             <objects>
-                <viewController storyboardIdentifier="SideMenuViewController" id="ZG8-go-UsI" customClass="SideMenuViewController" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SideMenuViewController" id="ZG8-go-UsI" customClass="SideMenuViewController" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Q0-ck-9lP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1334,7 +1334,7 @@ Demo App</string>
         <!--ResultVC-->
         <scene sceneID="Lc3-cq-lvJ">
             <objects>
-                <viewController storyboardIdentifier="ResultVC" id="qJ3-2l-AAY" customClass="ResultVC" customModule="bureau_ios_device_bb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultVC" id="qJ3-2l-AAY" customClass="ResultVC" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUi-Es-cG9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2163,7 +2163,7 @@ Demo App</string>
                                                                                                 <color key="textColor" name="ThemeColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJX-HJ-zYb" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJX-HJ-zYb" customClass="TagListView" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target">
                                                                                                 <rect key="frame" x="10" y="25" width="285" height="0.0"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -2336,7 +2336,7 @@ Demo App</string>
                                                                                                 <color key="textColor" name="ThemeColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aW-Ja-aa9" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aW-Ja-aa9" customClass="TagListView" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target">
                                                                                                 <rect key="frame" x="10" y="25" width="285" height="0.0"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -2509,7 +2509,7 @@ Demo App</string>
                                                                                                 <color key="textColor" name="ThemeColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVH-Nu-eg4" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVH-Nu-eg4" customClass="TagListView" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target">
                                                                                                 <rect key="frame" x="10" y="25" width="285" height="0.0"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -2682,7 +2682,7 @@ Demo App</string>
                                                                                                 <color key="textColor" name="ThemeColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-xw-mwb" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-xw-mwb" customClass="TagListView" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target">
                                                                                                 <rect key="frame" x="10" y="25" width="285" height="0.0"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -2855,7 +2855,7 @@ Demo App</string>
                                                                                                 <color key="textColor" name="ThemeColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-wb-mH7" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-wb-mH7" customClass="TagListView" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target">
                                                                                                 <rect key="frame" x="10" y="25" width="285" height="0.0"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -3028,7 +3028,7 @@ Demo App</string>
                                                                                                 <color key="textColor" name="ThemeColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ry5-Ps-Xu5" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ry5-Ps-Xu5" customClass="TagListView" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target">
                                                                                                 <rect key="frame" x="10" y="25" width="285" height="0.0"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -3201,7 +3201,7 @@ Demo App</string>
                                                                                                 <color key="textColor" name="ThemeColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-6l-rdD" customClass="TagListView" customModule="bureau_ios_device_bb" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-6l-rdD" customClass="TagListView" customModule="DI_BB_SDK_DemoApp" customModuleProvider="target">
                                                                                                 <rect key="frame" x="10" y="25" width="285" height="0.0"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -3632,9 +3632,9 @@ Demo App</string>
         <image name="XIco" width="24" height="24"/>
         <image name="appleIco" width="32" height="32"/>
         <image name="handIco" width="32" height="32"/>
+        <image name="hexaware-logo" width="225" height="45"/>
         <image name="locationIco" width="32" height="32"/>
         <image name="meterIco" width="32" height="32"/>
-        <image name="newBankLogo" width="128" height="24"/>
         <image name="plusIco" width="24" height="24"/>
         <image name="profileIco" width="32" height="32"/>
         <image name="progressImg" width="307.5" height="154"/>
@@ -3646,7 +3646,7 @@ Demo App</string>
             <color red="0.031372549019607843" green="0.56470588235294117" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeColor">
-            <color red="0.2669999897480011" green="0.38400000333786011" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.26666666666666666" green="0.3843137254901961" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeFontColor">
             <color red="0.0040000001899898052" green="0.019999999552965164" blue="0.20800000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3658,7 +3658,7 @@ Demo App</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

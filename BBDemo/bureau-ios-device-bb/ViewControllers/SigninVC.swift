@@ -38,7 +38,7 @@ class SigninVC: BaseViewController {
     
     func initSDK() -> Bool {
         eventId = NSUUID().uuidString
-        let config = BureauConfig(credentialID: "80925a29-7e4b-47b8-b4d3-7f2fc2d69e57", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
+        let config = BureauConfig(credentialID: "80925a29-7e4b-47b8-b4d3-7f2fc2d69e57", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
         BureauAPI.shared.configure(config: config)
         BureauAPI.shared.localSignalDelegate = self
         BureauAPI.shared.utilityDelegate = self
