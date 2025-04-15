@@ -4148,7 +4148,7 @@ Demo App</string>
                                                                         <rect key="frame" x="15" y="0.0" width="295" height="42.5"/>
                                                                         <color key="textColor" name="ThemeFontColor"/>
                                                                         <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4198,7 +4198,7 @@ Demo App</string>
                                                                                 <rect key="frame" x="10" y="0.0" width="147.5" height="42.5"/>
                                                                                 <color key="textColor" name="ThemeFontColor"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4245,7 +4245,7 @@ Demo App</string>
                                                                                 <rect key="frame" x="10" y="0.0" width="147.5" height="42.5"/>
                                                                                 <color key="textColor" name="ThemeFontColor"/>
                                                                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4578,7 +4578,7 @@ Demo App</string>
                                                                         <rect key="frame" x="10" y="0.0" width="315" height="42.5"/>
                                                                         <color key="textColor" name="ThemeFontColor"/>
                                                                         <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4625,7 +4625,7 @@ Demo App</string>
                                                                         <rect key="frame" x="10" y="0.0" width="315" height="42.5"/>
                                                                         <color key="textColor" name="ThemeFontColor"/>
                                                                         <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4915,22 +4915,22 @@ Demo App</string>
             <color red="0.031372549019607843" green="0.56470588235294117" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeColor">
-            <color red="0.26666666666666666" green="0.3843137254901961" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.2669999897480011" green="0.38400000333786011" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeFontColor">
             <color red="0.0040000001899898052" green="0.019999999552965164" blue="0.20800000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeSecFontColor">
-            <color red="0.44705882352941179" green="0.48627450980392156" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.44699999690055847" green="0.48600000143051147" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
