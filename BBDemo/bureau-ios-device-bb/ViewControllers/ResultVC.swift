@@ -114,6 +114,19 @@ class ResultVC: BaseViewController, TagListViewDelegate {
     
     var tapLocations: [(x: CGFloat, y: CGFloat)] = []  // Store tap locations
     
+    let riskScores: [String: Int] = [
+        "mockgps": 40,
+        "jailbreak": 80,
+        "developerMode": 35,
+        "voiceCallDetected": 50,
+        "remoteDesktop": 0, "appclone": 0, "tampered" : 0,
+        "emulator": 75,
+        "debuggable": 45,
+        "VPN": 50,
+        "factoryResetTime": 58,
+        "appStoreInstall" : 60
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bioWarinnerView.layer.borderColor = UIColor(red: 212/255, green: 223/255, blue: 247/255, alpha: 1).cgColor
@@ -133,7 +146,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
     func startSubmitDataCall(completion: ((Bool) -> Void)? = nil) {
         BureauAPI.shared.setUserID(userName ?? "")
         BureauAPI.shared.fingerprintDelegate = self
-        BureauAPI.shared.submit { success, error,arg  in
+        BureauAPI.shared.submit { success, eventId, error in
             completion?(success)
         }
     }
@@ -264,13 +277,42 @@ class ResultVC: BaseViewController, TagListViewDelegate {
         }.resume()
     }
     
-    func prepareChip(tagListView:TagListView, value:String, enable:Bool){
-        let tagView = tagListView.addTag(value)
+    func prepareChip(tagListView: TagListView, value: String, riskScore: Int? = nil, enable: Bool) {
+        let displayValue: String
+        if let score = riskScore, enable {
+            displayValue = "\(value) - RiskScore: \(score)"
+        } else {
+            displayValue = value
+        }
+        
+        let tagView = tagListView.addTag(displayValue)
         tagListView.delegate = self
         tagView.titleLineBreakMode = .byTruncatingTail
-        if enable{
-            tagView.tagBackgroundColor = AppConstant.RedColor ?? .gray
-            tagView.textColor = AppConstant.RedTitleColor ?? .darkGray
+        
+        if let score = riskScore{
+            if enable {
+                switch score {
+                case 0...30:
+                    tagView.tagBackgroundColor = AppConstant.GreenColor ?? .green
+                    tagView.textColor = AppConstant.GreenTitleColor ?? .darkText
+                case 31...70:
+                    tagView.tagBackgroundColor = AppConstant.OrangeColor ?? .orange
+                    tagView.textColor = AppConstant.OrangeTitleColor ?? .darkText
+                case 71...100:
+                    tagView.tagBackgroundColor = AppConstant.RedColor ?? .red
+                    tagView.textColor = AppConstant.RedTitleColor ?? .white
+                default:
+                   break
+                }
+            } else {
+                tagView.tagBackgroundColor = AppConstant.GreenColor ?? .green
+                tagView.textColor = AppConstant.GreenTitleColor ?? .darkText
+            }
+        } else {
+            if enable {
+                tagView.tagBackgroundColor = AppConstant.RedColor ?? .gray
+                tagView.textColor = AppConstant.RedTitleColor ?? .darkGray
+            }
         }
     }
     
@@ -279,13 +321,13 @@ class ResultVC: BaseViewController, TagListViewDelegate {
         listView.textFont = UIFont(name: "Lexend-Regular", size: 14)!
         switch listView{
         case deviceRiskListView:
-            prepareChip(tagListView: listView, value: "Mock GPS", enable: dic.value(forKeyPath: "mockgps") as? Bool ?? false)
-            prepareChip(tagListView: listView, value: "Remote Desktop", enable: dic.value(forKeyPath: "remoteDesktop") as? Bool ?? false)
-            prepareChip(tagListView: listView, value: "Rooted", enable: dic.value(forKeyPath: "jailbreak") as? Bool ?? false)
-            prepareChip(tagListView: listView, value: "Developer Mode", enable: dic.value(forKeyPath: "developerMode") as? Bool ?? false)
-            prepareChip(tagListView: listView, value: "Voice Call Detected", enable: dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false)
-            prepareChip(tagListView: listView, value: "Simulator", enable: dic.value(forKeyPath: "emulator") as? Bool ?? false)
-            prepareChip(tagListView: listView, value: "Frida Enable", enable: dic.value(forKeyPath: "fridaDetected") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Mock GPS", riskScore: riskScores["mockgps"], enable: dic.value(forKeyPath: "mockgps") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Remote Desktop", riskScore: riskScores["remoteDesktop"], enable: dic.value(forKeyPath: "remoteDesktop") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Rooted", riskScore: riskScores["jailbreak"], enable: dic.value(forKeyPath: "jailbreak") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Developer Mode", riskScore: riskScores["developerMode"], enable: dic.value(forKeyPath: "developerMode") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Voice Call Detected", riskScore: riskScores["voiceCallDetected"], enable: dic.value(forKeyPath: "voiceCallDetected") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Simulator", riskScore: riskScores["emulator"], enable: dic.value(forKeyPath: "emulator") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "Frida Enable", riskScore: 0, enable: dic.value(forKeyPath: "fridaDetected") as? Bool ?? false)
             if let FRTime = dic.value(forKeyPath: "factoryResetTime") as? Int64{
                 let adjustedTimestamp: TimeInterval
                 if FRTime > 1_000_000_000_000 { // Likely in milliseconds
@@ -293,15 +335,15 @@ class ResultVC: BaseViewController, TagListViewDelegate {
                 } else { // Likely in seconds
                     adjustedTimestamp = TimeInterval(FRTime)
                 }
-                let readableDate = convertTimestampToReadableDate(timestamp: TimeInterval(adjustedTimestamp))
-                prepareChip(tagListView: listView, value: "Factory Reset-\(readableDate)", enable: false)
+                let readableDate = convertTimestampToReadableDate(timestamp: TimeInterval(adjustedTimestamp), dateStyle: .short, timeStyle: .none)
+                prepareChip(tagListView: listView, value: "Factory Reset-\(readableDate)", riskScore: riskScores["factoryResetTime"], enable: true)
             }
             setLabelTheme(dic.value(forKey: "deviceRiskLevel") as? String ?? "", deviceRiskValueLbl)
         case appRiskListView:
-            prepareChip(tagListView: listView, value: "Debuggable", enable: dic.value(forKeyPath: "debuggable") as? Bool ?? false)
-            prepareChip(tagListView: listView, value: "App Cloned", enable: false)
-            prepareChip(tagListView: listView, value: "Tampered", enable: false)
-            prepareChip(tagListView: listView, value: "Appstore install", enable: !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false))
+            prepareChip(tagListView: listView, value: "Debuggable", riskScore: riskScores["debuggable"], enable: dic.value(forKeyPath: "debuggable") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "App Cloned", riskScore: riskScores["appclone"], enable: false)
+            prepareChip(tagListView: listView, value: "Tampered", riskScore: riskScores["tampered"], enable: false)
+            prepareChip(tagListView: listView, value: "Appstore install", riskScore: riskScores["appStoreInstall"], enable: !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false))
             if ((dic.value(forKeyPath: "debuggable") as? Bool ?? false) || !(dic.value(forKeyPath: "appStoreInstall") as? Bool ?? false)){
                 appRiskValueLbl.text = AppConstant.High
                 appRiskValueLbl.textColor = AppConstant.RedTitleColor
@@ -321,7 +363,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
             prepareChip(tagListView: listView, value: "Session ID - \(dic.value(forKeyPath: "sessionId") as? String ?? "")", enable: false)
             prepareChip(tagListView: listView, value: "MIME Attack Detected", enable: dic.value(forKeyPath: "mitmAttackDetected") as? Bool ?? false)
         case networkRiskListView:
-            prepareChip(tagListView: listView, value: "IP Security:VPN", enable: dic.value(forKeyPath: "IPSecurity.VPN") as? Bool ?? false)
+            prepareChip(tagListView: listView, value: "IP Security:VPN", riskScore: riskScores["VPN"], enable: dic.value(forKeyPath: "IPSecurity.VPN") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:TOR", enable: dic.value(forKeyPath: "IPSecurity.is_tor") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:Proxy", enable: dic.value(forKeyPath: "IPSecurity.is_proxy") as? Bool ?? false)
             prepareChip(tagListView: listView, value: "IP Security:Crawler", enable: dic.value(forKeyPath: "IPSecurity.is_crawler") as? Bool ?? false)
@@ -660,6 +702,7 @@ class ResultVC: BaseViewController, TagListViewDelegate {
 
 extension ResultVC : PrismFingerPrintDelegate{
     func onFinished(eventID: String?, data: [String : Any]?) {
+        self.eventId = eventID
         let statusCode = data?["statusCode"] as? Int
         if(statusCode == 200){
             loadSessionData(eventId: self.eventId ?? "")
