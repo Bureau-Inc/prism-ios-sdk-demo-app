@@ -48,7 +48,7 @@ class CheckoutViewController: UIViewController {
     
     func initSDK() -> Bool {
         eventId = NSUUID().uuidString
-        let config = BureauConfig(credentialID: "<<CREDENTIAL ID>>", eventId: eventId ?? "", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
+        let config = BureauConfig(credentialID: "<<CREDENTIAL ID>>", environment: .production, enableBehavioralBiometrics: isBBEnable, enableDebugLog: true)
         BureauAPI.shared.configure(config: config)
         BureauAPI.shared.startSubSession(NSUUID().uuidString)
         BureauAPI.shared.behavioralAnalyticsDelegate = self
